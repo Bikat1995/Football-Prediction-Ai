@@ -1,0 +1,7 @@
+{
+  "error": {
+    "message": "No bookmakers with live access found.",
+    "code": "RESTRICTED_ACCESS",
+    "details": "Fixture you have requested is live. Please check your account settings and ensure you have access to at least one bookmaker with live odds."
+  }
+}
