@@ -4,7 +4,6 @@ plotly
 numpy
 scikit-learn
 xgboost
-EasySoccerData
-python-dotenv
-requests
+git+https://github.com/manucabral/EasySoccerData.git
+curl_cffi
 
