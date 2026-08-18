@@ -139,12 +139,12 @@ def get_live_fixtures(leagues=None) -> list:
     return items
 
 
-def get_fixture_predictions(fixture_id: int) -> dict | None:
+def get_fixture_predictions(fixture_id: int) -> dict:
     """Deep prediction data for a fixture."""
-    data = _get('predictions', {'fixture': fixture_id}, KEY1, ttl=3600)
-    if data and 'response' in data and data['response']:
+    data = _get('predictions', {'fixture': fixture_id}, KEY1, ttl=10800)
+    if data and 'response' in data and len(data['response']) > 0:
         return data['response'][0]
-    return None
+    return {}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -188,7 +188,7 @@ def get_team_form(team_id: int, last: int = 8) -> dict:
     Works at the very start of a season — pulls actual match results.
     Returns avg goals scored/conceded.
     """
-    data = _get('fixtures', {'team': team_id, 'last': last}, KEY1, ttl=3600)
+    data = _get('fixtures', {'team': team_id, 'last': last}, KEY1, ttl=43200)
     if not data or 'response' not in data:
         return {}
     matches = [m for m in data['response']
@@ -210,7 +210,7 @@ def get_head_to_head(home_id: int, away_id: int, last: int = 10) -> dict:
     """Head-to-head stats from last N finished H2H matches."""
     data = _get('fixtures/headtohead',
                 {'h2h': f'{home_id}-{away_id}', 'last': last},
-                KEY1, ttl=86400)
+                KEY1, ttl=604800)
     if not data or 'response' not in data:
         return {}
     matches = [m for m in data['response']
