@@ -220,12 +220,22 @@ def compute_poisson_markets(home_team_name: str, away_team_name: str,
         model      = ML_MODEL_DATA['model']
         lg         = ML_MODEL_DATA.get('league_avg', {})
         fallback   = [lg.get('scored', 1.3), lg.get('conceded', 1.1), lg.get('ppg', 1.5)]
+        
+        import difflib
 
         def get_team_feat(name):
-            if name in team_stats and team_stats[name]['games'] >= 3:
-                g = team_stats[name]['games']
-                return [team_stats[name]['scored']/g, team_stats[name]['conceded']/g,
-                        team_stats[name]['points']/g], True
+            # Try exact match first
+            match_name = name
+            if name not in team_stats:
+                # Fuzzy match
+                matches = difflib.get_close_matches(name, team_stats.keys(), n=1, cutoff=0.6)
+                if matches:
+                    match_name = matches[0]
+
+            if match_name in team_stats and team_stats[match_name]['games'] >= 3:
+                g = team_stats[match_name]['games']
+                return [team_stats[match_name]['scored']/g, team_stats[match_name]['conceded']/g,
+                        team_stats[match_name]['points']/g], True
             return fallback, False
 
         h_feat, home_known = get_team_feat(home_team_name)

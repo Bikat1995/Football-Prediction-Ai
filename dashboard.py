@@ -236,18 +236,31 @@ with st.spinner("Crunching numbers…"):
     )
 
 # ── POISSON MARKETS (real AI) ─────────────────────────────────────────────────
-def _avg(stats, direction, venue_filter='total'):
-    """Extract goals average from team stats safely."""
+import live_data_fetcher
+
+def _avg(stats, team_name, direction, venue_filter='total'):
+    """Extract goals average from team stats safely. Falls back to ML historical data if new season."""
     try:
         val = stats['goals'][direction]['average'][venue_filter]
+        if val is None or val == "":
+            raise ValueError
         return float(val)
     except:
-        return 1.2  # fallback league average
+        if live_data_fetcher.ML_MODEL_DATA:
+            ts = live_data_fetcher.ML_MODEL_DATA['team_stats']
+            import difflib
+            matches = difflib.get_close_matches(team_name, ts.keys(), n=1, cutoff=0.6)
+            if matches:
+                m = matches[0]
+                g = ts[m]['games']
+                if g > 0:
+                    return ts[m]['scored']/g if direction == 'for' else ts[m]['conceded']/g
+        return 1.2  # absolute fallback
 
-home_scored    = _avg(home_stats, 'for')
-home_conceded  = _avg(home_stats, 'against')
-away_scored    = _avg(away_stats, 'for')
-away_conceded  = _avg(away_stats, 'against')
+home_scored    = _avg(home_stats, selected_fixture['home_name'], 'for')
+home_conceded  = _avg(home_stats, selected_fixture['home_name'], 'against')
+away_scored    = _avg(away_stats, selected_fixture['away_name'], 'for')
+away_conceded  = _avg(away_stats, selected_fixture['away_name'], 'against')
 
 markets = compute_poisson_markets(
     selected_fixture['home_name'], selected_fixture['away_name'],
