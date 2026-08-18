@@ -166,6 +166,78 @@ def get_league_top_assists(league_id: int, season: int) -> list:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# CURRENT SEASON — update when new season begins
+# ─────────────────────────────────────────────────────────────────────────────
+CURRENT_SEASON = 2026
+
+
+def get_team_form(team_id: int, last: int = 8) -> dict:
+    """
+    Real team form from last N FINISHED games across ALL competitions.
+    Works at the very start of a season — pulls actual match results.
+    Returns avg goals scored/conceded.
+    """
+    data = _get('fixtures', {'team': team_id, 'last': last}, KEY1, ttl=3600)
+    if not data or 'response' not in data:
+        return {}
+    matches = [m for m in data['response']
+               if m['fixture']['status']['short'] in FINISHED_STATUSES]
+    if not matches:
+        return {}
+    scored = 0
+    conceded = 0
+    for m in matches:
+        is_home = m['teams']['home']['id'] == team_id
+        g = m['goals']
+        scored   += (g.get('home') or 0) if is_home else (g.get('away') or 0)
+        conceded += (g.get('away') or 0) if is_home else (g.get('home') or 0)
+    n = len(matches)
+    return {'avg_scored': round(scored / n, 3), 'avg_conceded': round(conceded / n, 3), 'games': n}
+
+
+def get_head_to_head(home_id: int, away_id: int, last: int = 10) -> dict:
+    """Head-to-head stats from last N finished H2H matches."""
+    data = _get('fixtures/headtohead',
+                {'h2h': f'{home_id}-{away_id}', 'last': last},
+                KEY1, ttl=86400)
+    if not data or 'response' not in data:
+        return {}
+    matches = [m for m in data['response']
+               if m['fixture']['status']['short'] in FINISHED_STATUSES]
+    if not matches:
+        return {}
+    home_scored = 0
+    away_scored = 0
+    for m in matches:
+        is_home = m['teams']['home']['id'] == home_id
+        g = m['goals']
+        home_scored += (g.get('home') or 0) if is_home else (g.get('away') or 0)
+        away_scored += (g.get('away') or 0) if is_home else (g.get('home') or 0)
+    n = len(matches)
+    return {'home_avg': round(home_scored / n, 3), 'away_avg': round(away_scored / n, 3), 'games': n}
+
+
+def get_api_prediction_probs(fixture_id: int) -> dict:
+    """
+    Extract win probabilities from API-Football predictions endpoint.
+    Returns {'home': float, 'draw': float, 'away': float} or empty dict.
+    """
+    pred = get_fixture_predictions(fixture_id)
+    if not pred:
+        return {}
+    try:
+        pct = pred['predictions']['percent']
+        home = float(pct.get('home', '0').replace('%', '').strip())
+        draw = float(pct.get('draw', '0').replace('%', '').strip())
+        away = float(pct.get('away', '0').replace('%', '').strip())
+        if home + draw + away > 0:
+            return {'home': home, 'draw': draw, 'away': away}
+    except Exception:
+        pass
+    return {}
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # POISSON MODEL — Real AI predictions from actual team stats
 # ─────────────────────────────────────────────────────────────────────────────
 

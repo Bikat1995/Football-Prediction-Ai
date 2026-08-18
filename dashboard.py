@@ -9,9 +9,10 @@ import predict_today
 from live_data_fetcher import (
     get_live_fixtures, get_upcoming_fixtures,
     get_fixture_predictions, get_team_season_stats,
+    get_team_form, get_head_to_head, get_api_prediction_probs,
     get_league_top_scorers, get_league_top_assists,
     compute_poisson_markets,
-    LIVE_STATUSES, UPCOMING_STATUSES
+    LIVE_STATUSES, UPCOMING_STATUSES, CURRENT_SEASON
 )
 import base64
 import os
@@ -98,6 +99,18 @@ def cached_predictions(fixture_id):
 @st.cache_data(ttl=86400)
 def cached_team_stats(team_id, league_id, season):
     return get_team_season_stats(team_id, league_id, season)
+
+@st.cache_data(ttl=3600)
+def cached_team_form(team_id):
+    return get_team_form(team_id, last=8)
+
+@st.cache_data(ttl=86400)
+def cached_h2h(home_id, away_id):
+    return get_head_to_head(home_id, away_id, last=10)
+
+@st.cache_data(ttl=3600)
+def cached_api_probs(fixture_id):
+    return get_api_prediction_probs(fixture_id)
 
 @st.cache_data(ttl=86400)
 def cached_top_players(league_id, season):
@@ -223,49 +236,96 @@ st.html(f"""
 
 # ── FETCH DATA ────────────────────────────────────────────────────────────────
 with st.spinner("Crunching numbers…"):
-    pred_data  = cached_predictions(selected_fixture['id'])
-    home_stats = cached_team_stats(
+    pred_data   = cached_predictions(selected_fixture['id'])
+    # Real form: last 8 games for each team across all comps
+    home_form   = cached_team_form(selected_fixture['home_id'])
+    away_form   = cached_team_form(selected_fixture['away_id'])
+    # Head-to-head history
+    h2h         = cached_h2h(selected_fixture['home_id'], selected_fixture['away_id'])
+    # API-Football's own probability estimates
+    api_probs   = cached_api_probs(selected_fixture['id'])
+    # Season stats still fetched as a tertiary fallback
+    home_stats  = cached_team_stats(
         selected_fixture['home_id'],
         selected_fixture['league_id'],
         selected_fixture['season']
     )
-    away_stats = cached_team_stats(
+    away_stats  = cached_team_stats(
         selected_fixture['away_id'],
         selected_fixture['league_id'],
         selected_fixture['season']
     )
+    top_scorers, top_assists = cached_top_players(
+        selected_fixture['league_id'], CURRENT_SEASON
+    )
 
 # ── POISSON MARKETS (real AI) ─────────────────────────────────────────────────
 import live_data_fetcher
+import difflib
 
-def _avg(stats, team_name, direction, venue_filter='total'):
-    """Extract goals average from team stats safely. Falls back to ML historical data if new season."""
+LEAGUE_AVG_SCORED    = 1.35
+LEAGUE_AVG_CONCEDED  = 1.35
+
+def _best_avg(form: dict, stats: dict, team_name: str, direction: str) -> float:
+    """
+    Priority order:
+    1. Real form from last 8 games (always recent, cross-season)
+    2. Current season stats from API (only if games > 3)
+    3. ML historical team data (fuzzy matched)
+    4. League average
+    """
+    key = 'avg_scored' if direction == 'for' else 'avg_conceded'
+    # 1. Real recent form
+    if form and form.get('games', 0) >= 3:
+        return form[key]
+    # 2. Current season API stats
     try:
-        val = stats['goals'][direction]['average'][venue_filter]
-        if val is None or val == "":
-            raise ValueError
-        return float(val)
-    except:
-        if live_data_fetcher.ML_MODEL_DATA:
-            ts = live_data_fetcher.ML_MODEL_DATA['team_stats']
-            import difflib
-            matches = difflib.get_close_matches(team_name, ts.keys(), n=1, cutoff=0.6)
-            if matches:
-                m = matches[0]
-                g = ts[m]['games']
-                if g > 0:
-                    return ts[m]['scored']/g if direction == 'for' else ts[m]['conceded']/g
-        return 1.2  # absolute fallback
+        val = stats['goals'][direction]['average']['total']
+        if val and float(val) > 0:
+            games_played = stats['fixtures']['played']['total']
+            if games_played >= 3:
+                return float(val)
+    except Exception:
+        pass
+    # 3. ML historical
+    if live_data_fetcher.ML_MODEL_DATA:
+        ts = live_data_fetcher.ML_MODEL_DATA['team_stats']
+        matches = difflib.get_close_matches(team_name, ts.keys(), n=1, cutoff=0.6)
+        if matches:
+            m = matches[0]
+            g = ts[m]['games']
+            if g > 0:
+                return ts[m]['scored'] / g if direction == 'for' else ts[m]['conceded'] / g
+    # 4. League average
+    return LEAGUE_AVG_SCORED
 
-home_scored    = _avg(home_stats, selected_fixture['home_name'], 'for')
-home_conceded  = _avg(home_stats, selected_fixture['home_name'], 'against')
-away_scored    = _avg(away_stats, selected_fixture['away_name'], 'for')
-away_conceded  = _avg(away_stats, selected_fixture['away_name'], 'against')
+home_scored   = _best_avg(home_form, home_stats, selected_fixture['home_name'], 'for')
+home_conceded = _best_avg(home_form, home_stats, selected_fixture['home_name'], 'against')
+away_scored   = _best_avg(away_form, away_stats, selected_fixture['away_name'], 'for')
+away_conceded = _best_avg(away_form, away_stats, selected_fixture['away_name'], 'against')
+
+# Blend with H2H if available (25% weight)
+if h2h and h2h.get('games', 0) >= 3:
+    home_scored   = home_scored   * 0.75 + h2h['home_avg'] * 0.25
+    away_scored   = away_scored   * 0.75 + h2h['away_avg'] * 0.25
+    home_conceded = home_conceded * 0.75 + h2h['away_avg'] * 0.25
+    away_conceded = away_conceded * 0.75 + h2h['home_avg'] * 0.25
 
 markets = compute_poisson_markets(
     selected_fixture['home_name'], selected_fixture['away_name'],
     home_scored, home_conceded, away_scored, away_conceded
 )
+
+# If API-Football gives us their own probabilities, blend them in (40% weight)
+if api_probs:
+    blend = 0.40
+    hw = markets['home_win'] * (1 - blend) + api_probs['home'] * blend
+    dw = markets['draw']     * (1 - blend) + api_probs['draw'] * blend
+    aw = markets['away_win'] * (1 - blend) + api_probs['away'] * blend
+    total = hw + dw + aw
+    markets['home_win'] = round(hw / total * 100, 1)
+    markets['draw']     = round(dw / total * 100, 1)
+    markets['away_win'] = round(aw / total * 100, 1)
 
 # API advice string
 api_advice = ''
