@@ -14,7 +14,7 @@ from live_data_fetcher import (
     LIVE_STATUSES, UPCOMING_STATUSES
 )
 
-st.set_page_config(page_title="Football AI Pro", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="Better", layout="wide", initial_sidebar_state="expanded")
 
 # ── CSS loader ────────────────────────────────────────────────────────────────
 def _load_css():
@@ -97,9 +97,8 @@ def cached_top_players(league_id, season):
     return get_league_top_scorers(league_id, season), get_league_top_assists(league_id, season)
 
 # ── SIDEBAR (auto-refreshes every 60s) ───────────────────────────────────────
-logo_ph = st.sidebar.empty()
-st.sidebar.html("<div style='font-size:20px;font-weight:800;color:#e2e8f0;padding:4px 0;letter-spacing:-0.5px;'>Football AI Pro</div>")
-st.sidebar.html("<div style='font-size:11px;color:#475569;margin-bottom:12px;letter-spacing:0.05em;'>LIVE DEEP ANALYTICS</div>")
+st.sidebar.image("Better-logo.png", width=140)
+st.sidebar.html("<div style='font-size:11px;color:#475569;margin-bottom:12px;letter-spacing:0.05em;'>AI PREDICTION ENGINE</div>")
 st.sidebar.divider()
 
 if st.sidebar.button("Refresh All Data", width='stretch'):
@@ -151,9 +150,7 @@ _sidebar_section("🔴  Live Now", "#f87171", live_opts)
 _sidebar_section("📅  Today", "#38bdf8", today_opts)
 _sidebar_section("📅  Tomorrow", "#a78bfa", tomorrow_opts)
 
-if selected_fixture:
-    logo_ph.image(selected_fixture['league_logo'], width=44)
-
+# Removed logo_ph logic
 st.sidebar.divider()
 st.sidebar.caption(f"Auto-refreshes · Last check {datetime.now().strftime('%H:%M:%S')}")
 
@@ -275,7 +272,8 @@ if low_warn:
     banner_style = "background: linear-gradient(135deg,#92400e 0%,#b45309 100%);"
 else:
     banner_label = f"AI Recommendation · {'XGBoost + Stats' if ml_blend > 0 else 'Statistical Model'}"
-    banner_style = "background: linear-gradient(135deg,#0ea5e9 0%,#2563eb 100%);"
+    # Hot pink to deep purple from logo
+    banner_style = "background: linear-gradient(135deg,#FF007F 0%,#A200FF 100%); box-shadow: 0 0 32px rgba(255, 0, 127, .25);"
 
 st.html(f"""
 <div class="pred-banner" style="{banner_style}">

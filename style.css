@@ -1,22 +1,22 @@
-/* ── Football AI Pro – premium stylesheet ── */
+/* ── Better – premium stylesheet ── */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 html, body,
 [data-testid="stAppViewContainer"],
 [data-testid="stApp"] {
-  background-color: #0f1117 !important;
+  background-color: #0b0e1b !important;
   font-family: 'Inter', sans-serif !important;
 }
 [data-testid="stSidebar"] {
-  background-color: #161b27 !important;
-  border-right: 1px solid #1e2535 !important;
+  background-color: #121629 !important;
+  border-right: 1px solid #1a203a !important;
 }
 .main .block-container { padding-top: 1.5rem; padding-bottom: 2rem; }
 
 /* stat cards */
 .stat-box {
-  background: #1a2035;
-  border: 1px solid #252d42;
+  background: #151a2e;
+  border: 1px solid #202742;
   border-radius: 14px;
   height: 130px;
   display: flex;
@@ -27,24 +27,24 @@ html, body,
   gap: 6px;
   transition: transform .2s, box-shadow .2s;
 }
-.stat-box:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,210,255,.12); }
+.stat-box:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0, 225, 255, .12); }
 .stat-label {
   font-size: 11px; font-weight: 600;
   letter-spacing: .12em; text-transform: uppercase;
-  color: #6b7fa3; line-height: 1;
+  color: #7b8ea8; line-height: 1;
 }
-.stat-value { font-size: 32px; font-weight: 800; color: #e2e8f0; line-height: 1; }
-.stat-value.blue   { color: #38bdf8; }
-.stat-value.green  { color: #4ade80; }
-.stat-value.red    { color: #f87171; }
-.stat-value.amber  { color: #fbbf24; }
+.stat-value { font-size: 32px; font-weight: 800; color: #ffffff; line-height: 1; }
+.stat-value.blue   { color: #00e1ff; } /* Cyan */
+.stat-value.green  { color: #00ff9d; } /* Neon Green */
+.stat-value.red    { color: #ff007f; } /* Hot Pink */
+.stat-value.amber  { color: #ff5e00; } /* Vibrant Orange */
 
 /* prediction banner */
 .pred-banner {
-  background: linear-gradient(135deg,#0ea5e9 0%,#2563eb 100%);
+  background: linear-gradient(135deg, #FF007F 0%, #A200FF 100%);
   border-radius: 16px; padding: 22px 28px;
   margin-bottom: 20px;
-  box-shadow: 0 0 32px rgba(14,165,233,.25);
+  box-shadow: 0 0 32px rgba(255, 0, 127, .25);
 }
 .pred-banner .label {
   font-size: 11px; font-weight: 700;
