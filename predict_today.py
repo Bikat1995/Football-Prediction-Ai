@@ -2,6 +2,10 @@ import os
 import joblib
 import numpy as np
 from datetime import datetime
+from dotenv import load_dotenv
+load_dotenv()
+from live_data_fetcher import APIFootballClient
+from feature_builder_live import FeatureBuilderLive
 
 LEAGUES = {
     # Europe - Top 5
