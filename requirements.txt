@@ -1,8 +1,10 @@
 streamlit
 pandas
 plotly
-python-dotenv
-requests
 numpy
 scikit-learn
 xgboost
+EasySoccerData
+python-dotenv
+requests
+
