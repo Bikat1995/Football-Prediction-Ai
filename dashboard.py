@@ -127,13 +127,17 @@ if st.sidebar.button("Refresh All Data", use_container_width=True):
     
 # Quick API Health Check
 from live_data_fetcher import _get, KEY1
-api_status = _get('timezone', {}, KEY1, ttl=3600)
 st.sidebar.markdown("---")
-if api_status and 'response' in api_status and len(api_status['response']) > 0:
-    st.sidebar.markdown("<div style='color: #10B981; font-size: 0.8rem;'>● API Connected</div>", unsafe_allow_html=True)
+
+if not KEY1:
+    st.sidebar.markdown("<div style='color: #EF4444; font-size: 0.8rem;'>● API Error: Missing API_FOOTBALL_KEY</div>", unsafe_allow_html=True)
 else:
-    err = api_status.get('errors', {}).get('access', 'Unknown error') if api_status else 'Connection failed'
-    st.sidebar.markdown(f"<div style='color: #EF4444; font-size: 0.8rem;'>● API Error: {err}</div>", unsafe_allow_html=True)
+    api_status = _get('timezone', {}, KEY1, ttl=3600)
+    if api_status and 'response' in api_status and len(api_status['response']) > 0:
+        st.sidebar.markdown("<div style='color: #10B981; font-size: 0.8rem;'>● API Connected</div>", unsafe_allow_html=True)
+    else:
+        err = api_status.get('errors', {}).get('access', 'Unknown error') if api_status else 'HTTP Connection failed'
+        st.sidebar.markdown(f"<div style='color: #EF4444; font-size: 0.8rem;'>● API Error: {err}</div>", unsafe_allow_html=True)
 
 st.sidebar.markdown(f"<div class='last-update'>Auto-refreshes · Last check {datetime.utcnow().strftime('%H:%M:%S')}</div>", unsafe_allow_html=True)
 

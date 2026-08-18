@@ -76,9 +76,15 @@ def _get(endpoint: str, params: dict, api_key: str, ttl: int = 1800):
         data = r.json()
         _write_cache(ck, data)
         return data
+    except requests.exceptions.HTTPError as e:
+        print(f"[API] {endpoint} HTTP Error: {e.response.status_code} - {e.response.text[:100]}")
+        try:
+            return e.response.json()  # Try to parse API-Football error json
+        except:
+            return {"errors": {"access": f"HTTP {e.response.status_code} Forbidden"}}
     except Exception as e:
         print(f"[API] {endpoint} failed: {e}")
-        return None
+        return {"errors": {"access": f"Connection Error: {str(e)[:50]}"}}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
