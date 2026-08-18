@@ -1,2 +1,12 @@
 
 .env
+
+.env
+
+cache/
+__pycache__/
+
+New datasets/
+downloaded_files/
+*.json
+__pycache__/

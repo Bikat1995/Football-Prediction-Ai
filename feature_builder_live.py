@@ -116,6 +116,10 @@ class FeatureBuilderLive:
                     elif col.endswith('D'): final_features[col] = d_odds
                     elif col.endswith('A'): final_features[col] = a_odds
                     else: final_features[col] = 0
+                elif 'line_movement' in col:
+                    final_features[col] = 1.0  # Default: No line movement live
+                elif 'proxy_xg' in col:
+                    final_features[col] = 1.5  # Default: Average xG
                 else:
                     final_features[col] = 0
                     

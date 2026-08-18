@@ -61,7 +61,7 @@ def load_yearly_data():
     
     years = [str(year) for year in range(2017, 2026)]
     for year in years:
-        year_path = f"c:\\Users\\HP\\Desktop\\Backtesting\\{year}"
+        year_path = f".\/{year}"
         if os.path.exists(year_path):
             for file in os.listdir(year_path):
                 if file.endswith('.csv'):
@@ -87,7 +87,7 @@ def load_extras_data():
     """Load data from extras folder"""
     print("📁 Loading extras...")
     extras_data = []
-    extras_path = "c:\\Users\\HP\\Desktop\\Backtesting\\Extras"
+    extras_path = ".\/Extras"
     
     if os.path.exists(extras_path):
         for file in os.listdir(extras_path):
@@ -177,7 +177,8 @@ def process_yearly_extras_data(all_data):
         'AST': 'away_shots_on_target', 'HC': 'home_corners', 'AC': 'away_corners',
         'HF': 'home_fouls', 'AF': 'away_fouls', 'HY': 'home_yellow_cards',
         'AY': 'away_yellow_cards', 'HR': 'home_red_cards', 'AR': 'away_red_cards',
-        'B365H': 'home_odds', 'B365D': 'draw_odds', 'B365A': 'away_odds'
+        'B365H': 'home_odds', 'B365D': 'draw_odds', 'B365A': 'away_odds',
+        'B365CH': 'home_odds_closing', 'B365CD': 'draw_odds_closing', 'B365CA': 'away_odds_closing'
     }
     
     # Map columns for extras data
@@ -252,13 +253,13 @@ class UltimateFeatureEngineer:
             df_feat = df_feat.sort_values(['home_team', 'date'])
             df_feat['home_goals_rolling'] = (
                 df_feat.groupby('home_team')['home_goals']
-                .transform(lambda x: x.rolling(self.window, min_periods=1).mean())
+                .transform(lambda x: x.rolling(self.window, min_periods=1).mean().shift(1))
             )
             
             df_feat = df_feat.sort_values(['away_team', 'date'])
             df_feat['away_goals_rolling'] = (
                 df_feat.groupby('away_team')['away_goals']
-                .transform(lambda x: x.rolling(self.window, min_periods=1).mean())
+                .transform(lambda x: x.rolling(self.window, min_periods=1).mean().shift(1))
             )
         
         # Rolling shots if available
@@ -266,13 +267,13 @@ class UltimateFeatureEngineer:
             df_feat = df_feat.sort_values(['home_team', 'date'])
             df_feat['home_shots_rolling'] = (
                 df_feat.groupby('home_team')['home_shots']
-                .transform(lambda x: x.rolling(self.window, min_periods=1).mean())
+                .transform(lambda x: x.rolling(self.window, min_periods=1).mean().shift(1))
             )
             
             df_feat = df_feat.sort_values(['away_team', 'date'])
             df_feat['away_shots_rolling'] = (
                 df_feat.groupby('away_team')['away_shots']
-                .transform(lambda x: x.rolling(self.window, min_periods=1).mean())
+                .transform(lambda x: x.rolling(self.window, min_periods=1).mean().shift(1))
             )
         
         # Form indicators
@@ -283,14 +284,15 @@ class UltimateFeatureEngineer:
             df_feat = df_feat.sort_values(['home_team', 'date'])
             df_feat['home_form'] = (
                 df_feat.groupby('home_team')['points']
-                .transform(lambda x: x.rolling(self.window, min_periods=1).mean())
+                .transform(lambda x: x.rolling(self.window, min_periods=1).mean().shift(1))
             )
             
             df_feat = df_feat.sort_values(['away_team', 'date'])
             df_feat['away_form'] = (
                 df_feat.groupby('away_team')['points']
-                .transform(lambda x: x.rolling(self.window, min_periods=1).mean())
+                .transform(lambda x: x.rolling(self.window, min_periods=1).mean().shift(1))
             )
+        
         
         # Advanced odds features
         if 'home_odds' in df_feat.columns and 'away_odds' in df_feat.columns:
@@ -299,6 +301,30 @@ class UltimateFeatureEngineer:
             df_feat['implied_prob_home'] = 1 / df_feat['home_odds']
             df_feat['implied_prob_away'] = 1 / df_feat['away_odds']
             df_feat['implied_prob_draw'] = 1 / df_feat['draw_odds'] if 'draw_odds' in df_feat.columns else 0
+            
+        # LINE MOVEMENT (Smart Money) & PROXY xG
+        if 'home_odds_closing' in df_feat.columns and 'home_odds' in df_feat.columns:
+            df_feat['home_odds_closing'] = pd.to_numeric(df_feat['home_odds_closing'], errors='coerce')
+            df_feat['home_odds'] = pd.to_numeric(df_feat['home_odds'], errors='coerce')
+            df_feat['away_odds_closing'] = pd.to_numeric(df_feat['away_odds_closing'], errors='coerce')
+            df_feat['away_odds'] = pd.to_numeric(df_feat['away_odds'], errors='coerce')
+            df_feat['draw_odds_closing'] = pd.to_numeric(df_feat['draw_odds_closing'], errors='coerce')
+            df_feat['draw_odds'] = pd.to_numeric(df_feat['draw_odds'], errors='coerce')
+            df_feat['home_line_movement'] = df_feat['home_odds_closing'] / df_feat['home_odds']
+            df_feat['away_line_movement'] = df_feat['away_odds_closing'] / df_feat['away_odds']
+            df_feat['draw_line_movement'] = df_feat['draw_odds_closing'] / df_feat['draw_odds']
+            df_feat.replace([np.inf, -np.inf], np.nan, inplace=True)
+        
+        if 'home_shots_on_target' in df_feat.columns:
+            df_feat['home_proxy_xg'] = df_feat['home_shots_on_target'] * 0.3
+            df_feat['away_proxy_xg'] = df_feat['away_shots_on_target'] * 0.3
+            
+            df_feat = df_feat.sort_values(['home_team', 'date'])
+            df_feat['home_proxy_xg_rolling'] = df_feat.groupby('home_team')['home_proxy_xg'].transform(lambda x: x.rolling(self.window, min_periods=1).mean().shift(1))
+            
+            df_feat = df_feat.sort_values(['away_team', 'date'])
+            df_feat['away_proxy_xg_rolling'] = df_feat.groupby('away_team')['away_proxy_xg'].transform(lambda x: x.rolling(self.window, min_periods=1).mean().shift(1))
+
         
         # Probability features from scattered data
         if 'home_prob' in df_feat.columns:
@@ -355,7 +381,21 @@ class UltimateModel:
             'num_class': 3,
             'random_state': 42
         }
-        self.models['xgb'] = xgb.XGBClassifier(**xgb_params)
+        self.models['xgb'] = xgb.XGBClassifier(
+                n_estimators=500,
+                max_depth=6,
+                learning_rate=0.05,
+                subsample=0.8,
+                colsample_bytree=0.8,
+                min_child_weight=5,
+                gamma=0.1,
+                reg_alpha=0.1,
+                reg_lambda=1.0,
+                use_label_encoder=False,
+                eval_metric='mlogloss',
+                random_state=42,
+                n_jobs=-1
+            )
         self.models['xgb'].fit(X_train_scaled, y_train)
         
         # Random Forest with enhanced parameters
@@ -368,7 +408,15 @@ class UltimateModel:
             'random_state': 42,
             'n_jobs': -1
         }
-        self.models['rf'] = RandomForestClassifier(**rf_params)
+        self.models['rf'] = RandomForestClassifier(
+                n_estimators=500,
+                max_depth=12,
+                min_samples_split=10,
+                min_samples_leaf=5,
+                class_weight='balanced',
+                random_state=42,
+                n_jobs=-1
+            )
         self.models['rf'].fit(X_train_scaled, y_train)
         
         # Ultimate Ensemble
@@ -485,7 +533,31 @@ def main():
                        'source_year', 'source_file', 'homeTeamID', 'awayTeamID',
                        'homeGoals', 'awayGoals', 'points']
         numeric_cols = df_features.select_dtypes(include=[np.number]).columns.tolist()
-        feature_cols = [col for col in numeric_cols if col not in exclude_cols]
+        
+        # WHITELIST APPROACH: Only allow features we KNOW are available pre-match
+        # This prevents any post-match data from leaking in
+        allowed_prefixes = [
+            # Our engineered rolling/form features (shifted, so no leakage)
+            'home_goals_rolling', 'away_goals_rolling', 'home_shots_rolling', 'away_shots_rolling',
+            'home_form', 'away_form', 'goal_diff_rolling', 'total_goals_rolling',
+            'home_proxy_xg_rolling', 'away_proxy_xg_rolling',
+            # Line movement (opening vs closing odds - both pre-match)
+            'home_line_movement', 'away_line_movement', 'draw_line_movement',
+            # Our calculated odds features
+            'odds_ratio', 'odds_diff', 'implied_prob_home', 'implied_prob_away', 'implied_prob_draw',
+            # Raw pre-match opening odds (best from each bookmaker)
+            'home_odds', 'draw_odds', 'away_odds',
+        ]
+        feature_cols = [col for col in numeric_cols if col in allowed_prefixes]
+        
+        # If we have very few features, also include major bookmaker opening odds
+        major_bookmaker_odds = ['B365H', 'B365D', 'B365A', 'BWH', 'BWD', 'BWA', 
+                                'PSH', 'PSD', 'PSA', 'WHH', 'WHD', 'WHA',
+                                'IWH', 'IWD', 'IWA', 'VCH', 'VCD', 'VCA',
+                                'MaxH', 'MaxD', 'MaxA', 'AvgH', 'AvgD', 'AvgA']
+        for col in major_bookmaker_odds:
+            if col in numeric_cols and col not in feature_cols:
+                feature_cols.append(col)
         
         X = df_features[feature_cols]
         y = df_features['result']
@@ -533,3 +605,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+

@@ -2,17 +2,46 @@ import os
 import joblib
 import numpy as np
 from datetime import datetime
+from dotenv import load_dotenv
+load_dotenv()
 from live_data_fetcher import APIFootballClient
 from feature_builder_live import FeatureBuilderLive
 
 LEAGUES = {
+    # Europe - Top 5
     39: {"name": "Premier League"},
     140: {"name": "La Liga"},
     78: {"name": "Bundesliga"},
     135: {"name": "Serie A"},
     61: {"name": "Ligue 1"},
+    # Europe - Major
+    94: {"name": "Primeira Liga"},
+    88: {"name": "Eredivisie"},
+    144: {"name": "Jupiler Pro League"},
+    203: {"name": "Super Lig"},
+    113: {"name": "Allsvenskan"},
+    119: {"name": "Superliga (Denmark)"},
+    244: {"name": "Veikkausliiga"},
+    40: {"name": "Championship"},
+    41: {"name": "League One"},
+    42: {"name": "League Two"},
+    141: {"name": "Segunda Division"},
+    # Europe - Cups & Competitions
     2: {"name": "Champions League"},
-    3: {"name": "Europa League"}
+    3: {"name": "Europa League"},
+    848: {"name": "Conference League"},
+    137: {"name": "Coppa Italia"},
+    # Americas
+    253: {"name": "MLS"},
+    71: {"name": "Serie A (Brazil)"},
+    128: {"name": "Liga Profesional Argentina"},
+    239: {"name": "Primera A (Colombia)"},
+    262: {"name": "Liga MX"},
+    # Other
+    333: {"name": "Premier League (Ukraine)"},
+    283: {"name": "Liga I (Romania)"},
+    286: {"name": "Super Liga (Serbia)"},
+    271: {"name": "NB I (Hungary)"},
 }
 
 MODEL_FILE = 'ultimate_combined_model.pkl'

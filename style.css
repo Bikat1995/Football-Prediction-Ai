@@ -1,0 +1,149 @@
+/* ── Football AI Pro – premium stylesheet ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+html, body,
+[data-testid="stAppViewContainer"],
+[data-testid="stApp"] {
+  background-color: #0f1117 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+[data-testid="stSidebar"] {
+  background-color: #161b27 !important;
+  border-right: 1px solid #1e2535 !important;
+}
+.main .block-container { padding-top: 1.5rem; padding-bottom: 2rem; }
+
+/* stat cards */
+.stat-box {
+  background: #1a2035;
+  border: 1px solid #252d42;
+  border-radius: 14px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  transition: transform .2s, box-shadow .2s;
+}
+.stat-box:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,210,255,.12); }
+.stat-label {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: #6b7fa3; line-height: 1;
+}
+.stat-value { font-size: 32px; font-weight: 800; color: #e2e8f0; line-height: 1; }
+.stat-value.blue   { color: #38bdf8; }
+.stat-value.green  { color: #4ade80; }
+.stat-value.red    { color: #f87171; }
+.stat-value.amber  { color: #fbbf24; }
+
+/* prediction banner */
+.pred-banner {
+  background: linear-gradient(135deg,#0ea5e9 0%,#2563eb 100%);
+  border-radius: 16px; padding: 22px 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 32px rgba(14,165,233,.25);
+}
+.pred-banner .label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: rgba(255,255,255,.7); margin-bottom: 6px;
+}
+.pred-banner .value { font-size: 26px; font-weight: 800; color: #fff; line-height: 1.2; }
+
+/* match header */
+.match-header {
+  display: flex; align-items: center;
+  justify-content: center; gap: 24px; margin-bottom: 24px;
+}
+.match-team { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.match-team img { width: 72px; height: 72px; object-fit: contain; }
+.match-team .name {
+  font-size: 14px; font-weight: 700;
+  color: #cbd5e1; text-align: center; max-width: 120px;
+}
+.match-vs {
+  font-size: 13px; font-weight: 700;
+  letter-spacing: .15em; color: #374151;
+  background: #1e2535; border-radius: 8px; padding: 8px 14px;
+}
+
+/* tabs */
+.stTabs [data-baseweb="tab-list"]   { gap: 4px; border-bottom: 1px solid #1e2535; }
+.stTabs [data-baseweb="tab"] {
+  height: 44px; font-size: 13px; font-weight: 600;
+  color: #64748b; background: transparent;
+  border-radius: 8px 8px 0 0; padding: 0 18px;
+  border: none !important; box-shadow: none !important;
+}
+.stTabs [aria-selected="true"] { color: #38bdf8 !important; border-bottom: 2px solid #38bdf8 !important; }
+
+/* section title */
+.section-title {
+  font-size: 13px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: #475569; margin-bottom: 14px; margin-top: 20px;
+  border-left: 3px solid #0ea5e9; padding-left: 10px;
+}
+
+/* player rows */
+.player-row {
+  display: flex; align-items: center; gap: 14px;
+  background: #1a2035; border: 1px solid #252d42;
+  border-radius: 12px; padding: 12px 16px; margin-bottom: 10px;
+  transition: background .2s;
+}
+.player-row:hover { background: #1e2840; }
+.player-rank { font-size: 18px; font-weight: 800; color: #334155; width: 28px; text-align: center; flex-shrink: 0; }
+.player-rank.gold   { color: #f59e0b; }
+.player-rank.silver { color: #94a3b8; }
+.player-rank.bronze { color: #b45309; }
+.player-row img {
+  width: 46px; height: 46px; border-radius: 50%;
+  object-fit: cover; border: 2px solid #252d42; flex-shrink: 0;
+}
+.player-info  { flex: 1; min-width: 0; }
+.player-name  { font-size: 14px; font-weight: 700; color: #e2e8f0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.player-team  { font-size: 12px; color: #64748b; }
+.player-stat  { font-size: 22px; font-weight: 800; color: #38bdf8; flex-shrink: 0; }
+
+/* h2h */
+.h2h-row {
+  display: flex; align-items: center; justify-content: space-between;
+  background: #1a2035; border: 1px solid #252d42;
+  border-radius: 12px; padding: 12px 20px; margin-bottom: 10px;
+}
+.h2h-date   { font-size: 12px; color: #64748b; }
+.h2h-score  { font-size: 20px; font-weight: 800; color: #e2e8f0; }
+.h2h-league { font-size: 11px; color: #475569; }
+
+/* sidebar buttons */
+[data-testid="stSidebar"] button {
+  background: #1a2035 !important; border: 1px solid #252d42 !important;
+  color: #94a3b8 !important; font-size: 12px !important;
+  font-weight: 500 !important; border-radius: 8px !important;
+  text-align: left !important;
+}
+[data-testid="stSidebar"] button:hover {
+  background: #1e2840 !important; color: #38bdf8 !important;
+  border-color: #38bdf8 !important;
+}
+
+/* ou market cards */
+.ou-card { background: #1a2035; border: 1px solid #252d42; border-radius: 12px; padding: 16px 20px; }
+.ou-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #64748b; margin-bottom: 10px; }
+.ou-row   { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #1e2535; }
+.ou-row:last-child { border-bottom: none; }
+.ou-team  { font-size: 13px; color: #94a3b8; }
+.ou-vals  { font-size: 13px; font-weight: 700; }
+.ou-over  { color: #4ade80; }
+.ou-under { color: #f87171; }
+
+/* penalty card */
+.pen-card  { background: #1a2035; border: 1px solid #252d42; border-radius: 12px; padding: 16px 20px; }
+.pen-title { font-size: 13px; font-weight: 700; color: #e2e8f0; margin-bottom: 12px; }
+.pen-stat  { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.pen-label { font-size: 12px; color: #64748b; }
+.pen-val   { font-size: 13px; font-weight: 700; color: #e2e8f0; }
