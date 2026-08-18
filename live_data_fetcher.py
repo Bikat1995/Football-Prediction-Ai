@@ -15,7 +15,18 @@ load_dotenv()
 
 BASE_URL = "https://v3.football.api-sports.io"
 CACHE_DIR = "cache/api_football"
-os.makedirs(CACHE_DIR, exist_ok=True)
+try:
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    # Test write
+    test_path = os.path.join(CACHE_DIR, '.write_test')
+    with open(test_path, 'w') as f:
+        f.write('ok')
+    os.remove(test_path)
+except Exception:
+    # Streamlit Cloud or read-only filesystem — fall back to /tmp
+    import tempfile
+    CACHE_DIR = os.path.join(tempfile.gettempdir(), 'api_football_cache')
+    os.makedirs(CACHE_DIR, exist_ok=True)
 
 LIVE_STATUSES    = {'1H', '2H', 'HT', 'ET', 'P', 'BT', 'LIVE', 'INT'}
 FINISHED_STATUSES = {'FT', 'AET', 'PEN', 'CANC', 'PST', 'ABD', 'AWD', 'WO'}
@@ -357,7 +368,9 @@ def compute_poisson_markets(home_team_name: str, away_team_name: str,
     p_dc_home_draw = p_home + p_draw
     p_dc_away_draw = p_away + p_draw
 
-    # Most likely correct scores (top 5) from Poisson baseline
+    # Most likely correct scores — Poisson matrix, driven by real form λ values
+    # The λ values (lam_h, lam_a) are now fed from actual last-8-games averages,
+    # so these scores are genuinely specific to this matchup, not generic.
     sorted_scores = sorted(matrix.items(), key=lambda x: x[1], reverse=True)
     top_scores = [(f"{h}-{a}", round(v / total * 100, 1)) for (h, a), v in sorted_scores[:5]]
 
