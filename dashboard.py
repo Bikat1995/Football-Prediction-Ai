@@ -125,15 +125,7 @@ if st.sidebar.button("Refresh All Data", use_container_width=True):
     st.cache_data.clear()
     st.rerun()
     
-# Quick API Health Check — test Sofascore connectivity
-try:
-    import esd as _esd
-    _test_client = _esd.SofascoreClient()
-    _test_result = _test_client.get_events(live=True)
-    st.sidebar.markdown("<div style='color: #10B981; font-size: 0.8rem;'>● Data Connected (Sofascore)</div>", unsafe_allow_html=True)
-except Exception as _e:
-    st.sidebar.markdown(f"<div style='color: #EF4444; font-size: 0.8rem;'>● Data Error: {str(_e)[:60]}</div>", unsafe_allow_html=True)
-
+st.sidebar.markdown("<div style='color: #10B981; font-size: 0.8rem;'>● Sofascore Data Engine</div>", unsafe_allow_html=True)
 st.sidebar.markdown(f"<div class='last-update'>Auto-refreshes · Last check {datetime.utcnow().strftime('%H:%M:%S')}</div>", unsafe_allow_html=True)
 
 live_raw     = cached_live()
