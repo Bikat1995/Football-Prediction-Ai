@@ -13,6 +13,13 @@ from live_data_fetcher import (
     compute_poisson_markets,
     LIVE_STATUSES, UPCOMING_STATUSES
 )
+import base64
+import os
+
+LOGO_B64 = ""
+if os.path.exists("Better-logo.png"):
+    with open("Better-logo.png", "rb") as f:
+        LOGO_B64 = base64.b64encode(f.read()).decode()
 
 st.set_page_config(page_title="Better", layout="wide", initial_sidebar_state="expanded")
 
@@ -22,7 +29,7 @@ def _load_css():
         css = f.read()
     st.html(f"""
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>{css}</style>
     """)
 
@@ -97,8 +104,8 @@ def cached_top_players(league_id, season):
     return get_league_top_scorers(league_id, season), get_league_top_assists(league_id, season)
 
 # ── SIDEBAR (auto-refreshes every 60s) ───────────────────────────────────────
-st.sidebar.image("Better-logo.png", width=140)
-st.sidebar.html("<div style='font-size:11px;color:#475569;margin-bottom:12px;letter-spacing:0.05em;'>AI PREDICTION ENGINE</div>")
+st.sidebar.image("Better-logo.png", width=96)
+st.sidebar.html("<div style='font-family:DM Mono,monospace;font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:#4a5470;margin:6px 0 12px 0;'>AI Prediction Engine</div>")
 st.sidebar.divider()
 
 if st.sidebar.button("Refresh All Data", width='stretch'):
@@ -146,9 +153,9 @@ def _sidebar_section(title: str, color: str, opts: dict):
                 selected_fixture = m
         st.sidebar.html("<div style='margin-bottom:8px;'></div>")
 
-_sidebar_section("🔴  Live Now", "#f87171", live_opts)
-_sidebar_section("📅  Today", "#38bdf8", today_opts)
-_sidebar_section("📅  Tomorrow", "#a78bfa", tomorrow_opts)
+_sidebar_section("Live Now",  "#d94040", live_opts)
+_sidebar_section("Today",     "#8a90a6", today_opts)
+_sidebar_section("Tomorrow",  "#4a5470", tomorrow_opts)
 
 # Removed logo_ph logic
 st.sidebar.divider()
@@ -158,14 +165,26 @@ st.sidebar.caption(f"Auto-refreshes · Last check {datetime.now().strftime('%H:%
 if not selected_fixture:
     total = len(live_raw) + len(upcoming_raw)
     st.html(f"""
-    <div style='max-width:520px;margin:80px auto;text-align:center;'>
-      <div style='font-size:24px;font-weight:800;color:#e2e8f0;margin-bottom:8px;'>Select a Match</div>
-      <div style='font-size:14px;color:#475569;line-height:1.7;'>
-        {len(live_raw)} live &nbsp;·&nbsp; {len(upcoming_raw)} upcoming across today & tomorrow<br>
-        Pick any fixture from the sidebar to launch the deep analytics engine.
+    <div style='max-width:480px;margin:100px auto;text-align:center;'>
+      <img src='data:image/png;base64,{LOGO_B64}' width='60' style='margin-bottom:20px;border-radius:4px;'>
+      <div style='font-family:DM Mono,monospace;font-size:10px;letter-spacing:.12em;
+                  text-transform:uppercase;color:#4a5470;margin-bottom:18px;'>Better AI Prediction Engine</div>
+      <div style='font-size:28px;font-weight:700;color:#dde2ef;margin-bottom:10px;
+                  line-height:1.25;'>Select a match<br>to load the analysis.</div>
+      <div style='font-size:13px;color:#8491b0;line-height:1.8;'>
+        {len(live_raw)} live &nbsp;&middot;&nbsp; {len(upcoming_raw)} upcoming &mdash; choose from the sidebar.
       </div>
     </div>""")
     st.stop()
+
+# ── MAIN HEADER (Visible when match selected) ─────────────────────────────────
+st.html(f"""
+<div style='display:flex;align-items:center;gap:12px;margin-bottom:24px;'>
+  <img src='data:image/png;base64,{LOGO_B64}' width='32' style='border-radius:4px;'>
+  <div style='font-family:DM Mono,monospace;font-size:10px;letter-spacing:.12em;
+              text-transform:uppercase;color:#4a5470;'>Better AI Prediction Engine</div>
+</div>
+""")
 
 # ── MATCH HEADER ──────────────────────────────────────────────────────────────
 is_live = selected_fixture['status']['short'] in LIVE_STATUSES
@@ -177,16 +196,15 @@ if is_live:
     hg = selected_fixture['goals'].get('home', 0)
     ag = selected_fixture['goals'].get('away', 0)
     score_block = f"""
-    <div style='display:flex;flex-direction:column;align-items:center;gap:6px;'>
-      <div style='background:#ef4444;color:white;font-size:10px;font-weight:800;
-                  letter-spacing:0.15em;padding:3px 10px;border-radius:20px;'>LIVE {elapsed}'</div>
-      <div style='font-size:42px;font-weight:800;color:#e2e8f0;letter-spacing:-1px;'>{hg} &ndash; {ag}</div>
+    <div style='display:flex;flex-direction:column;align-items:center;gap:8px;'>
+      <div class='live-pill'>LIVE {elapsed}'</div>
+      <div style='font-family:DM Mono,monospace;font-size:40px;font-weight:500;color:#dde2ef;letter-spacing:-.5px;'>{hg} &ndash; {ag}</div>
     </div>"""
 else:
     score_block = f"""
     <div style='display:flex;flex-direction:column;align-items:center;gap:6px;'>
-      <div class='match-vs'>VS</div>
-      <div style='font-size:11px;color:#334155;font-weight:600;letter-spacing:0.06em;'>{match_date} · {match_time}</div>
+      <div class='match-vs'>vs</div>
+      <div style='font-family:DM Mono,monospace;font-size:11px;color:#4a5470;letter-spacing:.06em;'>{match_date} &middot; {match_time}</div>
     </div>"""
 
 st.html(f"""
@@ -268,18 +286,17 @@ low_warn = markets.get('low_data_warning')
 ml_blend = markets.get('ml_blend', 0)
 
 if low_warn:
-    banner_label = "⚠️ AI Prediction · Limited Data — Treat With Caution"
-    banner_style = "background: linear-gradient(135deg,#92400e 0%,#b45309 100%);"
+    banner_label = "Statistical Baseline"
+    banner_style = "border-color: #6b4000;"
 else:
-    banner_label = f"AI Recommendation · {'XGBoost + Stats' if ml_blend > 0 else 'Statistical Model'}"
-    # Hot pink to deep purple from logo
-    banner_style = "background: linear-gradient(135deg,#FF007F 0%,#A200FF 100%); box-shadow: 0 0 32px rgba(255, 0, 127, .25);"
+    banner_label = "AI Recommendation"
+    banner_style = ""
 
 st.html(f"""
 <div class="pred-banner" style="{banner_style}">
   <div class="label">{banner_label}</div>
   <div class="value">{ai_rec}</div>
-  {f'<div style="font-size:12px;color:rgba(255,255,255,0.75);margin-top:8px;">{low_warn}</div>' if low_warn else ''}
+  {f'<div style="font-family:DM Mono,monospace;font-size:11px;color:#8491b0;margin-top:8px;">{low_warn}</div>' if low_warn else ''}
 </div>
 """)
 
@@ -397,20 +414,16 @@ with t_markets:
 with t_edge:
     comparison = pred_data.get('comparison', {}) if pred_data else {}
     if comparison:
-        st.html('<div class="section-title">AI Engine Confidence</div>')
         ml_conf = markets.get('ml_blend', 0)
-        if ml_conf > 0:
+        # Only show a notice when data is INSUFFICIENT (no ML blend)
+        if ml_conf == 0:
             st.html(f"""
-            <div style='background:rgba(16, 185, 129, 0.1); border:1px solid #10b981; border-radius:12px; padding:16px; margin-bottom:20px;'>
-                <div style='color:#10b981; font-weight:800; font-size:14px; margin-bottom:4px;'>XGBOOST ML HYBRID ACTIVE</div>
-                <div style='color:#94a3b8; font-size:12px;'>Prediction is a {ml_conf}% blend of historical Machine Learning (trained on Champions League + Big 5 datasets) and {100-ml_conf}% current season statistical form.</div>
-            </div>
-            """)
-        else:
-             st.html(f"""
-            <div style='background:rgba(245, 158, 11, 0.1); border:1px solid #f59e0b; border-radius:12px; padding:16px; margin-bottom:20px;'>
-                <div style='color:#f59e0b; font-weight:800; font-size:14px; margin-bottom:4px;'>STATISTICAL BASELINE</div>
-                <div style='color:#94a3b8; font-size:12px;'>ML historical data insufficient for these teams. Falling back to 100% current season Poisson distribution.</div>
+            <div style='background:rgba(255,179,0,0.08); border:1px solid rgba(255,179,0,0.35);
+                        border-radius:12px; padding:14px 18px; margin-bottom:18px;'>
+                <div style='color:#FFB300; font-weight:800; font-size:12px;
+                            letter-spacing:.1em; text-transform:uppercase; margin-bottom:4px;'>Statistical Baseline</div>
+                <div style='color:#7B8DB0; font-size:12px; line-height:1.6;'>ML historical data insufficient for these teams.
+                Falling back to 100% current season Poisson distribution.</div>
             </div>
             """)
             
