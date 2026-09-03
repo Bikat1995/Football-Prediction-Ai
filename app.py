@@ -135,7 +135,8 @@ def debug():
         'logo_loaded': bool(LOGO_B64),
     }
     try:
-        dyn_leagues = get_dynamic_leagues()
+        league_map = get_league_map()
+        dyn_leagues = list(league_map.keys())
         info['dynamic_leagues_count'] = len(dyn_leagues)
         all_f = get_upcoming_fixtures(leagues=dyn_leagues)
         info['total_fixtures_fetched'] = len(all_f)
