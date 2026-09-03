@@ -1,91 +1,58 @@
-/*
-  Better — Dashboard Stylesheet v2
-  Design: typographic-first, sports-data aesthetic.
-  Brand: Bebas Neue (display), Inter (UI), IBM Plex Mono (data).
-  All labels UPPERCASE. No decoration for its own sake.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Share+Tech+Mono&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Share+Tech+Mono&display=swap');
-
-/* ── Tokens ── */
 :root {
-  /* Backgrounds */
-  --bg-0:  #0a0f16;
-  --bg-1:  #111620;
-  --bg-2:  #181e2b;
-  --bg-3:  #202838;
-
-  /* Borders */
-  --line:    #1f2937;
+  --bg-0: #0a0f16;
+  --bg-1: #111620;
+  --bg-2: #181e2b;
+  --bg-3: #202838;
+  --line: #1f2937;
   --line-hi: #374151;
-
-  /* Text */
   --ink-1: #f3f4f6;
   --ink-2: #9ca3af;
   --ink-3: #6b7280;
-
-  /* Semantic accents — one per meaning */
-  --c-home:  #f97316;
-  --c-away:  #3b82f6;
-  --c-draw:  #9ca3af;
-  --c-yes:   #10b981;
-  --c-no:    #ef4444;
-  --c-warn:  #f59e0b;
-  --c-live:  #ef4444;
-
-  /* Fonts */
+  --c-home: #f97316;
+  --c-away: #3b82f6;
+  --c-yes:  #10b981;
+  --c-no:   #ef4444;
+  --c-live: #ef4444;
   --f-brand: 'Caveat', cursive;
-  --f-ui:    'Share Tech Mono', monospace;
-  --f-data:  'Share Tech Mono', monospace;
+  --f-mono: 'Share Tech Mono', monospace;
 }
 
-/* ── Reset / Base ── */
-*, *::before, *::after { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html, body,
-[data-testid="stAppViewContainer"],
-[data-testid="stApp"] {
-  background: var(--bg-0) !important;
-  font-family: var(--f-ui) !important;
-  color: var(--ink-1) !important;
+html, body {
+  background: var(--bg-0);
+  font-family: var(--f-mono);
+  color: var(--ink-1);
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
-/* ── Sidebar — hide on desktop, show on mobile ── */
-@media (min-width: 769px) {
-  section[data-testid="stSidebar"] { display: none !important; }
-}
-@media (max-width: 768px) {
-  section[data-testid="stSidebar"] { display: block !important; }
-}
-[data-testid="stSidebar"] {
-  background: var(--bg-1) !important;
-  border-right: 1px solid var(--line) !important;
+.page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
 }
 
-/* ── Main container ── */
-.main .block-container,
-[data-testid="stAppViewBlockContainer"] {
-  max-width: 1440px !important;
-  padding: 1.5rem 2.5rem 4rem 2.5rem !important;
-}
-
-/* ── Navbar ── */
+/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0 14px 0;
+  padding: 16px 0;
   border-bottom: 1px solid var(--line);
-  margin-bottom: 20px;
+  margin-bottom: 28px;
   gap: 16px;
 }
 .navbar-brand {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
   flex-shrink: 0;
 }
+.navbar-brand img { border-radius: 4px; display: block; }
 .brand-name {
   font-family: var(--f-brand);
   font-size: 36px;
@@ -94,56 +61,57 @@ html, body,
   line-height: 1;
 }
 .brand-sub {
-  font-family: var(--f-ui);
   font-size: 9px;
   color: var(--ink-3);
   letter-spacing: .18em;
   text-transform: uppercase;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
-/* Desktop nav tab buttons */
-.navbar-tabs {
+/* Desktop tabs */
+.nav-tabs {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 .nav-btn {
+  display: inline-block;
+  padding: 8px 16px;
   background: var(--bg-2);
   color: var(--ink-2);
   border: 1px solid var(--line);
-  font-family: var(--f-ui);
+  font-family: var(--f-mono);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
   border-radius: 4px;
-  padding: 7px 14px;
-  cursor: pointer;
-  transition: background .15s, color .15s;
+  text-decoration: none;
+  transition: background .15s, color .15s, border-color .15s;
+  white-space: nowrap;
 }
 .nav-btn:hover { color: var(--ink-1); background: var(--bg-3); border-color: var(--line-hi); }
-.nav-btn--active { background: var(--c-home) !important; color: #fff !important; border-color: var(--c-home) !important; }
+.nav-btn.active { background: var(--c-home); color: #fff; border-color: var(--c-home); }
 
 .navbar-clock {
   font-size: 10px;
-  color: #4a5470;
-  font-family: var(--f-data);
+  color: var(--ink-3);
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
-/* Hamburger (hidden on desktop) */
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5px;
+  width: 42px;
+  height: 40px;
   background: var(--bg-2);
   border: 1px solid var(--line);
   border-radius: 4px;
-  width: 40px;
-  height: 38px;
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -154,283 +122,144 @@ html, body,
   background: var(--ink-2);
   border-radius: 2px;
 }
+.hamburger:hover span { background: var(--ink-1); }
 
-/* Mobile dropdown menu */
+/* Mobile dropdown */
 .mob-menu {
+  display: none;
   flex-direction: column;
   background: var(--bg-1);
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 8px;
-  margin-bottom: 16px;
-  gap: 4px;
+  margin-bottom: 20px;
+  gap: 2px;
 }
+.mob-menu.open { display: flex; }
 .mob-nav-item {
-  width: 100%;
-  background: transparent;
+  display: block;
+  padding: 13px 16px;
   color: var(--ink-2);
-  border: none;
-  font-family: var(--f-ui);
+  font-family: var(--f-mono);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
-  border-radius: 4px;
-  padding: 12px 16px;
-  text-align: left;
-  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background .15s, color .15s;
 }
 .mob-nav-item:hover { background: var(--bg-2); color: var(--ink-1); }
-.mob-nav-item--active { color: var(--c-home) !important; background: rgba(249,115,22,0.08) !important; }
+.mob-nav-item.active { color: var(--c-home); background: rgba(249,115,22,0.09); }
 .mob-clock {
   font-size: 10px;
   color: var(--ink-3);
-  font-family: var(--f-data);
-  padding: 8px 16px 4px 16px;
+  padding: 10px 16px 4px;
   border-top: 1px solid var(--line);
   margin-top: 4px;
 }
 
-/* ── Mobile responsive breakpoint ── */
-@media (max-width: 768px) {
-  .main .block-container,
-  [data-testid="stAppViewBlockContainer"] {
-    padding: 1rem 0.75rem 4rem 0.75rem !important;
-  }
-  .navbar-tabs { display: none !important; }
-  .navbar-clock { display: none !important; }
-  .hamburger { display: flex !important; }
-  .navbar { padding: 10px 0 12px 0; margin-bottom: 12px; }
-  .brand-name { font-size: 28px; }
-
-  /* Stack expander content on mobile */
-  [data-testid="stExpander"] summary { padding: 12px 14px !important; font-size: 12px !important; }
-  [data-testid="stExpander"] [data-testid="stExpanderDetails"] { padding: 0 12px 14px 12px !important; }
-
-  /* Force all columns to stack vertically on mobile */
-  [data-testid="stHorizontalBlock"] { flex-direction: column !important; gap: 8px !important; }
-  [data-testid="stHorizontalBlock"] > div { width: 100% !important; min-width: 100% !important; }
-}
-
-
-/* ── Tabs (category level) ── */
-[data-testid="stTabs"] [data-baseweb="tab-list"] {
-  background: transparent !important;
-  border-bottom: 1px solid var(--line) !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  gap: 0 !important;
-  margin-bottom: 16px !important;
-}
-[data-testid="stTabs"] [data-baseweb="tab"] {
-  background: transparent !important;
-  border-radius: 0 !important;
-  color: var(--ink-3) !important;
-  font-family: var(--f-ui) !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: .14em !important;
-  text-transform: uppercase !important;
-  padding: 11px 20px !important;
-  border-bottom: 2px solid transparent !important;
-  margin-bottom: -1px !important;
-  transition: color .15s ease !important;
-}
-[data-testid="stTabs"] [aria-selected="true"] {
-  color: var(--ink-1) !important;
-  background: transparent !important;
-  border-bottom-color: var(--c-home) !important;
-}
-
-/* ── Game card (expander) ── */
-[data-testid="stExpander"] {
-  background: var(--bg-1) !important;
-  border: 1px solid var(--line) !important;
-  border-radius: 6px !important;
-  margin-bottom: 8px !important;
-  overflow: hidden !important;
-}
-[data-testid="stExpander"] summary {
-  padding: 14px 18px !important;
-  background: transparent !important;
-  font-family: var(--f-ui) !important;
-  font-size: 13.5px !important;
-  font-weight: 600 !important;
-  color: var(--ink-1) !important;
-  letter-spacing: 0 !important;
-}
-[data-testid="stExpander"] summary:hover {
-  background: var(--bg-2) !important;
-}
-[data-testid="stExpander"] [data-testid="stExpanderDetails"] {
-  padding: 0 18px 18px 18px !important;
-  border-top: 1px solid var(--line) !important;
-}
-
-/* ── Buttons ── */
-button[kind="primary"] {
-  background: var(--c-home) !important;
-  color: #fff !important;
-  border: none !important;
-  font-family: var(--f-ui) !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: .1em !important;
-  text-transform: uppercase !important;
-  border-radius: 4px !important;
-}
-button[kind="secondary"] {
-  background: var(--bg-2) !important;
-  color: var(--ink-2) !important;
-  border: 1px solid var(--line) !important;
-  font-family: var(--f-ui) !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: .1em !important;
-  text-transform: uppercase !important;
-  border-radius: 4px !important;
-}
-button[kind="secondary"]:hover {
-  color: var(--ink-1) !important;
-  border-color: var(--line-hi) !important;
-  background: var(--bg-3) !important;
-}
-
-/* ── Metrics ── */
-[data-testid="stMetricLabel"] {
-  font-family: var(--f-ui) !important;
-  font-size: 9.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: .12em !important;
-  text-transform: uppercase !important;
-  color: var(--ink-3) !important;
-}
-[data-testid="stMetricValue"] {
-  font-family: var(--f-data) !important;
-  font-size: 20px !important;
-  font-weight: 500 !important;
-  color: var(--ink-1) !important;
-}
-
-/* ── Info boxes ── */
-[data-testid="stAlert"] {
-  background: var(--bg-2) !important;
-  border: 1px solid var(--line) !important;
-  border-radius: 4px !important;
-  font-family: var(--f-ui) !important;
-  font-size: 12px !important;
-  color: var(--ink-2) !important;
-}
-
-/* ── Spinner ── */
-[data-testid="stSpinner"] p {
-  font-family: var(--f-ui) !important;
-  font-size: 12px !important;
-  letter-spacing: .06em !important;
-  text-transform: uppercase !important;
-  color: var(--ink-3) !important;
-}
-
-/* ── Scrollbar ── */
-::-webkit-scrollbar { width: 4px; height: 4px; }
-::-webkit-scrollbar-track { background: var(--bg-0); }
-::-webkit-scrollbar-thumb { background: var(--line-hi); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: var(--c-draw); }
-
-/* ── Section label ── */
+/* Section label */
 .section-label {
-  font-family: var(--f-ui);
-  font-size: 9.5px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: .16em;
+  letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--ink-3);
-  padding-bottom: 8px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--line);
-  margin: 20px 0 12px 0;
+  margin: 24px 0 14px 0;
 }
+.section-label:first-child { margin-top: 0; }
 
-/* ── Conf bar ── */
-.conf-bar-wrap {
-  width: 100%;
-  height: 3px;
-  background: var(--bg-3);
-  border-radius: 2px;
+/* Game card */
+.game-card {
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  margin-bottom: 8px;
   overflow: hidden;
-  margin-top: 5px;
+  transition: border-color .15s;
 }
-.conf-bar-fill { height: 100%; border-radius: 2px; }
+.game-card:hover { border-color: var(--line-hi); }
+.game-card > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  gap: 12px;
+}
+.game-card > summary::-webkit-details-marker { display: none; }
+.game-card-title { font-size: 13.5px; font-weight: 600; color: var(--ink-1); }
+.game-card-time { font-size: 11px; color: var(--ink-3); flex-shrink: 0; }
+.game-card-body { padding: 0 18px 20px; border-top: 1px solid var(--line); }
 
-/* ── Market card ── */
-.mkt-card {
+/* Card inner grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+.card-teams { display: flex; flex-direction: column; gap: 4px; justify-content: center; }
+.team-home { font-family: var(--f-brand); font-size: 22px; font-weight: 700; color: var(--c-home); }
+.team-vs   { font-size: 10px; color: var(--ink-3); letter-spacing: .12em; text-transform: uppercase; padding: 4px 0; }
+.team-away { font-family: var(--f-brand); font-size: 22px; font-weight: 700; color: var(--c-away); }
+
+.pick-box {
   background: var(--bg-2);
   border: 1px solid var(--line);
   border-radius: 6px;
-  padding: 12px;
-  text-align: center;
+  padding: 14px;
 }
-.mkt-label {
-  font-family: var(--f-ui);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 6px;
-}
-.mkt-value {
-  font-family: var(--f-data);
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--ink-1);
-}
-.mkt-implied {
-  font-family: var(--f-ui);
-  font-size: 9.5px;
-  color: var(--ink-3);
-  margin-top: 3px;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-}
+.pick-label { font-size: 9.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
+.pick-value { font-size: 18px; font-weight: 600; color: var(--c-yes); margin-bottom: 6px; word-break: break-word; }
+.pick-conf { font-size: 10px; color: var(--ink-3); margin-bottom: 6px; }
+.conf-bar { width: 100%; height: 3px; background: var(--bg-3); border-radius: 2px; overflow: hidden; margin-bottom: 10px; }
+.conf-bar-fill { height: 100%; border-radius: 2px; background: var(--c-yes); }
+.pick-reason { font-size: 10px; color: var(--ink-3); font-style: italic; line-height: 1.5; }
 
-/* ── Live pill ── */
+/* Live pill */
 .live-pill {
   display: inline-block;
   background: var(--c-live);
   color: #fff;
-  font-family: var(--f-ui);
   font-size: 8.5px;
   font-weight: 800;
   letter-spacing: .16em;
   text-transform: uppercase;
   padding: 2px 7px;
   border-radius: 2px;
-  margin-right: 7px;
-  vertical-align: middle;
 }
 
-/* ── Form bubble ── */
-.form-bubble {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 23px; height: 23px;
-  border-radius: 50%;
-  font-family: var(--f-data);
-  font-size: 10px;
-  font-weight: 500;
-  margin-right: 4px;
-  color: #fff;
+/* Empty state */
+.empty-state { padding: 60px 20px; text-align: center; color: var(--ink-3); font-size: 13px; }
+
+/* Past results */
+.past-card { border-radius: 6px; padding: 16px; margin-bottom: 10px; }
+.past-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.past-card-bot { display: flex; justify-content: space-between; align-items: center; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-0); }
+::-webkit-scrollbar-thumb { background: var(--line-hi); border-radius: 2px; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .page-wrap { padding: 0 14px 60px; }
+  .nav-tabs { display: none; }
+  .navbar-clock { display: none; }
+  .hamburger { display: flex; }
+  .navbar { padding: 12px 0; margin-bottom: 14px; }
+  .brand-name { font-size: 28px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .game-card > summary { padding: 12px 14px; }
+  .game-card-body { padding: 0 14px 16px; }
+  .section-label { margin-top: 16px; }
 }
 
-/* Hide Streamlit default UI elements */
-[data-testid=stHeader] {display: none !important;}
-[data-testid=stToolbar] {display: none !important;}
-#MainMenu {display: none !important;}
-footer {display: none !important;}
-header {display: none !important;}
 
-/* Hide Streamlit Cloud Manage App badge */
-div[class^="viewerBadge"] { display: none !important; }
-div[class^="styles_viewerBadge"] { display: none !important; }
-#Manage-app { display: none !important; }

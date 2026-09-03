@@ -13,42 +13,49 @@ from live_data_fetcher import (
 
 app = Flask(__name__)
 
-# Load logo
-try:
-    with open('logo.png', 'rb') as _lf:
-        LOGO_B64 = base64.b64encode(_lf.read()).decode()
-except Exception:
-    LOGO_B64 = ''
+# Load logo - try all possible filenames
+LOGO_B64 = ''
+for _logo_name in ['Better-logo.png', 'logo.png', 'Logo.png']:
+    try:
+        with open(_logo_name, 'rb') as _lf:
+            LOGO_B64 = base64.b64encode(_lf.read()).decode()
+        break
+    except Exception:
+        continue
 
 form_cache = TTLCache(maxsize=500, ttl=3600)
-pred_cache = TTLCache(maxsize=20, ttl=300)
 
 LEAGUES = [
-    5242, 6088, 5971, 6061, 6223, 5240, 6171, 6245, 6192, 5966, 
-    5972, 6301, 6089, 5236, 6032, 5968, 6013, 6204, 6203, 6184, 
-    5970, 6035, 6039, 6248, 6228, 6205, 5961, 5960, 6157, 5969, 
+    5242, 6088, 5971, 6061, 6223, 5240, 6171, 6245, 6192, 5966,
+    5972, 6301, 6089, 5236, 6032, 5968, 6013, 6204, 6203, 6184,
+    5970, 6035, 6039, 6248, 6228, 6205, 5961, 5960, 6157, 5969,
     6081, 6033, 6220, 6065, 6214, 5978
 ]
 
 @cached(form_cache)
 def cached_team_form(team_id):
-    return get_team_form(team_id)
+    try:
+        return get_team_form(team_id)
+    except Exception:
+        return {'avg_scored': 1.2, 'avg_conceded': 1.2, 'form': []}
 
 def get_client_dates():
     today = datetime.utcnow().date()
     return today.isoformat(), (today + timedelta(days=1)).isoformat()
 
-@cached(pred_cache)
 def get_predictions(day_key):
     today_str, tomorrow_str = get_client_dates()
     target_date = today_str if day_key == 'today' else tomorrow_str
-    
-    if day_key == 'live':
-        fixtures = get_live_fixtures(leagues=LEAGUES)
-    else:
-        all_f = get_upcoming_fixtures(leagues=LEAGUES)
-        fixtures = [f for f in all_f if f.get('utc_date', '')[:10] == target_date]
-        
+    try:
+        if day_key == 'live':
+            fixtures = get_live_fixtures(leagues=LEAGUES)
+        else:
+            all_f = get_upcoming_fixtures(leagues=LEAGUES)
+            fixtures = [f for f in all_f if f.get('utc_date', '')[:10] == target_date]
+    except Exception as e:
+        print(f"[ERROR] Fetching fixtures: {e}")
+        return []
+
     results = []
     for f in fixtures:
         try:
@@ -59,16 +66,11 @@ def get_predictions(day_key):
                 hf.get('avg_scored', 1.3), hf.get('avg_conceded', 1.1),
                 af.get('avg_scored', 1.1), af.get('avg_conceded', 1.3),
             )
-            results.append({
-                'id': f['id'],
-                'fixture': f,
-                'poisson': poisson,
-                'home_form': hf,
-                'away_form': af,
-            })
-        except Exception:
-            pass
-            
+            results.append({'id': f['id'], 'fixture': f, 'poisson': poisson,
+                            'home_form': hf, 'away_form': af})
+        except Exception as e:
+            print(f"[ERROR] Processing fixture: {e}")
+
     return sorted(results, key=lambda x: x['fixture'].get('utc_date', ''))
 
 @app.route('/')

@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="main">
-        <div class="block-container">
-            
+    <div class="page-wrap">
+
             <!-- Navbar -->
             <nav class="navbar">
               <div class="navbar-brand">
@@ -34,7 +33,7 @@
               <div class="navbar-clock">Auto-refreshes every 5 min &nbsp;&middot;&nbsp; {{ utc_time }}</div>
 
               <!-- Hamburger -->
-              <button class="hamburger" onclick="var m=document.getElementById('mob-menu');m.style.display=m.style.display==='flex'?'none':'flex'">
+              <button class="hamburger" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
               </button>
             </nav>
@@ -84,45 +83,40 @@
                     {% for league, games in grouped_games.items() %}
                         <div class="section-label">{{ league }}</div>
                         {% for game in games %}
-                            <!-- Game Card -->
-                            <details class="game-card" style="background:var(--bg-1);border:1px solid var(--line);border-radius:6px;margin-bottom:8px;overflow:hidden;">
-                                <summary style="padding:14px 18px;font-family:var(--f-ui);font-size:13.5px;font-weight:600;color:var(--ink-1);cursor:pointer;list-style:none;">
-                                    {{ game.fixture.home_team.name }} vs {{ game.fixture.away_team.name }}
-                                    <span style="color:var(--ink-3);font-size:11px;font-weight:400;margin-left:8px;">
-                                        {{ game.fixture.utc_date[11:16] }}
-                                    </span>
+                            <details class="game-card">
+                                <summary>
+                                    <span class="game-card-title">{{ game.fixture.home_team.name }} vs {{ game.fixture.away_team.name }}</span>
+                                    <span class="game-card-time">{{ game.fixture.utc_date[11:16] }} UTC</span>
                                 </summary>
-                                <div style="padding: 0 18px 18px 18px;border-top:1px solid var(--line);">
-                                    
-                                    <div class="stHorizontalBlock" style="display:flex;gap:16px;margin-top:16px;">
-                                        <!-- Teams -->
-                                        <div style="flex:1;min-width:140px;">
-                                            <div style="font-size:18px;font-weight:800;font-family:var(--f-brand);margin-bottom:12px;line-height:1.2;">
-                                                <div style="color:var(--c-home);">{{ game.fixture.home_team.name }}</div>
-                                                <div style="color:var(--ink-3);font-size:14px;margin:4px 0;">VS</div>
-                                                <div style="color:var(--c-away);">{{ game.fixture.away_team.name }}</div>
-                                            </div>
+                                <div class="game-card-body">
+                                    <div class="card-grid">
+                                        <div class="card-teams">
+                                            <div class="team-home">{{ game.fixture.home_team.name }}</div>
+                                            <div class="team-vs">vs</div>
+                                            <div class="team-away">{{ game.fixture.away_team.name }}</div>
                                         </div>
-                                        
-                                        <!-- AI Pick -->
-                                        <div style="flex:1;min-width:140px;">
-                                            <div style="background:var(--bg-2);border:1px solid var(--line);border-radius:6px;padding:12px;">
-                                                <div style="font-family:var(--f-ui);font-size:10px;font-weight:700;color:var(--ink-3);margin-bottom:8px;">PRIMARY SAFE PICK</div>
-                                                <div style="font-family:var(--f-data);font-size:18px;font-weight:600;color:var(--c-yes);">{{ game.poisson.primary_pick }}</div>
-                                                <div style="font-family:var(--f-ui);font-size:10px;color:var(--ink-3);margin-top:8px;">Confidence: {{ game.poisson.primary_prob }}%</div>
-                                                <div style="font-family:var(--f-ui);font-size:10px;color:var(--ink-3);margin-top:8px;font-style:italic;">{{ game.poisson.reasoning }}</div>
-                                            </div>
+                                        <div class="pick-box">
+                                            <div class="pick-label">Primary Safe Pick</div>
+                                            <div class="pick-value">{{ game.poisson.primary_pick }}</div>
+                                            <div class="pick-conf">Confidence: {{ game.poisson.primary_prob }}%</div>
+                                            <div class="conf-bar"><div class="conf-bar-fill" style="width:{{ game.poisson.primary_prob }}%"></div></div>
+                                            <div class="pick-reason">{{ game.poisson.reasoning }}</div>
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </details>
                         {% endfor %}
                     {% endfor %}
                 {% endif %}
             {% endif %}
-            
-        </div>
+
     </div>
+
+    <script>
+    function toggleMenu() {
+        var m = document.getElementById('mob-menu');
+        m.classList.toggle('open');
+    }
+    </script>
 </body>
 </html>
