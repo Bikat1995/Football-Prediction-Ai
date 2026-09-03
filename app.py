@@ -1,5 +1,6 @@
 import os
 import json
+import base64
 from datetime import datetime, date, timedelta
 from flask import Flask, render_template, request
 from cachetools import TTLCache, cached
@@ -8,10 +9,16 @@ from live_data_fetcher import (
     get_live_fixtures,
     compute_poisson_markets,
     get_team_form,
-    LOGO_B64
 )
 
 app = Flask(__name__)
+
+# Load logo
+try:
+    with open('logo.png', 'rb') as _lf:
+        LOGO_B64 = base64.b64encode(_lf.read()).decode()
+except Exception:
+    LOGO_B64 = ''
 
 form_cache = TTLCache(maxsize=500, ttl=3600)
 pred_cache = TTLCache(maxsize=20, ttl=300)
