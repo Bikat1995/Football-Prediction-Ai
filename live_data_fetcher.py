@@ -23,9 +23,9 @@ except Exception:
     CACHE_DIR = os.path.join(tempfile.gettempdir(), 'thestatsapi_cache')
     os.makedirs(CACHE_DIR, exist_ok=True)
 
-LIVE_STATUSES    = {'in_play', 'paused', 'live'} # Will normalize these, but TheStatsAPI uses scheduled/finished
+LIVE_STATUSES     = {'in_play', 'paused', 'live', 'halftime', 'extra_time', 'penalties'}
 FINISHED_STATUSES = {'finished', 'awarded'}
-UPCOMING_STATUSES = {'scheduled', 'postponed', 'cancelled'}
+UPCOMING_STATUSES = {'scheduled', 'timed', 'in_play', 'paused', 'halftime', 'extra_time', 'postponed'}
 
 def _headers() -> dict:
     # Try env var first (local .env), then Streamlit secrets (Streamlit Cloud)

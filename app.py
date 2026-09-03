@@ -28,8 +28,8 @@ form_cache = TTLCache(maxsize=500, ttl=3600)
 from live_data_fetcher import _get
 
 @cached(TTLCache(maxsize=1, ttl=86400))
-def get_dynamic_leagues():
-    """Dynamically fetch all competitions that are 'league' type and have team stats."""
+def get_league_map():
+    """Fetch all league competitions. Returns {comp_id: comp_name} for leagues with team stats."""
     comps = []
     page = 1
     while True:
@@ -38,8 +38,11 @@ def get_dynamic_leagues():
         comps.extend(res['data'])
         if page >= res.get('meta', {}).get('total_pages', 1): break
         page += 1
-    
-    return [c['id'] for c in comps if c.get('type') == 'league' and c.get('has_team_stats') == True]
+    return {
+        c['id']: c['name']
+        for c in comps
+        if c.get('type') == 'league' and c.get('has_team_stats') == True
+    }
 
 @cached(form_cache)
 def cached_team_form(team_id):
@@ -56,7 +59,7 @@ def get_predictions(day_key):
     today_str, tomorrow_str = get_client_dates()
     target_date = today_str if day_key == 'today' else tomorrow_str
     
-    dyn_leagues = get_dynamic_leagues()
+    dyn_leagues = list(get_league_map().keys())
     
     try:
         if day_key == 'live':
@@ -90,13 +93,13 @@ def index():
     day = request.args.get('nav', 'today')
     if day not in ['today', 'tomorrow', 'live', 'past']:
         day = 'today'
-        
+
     context = {
         'day': day,
         'logo_b64': LOGO_B64,
         'utc_time': datetime.utcnow().strftime('%H:%M UTC')
     }
-    
+
     if day == 'past':
         try:
             with open('past_predictions.json') as f:
@@ -105,13 +108,15 @@ def index():
             context['past_results'] = []
     else:
         games = get_predictions(day)
+        league_map = get_league_map()
         grouped = {}
         for g in games:
-            lname = g['fixture']['competition']['name']
+            comp_id = g['fixture'].get('competition_id', '')
+            lname = league_map.get(comp_id, comp_id)  # fall back to ID if name not found
             if lname not in grouped:
                 grouped[lname] = []
             grouped[lname].append(g)
-            
+
         context['grouped_games'] = grouped
         context['has_games'] = len(games) > 0
 
