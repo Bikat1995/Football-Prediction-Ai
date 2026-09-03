@@ -28,7 +28,14 @@ FINISHED_STATUSES = {'finished', 'awarded'}
 UPCOMING_STATUSES = {'scheduled', 'postponed', 'cancelled'}
 
 def _headers() -> dict:
+    # Try env var first (local .env), then Streamlit secrets (Streamlit Cloud)
     key = os.getenv('THESTATSAPI_KEY', '')
+    if not key:
+        try:
+            import streamlit as st
+            key = st.secrets.get('THESTATSAPI_KEY', '')
+        except Exception:
+            pass
     return {
         'Authorization': f'Bearer {key}'
     }
