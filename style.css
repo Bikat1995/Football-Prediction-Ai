@@ -310,7 +310,13 @@ button[kind="secondary"]:hover {
 }
 
 /* Hide Streamlit default UI elements */
-[data-testid=stHeader] {display: none;}
-[data-testid=stToolbar] {display: none;}
-#MainMenu {display: none;}
-footer {display: none;}
+[data-testid=stHeader] {display: none !important;}
+[data-testid=stToolbar] {display: none !important;}
+#MainMenu {display: none !important;}
+footer {display: none !important;}
+header {display: none !important;}
+
+/* Hide Streamlit Cloud Manage App badge */
+div[class^="viewerBadge"] { display: none !important; }
+div[class^="styles_viewerBadge"] { display: none !important; }
+#Manage-app { display: none !important; }
