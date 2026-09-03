@@ -7,7 +7,7 @@ from live_data_fetcher import (
     get_upcoming_fixtures,
     get_live_fixtures,
     compute_poisson_markets,
-    get_team_form_v2,
+    get_team_form,
     LOGO_B64
 )
 
@@ -25,7 +25,7 @@ LEAGUES = [
 
 @cached(form_cache)
 def cached_team_form(team_id):
-    return get_team_form_v2(team_id)
+    return get_team_form(team_id)
 
 def get_client_dates():
     today = datetime.utcnow().date()
