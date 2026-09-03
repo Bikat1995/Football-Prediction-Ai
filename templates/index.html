@@ -97,10 +97,10 @@
                                         </div>
                                         <div class="pick-box">
                                             <div class="pick-label">Primary Safe Pick</div>
-                                            <div class="pick-value">{{ game.poisson.primary_pick }}</div>
-                                            <div class="pick-conf">Confidence: {{ game.poisson.primary_prob }}%</div>
-                                            <div class="conf-bar"><div class="conf-bar-fill" style="width:{{ game.poisson.primary_prob }}%"></div></div>
-                                            <div class="pick-reason">{{ game.poisson.reasoning }}</div>
+                                            <div class="pick-value">{{ game.poisson.expert_predictions.primary.selection }}</div>
+                                            <div class="pick-conf">Confidence: {{ game.poisson.expert_predictions.primary.confidence_score }}%</div>
+                                            <div class="conf-bar"><div class="conf-bar-fill" style="width:{{ game.poisson.expert_predictions.primary.confidence_score }}%"></div></div>
+                                            <div class="pick-reason">{{ game.poisson.expert_predictions.primary.reasoning }}</div>
                                         </div>
                                     </div>
                                 </div>

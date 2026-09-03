@@ -47,8 +47,13 @@ def get_league_map():
 @cached(form_cache)
 def cached_team_form(team_id):
     try:
-        return get_team_form(team_id)
-    except Exception:
+        res = get_team_form(team_id)
+        if not res:
+            print(f"[WARN] get_team_form returned empty for {team_id}")
+            return {'avg_scored': 1.2, 'avg_conceded': 1.2, 'form': []}
+        return res
+    except Exception as e:
+        print(f"[ERROR] cached_team_form failed for {team_id}: {e}")
         return {'avg_scored': 1.2, 'avg_conceded': 1.2, 'form': []}
 
 def get_client_dates():
