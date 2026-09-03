@@ -49,8 +49,22 @@ def get_client_dates():
     tomorrow = (client_now.date() + timedelta(days=1)).isoformat()
     return today, tomorrow
 
-LEAGUES = list(predict_today.LEAGUES.keys())
-
+@st.cache_data(ttl=86400, show_spinner=False)
+def get_league_map():
+    """Dynamically fetch all valid competitions instead of hardcoding."""
+    comps = []
+    page = 1
+    while True:
+        res = _get('competitions', {'limit': 100, 'page': page}, ttl=86400)
+        if not res or 'data' not in res: break
+        comps.extend(res['data'])
+        if page >= res.get('meta', {}).get('total_pages', 1): break
+        page += 1
+    return {
+        c['id']: c['name']
+        for c in comps
+        if c.get('type') == 'league' and c.get('has_team_stats') == True
+    }
 # ─── CSS ──────────────────────────────────────────────────────────────────────
 def _load_css():
     base_css = ""
@@ -103,11 +117,11 @@ def norm3(a, b, c):
 # ─── Cached data fetchers ─────────────────────────────────────────────────────
 @st.cache_data(ttl=60,    show_spinner=False)
 def cached_live():
-    return get_live_fixtures(leagues=LEAGUES)
+    return get_live_fixtures(leagues=list(get_league_map().keys()))
 
 @st.cache_data(ttl=300,   show_spinner=False)
 def cached_upcoming():
-    return get_upcoming_fixtures(leagues=LEAGUES)
+    return get_upcoming_fixtures(leagues=list(get_league_map().keys()))
 
 @st.cache_data(ttl=3600,  show_spinner=False)
 def cached_team_form_v2(team_id):
@@ -283,7 +297,8 @@ def render_card(game: dict, tab_key: str, pick_label: str, pick_pct: float, pick
     kick_off   = fmt_time(f['utc_date'])
     date_str   = fmt_date_short(f['utc_date'])
     comp_id    = f.get('competition_id')
-    league     = predict_today.LEAGUES[comp_id]['name'] if comp_id in predict_today.LEAGUES else 'Unknown League'
+    league_map = get_league_map()
+    league     = league_map.get(comp_id, 'Unknown League')
     fid        = f['id']
     is_live    = f['status'] in LIVE_STATUSES
 
@@ -667,8 +682,9 @@ grouped_games = defaultdict(list)
 for game in all_games:
     comp_id = game['fixture'].get('competition_id')
     league = "Unknown League"
-    if comp_id and comp_id in predict_today.LEAGUES:
-        league = predict_today.LEAGUES[comp_id]['name']
+    if comp_id:
+        league_map = get_league_map()
+        league = league_map.get(comp_id, 'Unknown League')
     grouped_games[league].append(game)
 
 # Iterate through sorted leagues
