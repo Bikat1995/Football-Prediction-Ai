@@ -1,6 +1,4 @@
 import streamlit as st
-import pandas as pd
-import plotly.graph_objects as go
 from datetime import datetime, date, timedelta
 from dotenv import load_dotenv
 load_dotenv()
@@ -8,731 +6,668 @@ load_dotenv()
 import predict_today
 from live_data_fetcher import (
     get_live_fixtures, get_upcoming_fixtures,
-    get_fixture_predictions, get_team_season_stats,
-    get_team_form, get_head_to_head, get_api_prediction_probs,
-    get_league_top_scorers, get_league_top_assists,
-    compute_poisson_markets,
-    LIVE_STATUSES, UPCOMING_STATUSES, CURRENT_SEASON
+    get_team_form, get_head_to_head,
+    get_match_odds, compute_poisson_markets,
+    LIVE_STATUSES, _get
 )
-import base64
-import os
+import base64, os
 
+# ─── Page config ──────────────────────────────────────────────────────────────
 LOGO_B64 = ""
 if os.path.exists("Better-logo.png"):
     with open("Better-logo.png", "rb") as f:
         LOGO_B64 = base64.b64encode(f.read()).decode()
 
-st.set_page_config(page_title="Better", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(
+    page_title="Better · AI Football Predictions",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
 
-# ── CSS loader ────────────────────────────────────────────────────────────────
+import zoneinfo
+from streamlit_javascript import st_javascript
+
+def get_client_timezone():
+    if 'client_tz' not in st.session_state:
+        # returns e.g. "Asia/Ho_Chi_Minh" or "America/Los_Angeles"
+        tz = st_javascript("Intl.DateTimeFormat().resolvedOptions().timeZone")
+        if tz:
+            st.session_state.client_tz = tz
+        else:
+            return "UTC"
+    return st.session_state.client_tz
+
+def get_client_dates():
+    tz_str = get_client_timezone()
+    try:
+        tz = zoneinfo.ZoneInfo(tz_str)
+    except:
+        tz = zoneinfo.ZoneInfo("UTC")
+    
+    client_now = datetime.now(tz)
+    today = client_now.date().isoformat()
+    tomorrow = (client_now.date() + timedelta(days=1)).isoformat()
+    return today, tomorrow
+
+LEAGUES = list(predict_today.LEAGUES.keys())
+
+# ─── CSS ──────────────────────────────────────────────────────────────────────
 def _load_css():
-    with open("style.css") as f:
-        css = f.read()
-    st.html(f"""
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>{css}</style>
-    """)
+    base_css = ""
+    if os.path.exists("style.css"):
+        with open("style.css") as f:
+            base_css = f.read()
+    st.html(f"<style>{base_css}</style>")
 
 _load_css()
 
-LEAGUES = list(predict_today.LEAGUES.keys())
-TODAY    = date.today().isoformat()
-TOMORROW = (date.today() + timedelta(days=1)).isoformat()
+# ─── Helpers ──────────────────────────────────────────────────────────────────
+def fmt_time(iso):
+    try:    return datetime.fromisoformat(iso.replace('Z','+00:00')).strftime('%H:%M')
+    except: return '??:??'
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
-def fmt_time(iso: str) -> str:
-    try:
-        return datetime.fromisoformat(iso.replace('Z', '+00:00')).strftime('%H:%M')
-    except:
-        return '??:??'
+def fmt_date_short(iso):
+    try:    return datetime.fromisoformat(iso.replace('Z','+00:00')).strftime('%d %b')
+    except: return iso[:10]
 
-def fmt_date(iso: str) -> str:
-    try:
-        return datetime.fromisoformat(iso.replace('Z', '+00:00')).strftime('%A %d %b')
-    except:
-        return iso[:10]
+def conf_color(pct):
+    if pct >= 65: return "#10B981"   # strong — green
+    if pct >= 54: return "#F59E0B"   # moderate — amber
+    return "#6b7280"                 # lean — grey
 
-def fixture_label(f: dict) -> str:
-    t = fmt_time(f['fixture']['date'])
-    return f"{t}  {f['teams']['home']['name']} vs {f['teams']['away']['name']}"
+def form_bubbles_html(form_arr, n=5):
+    if not form_arr:
+        return "<span style='color:#4a5470;font-size:11px;'>No data</span>"
+    bubbles = ""
+    for res in list(reversed(form_arr))[:n]:
+        color = "var(--c-yes)" if res == 'W' else "var(--c-warn)" if res == 'D' else "var(--c-no)"
+        bubbles += (
+            f"<span style='display:inline-flex;align-items:center;justify-content:center;"
+            f"width:22px;height:22px;border-radius:11px;background:{color};color:#fff;"
+            f"font-size:10px;font-weight:bold;margin-right:3px;font-family:var(--f-data);'>{res}</span>"
+        )
+    return bubbles
 
-def build_options(fixtures: list) -> dict:
-    """Group fixtures by league, return dict keyed by league name."""
-    opts = {}
-    for f in fixtures:
-        lg = f['league']['name']
-        if lg not in opts:
-            opts[lg] = []
-        opts[lg].append({
-            'label':       fixture_label(f),
-            'id':          f['fixture']['id'],
-            'league_id':   f['league']['id'],
-            'season':      f['league']['season'],
-            'home_id':     f['teams']['home']['id'],
-            'away_id':     f['teams']['away']['id'],
-            'home_logo':   f['teams']['home']['logo'],
-            'away_logo':   f['teams']['away']['logo'],
-            'league_logo': f['league']['logo'],
-            'home_name':   f['teams']['home']['name'],
-            'away_name':   f['teams']['away']['name'],
-            'date':        f['fixture']['date'],
-            'status':      f['fixture']['status'],
-            'goals':       f.get('goals', {}),
-            'events':      f.get('events', []),
-        })
-    return opts
+def implied(v):
+    try:    return 1.0 / float(v)
+    except: return 0.5
 
-# ── Cached data fetchers ───────────────────────────────────────────────────────
-@st.cache_data(ttl=30)
+def norm2(a, b):
+    s = a + b
+    return (round(a/s*100,1), round(b/s*100,1)) if s else (50.0, 50.0)
+
+def norm3(a, b, c):
+    s = a + b + c
+    return (round(a/s*100,1), round(b/s*100,1), round(c/s*100,1)) if s else (33.3, 33.3, 33.3)
+
+# ─── Cached data fetchers ─────────────────────────────────────────────────────
+@st.cache_data(ttl=60,    show_spinner=False)
 def cached_live():
     return get_live_fixtures(leagues=LEAGUES)
 
-@st.cache_data(ttl=120)
+@st.cache_data(ttl=300,   show_spinner=False)
 def cached_upcoming():
     return get_upcoming_fixtures(leagues=LEAGUES)
 
-@st.cache_data(ttl=3600)
-def cached_predictions(fixture_id):
-    return get_fixture_predictions(fixture_id)
-
-@st.cache_data(ttl=86400)
-def cached_team_stats(team_id, league_id, season):
-    return get_team_season_stats(team_id, league_id, season)
-
-@st.cache_data(ttl=3600)
-def cached_team_form(team_id):
+@st.cache_data(ttl=3600,  show_spinner=False)
+def cached_team_form_v2(team_id):
     return get_team_form(team_id, last=8)
 
-@st.cache_data(ttl=86400)
-def cached_h2h(home_id, away_id):
-    return get_head_to_head(home_id, away_id, last=10)
+@st.cache_data(ttl=86400, show_spinner=False)
+def cached_h2h_v2(home_id, away_id):
+    return get_head_to_head(home_id, away_id, last=5)
 
-@st.cache_data(ttl=3600)
-def cached_api_probs(fixture_id):
-    return get_api_prediction_probs(fixture_id)
+@st.cache_data(ttl=1800,  show_spinner=False)
+def cached_odds(fixture_id):
+    return get_match_odds(fixture_id)
 
-@st.cache_data(ttl=86400)
-def cached_top_players(league_id, season):
-    return get_league_top_scorers(league_id, season), get_league_top_assists(league_id, season)
-
-# ── SIDEBAR (auto-refreshes every 60s) ───────────────────────────────────────
-st.sidebar.image("Better-logo.png", width=96)
-st.sidebar.html("<div style='font-family:DM Mono,monospace;font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:#4a5470;margin:6px 0 12px 0;'>AI Prediction Engine</div>")
-st.sidebar.divider()
-
-if st.sidebar.button("Refresh All Data", use_container_width=True):
-    st.cache_data.clear()
-    st.rerun()
-    
-# Quick API Health Check
-from live_data_fetcher import _get, KEY1
-st.sidebar.markdown("---")
-
-if not KEY1:
-    st.sidebar.markdown("<div style='color: #EF4444; font-size: 0.8rem;'>● API Error: Missing API_FOOTBALL_KEY</div>", unsafe_allow_html=True)
-else:
-    api_status = _get('timezone', {}, KEY1, ttl=3600)
-    if api_status and 'response' in api_status and len(api_status['response']) > 0:
-        st.sidebar.markdown("<div style='color: #10B981; font-size: 0.8rem;'>● API Connected</div>", unsafe_allow_html=True)
+@st.cache_data(ttl=300, show_spinner=False)
+def get_all_predictions(day: str, target_date: str):
+    """Batch-compute Poisson predictions for all games on a given day."""
+    if day == 'live':
+        fixtures = cached_live()
     else:
-        err = api_status.get('errors', {}).get('access', 'Unknown error') if api_status else 'HTTP Connection failed'
-        st.sidebar.markdown(f"<div style='color: #EF4444; font-size: 0.8rem;'>● API Error: {err}</div>", unsafe_allow_html=True)
+        all_f  = cached_upcoming()
+        fixtures = [f for f in all_f if f['utc_date'][:10] == target_date]
 
-st.sidebar.markdown(f"<div class='last-update'>Auto-refreshes · Last check {datetime.utcnow().strftime('%H:%M:%S')}</div>", unsafe_allow_html=True)
+    results = []
+    for f in fixtures:
+        hf = cached_team_form_v2(f['home_team']['id'])
+        af = cached_team_form_v2(f['away_team']['id'])
+        poisson = compute_poisson_markets(
+            f['home_team']['name'], f['away_team']['name'],
+            hf.get('avg_scored', 1.3), hf.get('avg_conceded', 1.1),
+            af.get('avg_scored', 1.1), af.get('avg_conceded', 1.3),
+        )
+        results.append({
+            'id':          f['id'],
+            'fixture':     f,
+            'poisson':     poisson,
+            'home_form':   hf,
+            'away_form':   af,
+        })
 
-live_raw     = cached_live()
-upcoming_raw = cached_upcoming()
+    return sorted(results, key=lambda x: x['fixture']['utc_date'])
 
-live_opts     = build_options(live_raw)
-upcoming_opts = build_options(upcoming_raw)
+# ─── Session state defaults ────────────────────────────────────────────────────
+if 'day' not in st.session_state:
+    st.session_state.day = 'today'
+if 'game_odds' not in st.session_state:
+    st.session_state.game_odds = {}
+if 'game_h2h' not in st.session_state:
+    st.session_state.game_h2h = {}
 
-# Split upcoming into today vs tomorrow
-today_opts    = build_options([f for f in upcoming_raw
-                               if f['fixture']['date'][:10] == TODAY])
-tomorrow_opts = build_options([f for f in upcoming_raw
-                               if f['fixture']['date'][:10] == TOMORROW])
-
-selected_fixture = None
-
-def _sidebar_section(title: str, color: str, opts: dict):
-    global selected_fixture
-    if not opts:
-        return
-    st.sidebar.html(
-        f"<div style='font-size:11px;font-weight:700;letter-spacing:0.1em;"
-        f"text-transform:uppercase;color:{color};margin:10px 0 6px 0;'>"
-        f"{title}</div>")
-    for league, matches in opts.items():
-        lg_logo = matches[0]['league_logo']
-        st.sidebar.html(
-            f"<div style='display:flex;align-items:center;gap:8px;margin-bottom:4px;'>"
-            f"<img src='{lg_logo}' width='18' height='18' style='object-fit:contain;'>"
-            f"<span style='font-size:12px;font-weight:700;color:#94a3b8;'>{league}</span>"
-            f"</div>")
-        for m in matches:
-            label = m['label']
-            # For live games, prepend score
-            if m['status']['short'] in LIVE_STATUSES:
-                hg = m['goals'].get('home', '?')
-                ag = m['goals'].get('away', '?')
-                elapsed = m['status'].get('elapsed', '')
-                label = f"{hg}–{ag} ({elapsed}')  {m['home_name']} vs {m['away_name']}"
-            if st.sidebar.button(label, key=f"btn_{m['id']}", width='stretch'):
-                selected_fixture = m
-        st.sidebar.html("<div style='margin-bottom:8px;'></div>")
-
-_sidebar_section("Live Now",  "#d94040", live_opts)
-_sidebar_section("Today",     "#8a90a6", today_opts)
-_sidebar_section("Tomorrow",  "#4a5470", tomorrow_opts)
-
-# Removed logo_ph logic
-st.sidebar.divider()
-st.sidebar.caption(f"Auto-refreshes · Last check {datetime.now().strftime('%H:%M:%S')}")
-
-# ── MAIN ──────────────────────────────────────────────────────────────────────
-if not selected_fixture:
-    total = len(live_raw) + len(upcoming_raw)
-    st.html(f"""
-    <div style='max-width:480px;margin:100px auto;text-align:center;'>
-      <img src='data:image/png;base64,{LOGO_B64}' width='60' style='margin-bottom:20px;border-radius:4px;'>
-      <div style='font-family:DM Mono,monospace;font-size:10px;letter-spacing:.12em;
-                  text-transform:uppercase;color:#4a5470;margin-bottom:18px;'>Better AI Prediction Engine</div>
-      <div style='font-size:28px;font-weight:700;color:#dde2ef;margin-bottom:10px;
-                  line-height:1.25;'>Select a match<br>to load the analysis.</div>
-      <div style='font-size:13px;color:#8491b0;line-height:1.8;'>
-        {len(live_raw)} live &nbsp;&middot;&nbsp; {len(upcoming_raw)} upcoming &mdash; choose from the sidebar.
-      </div>
-    </div>""")
-    st.stop()
-
-# ── MAIN HEADER (Visible when match selected) ─────────────────────────────────
-st.html(f"""
-<div style='display:flex;align-items:center;gap:12px;margin-bottom:24px;'>
-  <img src='data:image/png;base64,{LOGO_B64}' width='32' style='border-radius:4px;'>
-  <div style='font-family:DM Mono,monospace;font-size:10px;letter-spacing:.12em;
-              text-transform:uppercase;color:#4a5470;'>Better AI Prediction Engine</div>
-</div>
-""")
-
-# ── MATCH HEADER ──────────────────────────────────────────────────────────────
-is_live = selected_fixture['status']['short'] in LIVE_STATUSES
-match_date = fmt_date(selected_fixture['date'])
-match_time = fmt_time(selected_fixture['date'])
-
-if is_live:
-    elapsed = selected_fixture['status'].get('elapsed', '')
-    hg = selected_fixture['goals'].get('home', 0)
-    ag = selected_fixture['goals'].get('away', 0)
-    score_block = f"""
-    <div style='display:flex;flex-direction:column;align-items:center;gap:8px;'>
-      <div class='live-pill'>LIVE {elapsed}'</div>
-      <div style='font-family:DM Mono,monospace;font-size:40px;font-weight:500;color:#dde2ef;letter-spacing:-.5px;'>{hg} &ndash; {ag}</div>
-    </div>"""
-else:
-    score_block = f"""
-    <div style='display:flex;flex-direction:column;align-items:center;gap:6px;'>
-      <div class='match-vs'>vs</div>
-      <div style='font-family:DM Mono,monospace;font-size:11px;color:#4a5470;letter-spacing:.06em;'>{match_date} &middot; {match_time}</div>
-    </div>"""
-
-st.html(f"""
-<div class="match-header">
-  <div class="match-team">
-    <img src="{selected_fixture['home_logo']}">
-    <div class="name">{selected_fixture['home_name']}</div>
-  </div>
-  {score_block}
-  <div class="match-team">
-    <img src="{selected_fixture['away_logo']}">
-    <div class="name">{selected_fixture['away_name']}</div>
-  </div>
-</div>
-""")
-
-# ── FETCH DATA ────────────────────────────────────────────────────────────────
-with st.spinner("Crunching numbers…"):
-    pred_data   = cached_predictions(selected_fixture['id'])
-    # Real form: last 8 games for each team across all comps
-    home_form   = cached_team_form(selected_fixture['home_id'])
-    away_form   = cached_team_form(selected_fixture['away_id'])
-    # Head-to-head history
-    h2h         = cached_h2h(selected_fixture['home_id'], selected_fixture['away_id'])
-    # API-Football's own probability estimates
-    api_probs   = cached_api_probs(selected_fixture['id'])
-    # Season stats still fetched as a tertiary fallback
-    home_stats  = cached_team_stats(
-        selected_fixture['home_id'],
-        selected_fixture['league_id'],
-        selected_fixture['season']
-    )
-    away_stats  = cached_team_stats(
-        selected_fixture['away_id'],
-        selected_fixture['league_id'],
-        selected_fixture['season']
-    )
-    top_scorers, top_assists = cached_top_players(
-        selected_fixture['league_id'], CURRENT_SEASON
-    )
-
-# ── POISSON MARKETS (real AI) ─────────────────────────────────────────────────
-import live_data_fetcher
-import difflib
-
-LEAGUE_AVG_SCORED    = 1.35
-LEAGUE_AVG_CONCEDED  = 1.35
-
-def _best_avg(form: dict, stats: dict, team_name: str, direction: str) -> float:
-    """
-    Priority order:
-    1. Real form from last 8 games (always recent, cross-season)
-    2. Current season stats from API (only if games > 3)
-    3. ML historical team data (fuzzy matched)
-    4. League average
-    """
-    key = 'avg_scored' if direction == 'for' else 'avg_conceded'
-    # 1. Real recent form
-    if form and form.get('games', 0) >= 3:
-        return form[key]
-    # 2. Current season API stats
-    try:
-        val = stats['goals'][direction]['average']['total']
-        if val and float(val) > 0:
-            games_played = stats['fixtures']['played']['total']
-            if games_played >= 3:
-                return float(val)
-    except Exception:
-        pass
-    # 3. ML historical
-    if live_data_fetcher.ML_MODEL_DATA:
-        ts = live_data_fetcher.ML_MODEL_DATA['team_stats']
-        matches = difflib.get_close_matches(team_name, ts.keys(), n=1, cutoff=0.6)
-        if matches:
-            m = matches[0]
-            g = ts[m]['games']
-            if g > 0:
-                return ts[m]['scored'] / g if direction == 'for' else ts[m]['conceded'] / g
-    # 4. League average
-    return LEAGUE_AVG_SCORED
-
-home_scored   = _best_avg(home_form, home_stats, selected_fixture['home_name'], 'for')
-home_conceded = _best_avg(home_form, home_stats, selected_fixture['home_name'], 'against')
-away_scored   = _best_avg(away_form, away_stats, selected_fixture['away_name'], 'for')
-away_conceded = _best_avg(away_form, away_stats, selected_fixture['away_name'], 'against')
-
-# Blend with H2H if available (25% weight)
-if h2h and h2h.get('games', 0) >= 3:
-    home_scored   = home_scored   * 0.75 + h2h['home_avg'] * 0.25
-    away_scored   = away_scored   * 0.75 + h2h['away_avg'] * 0.25
-    home_conceded = home_conceded * 0.75 + h2h['away_avg'] * 0.25
-    away_conceded = away_conceded * 0.75 + h2h['home_avg'] * 0.25
-
-markets = compute_poisson_markets(
-    selected_fixture['home_name'], selected_fixture['away_name'],
-    home_scored, home_conceded, away_scored, away_conceded
+# ─── Top bar ──────────────────────────────────────────────────────────────────
+logo_html = (
+    f"<img src='data:image/png;base64,{LOGO_B64}' height='34' "
+    f"style='border-radius:4px;margin-right:8px;'>"
+    if LOGO_B64 else ""
 )
 
-# If API-Football gives us their own probabilities, blend them in (40% weight)
-if api_probs:
-    blend = 0.40
-    hw = markets['home_win'] * (1 - blend) + api_probs['home'] * blend
-    dw = markets['draw']     * (1 - blend) + api_probs['draw'] * blend
-    aw = markets['away_win'] * (1 - blend) + api_probs['away'] * blend
-    total = hw + dw + aw
-    markets['home_win'] = round(hw / total * 100, 1)
-    markets['draw']     = round(dw / total * 100, 1)
-    markets['away_win'] = round(aw / total * 100, 1)
-
-# API advice string
-api_advice = ''
-if pred_data:
-    api_advice = pred_data.get('predictions', {}).get('advice', '')
-
-# ── AI PREDICTION BANNER ──────────────────────────────────────────────────────
-# Always pick the best bet — never show "No prediction available"
-hw  = markets['home_win']
-dw  = markets['draw']
-aw  = markets['away_win']
-bt  = markets['btts']
-o25 = markets['over_2_5']
-o15 = markets['over_1_5']
-dc_hd = markets['dc_home_draw']
-dc_ad = markets['dc_away_draw']
-
-# Ranked picks: highest probability market wins
-candidates = [
-    (hw,   f"Home Win — {selected_fixture['home_name']} ({hw:.1f}%)"),
-    (aw,   f"Away Win — {selected_fixture['away_name']} ({aw:.1f}%)"),
-    (dc_hd,f"{selected_fixture['home_name']} or Draw ({dc_hd:.1f}%)"),
-    (dc_ad,f"{selected_fixture['away_name']} or Draw ({dc_ad:.1f}%)"),
-    (bt,   f"Both Teams to Score ({bt:.1f}%)"),
-    (o25,  f"Over 2.5 Goals ({o25:.1f}%)"),
-    (o15,  f"Over 1.5 Goals ({o15:.1f}%)"),
-]
-best_prob, ai_rec = max(candidates, key=lambda x: x[0])
-
-low_warn = markets.get('low_data_warning')
-ml_blend = markets.get('ml_blend', 0)
-
-if low_warn:
-    banner_label = "Statistical Baseline"
-    banner_style = "border-color: #6b4000;"
-else:
-    banner_label = "AI Recommendation"
-    banner_style = ""
-
 st.html(f"""
-<div class="pred-banner" style="{banner_style}">
-  <div class="label">{banner_label}</div>
-  <div class="value">{ai_rec}</div>
-  {f'<div style="font-family:DM Mono,monospace;font-size:11px;color:#8491b0;margin-top:8px;">{low_warn}</div>' if low_warn else ''}
+<div class="top-bar">
+  <div class="top-bar-brand">
+    {logo_html}
+    <div>
+      <div class="brand-name">better</div>
+      <div class="brand-sub">AI Football Predictions</div>
+    </div>
+  </div>
+  <div style="font-size:10px;color:#4a5470;font-family:var(--f-data);">
+    Auto-refreshes every 5 min &nbsp;·&nbsp; {datetime.utcnow().strftime('%H:%M')} UTC
+  </div>
 </div>
 """)
 
-# ── STAT CARDS ────────────────────────────────────────────────────────────────
-c1, c2, c3, c4 = st.columns(4)
-cards_data = [
-    (c1, "Home Win",  f"{markets['home_win']:.1f}%",  "blue"),
-    (c2, "Draw",      f"{markets['draw']:.1f}%",       "amber"),
-    (c3, "Away Win",  f"{markets['away_win']:.1f}%",   "red"),
-    (c4, "BTTS",      f"{markets['btts']:.1f}%",       "green"),
-]
-for col, label, val, cls in cards_data:
-    col.html(f"""
-    <div class="stat-box">
-      <div class="stat-label">{label}</div>
-      <div class="stat-value {cls}">{val}</div>
-    </div>""")
+# ─── Day selector ─────────────────────────────────────────────────────────────
+d_cols = st.columns([1, 1.3, 1, 1.5, 4.2])
+for col, key, label in zip(d_cols[:4],
+                            ['today', 'tomorrow', 'live', 'past'],
+                            ['Today', 'Tomorrow', 'Live', 'Past Results']):
+    is_active = st.session_state.day == key
+    if col.button(label, use_container_width=True,
+                  type='primary' if is_active else 'secondary'):
+        st.session_state.day = key
+        st.rerun()
 
-st.html("<div style='margin:20px 0;border-bottom:1px solid #1e2535;'></div>")
-
-
-# ── LIVE EVENTS PANEL ─────────────────────────────────────────────────────────
-if is_live and selected_fixture.get('events'):
-    st.html('<div class="section-title">Live Events</div>')
-    for ev in selected_fixture['events'][:10]:
-        t    = ev.get('time', {}).get('elapsed', '?')
-        evtype = ev.get('type', '')
-        detail = ev.get('detail', '')
-        player = ev.get('player', {}).get('name', '')
-        team   = ev.get('team', {}).get('name', '')
-        icon = {'Goal': '⚽', 'Card': '🟨' if 'Yellow' in detail else '🟥', 'subst': '🔄'}.get(evtype, '·')
-        st.html(
-            f"<div style='font-size:13px;color:#94a3b8;padding:4px 0;'>"
-            f"<span style='color:#e2e8f0;font-weight:700;width:32px;display:inline-block;'>{t}'</span>"
-            f" {icon} <b>{player}</b> · {team} <span style='color:#475569;'>({detail})</span>"
-            f"</div>")
-    st.html("<div style='margin:16px 0;border-bottom:1px solid #1e2535;'></div>")
-
-# ── TABS ──────────────────────────────────────────────────────────────────────
-t_markets, t_edge, t_goals, t_cards, t_form, t_players, t_h2h = st.tabs([
-    "Betting Markets",
-    "Edge Comparison",
-    "Goals",
-    "Cards & Discipline",
-    "Formations",
-    "Top Players",
-    "Head-to-Head",
-])
-
-# ── TAB: BETTING MARKETS ──────────────────────────────────────────────────────
-with t_markets:
-    st.html('<div class="section-title">All Computed Markets · AI Hybrid Model</div>')
-
-    # ── Row 1: 1X2 + BTTS ────────────────────────────────────────────────────
-    r1 = st.columns(4)
-    main_m = [
-        ("Home Win",         f"{markets['home_win']:.1f}%",  "blue"),
-        ("Draw",             f"{markets['draw']:.1f}%",       "amber"),
-        ("Away Win",         f"{markets['away_win']:.1f}%",   "red"),
-        ("Both Teams Score", f"{markets['btts']:.1f}%",       "green"),
-    ]
-    for col, (lbl, val, cls) in zip(r1, main_m):
-        col.html(f'<div class="ou-card" style="padding:12px 16px;">'
-                 f'<div class="ou-row" style="border:none;padding:0;">'
-                 f'<div class="ou-team">{lbl}</div>'
-                 f'<div class="ou-vals {cls}">{val}</div>'
-                 f'</div></div>')
-
-    st.html("<div style='margin-top:10px;'></div>")
-
-    # ── Row 2: Over / Under ───────────────────────────────────────────────────
-    r2 = st.columns(3)
-    ou_m = [
-        ("Over 1.5 Goals", f"{markets['over_1_5']:.1f}%", "blue"),
-        ("Over 2.5 Goals", f"{markets['over_2_5']:.1f}%", "blue"),
-        ("Over 3.5 Goals", f"{markets['over_3_5']:.1f}%", "blue"),
-    ]
-    for col, (lbl, val, cls) in zip(r2, ou_m):
-        col.html(f'<div class="ou-card" style="padding:12px 16px;">'
-                 f'<div class="ou-row" style="border:none;padding:0;">'
-                 f'<div class="ou-team">{lbl}</div>'
-                 f'<div class="ou-vals {cls}">{val}</div>'
-                 f'</div></div>')
-
-    st.html("<div style='margin-top:10px;'></div>")
-
-    # ── Row 3: Double Chance + xG ─────────────────────────────────────────────
-    r3 = st.columns(4)
-    dc_m = [
-        (f"{selected_fixture['home_name'][:10]} or Draw",  f"{markets['dc_home_draw']:.1f}%", "green"),
-        (f"{selected_fixture['away_name'][:10]} or Draw",  f"{markets['dc_away_draw']:.1f}%", "green"),
-        (f"xG {selected_fixture['home_name'][:10]}",        f"{markets['xg_home']:.2f}",       "amber"),
-        (f"xG {selected_fixture['away_name'][:10]}",        f"{markets['xg_away']:.2f}",       "amber"),
-    ]
-    for col, (lbl, val, cls) in zip(r3, dc_m):
-        col.html(f'<div class="ou-card" style="padding:12px 16px;">'
-                 f'<div class="ou-row" style="border:none;padding:0;">'
-                 f'<div class="ou-team" style="font-size:11px;">{lbl}</div>'
-                 f'<div class="ou-vals {cls}">{val}</div>'
-                 f'</div></div>')
-
-    # ── Correct Scores ────────────────────────────────────────────────────────
-    st.html('<div class="section-title" style="margin-top:24px;">Most Likely Correct Scores</div>')
-    score_cols = st.columns(5)
-    for col, (score, prob) in zip(score_cols, markets['top_scores']):
-        col.html(
-            f'<div class="ou-card" style="padding:12px 16px;">'
-            f'<div class="ou-row" style="border:none;padding:0;">'
-            f'<div class="ou-vals blue" style="font-size:15px;">{score}</div>'
-            f'<div class="ou-team">{prob:.1f}%</div>'
-            f'</div></div>')
-
-
-# ── TAB: EDGE COMPARISON ──────────────────────────────────────────────────────
-with t_edge:
-    comparison = pred_data.get('comparison', {}) if pred_data else {}
-    if comparison:
-        ml_conf = markets.get('ml_blend', 0)
-        # Only show a notice when data is INSUFFICIENT (no ML blend)
-        if ml_conf == 0:
+# ─── Past Results ─────────────────────────────────────────────────────────────
+if st.session_state.day == 'past':
+    st.html("<div class='section-label' style='margin-top:0;'>Recent Model Performance</div>")
+    try:
+        import json
+        with open('past_predictions.json') as f:
+            past = json.load(f)
+        for p in past:
+            bg = "#10b98120" if p['correct'] else "#ef444420"
+            border = "#10b981" if p['correct'] else "#ef4444"
+            icon = "✅ Right" if p['correct'] else "❌ Wrong"
             st.html(f"""
-            <div style='background:rgba(255,179,0,0.08); border:1px solid rgba(255,179,0,0.35);
-                        border-radius:12px; padding:14px 18px; margin-bottom:18px;'>
-                <div style='color:#FFB300; font-weight:800; font-size:12px;
-                            letter-spacing:.1em; text-transform:uppercase; margin-bottom:4px;'>Statistical Baseline</div>
-                <div style='color:#7B8DB0; font-size:12px; line-height:1.6;'>ML historical data insufficient for these teams.
-                Falling back to 100% current season Poisson distribution.</div>
+            <div style='background:{bg}; border:1px solid {border}; border-radius:6px; padding:16px; margin-bottom:10px;'>
+                <div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;'>
+                    <span style='font-size:11px;color:var(--ink-2);letter-spacing:.05em;'>{p['date']} &middot; {p['league']}</span>
+                    <span style='font-family:var(--f-ui);font-weight:700;font-size:12px;color:{border};'>{icon}</span>
+                </div>
+                <div style='display:flex;justify-content:space-between;align-items:center;'>
+                    <div>
+                        <div style='font-size:16px;font-weight:700;color:var(--ink-1);'>{p['home']} <span style='color:var(--c-home);font-family:var(--f-data);margin:0 8px;'>{p['score']}</span> {p['away']}</div>
+                    </div>
+                    <div style='text-align:right;'>
+                        <div style='font-size:10px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;'>AI Pick</div>
+                        <div style='font-size:14px;font-weight:700;color:var(--ink-1);'>{p['ai_pick'].upper()} ({p['ai_prob']}%)</div>
+                    </div>
+                </div>
             </div>
             """)
+    except:
+        st.info("No past predictions logged yet.")
+    st.stop()
+
+# ─── Load all predictions ─────────────────────────────────────────────────# ── Load all predictions ──
+with st.spinner("Loading predictions."):
+    # Get dynamic timezone dates OUTSIDE the cached function to avoid Streamlit CachedWidgetWarning
+    today_str, tomorrow_str = get_client_dates()
+    target_date = today_str if st.session_state.day == 'today' else tomorrow_str
+    if st.session_state.day == 'live':
+        target_date = today_str
+        
+    all_games = get_all_predictions(st.session_state.day, target_date)
+
+if not all_games:
+    day_label = {'today':'today','tomorrow':'tomorrow','live':'live right now'}.get(st.session_state.day,'')
+    st.html(f"<div class='cat-empty' style='padding:60px 20px;text-align:center;color:var(--ink-3);'>No games found {day_label}. Try selecting another day or checking back later.</div>")
+    all_games = []
+
+# ─── Game card renderer ───────────────────────────────────────────────────────
+def render_card(game: dict, tab_key: str, pick_label: str, pick_pct: float, pick_color: str):
+    f         = game['fixture']
+    poisson   = game['poisson']
+    home_form = game['home_form']
+    away_form = game['away_form']
+
+    home       = f['home_team']['name']
+    away       = f['away_team']['name']
+    kick_off   = fmt_time(f['utc_date'])
+    date_str   = fmt_date_short(f['utc_date'])
+    comp_id    = f.get('competition_id')
+    league     = predict_today.LEAGUES[comp_id]['name'] if comp_id in predict_today.LEAGUES else 'Unknown League'
+    fid        = f['id']
+    is_live    = f['status'] in LIVE_STATUSES
+
+    live_tag = "LIVE · " if is_live else ""
+    score_tag = ""
+    if is_live:
+        sc = f.get('score', {})
+        hg = sc.get('home', 0) or 0
+        ag = sc.get('away', 0) or 0
+        score_tag = f"  [{hg}–{ag}]"
+
+    bar_w   = min(max(int(pick_pct), 0), 100)
+    expander_label = f"{live_tag}{home}{score_tag}  vs  {away}   ·   {kick_off}  {date_str}   ·   {league}"
+
+    with st.expander(expander_label, expanded=False):
+
+        expert = poisson.get('expert_predictions', {})
+        if expert:
+            ep = expert.get('primary', {})
+            mkt_cat = ep.get('market_category', 'Match Winner')
+            selection = ep.get('selection', pick_label)
+            conf = ep.get('confidence_score', int(pick_pct))
+            risk = ep.get('risk_level', 'MEDIUM')
             
-        st.html('<div class="section-title">Mathematical Advantage Comparison</div>')
-        metrics = [
-            ('Recent Form',         comparison.get('form', {})),
-            ('Attack Rating',       comparison.get('att', {})),
-            ('Defense Rating',      comparison.get('def', {})),
-            ('Poisson Distribution',comparison.get('poisson_distribution', {})),
-            ('H2H Historical Edge', comparison.get('h2h', {})),
-        ]
-        comp_df = pd.DataFrame([{
-            'Metric':    m,
-            'Home_val':  float(d.get('home','0%').replace('%','') or 0),
-            'Away_val':  float(d.get('away','0%').replace('%','') or 0),
-        } for m, d in metrics])
+            risk_color = '#10b981' if risk == 'LOW' else ('#eab308' if risk == 'MEDIUM' else '#ef4444')
+            
+            st.html(f"""
+            <div style='display:flex;align-items:center;justify-content:space-between;
+                        padding:12px 0 14px 0;border-bottom:1px solid #1e2535;margin-bottom:14px;'>
+              <div>
+                <div style='font-size:17px;font-weight:700;color:#dde2ef;'>
+                  {home} <span style='color:#4a5470;font-weight:400;'>vs</span> {away}
+                </div>
+                <div style='font-size:11px;color:#4a5470;margin-top:3px;'>
+                  {league} &middot; {kick_off} UTC &middot; {date_str}
+                </div>
+              </div>
+              
+              <div style='background:#151b24; padding:10px 14px; border:1px solid #1e2535; border-radius:6px; min-width:240px;'>
+                <div style='display:flex; justify-content:space-between; margin-bottom:6px;'>
+                    <span style='font-size:10px; font-weight:700; color:var(--ink-2); letter-spacing:0.1em; text-transform:uppercase;'>[ PRIMARY SAFE PICK ]</span>
+                    <span style='font-size:10px; font-weight:700; color:{risk_color}; padding:2px 6px; background:{risk_color}20; border-radius:4px;'>Risk: {risk}</span>
+                </div>
+                <div style='font-size:11px; color:#4a5470; text-transform:uppercase; margin-bottom:2px;'>Market: {mkt_cat}</div>
+                <div style='font-size:16px; font-weight:700; color:{pick_color}; margin-bottom:6px;'>{selection.upper()}</div>
+                <div style='display:flex; align-items:center; gap:8px;'>
+                    <div class='conf-bar-wrap' style='flex-grow:1; margin:0;'>
+                      <div class='conf-bar-fill' style='width:{conf}%; background:{pick_color};'></div>
+                    </div>
+                    <span style='font-family:var(--f-data); font-size:11px; color:{pick_color}; font-weight:700;'>{conf}%</span>
+                </div>
+                <div style='font-size:10px; color:#4a5470; margin-top:8px; font-style:italic;'>{ep.get('reasoning', '')}</div>
+              </div>
+            </div>
+            """)
+        else:
+            # Fallback legacy card
+            st.html(f"""
+            <div style='display:flex;align-items:center;justify-content:space-between;
+                        padding:12px 0 14px 0;border-bottom:1px solid #1e2535;margin-bottom:14px;'>
+              <div>
+                <div style='font-size:17px;font-weight:700;color:#dde2ef;'>
+                  {home} <span style='color:#4a5470;font-weight:400;'>vs</span> {away}
+                </div>
+                <div style='font-size:11px;color:#4a5470;margin-top:3px;'>
+                  {league} &middot; {kick_off} UTC &middot; {date_str}
+                </div>
+              </div>
+              <div style='text-align:right;min-width:160px;'>
+                <div style='font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#4a5470;margin-bottom:4px;'>AI Pick</div>
+                <div style='font-size:15px;font-weight:700;color:{pick_color};'>{pick_label}</div>
+                <div class='conf-bar-wrap'>
+                  <div class='conf-bar-fill' style='width:{bar_w}%;background:{pick_color};'></div>
+                </div>
+                <div style='font-family:var(--f-data);font-size:11px;color:{pick_color};margin-top:3px;'>
+                  {pick_pct}% confidence
+                </div>
+              </div>
+            </div>
+            """)
 
-        fig = go.Figure()
-        fig.add_trace(go.Bar(y=comp_df['Metric'], x=comp_df['Home_val'],
-                             name=selected_fixture['home_name'], orientation='h',
-                             marker=dict(color='#0ea5e9'), width=0.35))
-        fig.add_trace(go.Bar(y=comp_df['Metric'], x=comp_df['Away_val'],
-                             name=selected_fixture['away_name'], orientation='h',
-                             marker=dict(color='#f43f5e'), width=0.35))
-        fig.update_layout(barmode='group', template='plotly_dark',
-                          plot_bgcolor='#1a2035', paper_bgcolor='#1a2035',
-                          height=320, margin=dict(l=0,r=0,t=10,b=0),
-                          legend=dict(orientation='h',yanchor='bottom',y=1.02,xanchor='right',x=1),
-                          font=dict(family='Inter',size=12,color='#94a3b8'),
-                          xaxis=dict(gridcolor='#252d42'), yaxis=dict(gridcolor='#252d42'))
-        st.plotly_chart(fig, width='stretch')
+        inner = st.tabs(["Prediction", "Form & Stats", "Live Odds"])
 
-    # Poisson score probability heatmap
-    st.html('<div class="section-title">Score Probability Heatmap</div>')
-    import math
-    def _pmf(lam, k):
-        return (lam**k)*math.exp(-lam)/math.factorial(k) if lam > 0 else (1.0 if k==0 else 0.0)
-    lam_h = markets['xg_home']; lam_a = markets['xg_away']
-    n = 6
-    z = [[round(_pmf(lam_h,h)*_pmf(lam_a,a)*100,1) for a in range(n)] for h in range(n)]
-    fig_h = go.Figure(go.Heatmap(
-        z=z, x=[f"Away {i}" for i in range(n)], y=[f"Home {i}" for i in range(n)],
-        colorscale='Blues', showscale=True,
-        text=[[f"{v}%" for v in row] for row in z], texttemplate="%{text}",
-    ))
-    fig_h.update_layout(template='plotly_dark', plot_bgcolor='#1a2035', paper_bgcolor='#1a2035',
-                        height=340, margin=dict(l=0,r=0,t=10,b=0),
-                        font=dict(family='Inter',size=12,color='#94a3b8'))
-    st.plotly_chart(fig_h, width='stretch')
+        # ── Tab 1: Prediction ──────────────────────────────────────────────────
+        with inner[0]:
+            hw = poisson['home_win']
+            dr = poisson['draw']
+            aw = poisson['away_win']
 
-# ── TAB: GOALS ────────────────────────────────────────────────────────────────
-with t_goals:
-    teams_data = pred_data.get('teams', {}) if pred_data else {}
-
-    def extract_ou(team_key, ou_val):
-        try:
-            return teams_data[team_key]['league']['goals']['for']['under_over'][ou_val]
-        except:
-            return {'over':0,'under':0}
-
-    ou_15_h = extract_ou('home','1.5'); ou_15_a = extract_ou('away','1.5')
-    ou_25_h = extract_ou('home','2.5'); ou_25_a = extract_ou('away','2.5')
-
-    st.html('<div class="section-title">Over / Under — Historical Season Record</div>')
-    oc1, oc2 = st.columns(2)
-    with oc1:
-        st.html(f"""<div class="ou-card">
-          <div class="ou-title">Over / Under 1.5 Goals</div>
-          <div class="ou-row"><span class="ou-team">{selected_fixture['home_name']}</span>
-            <span class="ou-vals"><span class="ou-over">O {ou_15_h['over']}</span> &nbsp; <span class="ou-under">U {ou_15_h['under']}</span></span></div>
-          <div class="ou-row"><span class="ou-team">{selected_fixture['away_name']}</span>
-            <span class="ou-vals"><span class="ou-over">O {ou_15_a['over']}</span> &nbsp; <span class="ou-under">U {ou_15_a['under']}</span></span></div>
-        </div>""")
-    with oc2:
-        st.html(f"""<div class="ou-card">
-          <div class="ou-title">Over / Under 2.5 Goals</div>
-          <div class="ou-row"><span class="ou-team">{selected_fixture['home_name']}</span>
-            <span class="ou-vals"><span class="ou-over">O {ou_25_h['over']}</span> &nbsp; <span class="ou-under">U {ou_25_h['under']}</span></span></div>
-          <div class="ou-row"><span class="ou-team">{selected_fixture['away_name']}</span>
-            <span class="ou-vals"><span class="ou-over">O {ou_25_a['over']}</span> &nbsp; <span class="ou-under">U {ou_25_a['under']}</span></span></div>
-        </div>""")
-
-    st.html('<div class="section-title">Goal Timing — By 15-Minute Interval</div>')
-    def get_intervals(team_key):
-        try:
-            mins = teams_data[team_key]['league']['goals']['for']['minute']
-            pairs = [(k,v['total']) for k,v in mins.items() if k!='106-120' and v and v['total']]
-            if pairs:
-                return zip(*pairs)
-        except:
-            pass
-        return [], []
-
-    try:
-        hl,hv = get_intervals('home'); al,av = get_intervals('away')
-        fig2 = go.Figure()
-        fig2.add_trace(go.Bar(x=list(hl), y=list(hv), name=selected_fixture['home_name'], marker_color='#0ea5e9', opacity=0.85))
-        fig2.add_trace(go.Bar(x=list(al), y=list(av), name=selected_fixture['away_name'], marker_color='#f43f5e', opacity=0.85))
-        fig2.update_layout(barmode='group', template='plotly_dark', plot_bgcolor='#1a2035', paper_bgcolor='#1a2035',
-                           height=280, margin=dict(l=0,r=0,t=10,b=0),
-                           legend=dict(orientation='h',yanchor='bottom',y=1.02,xanchor='right',x=1),
-                           font=dict(family='Inter',size=12,color='#94a3b8'),
-                           xaxis=dict(gridcolor='#252d42'), yaxis=dict(gridcolor='#252d42'))
-        st.plotly_chart(fig2, width='stretch')
-    except:
-        st.info("Goal interval data unavailable for this fixture.")
-
-# ── TAB: CARDS ────────────────────────────────────────────────────────────────
-with t_cards:
-    teams_data = pred_data.get('teams', {}) if pred_data else {}
-    st.html('<div class="section-title">Yellow Card Distribution by Interval</div>')
-
-    def get_card_intervals(team_key):
-        try:
-            mins = teams_data[team_key]['league']['cards']['yellow']
-            pairs = [(k,v['total']) for k,v in mins.items() if k!='106-120' and v and v['total']]
-            if pairs:
-                return zip(*pairs)
-        except:
-            pass
-        return [], []
-
-    try:
-        hkl,hkv = get_card_intervals('home'); akl,akv = get_card_intervals('away')
-        fig3 = go.Figure()
-        fig3.add_trace(go.Bar(x=list(hkl), y=list(hkv), name=selected_fixture['home_name'], marker_color='#0ea5e9'))
-        fig3.add_trace(go.Bar(x=list(akl), y=list(akv), name=selected_fixture['away_name'], marker_color='#f43f5e'))
-        fig3.update_layout(barmode='group', template='plotly_dark', plot_bgcolor='#1a2035', paper_bgcolor='#1a2035',
-                           height=280, margin=dict(l=0,r=0,t=10,b=0),
-                           legend=dict(orientation='h',yanchor='bottom',y=1.02,xanchor='right',x=1),
-                           font=dict(family='Inter',size=12,color='#94a3b8'),
-                           xaxis=dict(gridcolor='#252d42'), yaxis=dict(gridcolor='#252d42'))
-        st.plotly_chart(fig3, width='stretch')
-    except:
-        st.info("Card interval data unavailable.")
-
-    st.html('<div class="section-title">Penalty Statistics</div>')
-    pc1, pc2 = st.columns(2)
-    for key, col, name in [('home',pc1,selected_fixture['home_name']),('away',pc2,selected_fixture['away_name'])]:
-        with col:
-            try:
-                pen = teams_data[key]['league']['penalty']
-                st.html(f"""<div class="pen-card">
-                  <div class="pen-title">{name}</div>
-                  <div class="pen-stat"><span class="pen-label">Scored</span><span class="pen-val">{pen['scored']['total']} ({pen['scored']['percentage']})</span></div>
-                  <div class="pen-stat"><span class="pen-label">Missed</span><span class="pen-val">{pen['missed']['total']} ({pen['missed']['percentage']})</span></div>
-                </div>""")
-            except:
-                st.html(f'<div class="pen-card"><div class="pen-title">{name}</div><div class="pen-label">Data unavailable</div></div>')
-
-# ── TAB: FORMATIONS ───────────────────────────────────────────────────────────
-with t_form:
-    teams_data = pred_data.get('teams', {}) if pred_data else {}
-    st.html('<div class="section-title">Preferred Formations This Season</div>')
-    fc1, fc2 = st.columns(2)
-    for key, col, name in [('home',fc1,selected_fixture['home_name']),('away',fc2,selected_fixture['away_name'])]:
-        with col:
-            st.html(f"<div style='font-size:13px;font-weight:700;color:#94a3b8;margin-bottom:10px;'>{name}</div>")
-            try:
-                lineups = teams_data[key]['league']['lineups']
-                if lineups:
-                    df_l = pd.DataFrame(lineups).sort_values('played', ascending=False)
-                    st.dataframe(df_l, width='stretch', hide_index=True)
-                else:
-                    st.html('<span style="color:#475569;font-size:13px;">No data.</span>')
-            except:
-                st.html('<span style="color:#475569;font-size:13px;">Data unavailable.</span>')
-
-# ── TAB: TOP PLAYERS ──────────────────────────────────────────────────────────
-with t_players:
-    st.html('<div class="section-title">League Top Players</div>')
-    with st.spinner("Loading…"):
-        scorers, assists = cached_top_players(selected_fixture['league_id'], selected_fixture['season'])
-
-    rank_cls = ['gold','silver','bronze','','']
-    pc1, pc2 = st.columns(2)
-    with pc1:
-        st.html("<div style='font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#64748b;margin-bottom:12px;'>Top Scorers</div>")
-        for i, p in enumerate(scorers[:5]):
-            pl = p['player']; stat = p['statistics'][0]['goals']['total']; club = p['statistics'][0]['team']['name']
-            st.html(f"""<div class="player-row">
-              <div class="player-rank {rank_cls[i]}">{i+1}</div>
-              <img src="{pl['photo']}">
-              <div class="player-info"><div class="player-name">{pl['name']}</div><div class="player-team">{club}</div></div>
-              <div class="player-stat">{stat}</div>
-            </div>""")
-    with pc2:
-        st.html("<div style='font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#64748b;margin-bottom:12px;'>Top Assists</div>")
-        for i, p in enumerate(assists[:5]):
-            pl = p['player']; stat = p['statistics'][0]['goals']['assists']; club = p['statistics'][0]['team']['name']
-            st.html(f"""<div class="player-row">
-              <div class="player-rank {rank_cls[i]}">{i+1}</div>
-              <img src="{pl['photo']}">
-              <div class="player-info"><div class="player-name">{pl['name']}</div><div class="player-team">{club}</div></div>
-              <div class="player-stat">{stat}</div>
-            </div>""")
-
-# ── TAB: H2H ─────────────────────────────────────────────────────────────────
-with t_h2h:
-    h2h = pred_data.get('h2h', []) if pred_data else []
-    st.html('<div class="section-title">Head-to-Head History</div>')
-    if not h2h:
-        st.info("No recent H2H records found.")
-    else:
-        for match in h2h[:8]:
-            try:
-                dt  = datetime.fromisoformat(match['fixture']['date'].replace('Z','+00:00')).strftime('%d %b %Y')
-                ht  = match['teams']['home']['name']
-                at  = match['teams']['away']['name']
-                hg  = match['goals']['home']
-                ag  = match['goals']['away']
-                lg  = match['league']['name']
-                st.html(f"""<div class="h2h-row">
-                  <div><div class="h2h-date">{dt}</div><div class="h2h-league">{lg}</div></div>
-                  <div style="text-align:center;">
-                    <div style="font-size:12px;color:#64748b;">{ht}</div>
-                    <div class="h2h-score">{hg} &mdash; {ag}</div>
-                    <div style="font-size:12px;color:#64748b;">{at}</div>
+            # Win probability bars
+            for label_, pct_, color_ in [
+                (home, hw, 'var(--c-home)'),
+                ('Draw', dr, 'var(--c-draw)'),
+                (away, aw, 'var(--c-away)'),
+            ]:
+                st.html(f"""
+                <div style='margin-bottom:10px;'>
+                  <div style='display:flex;justify-content:space-between;margin-bottom:3px;'>
+                    <span style='font-size:12px;color:#dde2ef;font-weight:600;'>{label_}</span>
+                    <span style='font-family:var(--f-data);font-size:12px;color:{color_};'>{pct_}%</span>
                   </div>
-                  <div style="width:80px;"></div>
-                </div>""")
-            except:
-                pass
+                  <div class='conf-bar-wrap'>
+                    <div class='conf-bar-fill' style='width:{pct_}%;background:{color_};'></div>
+                  </div>
+                </div>
+                """)
+
+            # Extra Expert Picks
+            expert = poisson.get('expert_predictions', {})
+            if expert:
+                v = expert.get('value', {})
+                s = expert.get('stat', {})
+                
+                def render_subpick(title, p):
+                    risk = p.get('risk_level', 'MEDIUM')
+                    rc = '#10b981' if risk == 'LOW' else ('#eab308' if risk == 'MEDIUM' else '#ef4444')
+                    return f"""
+                    <div style='background:#111520; border:1px solid #1e2535; border-radius:6px; padding:10px; margin-bottom:12px; flex:1; min-width:200px;'>
+                        <div style='display:flex; justify-content:space-between; margin-bottom:4px;'>
+                            <span style='font-size:9px; font-weight:700; color:var(--ink-3); text-transform:uppercase; letter-spacing:0.05em;'>{title}</span>
+                            <span style='font-size:9px; color:{rc};'>{risk} RISK</span>
+                        </div>
+                        <div style='font-size:13px; font-weight:700; color:#dde2ef; margin-bottom:2px;'>{p.get('selection', '')}</div>
+                        <div style='font-size:10px; color:#4a5470;'>{p.get('market_name', '')} &middot; {p.get('confidence_score', 0)}% Conf</div>
+                        <div style='font-size:9px; color:#4a5470; margin-top:6px; font-style:italic;'>{p.get('reasoning', '')}</div>
+                    </div>
+                    """
+                
+                st.html(f"<div style='display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;'>" + render_subpick("Value Pick", v) + render_subpick("Stat/Prop Pick", s) + "</div>")
+
+            # xG + goals markets
+            xh = poisson['xg_home']
+            xa = poisson['xg_away']
+            o15 = poisson['over_1_5']
+            o25 = poisson['over_2_5']
+            o35 = poisson['over_3_5']
+            btts = poisson['btts']
+
+            c1, c2, c3, c4, c5, c6 = st.columns(6)
+            c1.metric("xG Home",   str(xh))
+            c2.metric("xG Away",   str(xa))
+            c3.metric("Over 1.5",  f"{o15}%")
+            c4.metric("Over 2.5",  f"{o25}%")
+            c5.metric("Over 3.5",  f"{o35}%")
+            c6.metric("BTTS",      f"{btts}%")
+
+            # Most likely scores
+            st.html("<div style='margin-top:16px;font-size:10px;color:#4a5470;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;'>Most Likely Scores</div>")
+            score_html = "".join(
+                f"<span style='background:#111520;border:1px solid #1e2535;border-radius:6px;"
+                f"padding:6px 14px;font-family:var(--f-data);font-size:14px;color:#dde2ef;"
+                f"margin-right:8px;margin-bottom:8px;display:inline-block;'>"
+                f"{sc_} <span style='font-size:9px;color:#4a5470;'>({p_}%)</span></span>"
+                for sc_, p_ in poisson['top_scores']
+            )
+            st.html(f"<div style='display:flex;flex-wrap:wrap;'>{score_html}</div>")
+
+            if poisson.get('low_data_warning'):
+                st.html(f"<div style='font-size:11px;color:var(--c-warn);margin-top:10px;'>{poisson['low_data_warning']}</div>")
+
+        # ── Tab 2: Form & Stats ────────────────────────────────────────────────
+        with inner[1]:
+            st.html(f"""
+            <div style='margin-bottom:14px;'>
+              <div style='display:flex;align-items:center;justify-content:space-between;
+                          padding:10px 12px;background:#0d1018;border:1px solid #1e2535;
+                          border-radius:7px;margin-bottom:7px;'>
+                <span style='font-size:13px;font-weight:600;color:#dde2ef;'>{home}</span>
+                <div>{form_bubbles_html(home_form.get('form',[]))}</div>
+              </div>
+              <div style='display:flex;align-items:center;justify-content:space-between;
+                          padding:10px 12px;background:#0d1018;border:1px solid #1e2535;border-radius:7px;'>
+                <span style='font-size:13px;font-weight:600;color:#dde2ef;'>{away}</span>
+                <div>{form_bubbles_html(away_form.get('form',[]))}</div>
+              </div>
+            </div>
+            """)
+
+            # Comparison bars
+            for lbl_, hv_, av_ in [
+                ('Avg Goals Scored',   home_form.get('avg_scored', 0),   away_form.get('avg_scored', 0)),
+                ('Avg Goals Conceded', home_form.get('avg_conceded', 0), away_form.get('avg_conceded', 0)),
+                ('Points per Game',    home_form.get('pts_per_game', 0), away_form.get('pts_per_game', 0)),
+            ]:
+                total_ = abs(hv_) + abs(av_)
+                hp_ = round(abs(hv_)/total_*100, 1) if total_ else 50
+                ap_ = round(abs(av_)/total_*100, 1) if total_ else 50
+                st.html(f"""
+                <div style='margin-bottom:10px;'>
+                  <div style='text-align:center;font-size:10px;color:#94a3b8;margin-bottom:4px;
+                               text-transform:uppercase;letter-spacing:.05em;'>{lbl_}</div>
+                  <div style='display:flex;align-items:center;gap:10px;'>
+                    <div style='flex:0 0 34px;font-family:var(--f-data);font-size:12px;
+                                color:var(--c-home);text-align:right;'>{hv_}</div>
+                    <div style='flex:1;height:5px;background:#1e293b;border-radius:3px;
+                                display:flex;overflow:hidden;'>
+                      <div style='width:{hp_}%;background:var(--c-home);'></div>
+                      <div style='width:{ap_}%;background:var(--c-away);'></div>
+                    </div>
+                    <div style='flex:0 0 34px;font-family:var(--f-data);font-size:12px;
+                                color:var(--c-away);text-align:left;'>{av_}</div>
+                  </div>
+                </div>
+                """)
+
+            # H2H section
+            st.html("<div style='margin-top:16px;font-size:10px;color:#4a5470;letter-spacing:.08em;"
+                    "text-transform:uppercase;margin-bottom:8px;'>Head-to-Head</div>")
+
+            h2h_ss_key = f'h2h_{fid}'
+            if h2h_ss_key not in st.session_state.game_h2h:
+                if st.button("Load H2H", key=f"h2h_{fid}_{tab_key}"):
+                    with st.spinner("Fetching H2H…"):
+                        st.session_state.game_h2h[h2h_ss_key] = cached_h2h_v2(
+                            f['home_team']['id'], f['away_team']['id']
+                        )
+                    st.rerun()
+            else:
+                h2h = st.session_state.game_h2h[h2h_ss_key]
+                matches = h2h.get('matches', [])
+                if not matches:
+                    st.info("No H2H data found.")
+                else:
+                    for m in matches[:5]:
+                        try:
+                            dt   = datetime.fromisoformat(m['utc_date'].replace('Z','+00:00')).strftime('%d %b %Y')
+                            ht_  = m['home_team']['name']
+                            at_  = m['away_team']['name']
+                            hg_  = m['score'].get('home','?')
+                            ag_  = m['score'].get('away','?')
+                            win  = m['score'].get('winner')
+                            hs_  = 'color:var(--c-home);font-weight:700;' if win=='home' else 'color:#94a3b8;'
+                            as__ = 'color:var(--c-away);font-weight:700;' if win=='away' else 'color:#94a3b8;'
+                            st.html(f"""
+                            <div style='display:flex;align-items:center;justify-content:space-between;
+                                        padding:7px 0;border-bottom:1px solid #1e2535;'>
+                              <span style='font-size:10px;color:#4a5470;font-family:var(--f-data);
+                                           flex:0 0 72px;'>{dt}</span>
+                              <div style='flex:1;display:flex;align-items:center;justify-content:center;gap:10px;'>
+                                <span style='font-size:12px;{hs_}'>{ht_}</span>
+                                <span style='font-family:var(--f-data);font-size:15px;color:#dde2ef;
+                                             min-width:36px;text-align:center;'>{hg_}–{ag_}</span>
+                                <span style='font-size:12px;{as__}'>{at_}</span>
+                              </div>
+                            </div>
+                            """)
+                        except Exception:
+                            pass
+
+        # ── Tab 3: Live Odds ───────────────────────────────────────────────────
+        with inner[2]:
+            odds_ss_key = f'odds_{fid}'
+            if odds_ss_key not in st.session_state.game_odds:
+                btn_cols = st.columns([1, 3])
+                if btn_cols[0].button("Fetch Live Odds", key=f"odds_{fid}_{tab_key}"):
+                    with st.spinner("Fetching Bet365 odds…"):
+                        st.session_state.game_odds[odds_ss_key] = cached_odds(fid)
+                    st.rerun()
+                st.html("<div style='font-size:11px;color:#4a5470;margin-top:6px;'>Loads Bet365 odds for this match.</div>")
+            else:
+                odds = st.session_state.game_odds.get(odds_ss_key) or {}
+
+                if not odds:
+                    st.info("No Bet365 odds available for this match.")
+                else:
+                    # Match odds
+                    if 'match_odds' in odds:
+                        o = odds['match_odds']
+                        oh_ = float(o['home']['last_seen'])
+                        od_ = float(o['draw']['last_seen'])
+                        oa_ = float(o['away']['last_seen'])
+                        hp_, dp_, ap_ = norm3(implied(oh_), implied(od_), implied(oa_))
+                        st.html(f"""
+                        <div style='margin-bottom:14px;'>
+                          <div style='font-size:10px;color:#4a5470;text-transform:uppercase;
+                                      letter-spacing:.08em;margin-bottom:8px;'>Match Odds (Bet365)</div>
+                          <div style='display:flex;gap:8px;'>
+                            <div style='flex:1;background:#0d1018;border:1px solid #1e2535;border-radius:7px;
+                                        padding:10px;text-align:center;'>
+                              <div style='font-size:10px;color:#4a5470;margin-bottom:4px;'>{home}</div>
+                              <div style='font-family:var(--f-data);font-size:22px;color:var(--c-home);'>{oh_}</div>
+                              <div style='font-size:10px;color:#4a5470;'>{hp_}%</div>
+                            </div>
+                            <div style='flex:1;background:#0d1018;border:1px solid #1e2535;border-radius:7px;
+                                        padding:10px;text-align:center;'>
+                              <div style='font-size:10px;color:#4a5470;margin-bottom:4px;'>Draw</div>
+                              <div style='font-family:var(--f-data);font-size:22px;color:var(--c-draw);'>{od_}</div>
+                              <div style='font-size:10px;color:#4a5470;'>{dp_}%</div>
+                            </div>
+                            <div style='flex:1;background:#0d1018;border:1px solid #1e2535;border-radius:7px;
+                                        padding:10px;text-align:center;'>
+                              <div style='font-size:10px;color:#4a5470;margin-bottom:4px;'>{away}</div>
+                              <div style='font-family:var(--f-data);font-size:22px;color:var(--c-away);'>{oa_}</div>
+                              <div style='font-size:10px;color:#4a5470;'>{ap_}%</div>
+                            </div>
+                          </div>
+                        </div>
+                        """)
+
+                    def _market_row(title, items):
+                        """items = list of (label, odd, color)"""
+                        cards = ""
+                        for lbl_, odd_, col_ in items:
+                            p_ = round(implied(odd_)*100, 1)
+                            cards += (
+                                f"<div style='flex:1;background:#0d1018;border:1px solid #1e2535;"
+                                f"border-radius:7px;padding:10px;text-align:center;'>"
+                                f"<div style='font-size:10px;color:#4a5470;margin-bottom:4px;'>{lbl_}</div>"
+                                f"<div style='font-family:var(--f-data);font-size:18px;color:{col_};'>{odd_}</div>"
+                                f"<div style='font-size:10px;color:#4a5470;'>{p_}% implied</div>"
+                                f"</div>"
+                            )
+                        return (
+                            f"<div style='margin-bottom:12px;'>"
+                            f"<div style='font-size:10px;color:#4a5470;text-transform:uppercase;"
+                            f"letter-spacing:.08em;margin-bottom:6px;'>{title}</div>"
+                            f"<div style='display:flex;gap:8px;'>{cards}</div></div>"
+                        )
+
+                    # BTTS
+                    if 'btts' in odds:
+                        try:
+                            oy = odds['btts']['yes']['last_seen']
+                            on_ = odds['btts']['no']['last_seen']
+                            st.html(_market_row("BTTS", [("Yes", oy, "var(--c-yes)"), ("No", on_, "var(--c-no)")]))
+                        except Exception: pass
+
+                    # Total Goals 1.5 / 2.5 / 3.5
+                    if 'total_goals' in odds:
+                        tg = odds['total_goals']
+                        for line in ['1.5','2.5','3.5']:
+                            if line in tg:
+                                try:
+                                    ov_ = tg[line]['over']['last_seen']
+                                    un_ = tg[line]['under']['last_seen']
+                                    st.html(_market_row(f"Total Goals {line}",
+                                        [(f"Over {line}", ov_, "var(--c-yes)"), (f"Under {line}", un_, "var(--c-no)")]))
+                                except Exception: pass
+
+                    # Corners
+                    if 'match_corners' in odds:
+                        lines = list(odds['match_corners'].keys())
+                        mid = lines[len(lines)//2] if lines else None
+                        if mid:
+                            try:
+                                ov_ = odds['match_corners'][mid]['over']['last_seen']
+                                un_ = odds['match_corners'][mid]['under']['last_seen']
+                                st.html(_market_row(f"Corners {mid}",
+                                    [(f"Over {mid}", ov_, "var(--c-yes)"), (f"Under {mid}", un_, "var(--c-no)")]))
+                            except Exception: pass
+
+                    # Asian Handicap
+                    if 'asian_handicap' in odds:
+                        ah = odds['asian_handicap']
+                        try:
+                            hl = list(ah.get('home',{}).keys())[0]
+                            al = list(ah.get('away',{}).keys())[0]
+                            oh_ = ah['home'][hl]['last_seen']
+                            oa_ = ah['away'][al]['last_seen']
+                            st.html(_market_row("Asian Handicap",
+                                [(f"{home} ({hl})", oh_, "var(--c-home)"),
+                                 (f"{away} ({al})", oa_, "var(--c-away)")]))
+                        except Exception: pass
+
+                    # Draw No Bet
+                    if 'draw_no_bet' in odds:
+                        try:
+                            oh_ = odds['draw_no_bet']['home']['last_seen']
+                            oa_ = odds['draw_no_bet']['away']['last_seen']
+                            st.html(_market_row("Draw No Bet",
+                                [(home, oh_, "var(--c-home)"), (away, oa_, "var(--c-away)")]))
+                        except Exception: pass
+
+# ─── Unified AI Predictions ───────────────────────────────────────────────────
+st.html("""<div style='font-size:10px;color:#4a5470;letter-spacing:.1em;text-transform:uppercase;
+        margin-bottom:14px;'>AI Market Scanner — Safest prediction per game across all markets</div>""")
+
+# Group by league first
+from collections import defaultdict
+grouped_games = defaultdict(list)
+for game in all_games:
+    comp_id = game['fixture'].get('competition_id')
+    league = "Unknown League"
+    if comp_id and comp_id in predict_today.LEAGUES:
+        league = predict_today.LEAGUES[comp_id]['name']
+    grouped_games[league].append(game)
+
+# Iterate through sorted leagues
+for league in sorted(grouped_games.keys()):
+    # Display the league name as a distinct header
+    st.html(f"""
+    <div style='margin-top: 24px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;'>
+        <div style='width: 4px; height: 16px; background: var(--c-home); border-radius: 2px;'></div>
+        <div style='font-size: 15px; font-weight: 700; color: #ffffff; letter-spacing: 0.05em; text-transform: uppercase;'>
+            {league}
+        </div>
+    </div>
+    """)
+    
+    # Sort games within this league by confidence
+    league_games = sorted(grouped_games[league], key=lambda g: g['poisson'].get('expert_predictions', {}).get('primary', {}).get('confidence_score', 0), reverse=True)
+    
+    for game in league_games:
+        p  = game['poisson']
+        ep = p.get('expert_predictions', {})
+        pr = ep.get('primary', {})
+
+        if pr:
+            pick = pr.get('selection', 'N/A')
+            pct  = pr.get('confidence_score', 50)
+        else:
+            hw_, dr_, aw_ = p['home_win'], p['draw'], p['away_win']
+            if hw_ >= dr_ and hw_ >= aw_:
+                pick, pct = f"{game['fixture']['home_team']['name']} Win", hw_
+            elif aw_ >= hw_ and aw_ >= dr_:
+                pick, pct = f"{game['fixture']['away_team']['name']} Win", aw_
+            else:
+                pick, pct = "Draw", dr_
+
+        render_card(game, 'unified', pick, pct, conf_color(pct))
+

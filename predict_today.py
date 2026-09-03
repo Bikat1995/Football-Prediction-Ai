@@ -9,39 +9,46 @@ from feature_builder_live import FeatureBuilderLive
 
 LEAGUES = {
     # Europe - Top 5
-    39: {"name": "Premier League"},
-    140: {"name": "La Liga"},
-    78: {"name": "Bundesliga"},
-    135: {"name": "Serie A"},
-    61: {"name": "Ligue 1"},
+    "comp_3039": {"name": "Premier League"},
+    "comp_8814": {"name": "LaLiga"},
+    "comp_4643": {"name": "Bundesliga"},
+    "comp_5840": {"name": "Serie A"},
+    "comp_0256": {"name": "Ligue 1"},
     # Europe - Major
-    94: {"name": "Primeira Liga"},
-    88: {"name": "Eredivisie"},
-    144: {"name": "Jupiler Pro League"},
-    203: {"name": "Super Lig"},
-    113: {"name": "Allsvenskan"},
-    119: {"name": "Superliga (Denmark)"},
-    244: {"name": "Veikkausliiga"},
-    40: {"name": "Championship"},
-    41: {"name": "League One"},
-    42: {"name": "League Two"},
-    141: {"name": "Segunda Division"},
+    "comp_8385": {"name": "Liga Portugal"},
+    "comp_3809": {"name": "Eredivisie"},
+    "comp_8321": {"name": "Championship"},
+    "comp_6387": {"name": "Scottish Premiership"},
+    "comp_4893": {"name": "Austrian Bundesliga"},
     # Europe - Cups & Competitions
-    2: {"name": "Champions League"},
-    3: {"name": "Europa League"},
-    848: {"name": "Conference League"},
-    137: {"name": "Coppa Italia"},
+    "comp_3498": {"name": "Champions League"},
+    "comp_7739": {"name": "Europa League"},
+    "comp_408698": {"name": "Conference League"},
+    "comp_7915": {"name": "Copa del Rey"},
+    "comp_8525": {"name": "Coppa Italia"},
+    "comp_8531": {"name": "Belgian Pro League"},
+    "comp_4750": {"name": "Coupe de France"},
+    "comp_3620": {"name": "DFB Pokal"},
+    "comp_2504": {"name": "EFL Cup (Carabao)"},
+    "comp_7428": {"name": "FA Cup"},
+    "comp_1047": {"name": "KNVB Beker"},
+    "comp_3861": {"name": "Scottish Cup"},
+    "comp_0406": {"name": "2. Bundesliga"},
+    "comp_9777": {"name": "Ligue 2"},
+    "comp_5450": {"name": "Serie B"},
+    "comp_0196": {"name": "League One"},
+    "comp_4023": {"name": "League Two"},
+    "comp_7218": {"name": "Challenger Pro League"},
+    "comp_5749": {"name": "Copa América"},
+    "comp_6107": {"name": "FIFA World Cup"},
     # Americas
-    253: {"name": "MLS"},
-    71: {"name": "Serie A (Brazil)"},
-    128: {"name": "Liga Profesional Argentina"},
-    239: {"name": "Primera A (Colombia)"},
-    262: {"name": "Liga MX"},
+    "comp_9799": {"name": "MLS"},
+    "comp_4795": {"name": "Brasileirão Série A"},
+    "comp_5242": {"name": "Copa do Brasil"},
     # Other
-    333: {"name": "Premier League (Ukraine)"},
-    283: {"name": "Liga I (Romania)"},
-    286: {"name": "Super Liga (Serbia)"},
-    271: {"name": "NB I (Hungary)"},
+    "comp_8363": {"name": "Ukrainian Premier League"},
+    "comp_9639": {"name": "Romanian Super Liga"},
+    "comp_5824": {"name": "Russian Premier League"},
 }
 
 MODEL_FILE = 'ultimate_combined_model.pkl'
@@ -50,7 +57,7 @@ def generate_report(predictions):
     """Prints a beautiful summary report for today's predictions"""
     print("\n" + "="*70)
     print(f"TODAY'S PREDICTIONS - {datetime.now().strftime('%A, %d %B %Y')}")
-    print("   Powered by API-Football + Your Trained ML Model")
+    print("   Powered by TheStatsAPI + Your Trained ML Model")
     print("="*70)
     
     if not predictions:
@@ -78,7 +85,7 @@ def generate_report(predictions):
         implied_home = 1 / odds['home'] if odds['home'] else 0
         value_edge = probs[1] - implied_home
         
-        print(f"\n   LIVE ODDS (Best Available):")
+        print(f"\n   LIVE ODDS (Bet365):")
         print(f"      {p['home_team']}: {odds['home']:.2f} | Draw: {odds['draw']:.2f} | {p['away_team']}: {odds['away']:.2f}")
         
         if value_edge > 0.05:
@@ -99,7 +106,7 @@ def main():
     print("Starting Daily Predictions Engine...")
     
     # 1. Initialize Clients
-    api_football = APIFootballClient()
+    api_client = APIFootballClient()
     feature_builder = FeatureBuilderLive(MODEL_FILE)
     
     # 2. Load ML Model
@@ -112,7 +119,7 @@ def main():
     
     # 3. Fetch Today's Fixtures
     print(f"Fetching fixtures for {len(LEAGUES)} leagues...")
-    fixtures = api_football.get_todays_fixtures(leagues=list(LEAGUES.keys()))
+    fixtures = api_client.get_todays_fixtures(leagues=list(LEAGUES.keys()))
     
     if not fixtures:
         print("No fixtures found for today in the configured leagues.")
@@ -123,20 +130,20 @@ def main():
     all_predictions = []
     
     for fixture in fixtures:
-        home_team = fixture['teams']['home']
-        away_team = fixture['teams']['away']
-        league_name = fixture['league']['name']
-        fixture_id = fixture['fixture']['id']
-        kickoff_time = datetime.fromisoformat(fixture['fixture']['date'].replace('Z', '+00:00')).strftime('%H:%M')
+        home_team = fixture['home_team']
+        away_team = fixture['away_team']
+        league_name = fixture.get('competition_name', LEAGUES.get(fixture['competition_id'], {}).get('name', 'Unknown'))
+        fixture_id = fixture['id']
+        kickoff_time = datetime.fromisoformat(fixture['utc_date'].replace('Z', '+00:00')).strftime('%H:%M')
         
         print(f"  Processing: {home_team['name']} vs {away_team['name']} ({league_name})")
         
         # 4. Fetch Team Form (last 6 matches)
-        home_matches = api_football.get_team_last_matches(home_team['id'])
-        away_matches = api_football.get_team_last_matches(away_team['id'])
+        home_matches = api_client.get_team_last_matches(home_team['id'])
+        away_matches = api_client.get_team_last_matches(away_team['id'])
         
-        fixture_odds = api_football.get_fixture_odds(fixture_id)
-        odds = api_football.extract_match_winner_odds(fixture_odds)
+        fixture_odds = api_client.get_fixture_odds(fixture_id)
+        odds = api_client.extract_match_winner_odds(fixture_odds)
 
         if not odds or odds['home'] == 0:
             odds = {'home': 2.1, 'draw': 3.4, 'away': 3.8}
