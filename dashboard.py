@@ -233,8 +233,13 @@ with st.spinner("Loading predictions."):
     all_games = get_all_predictions(st.session_state.day, target_date)
 
 if not all_games:
-    day_label = {'today':'today','tomorrow':'tomorrow','live':'live right now'}.get(st.session_state.day,'')
-    st.html(f"<div class='cat-empty' style='padding:60px 20px;text-align:center;color:var(--ink-3);'>No games found {day_label}. Try selecting another day or checking back later.</div>")
+    st.markdown(
+        f"<div style='text-align:center; padding:40px; color:var(--text-muted);'>"
+        f"No games found {st.session_state.day}. "
+        f"(Debug: Target={target_date}, Total in cache={len(cached_upcoming())})<br>"
+        f"Try selecting another day or checking back later.</div>",
+        unsafe_allow_html=True
+    )
     all_games = []
 
 # ─── Game card renderer ───────────────────────────────────────────────────────
