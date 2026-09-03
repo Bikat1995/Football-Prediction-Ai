@@ -102,9 +102,37 @@ def index():
             
         context['grouped_games'] = grouped
         context['has_games'] = len(games) > 0
-        
+
     return render_template('index.html', **context)
+
+@app.route('/debug')
+def debug():
+    from live_data_fetcher import _headers, get_upcoming_fixtures
+    import requests as req
+    key = os.getenv('THESTATSAPI_KEY', '')
+    today_str, _ = get_client_dates()
+    info = {
+        'api_key_set': bool(key),
+        'api_key_prefix': key[:8] + '...' if key else 'MISSING',
+        'today': today_str,
+        'logo_loaded': bool(LOGO_B64),
+    }
+    try:
+        all_f = get_upcoming_fixtures(leagues=LEAGUES)
+        info['total_fixtures_fetched'] = len(all_f)
+        info['fixtures_today'] = len([f for f in all_f if f.get('utc_date','')[:10] == today_str])
+        if all_f:
+            info['sample_fixture'] = {
+                'id': all_f[0].get('id'),
+                'home': all_f[0].get('home_team',{}).get('name'),
+                'away': all_f[0].get('away_team',{}).get('name'),
+                'utc_date': all_f[0].get('utc_date'),
+            }
+    except Exception as e:
+        info['fetch_error'] = str(e)
+    return info
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8501))
+
     app.run(host='0.0.0.0', port=port)
