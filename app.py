@@ -25,8 +25,21 @@ for _logo_name in ['Better-logo.png', 'logo.png', 'Logo.png']:
 
 form_cache = TTLCache(maxsize=500, ttl=3600)
 
-from predict_today import LEAGUES as PT_LEAGUES
-LEAGUES = list(PT_LEAGUES.keys())
+from live_data_fetcher import _get
+
+@cached(TTLCache(maxsize=1, ttl=86400))
+def get_dynamic_leagues():
+    """Dynamically fetch all competitions that are 'league' type and have team stats."""
+    comps = []
+    page = 1
+    while True:
+        res = _get('competitions', {'limit': 100, 'page': page}, ttl=86400)
+        if not res or 'data' not in res: break
+        comps.extend(res['data'])
+        if page >= res.get('meta', {}).get('total_pages', 1): break
+        page += 1
+    
+    return [c['id'] for c in comps if c.get('type') == 'league' and c.get('has_team_stats') == True]
 
 @cached(form_cache)
 def cached_team_form(team_id):
@@ -42,11 +55,14 @@ def get_client_dates():
 def get_predictions(day_key):
     today_str, tomorrow_str = get_client_dates()
     target_date = today_str if day_key == 'today' else tomorrow_str
+    
+    dyn_leagues = get_dynamic_leagues()
+    
     try:
         if day_key == 'live':
-            fixtures = get_live_fixtures(leagues=LEAGUES)
+            fixtures = get_live_fixtures(leagues=dyn_leagues)
         else:
-            all_f = get_upcoming_fixtures(leagues=LEAGUES)
+            all_f = get_upcoming_fixtures(leagues=dyn_leagues)
             fixtures = [f for f in all_f if f.get('utc_date', '')[:10] == target_date]
     except Exception as e:
         print(f"[ERROR] Fetching fixtures: {e}")
@@ -114,7 +130,9 @@ def debug():
         'logo_loaded': bool(LOGO_B64),
     }
     try:
-        all_f = get_upcoming_fixtures(leagues=LEAGUES)
+        dyn_leagues = get_dynamic_leagues()
+        info['dynamic_leagues_count'] = len(dyn_leagues)
+        all_f = get_upcoming_fixtures(leagues=dyn_leagues)
         info['total_fixtures_fetched'] = len(all_f)
         info['fixtures_today'] = len([f for f in all_f if f.get('utc_date','')[:10] == today_str])
         if all_f:
