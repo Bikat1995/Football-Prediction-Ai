@@ -1,9 +1,8 @@
-﻿services:
+services:
   - type: web
     name: better-predictions
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run dashboard.py --server.port $PORT --server.address 0.0.0.0 --server.enableCORS false
-    envVars:
+    startCommand: gunicorn app:app --bind 0.0.0.0:    envVars:
       - key: THESTATSAPI_KEY
         sync: false

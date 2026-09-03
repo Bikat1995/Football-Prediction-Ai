@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better - AI Football Predictions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main">
+        <div class="block-container">
+            
+            <!-- Navbar -->
+            <nav class="navbar">
+              <div class="navbar-brand">
+                {% if logo_b64 %}
+                <img src="data:image/png;base64,{{ logo_b64 }}" height="34" style="border-radius:4px;margin-right:10px;">
+                {% endif %}
+                <div>
+                  <div class="brand-name">better</div>
+                  <div class="brand-sub">AI Football Predictions</div>
+                </div>
+              </div>
+
+              <!-- Desktop nav tabs -->
+              <div class="navbar-tabs">
+                <a href="/?nav=today" class="nav-btn {% if day == 'today' %}nav-btn--active{% endif %}">TODAY</a>
+                <a href="/?nav=tomorrow" class="nav-btn {% if day == 'tomorrow' %}nav-btn--active{% endif %}">TOMORROW</a>
+                <a href="/?nav=live" class="nav-btn {% if day == 'live' %}nav-btn--active{% endif %}">LIVE</a>
+                <a href="/?nav=past" class="nav-btn {% if day == 'past' %}nav-btn--active{% endif %}">PAST RESULTS</a>
+              </div>
+
+              <!-- Desktop clock -->
+              <div class="navbar-clock">Auto-refreshes every 5 min &nbsp;&middot;&nbsp; {{ utc_time }}</div>
+
+              <!-- Hamburger -->
+              <button class="hamburger" onclick="var m=document.getElementById('mob-menu');m.style.display=m.style.display==='flex'?'none':'flex'">
+                <span></span><span></span><span></span>
+              </button>
+            </nav>
+
+            <!-- Mobile menu -->
+            <div id="mob-menu" class="mob-menu" style="display:none;">
+                <a href="/?nav=today" class="mob-nav-item {% if day == 'today' %}mob-nav-item--active{% endif %}">TODAY</a>
+                <a href="/?nav=tomorrow" class="mob-nav-item {% if day == 'tomorrow' %}mob-nav-item--active{% endif %}">TOMORROW</a>
+                <a href="/?nav=live" class="mob-nav-item {% if day == 'live' %}mob-nav-item--active{% endif %}">LIVE</a>
+                <a href="/?nav=past" class="mob-nav-item {% if day == 'past' %}mob-nav-item--active{% endif %}">PAST RESULTS</a>
+                <div class="mob-clock">Auto-refreshes every 5 min &middot; {{ utc_time }}</div>
+            </div>
+
+            <!-- Content -->
+            {% if day == 'past' %}
+                <div class="section-label" style="margin-top:0;">Recent Model Performance</div>
+                {% if past_results %}
+                    {% for p in past_results %}
+                        {% set bg = '#10b98120' if p.correct else '#ef444420' %}
+                        {% set border = '#10b981' if p.correct else '#ef4444' %}
+                        {% set icon = '✅ Right' if p.correct else '❌ Wrong' %}
+                        <div style="background:{{ bg }}; border:1px solid {{ border }}; border-radius:6px; padding:16px; margin-bottom:10px;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                                <span style="font-size:11px;color:var(--ink-2);letter-spacing:.05em;">{{ p.date }} &middot; {{ p.league }}</span>
+                                <span style="font-family:var(--f-ui);font-weight:700;font-size:12px;color:{{ border }};">{{ icon }}</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <div>
+                                    <div style="font-size:16px;font-weight:700;color:var(--ink-1);">{{ p.home }} <span style="color:var(--c-home);font-family:var(--f-data);margin:0 8px;">{{ p.score }}</span> {{ p.away }}</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div style="font-size:10px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;">AI Pick</div>
+                                    <div style="font-size:14px;font-weight:700;color:var(--ink-1);">{{ p.ai_pick | upper }} ({{ p.ai_prob }}%)</div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div style="color:var(--ink-3);">No past predictions logged yet.</div>
+                {% endif %}
+            {% else %}
+                {% if not has_games %}
+                    <div class="cat-empty" style="padding:60px 20px;text-align:center;color:var(--ink-3);">
+                        No games found {{ day }}. Try selecting another day or checking back later.
+                    </div>
+                {% else %}
+                    {% for league, games in grouped_games.items() %}
+                        <div class="section-label">{{ league }}</div>
+                        {% for game in games %}
+                            <!-- Game Card -->
+                            <details class="game-card" style="background:var(--bg-1);border:1px solid var(--line);border-radius:6px;margin-bottom:8px;overflow:hidden;">
+                                <summary style="padding:14px 18px;font-family:var(--f-ui);font-size:13.5px;font-weight:600;color:var(--ink-1);cursor:pointer;list-style:none;">
+                                    {{ game.fixture.home_team.name }} vs {{ game.fixture.away_team.name }}
+                                    <span style="color:var(--ink-3);font-size:11px;font-weight:400;margin-left:8px;">
+                                        {{ game.fixture.utc_date[11:16] }}
+                                    </span>
+                                </summary>
+                                <div style="padding: 0 18px 18px 18px;border-top:1px solid var(--line);">
+                                    
+                                    <div class="stHorizontalBlock" style="display:flex;gap:16px;margin-top:16px;">
+                                        <!-- Teams -->
+                                        <div style="flex:1;min-width:140px;">
+                                            <div style="font-size:18px;font-weight:800;font-family:var(--f-brand);margin-bottom:12px;line-height:1.2;">
+                                                <div style="color:var(--c-home);">{{ game.fixture.home_team.name }}</div>
+                                                <div style="color:var(--ink-3);font-size:14px;margin:4px 0;">VS</div>
+                                                <div style="color:var(--c-away);">{{ game.fixture.away_team.name }}</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- AI Pick -->
+                                        <div style="flex:1;min-width:140px;">
+                                            <div style="background:var(--bg-2);border:1px solid var(--line);border-radius:6px;padding:12px;">
+                                                <div style="font-family:var(--f-ui);font-size:10px;font-weight:700;color:var(--ink-3);margin-bottom:8px;">PRIMARY SAFE PICK</div>
+                                                <div style="font-family:var(--f-data);font-size:18px;font-weight:600;color:var(--c-yes);">{{ game.poisson.primary_pick }}</div>
+                                                <div style="font-family:var(--f-ui);font-size:10px;color:var(--ink-3);margin-top:8px;">Confidence: {{ game.poisson.primary_prob }}%</div>
+                                                <div style="font-family:var(--f-ui);font-size:10px;color:var(--ink-3);margin-top:8px;font-style:italic;">{{ game.poisson.reasoning }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </details>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
+            
+        </div>
+    </div>
+</body>
+</html>

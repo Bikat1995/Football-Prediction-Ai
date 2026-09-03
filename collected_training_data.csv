@@ -1,0 +1,1019 @@
+Match_ID,Date,Competition_ID,Home_ID,Home_Name,Away_ID,Away_Name,Home_Goals,Away_Goals,Winner
+mt_644018124,2026-08-23,comp_3039,tm_1552,Brighton & Hove Albion,tm_1002,Aston Villa,4,0,home
+mt_644942623,2026-08-12,comp_4811,tm_01119,Paris Saint-Germain,tm_1002,Aston Villa,2,1,home
+mt_252066552,2026-05-24,comp_3039,tm_3039,Manchester City,tm_1002,Aston Villa,1,2,away
+mt_642459643,2026-05-20,comp_7739,tm_89592,SC Freiburg,tm_1002,Aston Villa,0,3,away
+mt_838955483,2026-05-15,comp_3039,tm_1002,Aston Villa,tm_0406,Liverpool,4,2,home
+mt_747399273,2026-05-10,comp_3039,tm_6573,Burnley,tm_1002,Aston Villa,2,2,draw
+mt_460618466,2026-05-07,comp_7739,tm_1002,Aston Villa,tm_0836,Nottingham Forest,4,0,home
+mt_363788030,2026-05-03,comp_3039,tm_1002,Aston Villa,tm_5130,Tottenham Hotspur,1,2,away
+mt_511976728,2026-08-30,comp_3039,tm_4643,Manchester United,tm_9825,Ipswich Town,5,2,home
+mt_644018195,2026-08-30,comp_3039,tm_0256,Leeds United,tm_1662,Brentford,1,1,draw
+mt_466259577,2026-08-30,comp_3039,tm_2674,Sunderland,tm_5290,Fulham,1,0,home
+mt_733621236,2026-08-30,comp_3039,tm_8531,Chelsea,tm_1552,Brighton & Hove Albion,4,3,home
+mt_899822853,2026-08-30,comp_8814,tm_20116,Celta Vigo,tm_46224,Athletic Club,0,2,away
+mt_200233250,2026-08-30,comp_8814,tm_98394,Deportivo La Coruña,tm_89783,Valencia,3,1,home
+mt_988900914,2026-08-30,comp_8814,tm_73673,Real Madrid,tm_15810,Málaga,4,0,home
+mt_733746433,2026-08-30,comp_4643,tm_15641,FC Augsburg,tm_15093,FC Schalke 04,3,0,home
+mt_733746444,2026-08-30,comp_4643,tm_89592,SC Freiburg,tm_02413,SV Werder Bremen,4,1,home
+mt_988230308,2026-08-30,comp_5840,tm_73052,Cagliari,tm_37262,Inter,0,1,away
+mt_200713135,2026-08-30,comp_5840,tm_73047,Lazio,tm_51322,Genoa,1,0,home
+mt_377145453,2026-08-30,comp_5840,tm_02943,Napoli,tm_02924,Como,1,2,away
+mt_511386125,2026-08-30,comp_0256,tm_58813,AS Monaco,tm_25550,Olympique de Marseille,2,0,home
+mt_466109685,2026-08-30,comp_0256,tm_83353,Stade Rennais,tm_97723,Le Mans,3,2,home
+mt_022917237,2026-08-30,comp_0256,tm_11910,Paris FC,tm_25567,Nice,3,0,home
+mt_644694200,2026-08-30,comp_8385,tm_216266,Famalicão,tm_10330,Gil Vicente,0,0,draw
+mt_466486021,2026-08-30,comp_8385,tm_487248,Casa Pia,tm_04880,Moreirense,0,1,away
+mt_377317643,2026-08-30,comp_8385,tm_52779,CD Nacional,tm_47570,CF Estrela Amadora,2,3,away
+mt_155791518,2026-08-30,comp_3809,tm_10474,SC Cambuur,tm_47976,FC Twente,1,4,away
+mt_899638980,2026-08-30,comp_3809,tm_91047,SC Telstar,tm_52627,AFC Ajax,0,4,away
+mt_377263738,2026-08-30,comp_3809,tm_79196,Feyenoord,tm_63899,ADO Den Haag,2,2,draw
+mt_644526464,2026-08-30,comp_3809,tm_26373,Willem II Tilburg,tm_04732,SC Heerenveen,2,2,draw
+mt_466104640,2026-08-30,comp_3809,tm_85290,FC Utrecht,tm_91010,PSV Eindhoven,1,6,away
+mt_511969435,2026-08-30,comp_6387,tm_37653,Dundee FC,tm_02173,Hibernian,1,2,away
+mt_200131639,2026-08-30,comp_6387,tm_73422,St. Mirren,tm_64165,Motherwell,3,3,draw
+mt_155848676,2026-08-30,comp_6387,tm_46091,Aberdeen,tm_20535,Rangers,0,1,away
+mt_466286125,2026-08-30,comp_4893,tm_62024,Red Bull Salzburg,tm_51679,Austria Wien,4,1,home
+mt_511941335,2026-08-30,comp_4893,tm_40288,TSV Hartberg,tm_74640,SV Ried,3,2,home
+mt_155865776,2026-08-30,comp_4893,tm_40266,SK Rapid Wien,tm_25152,SK Sturm Graz,3,1,home
+mt_517295622,2026-08-30,comp_9799,tm_5357142,St.Louis City,tm_98106,FC Dallas,3,3,draw
+mt_370843583,2026-08-30,comp_9799,tm_02201,Columbus Crew,tm_20633,New England Revolution,1,3,away
+mt_732967152,2026-08-30,comp_9799,tm_29289308,San Diego FC,tm_51268,LA Galaxy,3,1,home
+mt_641306830,2026-08-30,comp_9799,tm_377026,Portland Timbers,tm_5314216,Austin FC,1,2,away
+mt_986139021,2026-08-30,comp_9799,tm_15511,Colorado Rapids,tm_59611,Real Salt Lake,1,0,home
+mt_641306896,2026-08-30,comp_9799,tm_73376,Sporting Kansas City,tm_155376,Vancouver Whitecaps,0,3,away
+mt_028450739,2026-08-30,comp_9799,tm_869273,Minnesota United,tm_343130,Orlando City SC,3,3,draw
+mt_894578202,2026-08-30,comp_9799,tm_89986,Houston Dynamo,tm_460479,San Jose Earthquakes,0,0,draw
+mt_641306845,2026-08-30,comp_9799,tm_9241601,Nashville SC,tm_3714078,FC Cincinnati,4,0,home
+mt_894624426,2026-08-30,comp_4795,tm_40150,Bahia,tm_62523,Internacional,3,2,home
+mt_465195940,2026-08-30,comp_4795,tm_66113,Grêmio,tm_460410,Chapecoense,3,1,home
+mt_732012165,2026-08-30,comp_4795,tm_988681,Mirassol,tm_58387,Palmeiras,1,1,draw
+mt_986406600,2026-08-30,comp_4795,tm_22917,Flamengo,tm_83640,Botafogo,3,0,home
+mt_370250538,2026-08-30,comp_4795,tm_36208,Corinthians,tm_83636,Santos,0,1,away
+mt_517367767,2026-08-30,comp_4795,tm_36261,Athletico,tm_25892,Fluminense,3,3,draw
+mt_986406039,2026-08-30,comp_4795,tm_01922,Vasco da Gama,tm_01988,Cruzeiro,3,1,home
+mt_377431621,2026-08-30,comp_8363,tm_3847085,LNZ Cherkasy,tm_5114137,Veres Rivne,0,1,away
+mt_022503191,2026-08-30,comp_8363,tm_10088,Chornomorets Odesa,tm_8587932,FC Kryvbas Kryvyi Rih,1,0,home
+mt_466225221,2026-08-30,comp_9639,tm_26681,FCSB,tm_3780212,UTA Arad,1,3,away
+mt_377440443,2026-08-30,comp_9639,tm_04497,FC Farul Constanța,tm_897249,FC Botoșani,0,0,draw
+mt_466285052,2026-08-30,comp_5824,tm_51798,Rubin Kazan,tm_6511948,Dinamo Makhachkala,3,1,home
+mt_899704342,2026-08-30,comp_5824,tm_51737,FC Spartak Moscow,tm_896267,Orenburg,1,1,draw
+mt_022538189,2026-08-30,comp_5824,tm_7592579,Rodina Moscow,tm_300646,Baltika Kaliningrad,0,3,away
+mt_511976372,2026-08-21,comp_3039,tm_9145,Arsenal,tm_2954,Coventry City,3,0,home
+mt_377108144,2026-08-16,comp_6323,tm_9145,Arsenal,tm_3039,Manchester City,3,0,home
+mt_642459639,2026-05-30,comp_3498,tm_01119,Paris Saint-Germain,tm_9145,Arsenal,1,1,home
+mt_585122817,2026-05-24,comp_3039,tm_3498,Crystal Palace,tm_9145,Arsenal,1,2,away
+mt_191500937,2026-05-18,comp_3039,tm_9145,Arsenal,tm_6573,Burnley,1,0,home
+mt_979811703,2026-05-10,comp_3039,tm_3809,West Ham United,tm_9145,Arsenal,0,1,away
+mt_460618477,2026-05-05,comp_3498,tm_9145,Arsenal,tm_64681,Atlético Madrid,1,0,home
+mt_252066927,2026-05-02,comp_3039,tm_9145,Arsenal,tm_5290,Fulham,3,0,home
+mt_733716922,2026-08-27,comp_8814,tm_37445,Barcelona,tm_46224,Athletic Club,2,0,home
+mt_200233267,2026-08-23,comp_8814,tm_64612,Elche,tm_37445,Barcelona,0,5,away
+mt_747995447,2026-05-23,comp_8814,tm_89783,Valencia,tm_37445,Barcelona,3,1,home
+mt_626339140,2026-05-17,comp_8814,tm_37445,Barcelona,tm_64056,Real Betis,3,1,home
+mt_585224649,2026-05-13,comp_8814,tm_46488,Deportivo Alavés,tm_37445,Barcelona,1,0,home
+mt_979112067,2026-05-10,comp_8814,tm_37445,Barcelona,tm_73673,Real Madrid,2,0,home
+mt_404777402,2026-05-02,comp_8814,tm_15885,Osasuna,tm_37445,Barcelona,1,2,away
+mt_404777809,2026-04-25,comp_8814,tm_73740,Getafe,tm_37445,Barcelona,0,2,away
+mt_988900971,2026-08-20,comp_8814,tm_89774,Rayo Vallecano,tm_46488,Deportivo Alavés,1,1,draw
+mt_988903108,2026-08-15,comp_8814,tm_51959,Sevilla,tm_89774,Rayo Vallecano,2,1,home
+mt_734305701,2026-05-27,comp_408698,tm_3498,Crystal Palace,tm_89774,Rayo Vallecano,1,0,home
+mt_626339162,2026-05-23,comp_8814,tm_46488,Deportivo Alavés,tm_89774,Rayo Vallecano,1,2,away
+mt_979112622,2026-05-17,comp_8814,tm_89774,Rayo Vallecano,tm_73664,Villarreal,2,0,home
+mt_747995216,2026-05-14,comp_8814,tm_89783,Valencia,tm_89774,Rayo Vallecano,1,1,draw
+mt_838550203,2026-05-11,comp_8814,tm_89774,Rayo Vallecano,tm_029137,Girona FC,1,1,draw
+mt_893960808,2026-05-07,comp_408698,tm_74493,RC Strasbourg,tm_89774,Rayo Vallecano,0,1,away
+mt_981230632,2026-08-27,comp_8814,tm_20116,Celta Vigo,tm_15885,Osasuna,1,2,away
+mt_644688626,2026-08-24,comp_8814,tm_15885,Osasuna,tm_73725,Levante UD,0,0,draw
+mt_585224877,2026-05-23,comp_8814,tm_73740,Getafe,tm_15885,Osasuna,1,0,home
+mt_626339101,2026-05-17,comp_8814,tm_15885,Osasuna,tm_02599,Espanyol,1,2,away
+mt_010443871,2026-05-12,comp_8814,tm_15885,Osasuna,tm_64681,Atlético Madrid,1,2,away
+mt_838550248,2026-05-08,comp_8814,tm_73725,Levante UD,tm_15885,Osasuna,3,2,home
+mt_252666736,2026-04-26,comp_8814,tm_15885,Osasuna,tm_51959,Sevilla,2,1,home
+mt_206632628,2026-08-27,comp_408698,tm_93021,FK Partizan,tm_73740,Getafe,2,1,home
+mt_155144155,2026-08-23,comp_8814,tm_73740,Getafe,tm_46499,Racing de Santander,1,0,home
+mt_150517360,2026-08-20,comp_408698,tm_73740,Getafe,tm_93021,FK Partizan,3,1,home
+mt_377354734,2026-08-15,comp_8814,tm_46488,Deportivo Alavés,tm_73740,Getafe,3,0,home
+mt_252667960,2026-05-17,comp_8814,tm_64612,Elche,tm_73740,Getafe,1,0,home
+mt_838550275,2026-05-13,comp_8814,tm_73740,Getafe,tm_64068,Mallorca,3,1,home
+mt_979112012,2026-05-10,comp_8814,tm_20291,Real Oviedo,tm_73740,Getafe,0,0,draw
+mt_895528573,2026-08-27,comp_408698,tm_60499,Hapoel Tel Aviv,tm_64513,Atalanta,0,1,away
+mt_200781991,2026-08-23,comp_5840,tm_64513,Atalanta,tm_51921,Sassuolo,2,1,home
+mt_739370253,2026-08-20,comp_408698,tm_64513,Atalanta,tm_60499,Hapoel Tel Aviv,0,0,draw
+mt_191978469,2026-05-22,comp_5840,tm_51388,Fiorentina,tm_64513,Atalanta,1,1,draw
+mt_838367237,2026-05-17,comp_5840,tm_64513,Atalanta,tm_46156,Bologna,0,1,away
+mt_626250808,2026-05-10,comp_5840,tm_98476,Milan,tm_64513,Atalanta,2,3,away
+mt_585839644,2026-05-02,comp_5840,tm_64513,Atalanta,tm_51322,Genoa,0,0,draw
+mt_252581328,2026-04-27,comp_5840,tm_73052,Cagliari,tm_64513,Atalanta,3,2,home
+mt_739375452,2026-08-27,comp_7739,tm_7937035,FC Ararat-Armenia,tm_5753193,Universitatea Craiova,1,0,home
+mt_200119115,2026-08-23,comp_9639,tm_5753193,Universitatea Craiova,tm_411160,FC Voluntari,3,1,home
+mt_024203124,2026-08-20,comp_7739,tm_5753193,Universitatea Craiova,tm_7937035,FC Ararat-Armenia,1,1,draw
+mt_022558594,2026-08-16,comp_9639,tm_26678,SC Oțelul Galați,tm_5753193,Universitatea Craiova,1,1,draw
+mt_378024478,2026-08-13,comp_7739,tm_5753193,Universitatea Craiova,tm_02792,KuPS,2,1,home
+mt_377440412,2026-08-09,comp_9639,tm_5753193,Universitatea Craiova,tm_2928016,FC Argeș Pitești,0,1,away
+mt_512739916,2026-08-06,comp_7739,tm_02792,KuPS,tm_5753193,Universitatea Craiova,1,1,draw
+mt_200119102,2026-08-01,comp_9639,tm_5753193,Universitatea Craiova,tm_646316,FC Petrolul Ploieşti,4,0,home
+mt_155869055,2026-08-29,comp_8321,tm_5104,Wolverhampton,tm_7348,Stoke City,4,1,home
+mt_024341559,2026-08-25,comp_2504,tm_7348,Stoke City,tm_6115,Hull City,1,1,away
+mt_022531202,2026-08-22,comp_8321,tm_4893,Southampton,tm_7348,Stoke City,3,1,home
+mt_200175082,2026-08-15,comp_8321,tm_7348,Stoke City,tm_0016,Swansea City,1,2,away
+mt_988321378,2026-08-08,comp_2504,tm_7348,Stoke City,tm_4203,Oldham Athletic,2,0,home
+mt_363853275,2026-05-02,comp_8321,tm_8651,Bristol City,tm_7348,Stoke City,2,0,home
+mt_404794198,2026-04-25,comp_8321,tm_7348,Stoke City,tm_9756,Portsmouth,1,3,away
+mt_252632839,2026-04-21,comp_8321,tm_7348,Stoke City,tm_4023,Millwall,1,3,away
+mt_512428994,2026-08-25,comp_2504,tm_9685,Sheffield Wednesday,tm_5104,Wolverhampton,0,2,away
+mt_988327896,2026-08-22,comp_8321,tm_2504,Preston North End,tm_5104,Wolverhampton,1,3,away
+mt_511948136,2026-08-14,comp_8321,tm_5104,Wolverhampton,tm_6917,Blackburn Rovers,2,2,draw
+mt_899705792,2026-08-07,comp_2504,tm_5104,Wolverhampton,tm_4153,Port Vale,3,0,home
+mt_191500998,2026-05-24,comp_3039,tm_6573,Burnley,tm_5104,Wolverhampton,1,1,draw
+mt_838955330,2026-05-17,comp_3039,tm_5104,Wolverhampton,tm_5290,Fulham,1,1,draw
+mt_404677099,2026-05-09,comp_3039,tm_1552,Brighton & Hove Albion,tm_5104,Wolverhampton,3,0,home
+mt_466280702,2026-08-29,comp_8321,tm_3759,Derby County,tm_0016,Swansea City,0,3,away
+mt_466280647,2026-08-22,comp_8321,tm_0016,Swansea City,tm_4513,Sheffield United,0,0,draw
+mt_466287274,2026-08-08,comp_2504,tm_0016,Swansea City,tm_7218,Birmingham City,0,1,away
+mt_252632850,2026-05-02,comp_8321,tm_0016,Swansea City,tm_3169,Charlton Athletic,3,1,home
+mt_838528632,2026-04-25,comp_8321,tm_5188,Norwich City,tm_0016,Swansea City,1,1,draw
+mt_363853132,2026-04-21,comp_8321,tm_2949,Queens Park Rangers,tm_0016,Swansea City,1,2,away
+mt_404794826,2026-04-18,comp_8321,tm_0016,Swansea City,tm_4893,Southampton,1,2,away
+mt_733654934,2026-08-29,comp_8321,tm_0196,Watford,tm_3809,West Ham United,1,1,draw
+mt_378186435,2026-08-25,comp_2504,tm_0196,Watford,tm_0976,Peterborough United,1,5,away
+mt_733654942,2026-08-22,comp_8321,tm_0586,Wrexham,tm_0196,Watford,1,1,draw
+mt_511948197,2026-08-16,comp_8321,tm_0196,Watford,tm_4893,Southampton,2,1,home
+mt_981108343,2026-08-08,comp_2504,tm_0196,Watford,tm_41151,Crawley Town,1,0,home
+mt_979109471,2026-05-02,comp_8321,tm_0196,Watford,tm_2954,Coventry City,0,4,away
+mt_191041733,2026-04-25,comp_8321,tm_6387,Middlesbrough,tm_0196,Watford,5,1,home
+mt_191041744,2026-04-21,comp_8321,tm_8814,West Bromwich Albion,tm_0196,Watford,3,0,home
+mt_511948284,2026-08-29,comp_8321,tm_2814,Cardiff City,tm_4513,Sheffield United,2,2,draw
+mt_150609889,2026-08-25,comp_2504,tm_6917,Blackburn Rovers,tm_4513,Sheffield United,1,2,away
+mt_988327830,2026-08-15,comp_8321,tm_4513,Sheffield United,tm_7218,Birmingham City,0,0,draw
+mt_200176199,2026-08-09,comp_2504,tm_1882,Mansfield Town,tm_4513,Sheffield United,0,3,away
+mt_838528694,2026-05-02,comp_8321,tm_3759,Derby County,tm_4513,Sheffield United,1,2,away
+mt_363853254,2026-04-25,comp_8321,tm_4513,Sheffield United,tm_2504,Preston North End,2,3,away
+mt_747917021,2026-04-22,comp_8321,tm_4513,Sheffield United,tm_6917,Blackburn Rovers,1,3,away
+mt_200175650,2026-08-29,comp_8321,tm_4830,Bolton Wanderers,tm_9667,Lincoln City,0,1,away
+mt_511948158,2026-08-22,comp_8321,tm_2949,Queens Park Rangers,tm_4830,Bolton Wanderers,0,0,draw
+mt_466280610,2026-08-15,comp_8321,tm_4830,Bolton Wanderers,tm_2504,Preston North End,2,1,home
+mt_644093089,2026-08-08,comp_2504,tm_9685,Sheffield Wednesday,tm_4830,Bolton Wanderers,1,0,home
+mt_466769502,2026-05-24,comp_0196,tm_4830,Bolton Wanderers,tm_1332,Stockport County,4,1,home
+mt_644263553,2026-05-14,comp_0196,tm_9715,Bradford City,tm_4830,Bolton Wanderers,0,1,away
+mt_899383653,2026-05-09,comp_0196,tm_4830,Bolton Wanderers,tm_9715,Bradford City,1,0,home
+mt_838544666,2026-05-02,comp_0196,tm_4830,Bolton Wanderers,tm_9905,Luton Town,2,3,away
+mt_022531419,2026-08-29,comp_8321,tm_3169,Charlton Athletic,tm_2504,Preston North End,1,0,home
+mt_739594674,2026-08-26,comp_2504,tm_2504,Preston North End,tm_8091,Everton,0,4,away
+mt_511942982,2026-08-08,comp_2504,tm_2504,Preston North End,tm_7058,Huddersfield Town,1,1,home
+mt_585265384,2026-05-02,comp_8321,tm_2504,Preston North End,tm_4893,Southampton,1,3,away
+mt_585265361,2026-04-22,comp_8321,tm_7218,Birmingham City,tm_2504,Preston North End,2,1,home
+mt_988327171,2026-08-29,comp_8321,tm_8651,Bristol City,tm_9756,Portsmouth,2,1,home
+mt_377416741,2026-08-22,comp_8321,tm_7218,Birmingham City,tm_8651,Bristol City,2,2,draw
+mt_644092454,2026-08-15,comp_8321,tm_8651,Bristol City,tm_4023,Millwall,0,2,away
+mt_644093020,2026-08-06,comp_2504,tm_8651,Bristol City,tm_6267,Walsall,0,1,away
+mt_626386510,2026-04-25,comp_8321,tm_7218,Birmingham City,tm_8651,Bristol City,2,1,home
+mt_838528087,2026-04-21,comp_8321,tm_4893,Southampton,tm_8651,Bristol City,2,2,draw
+mt_191041681,2026-04-18,comp_8321,tm_8651,Bristol City,tm_5188,Norwich City,2,4,away
+mt_155869581,2026-08-22,comp_8321,tm_9667,Lincoln City,tm_9756,Portsmouth,1,3,away
+mt_155869578,2026-08-15,comp_8321,tm_9756,Portsmouth,tm_2949,Queens Park Rangers,1,3,away
+mt_200176166,2026-08-08,comp_2504,tm_3809,West Ham United,tm_9756,Portsmouth,3,1,home
+mt_191041799,2026-05-02,comp_8321,tm_9756,Portsmouth,tm_7218,Birmingham City,1,1,draw
+mt_626386969,2026-04-21,comp_8321,tm_2954,Coventry City,tm_9756,Portsmouth,5,1,home
+mt_363853141,2026-04-18,comp_8321,tm_9756,Portsmouth,tm_2064,Leicester City,1,0,home
+mt_733654366,2026-08-22,comp_8321,tm_3759,Derby County,tm_2814,Cardiff City,2,2,draw
+mt_377416728,2026-08-15,comp_8321,tm_3169,Charlton Athletic,tm_3759,Derby County,2,1,home
+mt_733659694,2026-08-08,comp_2504,tm_3759,Derby County,tm_9667,Lincoln City,1,2,away
+mt_252632895,2026-04-25,comp_8321,tm_2949,Queens Park Rangers,tm_3759,Derby County,2,3,away
+mt_747917577,2026-04-21,comp_8321,tm_5188,Norwich City,tm_3759,Derby County,2,1,home
+mt_979109296,2026-04-18,comp_8321,tm_3759,Derby County,tm_4558,Oxford United,1,0,home
+mt_512428932,2026-08-25,comp_2504,tm_3489,Blackpool,tm_9667,Lincoln City,1,4,away
+mt_899703960,2026-08-15,comp_8321,tm_6387,Middlesbrough,tm_9667,Lincoln City,2,1,home
+mt_979166474,2026-05-02,comp_0196,tm_4153,Port Vale,tm_9667,Lincoln City,0,2,away
+mt_585277447,2026-04-25,comp_0196,tm_9667,Lincoln City,tm_9495,Wycombe Wanderers,4,3,home
+mt_893739292,2026-04-21,comp_0196,tm_0872,Doncaster Rovers,tm_9667,Lincoln City,0,2,away
+mt_155869099,2026-08-29,comp_8321,tm_6917,Blackburn Rovers,tm_2949,Queens Park Rangers,1,2,away
+mt_899703976,2026-08-22,comp_8321,tm_6917,Blackburn Rovers,tm_6387,Middlesbrough,2,1,home
+mt_466287262,2026-08-08,comp_2504,tm_0830,Burton Albion,tm_6917,Blackburn Rovers,1,2,away
+mt_747917034,2026-05-02,comp_8321,tm_6917,Blackburn Rovers,tm_2064,Leicester City,0,1,away
+mt_979109230,2026-04-17,comp_8321,tm_6917,Blackburn Rovers,tm_2954,Coventry City,1,1,draw
+mt_200170888,2026-08-29,comp_4893,tm_97380,Grazer AK 1902,tm_62095,Wolfsberger AC,0,0,draw
+mt_200170866,2026-08-15,comp_4893,tm_97316,SC Austria Lustenau,tm_62095,Wolfsberger AC,2,1,home
+mt_899709654,2026-08-09,comp_4893,tm_62095,Wolfsberger AC,tm_62024,Red Bull Salzburg,1,1,draw
+mt_200170877,2026-08-02,comp_4893,tm_62095,Wolfsberger AC,tm_51679,Austria Wien,3,0,home
+mt_988177171,2026-05-19,comp_4893,tm_74640,SV Ried,tm_62095,Wolfsberger AC,2,1,home
+mt_734909970,2026-05-16,comp_4893,tm_62095,Wolfsberger AC,tm_42618,WSG Tirol,2,0,home
+mt_460717740,2026-05-09,comp_4893,tm_74640,SV Ried,tm_62095,Wolfsberger AC,0,1,away
+mt_987141139,2026-05-04,comp_4893,tm_65969,SC Rheindorf Altach,tm_62095,Wolfsberger AC,1,4,away
+mt_466259566,2026-08-31,comp_3039,tm_1002,Aston Villa,tm_9145,Arsenal,0,1,away
+mt_466499402,2026-08-31,comp_8814,tm_37445,Barcelona,tm_89774,Rayo Vallecano,5,2,home
+mt_022077040,2026-08-31,comp_8814,tm_15885,Osasuna,tm_73740,Getafe,1,0,home
+mt_155684843,2026-08-31,comp_5840,tm_64513,Atalanta,tm_46156,Bologna,1,0,home
+mt_644908080,2026-08-31,comp_5840,tm_73026,Lecce,tm_98487,Roma,0,4,away
+mt_733753349,2026-08-31,comp_8385,tm_63118,Benfica,tm_17364,Estoril Praia,2,1,home
+mt_022032153,2026-08-31,comp_8385,tm_79214,Sporting Braga,tm_79223,Vitória SC,1,0,home
+mt_377416880,2026-09-01,comp_8321,tm_7348,Stoke City,tm_5188,Norwich City,1,0,home
+mt_988327182,2026-09-01,comp_8321,tm_7218,Birmingham City,tm_4893,Southampton,1,1,draw
+mt_155865415,2026-09-01,comp_8321,tm_3809,West Ham United,tm_5104,Wolverhampton,4,2,home
+mt_899703553,2026-09-01,comp_8321,tm_0016,Swansea City,tm_0196,Watford,2,0,home
+mt_644092338,2026-09-01,comp_8321,tm_4513,Sheffield United,tm_4830,Bolton Wanderers,3,2,home
+mt_466280764,2026-09-01,comp_8321,tm_2504,Preston North End,tm_8651,Bristol City,1,3,away
+mt_022531425,2026-09-01,comp_8321,tm_9756,Portsmouth,tm_3759,Derby County,0,2,away
+mt_511948213,2026-09-01,comp_8321,tm_9667,Lincoln City,tm_6917,Blackburn Rovers,0,0,draw
+mt_643345882,2026-09-01,comp_4893,tm_62095,Wolfsberger AC,tm_83796,LASK,1,3,away
+mt_209839993,2026-08-31,comp_4795,tm_97432,Remo,tm_97417,Coritiba,2,3,away
+mt_200127572,2026-08-31,comp_8363,tm_659381,Bukovyna Chernivtsi,tm_47720,Dynamo Kyiv,3,0,home
+mt_155816968,2026-08-31,comp_8363,tm_3161303,Zoria Luhansk,tm_7990173,Metalist 1925,0,3,away
+mt_200119297,2026-08-31,comp_9639,tm_5466754,FC Rapid București,tm_5753193,Universitatea Craiova,1,1,draw
+mt_206723293,2026-08-27,comp_408698,tm_1552,Brighton & Hove Albion,tm_1135,Tromsø IL,4,0,home
+mt_206632686,2026-08-20,comp_408698,tm_1135,Tromsø IL,tm_1552,Brighton & Hove Albion,0,0,draw
+mt_747399440,2026-05-24,comp_3039,tm_1552,Brighton & Hove Albion,tm_4643,Manchester United,0,3,away
+mt_155794506,2026-08-28,comp_0256,tm_58884,Lille,tm_01119,Paris Saint-Germain,2,2,draw
+mt_466109840,2026-08-23,comp_0256,tm_83353,Stade Rennais,tm_01119,Paris Saint-Germain,2,2,draw
+mt_377128716,2026-08-16,comp_7920,tm_83394,RC Lens,tm_01119,Paris Saint-Germain,1,0,home
+mt_988360616,2026-08-28,comp_3039,tm_3498,Crystal Palace,tm_3039,Manchester City,1,4,away
+mt_511976717,2026-08-23,comp_3039,tm_3039,Manchester City,tm_1772,Bournemouth,2,1,home
+mt_626433281,2026-05-19,comp_3039,tm_1772,Bournemouth,tm_3039,Manchester City,1,1,draw
+mt_200170326,2026-09-02,comp_8321,tm_6573,Burnley,tm_6387,Middlesbrough,1,1,draw
+mt_022532705,2026-09-02,comp_8321,tm_8814,West Bromwich Albion,tm_3169,Charlton Athletic,1,1,draw
+mt_511941653,2026-09-02,comp_8321,tm_2949,Queens Park Rangers,tm_2814,Cardiff City,2,1,home
+mt_988328092,2026-09-02,comp_8321,tm_4023,Millwall,tm_0586,Wrexham,0,3,away
+mt_899727528,2026-09-02,comp_6387,tm_51874,Falkirk FC,tm_20535,Rangers,1,2,away
+mt_644080385,2026-09-02,comp_6387,tm_37034,Kilmarnock,tm_73422,St. Mirren,0,1,away
+mt_466292798,2026-09-02,comp_6387,tm_64165,Motherwell,tm_73411,Dundee United,3,0,home
+mt_511969261,2026-09-02,comp_6387,tm_98708,Celtic,tm_46091,Aberdeen,3,0,home
+mt_644080469,2026-09-02,comp_6387,tm_37653,Dundee FC,tm_89488,St. Johnstone,1,1,draw
+mt_206839025,2026-09-02,comp_4893,tm_62024,Red Bull Salzburg,tm_40266,SK Rapid Wien,5,1,home
+mt_981406898,2026-09-02,comp_4893,tm_51679,Austria Wien,tm_42618,WSG Tirol,0,1,away
+mt_155144100,2026-08-29,comp_8814,tm_02555,Real Sociedad,tm_02599,Espanyol,2,1,home
+mt_200231635,2026-08-26,comp_8814,tm_73673,Real Madrid,tm_02555,Real Sociedad,4,1,home
+mt_511566584,2026-08-21,comp_8814,tm_64056,Real Betis,tm_02555,Real Sociedad,1,0,home
+mt_747995410,2026-05-23,comp_8814,tm_02599,Espanyol,tm_02555,Real Sociedad,1,1,draw
+mt_363881020,2026-05-17,comp_8814,tm_02555,Real Sociedad,tm_89783,Valencia,3,4,away
+mt_010443708,2026-05-14,comp_8814,tm_029137,Girona FC,tm_02555,Real Sociedad,1,1,draw
+mt_585224614,2026-05-09,comp_8814,tm_02555,Real Sociedad,tm_64056,Real Betis,2,2,draw
+mt_626333652,2026-05-04,comp_8814,tm_51959,Sevilla,tm_02555,Real Sociedad,1,0,home
+mt_899822894,2026-08-22,comp_8814,tm_89783,Valencia,tm_20116,Celta Vigo,0,0,draw
+mt_404778090,2026-05-23,comp_8814,tm_20116,Celta Vigo,tm_51959,Sevilla,1,0,home
+mt_626339125,2026-05-17,comp_8814,tm_46224,Athletic Club,tm_20116,Celta Vigo,1,1,draw
+mt_585224635,2026-05-12,comp_8814,tm_20116,Celta Vigo,tm_73725,Levante UD,2,3,away
+mt_252667333,2026-05-09,comp_8814,tm_64681,Atlético Madrid,tm_20116,Celta Vigo,0,1,away
+mt_252666190,2026-05-03,comp_8814,tm_20116,Celta Vigo,tm_64612,Elche,3,1,home
+mt_733041399,2026-08-29,comp_0256,tm_40658,Stade Brestois,tm_25581,Toulouse,2,2,draw
+mt_644528431,2026-08-22,comp_0256,tm_25581,Toulouse,tm_74434,Olympique Lyonnais,0,2,away
+mt_404758244,2026-05-10,comp_0256,tm_25581,Toulouse,tm_74434,Olympique Lyonnais,2,1,home
+mt_838089798,2026-05-03,comp_0256,tm_74493,RC Strasbourg,tm_25581,Toulouse,1,2,away
+mt_252720109,2026-04-25,comp_0256,tm_25581,Toulouse,tm_58813,AS Monaco,2,2,draw
+mt_376871833,2026-04-21,comp_4750,tm_83394,RC Lens,tm_25581,Toulouse,4,1,home
+mt_747573626,2026-04-17,comp_0256,tm_83394,RC Lens,tm_25581,Toulouse,3,2,home
+mt_585451977,2026-04-12,comp_0256,tm_25581,Toulouse,tm_58884,Lille,0,4,away
+mt_899632993,2026-08-23,comp_0256,tm_01158,Angers,tm_58884,Lille,0,2,away
+mt_626312208,2026-05-17,comp_0256,tm_58884,Lille,tm_62226,Auxerre,0,2,away
+mt_252697237,2026-05-10,comp_0256,tm_58813,AS Monaco,tm_58884,Lille,0,1,away
+mt_363137474,2026-05-03,comp_0256,tm_58884,Lille,tm_97714,Le Havre,1,1,draw
+mt_838089737,2026-04-26,comp_0256,tm_11910,Paris FC,tm_58884,Lille,0,1,away
+mt_585451988,2026-04-18,comp_0256,tm_58884,Lille,tm_25567,Nice,0,0,draw
+mt_895082847,2026-08-27,comp_408698,tm_02173,Hibernian,tm_51594,KAA Gent,2,3,away
+mt_024470450,2026-08-20,comp_408698,tm_51594,KAA Gent,tm_02173,Hibernian,0,0,draw
+mt_643106330,2026-08-13,comp_408698,tm_59192,KF Shkëndija,tm_02173,Hibernian,0,0,draw
+mt_988303107,2026-08-09,comp_6387,tm_20535,Rangers,tm_02173,Hibernian,1,2,away
+mt_467524707,2026-08-06,comp_408698,tm_02173,Hibernian,tm_59192,KF Shkëndija,2,1,home
+mt_377454803,2026-08-02,comp_6387,tm_02173,Hibernian,tm_64165,Motherwell,1,2,away
+mt_022058779,2026-07-30,comp_408698,tm_02173,Hibernian,tm_0343447,FC Malisheva,4,1,home
+mt_200131722,2026-08-29,comp_6387,tm_51862,Heart of Midlothian,tm_89488,St. Johnstone,2,1,home
+mt_895008066,2026-08-26,comp_408698,tm_40266,SK Rapid Wien,tm_51862,Heart of Midlothian,1,1,away
+mt_739917904,2026-08-20,comp_408698,tm_51862,Heart of Midlothian,tm_40266,SK Rapid Wien,2,2,draw
+mt_739264576,2026-08-13,comp_7739,tm_51862,Heart of Midlothian,tm_63118,Benfica,1,1,draw
+mt_022575425,2026-08-09,comp_6387,tm_51862,Heart of Midlothian,tm_73411,Dundee United,4,0,home
+mt_895473086,2026-08-06,comp_7739,tm_63118,Benfica,tm_51862,Heart of Midlothian,6,1,home
+mt_155848044,2026-08-01,comp_6387,tm_46091,Aberdeen,tm_51862,Heart of Midlothian,2,1,home
+mt_200823527,2026-07-28,comp_3498,tm_51862,Heart of Midlothian,tm_25152,SK Sturm Graz,0,2,away
+mt_981301049,2026-09-02,comp_4795,tm_22917,Flamengo,tm_988681,Mirassol,2,0,home
+mt_150658111,2026-09-02,comp_5242,tm_36272,Atlético Mineiro,tm_01988,Cruzeiro,2,1,home
+mt_467862446,2026-08-27,comp_5242,tm_62523,Internacional,tm_66113,Grêmio,0,0,draw
+mt_641581802,2026-08-23,comp_4795,tm_74002,Red Bull Bragantino,tm_66113,Grêmio,1,0,home
+mt_209839388,2026-08-16,comp_4795,tm_36272,Atlético Mineiro,tm_66113,Grêmio,3,0,home
+mt_986406012,2026-08-08,comp_4795,tm_66113,Grêmio,tm_25869,São Paulo,2,1,home
+mt_466896611,2026-08-05,comp_5242,tm_66113,Grêmio,tm_988681,Mirassol,1,0,home
+mt_899029972,2026-08-02,comp_5242,tm_988681,Mirassol,tm_66113,Grêmio,1,1,draw
+mt_511475168,2026-07-30,comp_1615,tm_66113,Grêmio,tm_721023,Bolívar,0,1,away
+mt_641581864,2026-08-22,comp_4795,tm_62523,Internacional,tm_36272,Atlético Mineiro,0,0,draw
+mt_028978757,2026-08-17,comp_4795,tm_62523,Internacional,tm_97432,Remo,1,1,draw
+mt_732012227,2026-08-09,comp_4795,tm_58387,Palmeiras,tm_62523,Internacional,0,0,draw
+mt_200730085,2026-08-06,comp_5242,tm_36208,Corinthians,tm_62523,Internacional,2,1,home
+mt_200730010,2026-08-02,comp_5242,tm_62523,Internacional,tm_36208,Corinthians,2,0,home
+mt_894624452,2026-07-29,comp_4795,tm_62523,Internacional,tm_22917,Flamengo,1,1,draw
+mt_377416875,2026-08-29,comp_8321,tm_5188,Norwich City,tm_6573,Burnley,4,1,home
+mt_024341593,2026-08-26,comp_2504,tm_9715,Bradford City,tm_6573,Burnley,0,0,home
+mt_644092469,2026-08-23,comp_8321,tm_8814,West Bromwich Albion,tm_6573,Burnley,3,1,home
+mt_022531251,2026-08-16,comp_8321,tm_6573,Burnley,tm_3809,West Ham United,2,2,draw
+mt_644092326,2026-08-29,comp_8321,tm_6387,Middlesbrough,tm_8814,West Bromwich Albion,3,1,home
+mt_739594601,2026-08-25,comp_2504,tm_0872,Doncaster Rovers,tm_6387,Middlesbrough,1,3,away
+mt_024341534,2026-08-26,comp_2504,tm_7938,Newcastle United,tm_8814,West Bromwich Albion,3,2,home
+mt_733654300,2026-08-15,comp_8321,tm_5188,Norwich City,tm_8814,West Bromwich Albion,1,2,away
+mt_643932095,2026-08-26,comp_2504,tm_5130,Tottenham Hotspur,tm_3169,Charlton Athletic,5,1,home
+mt_377416732,2026-08-22,comp_8321,tm_3809,West Ham United,tm_3169,Charlton Athletic,1,2,away
+mt_155860859,2026-08-08,comp_2504,tm_2949,Queens Park Rangers,tm_4023,Millwall,1,1,away
+mt_895053708,2026-08-25,comp_2504,tm_2814,Cardiff City,tm_5188,Norwich City,1,2,away
+mt_466280626,2026-08-17,comp_8321,tm_2814,Cardiff City,tm_0586,Wrexham,1,1,draw
+mt_899703594,2026-08-29,comp_8321,tm_4893,Southampton,tm_4023,Millwall,5,1,home
+mt_512428941,2026-08-25,comp_2504,tm_5960,Cambridge United,tm_4023,Millwall,0,1,away
+mt_200175023,2026-08-22,comp_8321,tm_4023,Millwall,tm_5188,Norwich City,3,0,home
+mt_200175606,2026-08-28,comp_8321,tm_0586,Wrexham,tm_7218,Birmingham City,1,2,away
+mt_899705727,2026-08-07,comp_2504,tm_6387,Middlesbrough,tm_0586,Wrexham,1,0,home
+mt_022575308,2026-08-29,comp_6387,tm_98708,Celtic,tm_51874,Falkirk FC,2,1,home
+mt_155848033,2026-08-09,comp_6387,tm_64165,Motherwell,tm_51874,Falkirk FC,0,0,draw
+mt_200131681,2026-08-01,comp_6387,tm_51874,Falkirk FC,tm_73422,St. Mirren,0,2,away
+mt_377514726,2026-05-16,comp_6387,tm_51874,Falkirk FC,tm_20535,Rangers,2,5,away
+mt_378143817,2026-08-27,comp_408698,tm_46909,FK Jablonec,tm_20535,Rangers,1,0,home
+mt_467794749,2026-08-20,comp_408698,tm_20535,Rangers,tm_46909,FK Jablonec,1,0,home
+mt_378024604,2026-08-13,comp_7739,tm_20535,Rangers,tm_299627,Jagiellonia Białystok,1,1,draw
+mt_377454732,2026-08-29,comp_6387,tm_37034,Kilmarnock,tm_73411,Dundee United,0,4,away
+mt_899727987,2026-08-09,comp_6387,tm_37034,Kilmarnock,tm_98708,Celtic,1,5,away
+mt_155848687,2026-08-02,comp_6387,tm_89488,St. Johnstone,tm_37034,Kilmarnock,4,3,home
+mt_988023839,2026-05-17,comp_6387,tm_64280,Livingston,tm_37034,Kilmarnock,1,4,away
+mt_988303400,2026-08-08,comp_6387,tm_73422,St. Mirren,tm_89488,St. Johnstone,1,0,home
+mt_733925402,2026-05-25,comp_6387,tm_73422,St. Mirren,tm_89342,Partick Thistle,1,0,home
+mt_981290339,2026-08-27,comp_408698,tm_89592,SC Freiburg,tm_64165,Motherwell,4,1,home
+mt_150041080,2026-08-20,comp_408698,tm_64165,Motherwell,tm_89592,SC Freiburg,1,3,away
+mt_467524771,2026-08-13,comp_408698,tm_64165,Motherwell,tm_98046,HJK,2,0,home
+mt_377454848,2026-08-22,comp_6387,tm_73411,Dundee United,tm_37653,Dundee FC,0,2,away
+mt_733616377,2026-07-31,comp_6387,tm_73411,Dundee United,tm_20535,Rangers,1,1,draw
+mt_150510613,2026-08-25,comp_3498,tm_83796,LASK,tm_98708,Celtic,4,1,home
+mt_895985078,2026-08-19,comp_3498,tm_98708,Celtic,tm_83796,LASK,3,0,home
+mt_466292647,2026-08-08,comp_6387,tm_37653,Dundee FC,tm_46091,Aberdeen,2,0,home
+mt_200371011,2026-05-17,comp_6387,tm_37653,Dundee FC,tm_46091,Aberdeen,3,2,home
+mt_200131650,2026-08-03,comp_6387,tm_98708,Celtic,tm_37653,Dundee FC,1,0,home
+mt_747350226,2026-05-01,comp_6236,tm_02189,Ayr United,tm_89488,St. Johnstone,0,1,away
+mt_467648082,2026-08-27,comp_7739,tm_62024,Red Bull Salzburg,tm_58267,Mjällby AIF,3,0,home
+mt_895980398,2026-08-20,comp_7739,tm_58267,Mjällby AIF,tm_62024,Red Bull Salzburg,0,1,away
+mt_644094546,2026-08-16,comp_4893,tm_42618,WSG Tirol,tm_62024,Red Bull Salzburg,0,3,away
+mt_988328412,2026-08-16,comp_4893,tm_40266,SK Rapid Wien,tm_97380,Grazer AK 1902,8,0,home
+mt_150041016,2026-08-27,comp_408698,tm_51679,Austria Wien,tm_79214,Sporting Braga,0,0,draw
+mt_378853836,2026-08-20,comp_408698,tm_79214,Sporting Braga,tm_51679,Austria Wien,2,0,home
+mt_988328424,2026-08-16,comp_4893,tm_40288,TSV Hartberg,tm_51679,Austria Wien,0,2,away
+mt_899709669,2026-08-28,comp_4893,tm_97316,SC Austria Lustenau,tm_42618,WSG Tirol,0,4,away
+mt_155865760,2026-08-07,comp_4893,tm_65969,SC Rheindorf Altach,tm_42618,WSG Tirol,3,1,home
+mt_511941323,2026-08-01,comp_4893,tm_42618,WSG Tirol,tm_25152,SK Sturm Graz,1,1,draw
+mt_894624275,2026-08-22,comp_4795,tm_01988,Cruzeiro,tm_22917,Flamengo,2,1,home
+mt_377166078,2026-08-20,comp_0499,tm_22917,Flamengo,tm_01988,Cruzeiro,2,1,home
+mt_641581851,2026-08-16,comp_4795,tm_988681,Mirassol,tm_22917,Flamengo,1,5,away
+mt_465195925,2026-08-23,comp_4795,tm_83636,Santos,tm_988681,Mirassol,1,1,draw
+mt_200755951,2026-08-20,comp_0499,tm_34030,LDU,tm_988681,Mirassol,0,0,home
+mt_981217327,2026-08-25,comp_2504,tm_7218,Birmingham City,tm_1662,Brentford,1,6,away
+mt_467870288,2026-08-25,comp_2504,tm_4893,Southampton,tm_3809,West Ham United,1,4,away
+mt_209839311,2026-08-29,comp_4795,tm_36272,Atlético Mineiro,tm_97470,Vitória,2,1,home
+mt_643940663,2026-08-26,comp_5242,tm_01988,Cruzeiro,tm_36272,Atlético Mineiro,1,1,draw
+mt_988277897,2026-08-19,comp_1615,tm_36272,Atlético Mineiro,tm_74002,Red Bull Bragantino,2,2,draw
+mt_988328443,2026-08-29,comp_4893,tm_83796,LASK,tm_65969,SC Rheindorf Altach,3,0,home
+mt_466286174,2026-08-14,comp_4893,tm_83796,LASK,tm_74640,SV Ried,4,1,home
+mt_150516969,2026-08-27,comp_7739,tm_29826,AGF,tm_63118,Benfica,1,3,away
+mt_643469245,2026-08-20,comp_7739,tm_63118,Benfica,tm_29826,AGF,3,1,home
+mt_155165373,2026-08-17,comp_8385,tm_487248,Casa Pia,tm_63118,Benfica,0,7,away
+mt_377317023,2026-08-22,comp_8385,tm_17364,Estoril Praia,tm_63134,Rio Ave,0,2,away
+mt_988928648,2026-08-16,comp_8385,tm_52779,CD Nacional,tm_17364,Estoril Praia,2,0,home
+mt_644694139,2026-08-07,comp_8385,tm_17364,Estoril Praia,tm_216266,Famalicão,1,1,draw
+mt_838872028,2026-05-16,comp_8385,tm_17364,Estoril Praia,tm_63118,Benfica,1,3,away
+mt_467524782,2026-08-13,comp_408698,tm_26766,Dinamo Minsk,tm_79214,Sporting Braga,0,0,draw
+mt_733753297,2026-08-09,comp_8385,tm_04880,Moreirense,tm_79214,Sporting Braga,2,2,draw
+mt_899809335,2026-08-23,comp_8385,tm_79223,Vitória SC,tm_52779,CD Nacional,1,0,home
+mt_022032893,2026-08-14,comp_8385,tm_26936,Sporting,tm_79223,Vitória SC,3,2,home
+mt_511541741,2026-08-08,comp_8385,tm_79223,Vitória SC,tm_373760,FC Arouca,0,1,away
+mt_747761521,2026-05-16,comp_8385,tm_52779,CD Nacional,tm_79223,Vitória SC,2,0,home
+mt_153743476,2026-08-22,comp_4795,tm_25892,Fluminense,tm_97432,Remo,2,1,home
+mt_465195974,2026-08-08,comp_4795,tm_97432,Remo,tm_36272,Atlético Mineiro,2,2,draw
+mt_988208848,2026-08-05,comp_5242,tm_97432,Remo,tm_83636,Santos,0,1,away
+mt_370250547,2026-08-23,comp_4795,tm_97417,Coritiba,tm_36208,Corinthians,2,1,home
+mt_028978730,2026-08-16,comp_4795,tm_25869,São Paulo,tm_97417,Coritiba,1,1,draw
+mt_517367623,2026-08-08,comp_4795,tm_97417,Coritiba,tm_460410,Chapecoense,2,1,home
+mt_732012194,2026-07-31,comp_4795,tm_97417,Coritiba,tm_01988,Cruzeiro,0,1,away
+mt_511954846,2026-08-15,comp_8363,tm_63363,Karpaty Lviv,tm_659381,Bukovyna Chernivtsi,3,0,home
+mt_200127561,2026-08-08,comp_8363,tm_659381,Bukovyna Chernivtsi,tm_0128797,Obolon Kyiv,0,0,draw
+mt_511954815,2026-08-03,comp_8363,tm_659381,Bukovyna Chernivtsi,tm_3847085,LNZ Cherkasy,0,0,draw
+mt_733675450,2026-08-16,comp_8363,tm_47720,Dynamo Kyiv,tm_6449453,Kolos Kovalivka,2,1,home
+mt_206912665,2026-08-13,comp_408698,tm_99621,Qarabağ,tm_47720,Dynamo Kyiv,2,0,home
+mt_155816907,2026-08-09,comp_8363,tm_5114137,Veres Rivne,tm_47720,Dynamo Kyiv,1,2,away
+mt_895478546,2026-08-06,comp_408698,tm_47720,Dynamo Kyiv,tm_99621,Qarabağ,1,0,home
+mt_899780300,2026-08-17,comp_8363,tm_6344902,Polissya Zhytomyr,tm_3161303,Zoria Luhansk,1,2,away
+mt_733675495,2026-08-09,comp_8363,tm_3161303,Zoria Luhansk,tm_8587932,FC Kryvbas Kryvyi Rih,1,3,away
+mt_200127508,2026-07-31,comp_8363,tm_3161303,Zoria Luhansk,tm_6449453,Kolos Kovalivka,2,0,home
+mt_363811867,2026-05-23,comp_8363,tm_63363,Karpaty Lviv,tm_3161303,Zoria Luhansk,1,2,away
+mt_988392719,2026-08-16,comp_8363,tm_7990173,Metalist 1925,tm_52257,Shakhtar Donetsk,0,1,away
+mt_022503147,2026-08-10,comp_8363,tm_6344902,Polissya Zhytomyr,tm_7990173,Metalist 1925,3,1,home
+mt_466248069,2026-08-01,comp_8363,tm_7990173,Metalist 1925,tm_5114137,Veres Rivne,1,0,home
+mt_010433417,2026-05-24,comp_8363,tm_5114137,Veres Rivne,tm_7990173,Metalist 1925,0,1,away
+mt_899774768,2026-08-21,comp_9639,tm_646316,FC Petrolul Ploieşti,tm_5466754,FC Rapid București,0,2,away
+mt_988336347,2026-08-15,comp_9639,tm_5466754,FC Rapid București,tm_91123,FC Dinamo București,0,1,away
+mt_988336326,2026-08-07,comp_9639,tm_3780212,UTA Arad,tm_5466754,FC Rapid București,0,0,draw
+mt_377440478,2026-08-02,comp_9639,tm_5466754,FC Rapid București,tm_34668,CFR 1907 Cluj,3,1,home
+mt_022587983,2026-08-22,comp_3039,tm_6115,Hull City,tm_4643,Manchester United,2,0,home
+mt_626433224,2026-05-17,comp_3039,tm_4643,Manchester United,tm_0836,Nottingham Forest,3,2,home
+mt_838955329,2026-05-09,comp_3039,tm_2674,Sunderland,tm_4643,Manchester United,0,0,draw
+mt_378186414,2026-08-25,comp_2504,tm_9825,Ipswich Town,tm_2064,Leicester City,3,1,home
+mt_644018510,2026-08-22,comp_3039,tm_9825,Ipswich Town,tm_2674,Sunderland,2,1,home
+mt_404794102,2026-05-02,comp_8321,tm_9825,Ipswich Town,tm_2949,Queens Park Rangers,3,0,home
+mt_734524246,2026-04-28,comp_8321,tm_4893,Southampton,tm_9825,Ipswich Town,2,2,draw
+mt_895053784,2026-08-25,comp_2504,tm_0836,Nottingham Forest,tm_0256,Leeds United,0,2,away
+mt_899742430,2026-08-22,comp_3039,tm_0836,Nottingham Forest,tm_0256,Leeds United,0,1,away
+mt_838955396,2026-05-24,comp_3039,tm_3809,West Ham United,tm_0256,Leeds United,3,0,home
+mt_010244118,2026-05-17,comp_3039,tm_0256,Leeds United,tm_1552,Brighton & Hove Albion,1,0,home
+mt_988360680,2026-08-22,comp_3039,tm_1662,Brentford,tm_5130,Tottenham Hotspur,3,0,home
+mt_979811780,2026-05-24,comp_3039,tm_0406,Liverpool,tm_1662,Brentford,1,1,draw
+mt_585122886,2026-05-17,comp_3039,tm_1662,Brentford,tm_3498,Crystal Palace,2,2,draw
+mt_626433243,2026-05-24,comp_3039,tm_2674,Sunderland,tm_8531,Chelsea,2,1,home
+mt_404677000,2026-05-17,comp_3039,tm_8091,Everton,tm_2674,Sunderland,1,3,away
+mt_206765185,2026-08-27,comp_2504,tm_5290,Fulham,tm_371423,AFC Wimbledon,3,0,home
+mt_022587821,2026-08-24,comp_3039,tm_5290,Fulham,tm_8531,Chelsea,2,3,away
+mt_404677066,2026-05-24,comp_3039,tm_5290,Fulham,tm_7938,Newcastle United,2,0,home
+mt_150609873,2026-08-27,comp_2504,tm_8531,Chelsea,tm_9905,Luton Town,2,0,home
+mt_377685036,2026-05-19,comp_3039,tm_8531,Chelsea,tm_5130,Tottenham Hotspur,2,1,home
+mt_200233206,2026-08-22,comp_8814,tm_46224,Athletic Club,tm_51959,Sevilla,1,3,away
+mt_252667553,2026-05-23,comp_8814,tm_73673,Real Madrid,tm_46224,Athletic Club,4,2,home
+mt_377355380,2026-08-24,comp_8814,tm_15810,Málaga,tm_98394,Deportivo La Coruña,1,1,draw
+mt_155148043,2026-08-17,comp_8814,tm_98394,Deportivo La Coruña,tm_64612,Elche,1,1,draw
+mt_404777291,2026-05-31,comp_0976,tm_98394,Deportivo La Coruña,tm_305504,Las Palmas,1,2,away
+mt_838553042,2026-05-24,comp_0976,tm_20127,Real Valladolid,tm_98394,Deportivo La Coruña,0,2,away
+mt_733716911,2026-08-25,comp_8814,tm_89783,Valencia,tm_64056,Real Betis,0,1,away
+mt_644688638,2026-08-22,comp_8814,tm_02599,Espanyol,tm_73673,Real Madrid,1,2,away
+mt_979112633,2026-05-17,comp_8814,tm_51959,Sevilla,tm_73673,Real Madrid,0,1,away
+mt_466492791,2026-08-19,comp_8814,tm_64681,Atlético Madrid,tm_15810,Málaga,2,0,home
+mt_644515634,2026-06-20,comp_0976,tm_89830,Almería,tm_15810,Málaga,1,2,away
+mt_511373868,2026-06-14,comp_0976,tm_15810,Málaga,tm_89830,Almería,0,0,draw
+mt_644904990,2026-08-22,comp_3620,tm_98178,Energie Cottbus,tm_15641,FC Augsburg,0,2,away
+mt_838547377,2026-05-16,comp_4643,tm_37885,1. FC Union Berlin,tm_15641,FC Augsburg,4,0,home
+mt_747920719,2026-05-09,comp_4643,tm_15641,FC Augsburg,tm_37804,Borussia M'gladbach,3,1,home
+mt_252698127,2026-05-02,comp_4643,tm_02413,SV Werder Bremen,tm_15641,FC Augsburg,1,3,away
+mt_022352355,2026-08-24,comp_3620,tm_98139,Hallescher FC,tm_15093,FC Schalke 04,2,2,away
+mt_010485152,2026-05-17,comp_0406,tm_15093,FC Schalke 04,tm_37810,Eintracht Braunschweig,1,0,home
+mt_979163740,2026-05-09,comp_0406,tm_51271,1. FC Nürnberg,tm_15093,FC Schalke 04,3,0,home
+mt_010485138,2026-05-02,comp_0406,tm_15093,FC Schalke 04,tm_89580,Fortuna Düsseldorf,1,0,home
+mt_377147184,2026-08-23,comp_3620,tm_89580,Fortuna Düsseldorf,tm_89592,SC Freiburg,1,5,away
+mt_988238241,2026-08-22,comp_3620,tm_029727,LSK Hansa Lüneburg,tm_02413,SV Werder Bremen,0,3,away
+mt_252691529,2026-05-16,comp_4643,tm_02413,SV Werder Bremen,tm_51366,Borussia Dortmund,0,2,away
+mt_979164903,2026-05-09,comp_4643,tm_73909,TSG Hoffenheim,tm_02413,SV Werder Bremen,1,0,home
+mt_511439786,2026-08-22,comp_5840,tm_15731,Parma,tm_73052,Cagliari,0,1,away
+mt_378154235,2026-08-14,comp_8525,tm_73052,Cagliari,tm_20886,Arezzo,1,0,home
+mt_252581365,2026-05-24,comp_5840,tm_98476,Milan,tm_73052,Cagliari,1,2,away
+mt_191978454,2026-05-17,comp_5840,tm_73052,Cagliari,tm_64529,Torino,2,1,home
+mt_155794550,2026-08-22,comp_0256,tm_97723,Le Mans,tm_40658,Stade Brestois,2,2,draw
+mt_363806636,2026-05-09,comp_9777,tm_40064,Bastia,tm_97723,Le Mans,0,2,away
+mt_027778474,2026-05-02,comp_9777,tm_97723,Le Mans,tm_97749,Stade de Reims,1,1,draw
+mt_626315216,2026-04-25,comp_9777,tm_25578,Grenoble Foot 38,tm_97723,Le Mans,1,1,draw
+mt_377265786,2026-08-22,comp_0256,tm_97782,Troyes,tm_11910,Paris FC,0,0,draw
+mt_191039980,2026-05-17,comp_0256,tm_11910,Paris FC,tm_01119,Paris Saint-Germain,2,1,home
+mt_585274953,2026-05-10,comp_0256,tm_83353,Stade Rennais,tm_11910,Paris FC,2,1,home
+mt_191615803,2026-05-03,comp_0256,tm_11910,Paris FC,tm_40658,Stade Brestois,4,0,home
+mt_511386119,2026-08-22,comp_0256,tm_25567,Nice,tm_62238,Lorient,0,0,draw
+mt_200652802,2026-05-29,comp_0256,tm_25567,Nice,tm_83365,Saint-Étienne,4,1,home
+mt_466704160,2026-05-26,comp_0256,tm_83365,Saint-Étienne,tm_25567,Nice,0,0,draw
+mt_200923226,2026-05-22,comp_4750,tm_83394,RC Lens,tm_25567,Nice,3,1,home
+mt_022032859,2026-08-23,comp_8385,tm_26997,Santa Clara,tm_216266,Famalicão,1,0,home
+mt_200270985,2026-08-16,comp_8385,tm_216266,Famalicão,tm_38000,Marítimo,1,2,away
+mt_191818736,2026-05-16,comp_8385,tm_216266,Famalicão,tm_8932260,FC Alverca,1,0,home
+mt_899809472,2026-08-24,comp_8385,tm_10330,Gil Vicente,tm_487248,Casa Pia,2,0,home
+mt_377317082,2026-08-09,comp_8385,tm_10330,Gil Vicente,tm_63134,Rio Ave,1,0,home
+mt_252121898,2026-05-16,comp_8385,tm_26936,Sporting,tm_10330,Gil Vicente,3,0,home
+mt_191818740,2026-05-11,comp_8385,tm_10330,Gil Vicente,tm_373760,FC Arouca,1,3,away
+mt_899809457,2026-08-08,comp_8385,tm_38000,Marítimo,tm_487248,Casa Pia,1,0,home
+mt_155098547,2026-05-28,comp_8385,tm_487248,Casa Pia,tm_373776,Torreense,2,0,home
+mt_377317014,2026-08-16,comp_8385,tm_373760,FC Arouca,tm_04880,Moreirense,4,0,home
+mt_747676029,2026-05-16,comp_8385,tm_04880,Moreirense,tm_8840625,AVS - Futebol SAD,0,0,draw
+mt_252121837,2026-05-11,comp_8385,tm_690582,Tondela,tm_04880,Moreirense,2,0,home
+mt_200270979,2026-08-10,comp_8385,tm_26997,Santa Clara,tm_52779,CD Nacional,2,2,draw
+mt_466486588,2026-08-15,comp_8385,tm_8932260,FC Alverca,tm_47570,CF Estrela Amadora,2,2,draw
+mt_466486577,2026-08-08,comp_8385,tm_47570,CF Estrela Amadora,tm_26936,Sporting,2,2,draw
+mt_010057383,2026-05-16,comp_8385,tm_79214,Sporting Braga,tm_47570,CF Estrela Amadora,2,2,draw
+mt_585959369,2026-05-11,comp_8385,tm_47570,CF Estrela Amadora,tm_216266,Famalicão,0,0,draw
+mt_511385149,2026-08-23,comp_3809,tm_10474,SC Cambuur,tm_79196,Feyenoord,2,5,away
+mt_899638969,2026-08-15,comp_3809,tm_38581,Fortuna Sittard,tm_10474,SC Cambuur,3,1,home
+mt_511385156,2026-08-07,comp_3809,tm_10474,SC Cambuur,tm_38512,Excelsior,0,4,away
+mt_252088200,2026-04-24,comp_2977,tm_10474,SC Cambuur,tm_85256,Vitesse,2,1,home
+mt_643906428,2026-08-27,comp_408698,tm_99621,Qarabağ,tm_47976,FC Twente,1,2,away
+mt_739917979,2026-08-20,comp_408698,tm_47976,FC Twente,tm_99621,Qarabağ,0,1,away
+mt_644526402,2026-08-16,comp_3809,tm_47976,FC Twente,tm_26389,PEC Zwolle,3,1,home
+mt_024850439,2026-08-13,comp_408698,tm_514387,DAC 1904,tm_47976,FC Twente,3,3,draw
+mt_377263747,2026-08-14,comp_3809,tm_91047,SC Telstar,tm_10401,Sparta Rotterdam,1,3,away
+mt_644526451,2026-08-08,comp_3809,tm_91026,NEC Nijmegen,tm_91047,SC Telstar,1,2,away
+mt_252079688,2026-05-17,comp_3809,tm_85207,FC Volendam,tm_91047,SC Telstar,1,2,away
+mt_626491983,2026-05-10,comp_3809,tm_91047,SC Telstar,tm_38524,Heracles Almelo,3,0,home
+mt_466286119,2026-08-22,comp_4893,tm_65969,SC Rheindorf Altach,tm_40288,TSV Hartberg,1,2,away
+mt_377417210,2026-08-08,comp_4893,tm_40288,TSV Hartberg,tm_25152,SK Sturm Graz,0,2,away
+mt_022532930,2026-08-01,comp_4893,tm_62024,Red Bull Salzburg,tm_40288,TSV Hartberg,1,0,home
+mt_899709603,2026-08-21,comp_4893,tm_74640,SV Ried,tm_97380,Grazer AK 1902,1,0,home
+mt_733653094,2026-08-09,comp_4893,tm_74640,SV Ried,tm_40266,SK Rapid Wien,1,2,away
+mt_511941314,2026-08-02,comp_4893,tm_97316,SC Austria Lustenau,tm_74640,SV Ried,1,1,draw
+mt_644094551,2026-08-22,comp_4893,tm_25152,SK Sturm Graz,tm_97316,SC Austria Lustenau,1,1,draw
+mt_644094598,2026-08-15,comp_4893,tm_25152,SK Sturm Graz,tm_65969,SC Rheindorf Altach,1,0,home
+mt_512817946,2026-08-11,comp_3498,tm_25152,SK Sturm Graz,tm_91646,Fenerbahçe,0,1,away
+mt_517251442,2026-08-23,comp_9799,tm_5357142,St.Louis City,tm_89986,Houston Dynamo,2,1,home
+mt_465746867,2026-08-20,comp_9799,tm_73376,Sporting Kansas City,tm_5357142,St.Louis City,1,1,draw
+mt_465746806,2026-08-16,comp_9799,tm_460479,San Jose Earthquakes,tm_5357142,St.Louis City,1,3,away
+mt_641364914,2026-08-02,comp_9799,tm_5357142,St.Louis City,tm_59611,Real Salt Lake,1,1,draw
+mt_370837113,2026-08-23,comp_9799,tm_155376,Vancouver Whitecaps,tm_98106,FC Dallas,5,0,home
+mt_153015604,2026-08-20,comp_9799,tm_59611,Real Salt Lake,tm_98106,FC Dallas,3,4,away
+mt_986198270,2026-08-17,comp_9799,tm_5314216,Austin FC,tm_98106,FC Dallas,1,2,away
+mt_159008331,2026-08-13,comp_586572,tm_25717,CD Toluca,tm_98106,FC Dallas,3,1,home
+mt_739017334,2026-08-27,comp_586572,tm_74579,Club América,tm_02201,Columbus Crew,2,0,home
+mt_465746812,2026-08-23,comp_9799,tm_9241601,Nashville SC,tm_02201,Columbus Crew,3,2,home
+mt_986198286,2026-08-19,comp_9799,tm_02201,Columbus Crew,tm_644151,CF Montréal,1,2,away
+mt_894589040,2026-08-15,comp_9799,tm_8670388,Charlotte FC,tm_02201,Columbus Crew,3,1,home
+mt_641364990,2026-08-23,comp_9799,tm_20633,New England Revolution,tm_5174148,New York City FC,1,1,draw
+mt_517251418,2026-08-19,comp_9799,tm_98890,DC United,tm_20633,New England Revolution,0,3,away
+mt_153015638,2026-08-15,comp_9799,tm_134757,Toronto FC,tm_20633,New England Revolution,2,1,home
+mt_518462938,2026-08-08,comp_9799,tm_20633,New England Revolution,tm_89986,Houston Dynamo,0,2,away
+mt_028402333,2026-08-23,comp_9799,tm_29289308,San Diego FC,tm_15511,Colorado Rapids,3,0,home
+mt_028402344,2026-08-20,comp_9799,tm_377026,Portland Timbers,tm_29289308,San Diego FC,3,1,home
+mt_641364923,2026-08-16,comp_9799,tm_1068777,Los Angeles FC,tm_29289308,San Diego FC,0,1,away
+mt_518229788,2026-08-13,comp_586572,tm_29289308,San Diego FC,tm_25728,Club Puebla,3,2,home
+mt_894589058,2026-08-22,comp_9799,tm_644151,CF Montréal,tm_51268,LA Galaxy,2,2,draw
+mt_209620769,2026-08-20,comp_9799,tm_51268,LA Galaxy,tm_460479,San Jose Earthquakes,1,0,home
+mt_028402311,2026-08-16,comp_9799,tm_89986,Houston Dynamo,tm_51268,LA Galaxy,1,0,home
+mt_986198209,2026-08-02,comp_9799,tm_51268,LA Galaxy,tm_98106,FC Dallas,0,0,draw
+mt_641364956,2026-08-23,comp_9799,tm_1068777,Los Angeles FC,tm_377026,Portland Timbers,1,1,draw
+mt_732973546,2026-08-16,comp_9799,tm_46646,Chicago Fire,tm_377026,Portland Timbers,2,1,home
+mt_159008354,2026-08-14,comp_586572,tm_377026,Portland Timbers,tm_488946,Club Tijuana,3,1,home
+mt_895628994,2026-08-27,comp_586572,tm_25717,CD Toluca,tm_5314216,Austin FC,2,0,home
+mt_986198228,2026-08-23,comp_9799,tm_5314216,Austin FC,tm_536435,Philadelphia Union,1,1,draw
+mt_986198217,2026-08-20,comp_9799,tm_733209,Seattle Sounders FC,tm_5314216,Austin FC,1,2,away
+mt_894589097,2026-08-20,comp_9799,tm_15511,Colorado Rapids,tm_1068777,Los Angeles FC,1,0,home
+mt_517251487,2026-08-16,comp_9799,tm_15511,Colorado Rapids,tm_73376,Sporting Kansas City,2,0,home
+mt_465746850,2026-08-02,comp_9799,tm_15511,Colorado Rapids,tm_5314216,Austin FC,1,0,home
+mt_028402322,2026-08-19,comp_9799,tm_64463,New York Red Bulls,tm_9241601,Nashville SC,0,1,away
+mt_209620792,2026-08-16,comp_9799,tm_9241601,Nashville SC,tm_9241098,Inter Miami CF,4,1,home
+mt_893557446,2026-08-13,comp_586572,tm_97234,CF Monterrey,tm_9241601,Nashville SC,2,1,home
+mt_209620775,2026-08-22,comp_9799,tm_3714078,FC Cincinnati,tm_733209,Seattle Sounders FC,1,1,draw
+mt_209620703,2026-08-19,comp_9799,tm_3714078,FC Cincinnati,tm_5174148,New York City FC,2,1,home
+mt_732973520,2026-08-15,comp_9799,tm_343130,Orlando City SC,tm_3714078,FC Cincinnati,1,1,draw
+mt_021445881,2026-08-12,comp_586572,tm_3714078,FC Cincinnati,tm_74015,Atlas FC,1,2,away
+mt_028978708,2026-08-23,comp_4795,tm_97470,Vitória,tm_40150,Bahia,0,2,away
+mt_370250526,2026-08-16,comp_4795,tm_460410,Chapecoense,tm_40150,Bahia,3,3,draw
+mt_153743460,2026-08-09,comp_4795,tm_40150,Bahia,tm_01922,Vasco da Gama,0,0,draw
+mt_370250510,2026-07-30,comp_4795,tm_25892,Fluminense,tm_40150,Bahia,0,0,draw
+mt_209839322,2026-08-23,comp_4795,tm_460410,Chapecoense,tm_25869,São Paulo,1,0,home
+mt_155645573,2026-08-05,comp_5242,tm_01988,Cruzeiro,tm_460410,Chapecoense,2,0,home
+mt_378174331,2026-09-03,comp_5242,tm_83636,Santos,tm_58387,Palmeiras,0,0,draw
+mt_024325001,2026-08-27,comp_5242,tm_58387,Palmeiras,tm_83636,Santos,3,0,home
+mt_028978871,2026-08-23,comp_4795,tm_58387,Palmeiras,tm_01922,Vasco da Gama,4,1,home
+mt_200755902,2026-08-19,comp_0499,tm_22928,Cerro Porteño,tm_58387,Palmeiras,0,1,away
+mt_986406043,2026-08-24,comp_4795,tm_83640,Botafogo,tm_36261,Athletico,2,3,away
+mt_022311473,2026-08-21,comp_1615,tm_83640,Botafogo,tm_20908,Cienciano,1,0,home
+mt_517367656,2026-08-16,comp_4795,tm_97470,Vitória,tm_83640,Botafogo,1,0,home
+mt_022311204,2026-08-14,comp_1615,tm_20908,Cienciano,tm_83640,Botafogo,6,1,home
+mt_511488727,2026-08-21,comp_0499,tm_36208,Corinthians,tm_38728,Rosario Central,1,0,home
+mt_465195919,2026-08-16,comp_4795,tm_36208,Corinthians,tm_01988,Cruzeiro,1,2,away
+mt_988277610,2026-08-14,comp_0499,tm_38728,Rosario Central,tm_36208,Corinthians,0,0,draw
+mt_644922380,2026-08-20,comp_1615,tm_22531,Macará,tm_83636,Santos,0,0,draw
+mt_894624269,2026-08-15,comp_4795,tm_36261,Athletico,tm_74002,Red Bull Bragantino,1,1,draw
+mt_028978882,2026-08-09,comp_4795,tm_83636,Santos,tm_36261,Athletico,0,2,away
+mt_200736960,2026-08-06,comp_5242,tm_97470,Vitória,tm_36261,Athletico,4,0,home
+mt_511488716,2026-08-18,comp_0499,tm_922132,Independiente Rivadavia,tm_25892,Fluminense,1,1,away
+mt_986406024,2026-08-15,comp_4795,tm_25892,Fluminense,tm_58387,Palmeiras,3,2,home
+mt_988277679,2026-08-11,comp_0499,tm_25892,Fluminense,tm_922132,Independiente Rivadavia,0,0,draw
+mt_377440424,2026-08-22,comp_9639,tm_3780212,UTA Arad,tm_8350909,FC Corvinul Hunedoara,0,0,draw
+mt_200119189,2026-08-17,comp_9639,tm_088342,FC Universitatea Cluj,tm_3780212,UTA Arad,2,1,home
+mt_466225276,2026-08-01,comp_9639,tm_411160,FC Voluntari,tm_3780212,UTA Arad,1,0,home
+mt_988336338,2026-08-23,comp_9639,tm_7327310,Sepsi OSK,tm_04497,FC Farul Constanța,1,1,draw
+mt_511997931,2026-08-14,comp_9639,tm_2928016,FC Argeș Pitești,tm_04497,FC Farul Constanța,1,1,draw
+mt_644001099,2026-08-08,comp_9639,tm_04497,FC Farul Constanța,tm_9137131,FK Csíkszereda Miercurea Ciuc,3,2,home
+mt_511997927,2026-08-03,comp_9639,tm_26681,FCSB,tm_04497,FC Farul Constanța,2,2,draw
+mt_155883883,2026-08-24,comp_9639,tm_897249,FC Botoșani,tm_9137131,FK Csíkszereda Miercurea Ciuc,1,0,home
+mt_899774707,2026-08-17,comp_9639,tm_26681,FCSB,tm_897249,FC Botoșani,3,2,home
+mt_511997916,2026-08-10,comp_9639,tm_897249,FC Botoșani,tm_8350909,FC Corvinul Hunedoara,0,0,draw
+mt_988336379,2026-08-03,comp_9639,tm_088342,FC Universitatea Cluj,tm_897249,FC Botoșani,2,1,home
+mt_200189396,2026-09-02,comp_2999,tm_896267,Orenburg,tm_51798,Rubin Kazan,1,1,away
+mt_155863943,2026-08-24,comp_5824,tm_300646,Baltika Kaliningrad,tm_51798,Rubin Kazan,1,1,draw
+mt_511937664,2026-08-19,comp_2999,tm_51798,Rubin Kazan,tm_51737,FC Spartak Moscow,1,1,home
+mt_511947819,2026-08-15,comp_5824,tm_64153,FC Rostov,tm_51798,Rubin Kazan,1,1,draw
+mt_466215954,2026-09-02,comp_2999,tm_20972,Zenit St. Petersburg,tm_6511948,Dinamo Makhachkala,3,0,home
+mt_733652411,2026-08-23,comp_5824,tm_6511948,Dinamo Makhachkala,tm_480099,FK Krasnodar,0,1,away
+mt_378847178,2026-08-20,comp_2999,tm_300646,Baltika Kaliningrad,tm_6511948,Dinamo Makhachkala,1,1,home
+mt_377410665,2026-08-16,comp_5824,tm_98640,Krylya Sovetov Samara,tm_6511948,Dinamo Makhachkala,1,4,away
+mt_155873435,2026-09-02,comp_2999,tm_51737,FC Spartak Moscow,tm_7592579,Rodina Moscow,3,1,home
+mt_899704488,2026-08-23,comp_5824,tm_51737,FC Spartak Moscow,tm_20972,Zenit St. Petersburg,2,0,home
+mt_155863314,2026-08-16,comp_5824,tm_300646,Baltika Kaliningrad,tm_51737,FC Spartak Moscow,1,2,away
+mt_644091280,2026-08-22,comp_5824,tm_37018,Fakel Voronezh,tm_896267,Orenburg,0,0,draw
+mt_988346001,2026-08-18,comp_2999,tm_7592579,Rodina Moscow,tm_896267,Orenburg,1,4,away
+mt_733652267,2026-08-14,comp_5824,tm_896267,Orenburg,tm_15368,Lokomotiv Moscow,1,1,draw
+mt_644091165,2026-08-23,comp_5824,tm_46580,Dynamo Moscow,tm_7592579,Rodina Moscow,3,1,home
+mt_466285548,2026-08-15,comp_5824,tm_7592579,Rodina Moscow,tm_7969714,Akron Togliatti,3,3,draw
+mt_022598785,2026-09-02,comp_2999,tm_300646,Baltika Kaliningrad,tm_98640,Krylya Sovetov Samara,0,0,away
+mt_899704334,2026-08-29,comp_5824,tm_37018,Fakel Voronezh,tm_20972,Zenit St. Petersburg,0,1,away
+mt_644051886,2026-08-19,comp_2999,tm_98640,Krylya Sovetov Samara,tm_20972,Zenit St. Petersburg,0,0,away
+mt_377410034,2026-08-16,comp_5824,tm_20972,Zenit St. Petersburg,tm_46580,Dynamo Moscow,3,0,home
+mt_200179590,2026-08-29,comp_5824,tm_21309,Akhmat Grozny,tm_98640,Krylya Sovetov Samara,3,3,draw
+mt_022538173,2026-08-23,comp_5824,tm_7969714,Akron Togliatti,tm_98640,Krylya Sovetov Samara,0,3,away
+mt_733506240,2026-08-24,comp_5840,tm_46156,Bologna,tm_73047,Lazio,0,1,away
+mt_747406152,2026-05-23,comp_5840,tm_46156,Bologna,tm_37262,Inter,3,3,draw
+mt_747406104,2026-05-11,comp_5840,tm_02943,Napoli,tm_46156,Bologna,2,3,away
+mt_377124068,2026-08-23,comp_5840,tm_89646,Venezia,tm_73026,Lecce,0,2,away
+mt_466285725,2026-08-17,comp_8525,tm_46171,Palermo,tm_73026,Lecce,2,0,home
+mt_626250845,2026-05-24,comp_5840,tm_73026,Lecce,tm_51322,Genoa,1,0,home
+mt_838367202,2026-05-17,comp_5840,tm_51921,Sassuolo,tm_73026,Lecce,2,3,away
+mt_466812500,2026-08-24,comp_5840,tm_98487,Roma,tm_51388,Fiorentina,4,0,home
+mt_010195724,2026-05-24,comp_5840,tm_20809,Hellas Verona,tm_98487,Roma,0,2,away
+mt_585839611,2026-05-17,comp_5840,tm_98487,Roma,tm_73047,Lazio,2,0,home
+mt_979743087,2026-05-10,comp_5840,tm_15731,Parma,tm_98487,Roma,2,3,away
+mt_155678398,2026-08-22,comp_5840,tm_37262,Inter,tm_73004,Monza,4,1,home
+mt_363624574,2026-05-17,comp_5840,tm_37262,Inter,tm_20809,Hellas Verona,1,1,draw
+mt_200929530,2026-05-13,comp_8525,tm_73047,Lazio,tm_37262,Inter,0,2,away
+mt_200179688,2026-08-16,comp_8525,tm_73047,Lazio,tm_15838,Mantova,0,2,away
+mt_979743018,2026-05-23,comp_5840,tm_73047,Lazio,tm_37240,Pisa,2,1,home
+mt_155678337,2026-08-22,comp_5840,tm_51322,Genoa,tm_02943,Napoli,0,2,away
+mt_467892122,2026-08-16,comp_8525,tm_51322,Genoa,tm_37274,Ascoli,4,1,home
+mt_838367298,2026-05-17,comp_5840,tm_51322,Genoa,tm_98476,Milan,1,2,away
+mt_252581309,2026-05-24,comp_5840,tm_02943,Napoli,tm_46107,Udinese,1,0,home
+mt_404012968,2026-05-17,comp_5840,tm_37240,Pisa,tm_02943,Napoli,0,3,away
+mt_022395818,2026-08-22,comp_5840,tm_46107,Udinese,tm_02924,Como,1,1,draw
+mt_191978403,2026-05-24,comp_5840,tm_20131,Cremonese,tm_02924,Como,1,4,away
+mt_747406191,2026-05-17,comp_5840,tm_02924,Como,tm_15731,Parma,1,0,home
+mt_747406147,2026-05-10,comp_5840,tm_20809,Hellas Verona,tm_02924,Como,0,1,away
+mt_981296087,2026-08-27,comp_408698,tm_58813,AS Monaco,tm_10956,Górnik Zabrze,4,1,home
+mt_733041333,2026-08-23,comp_0256,tm_97714,Le Havre,tm_58813,AS Monaco,0,1,away
+mt_895528564,2026-08-20,comp_408698,tm_10956,Górnik Zabrze,tm_58813,AS Monaco,2,3,away
+mt_404750014,2026-05-17,comp_0256,tm_74493,RC Strasbourg,tm_58813,AS Monaco,5,4,home
+mt_988470884,2026-08-21,comp_0256,tm_25550,Olympique de Marseille,tm_74493,RC Strasbourg,4,0,home
+mt_363806640,2026-05-17,comp_0256,tm_25550,Olympique de Marseille,tm_83353,Stade Rennais,3,1,home
+mt_010483559,2026-05-10,comp_0256,tm_97714,Le Havre,tm_25550,Olympique de Marseille,0,1,away
+mt_404846268,2026-05-02,comp_0256,tm_36675,Nantes,tm_25550,Olympique de Marseille,3,0,home
+mt_981290944,2026-08-27,comp_408698,tm_52627,AFC Ajax,tm_98871,FC Sion,5,3,home
+mt_895528589,2026-08-20,comp_408698,tm_98871,FC Sion,tm_52627,AFC Ajax,2,4,away
+mt_200852088,2026-08-16,comp_3809,tm_52627,AFC Ajax,tm_04732,SC Heerenveen,2,2,draw
+mt_512795233,2026-08-13,comp_408698,tm_04289,Shelbourne,tm_52627,AFC Ajax,2,2,draw
+mt_899638903,2026-08-16,comp_3809,tm_79196,Feyenoord,tm_79161,Go Ahead Eagles,2,2,draw
+mt_022910245,2026-08-09,comp_3809,tm_10401,Sparta Rotterdam,tm_79196,Feyenoord,0,1,away
+mt_747352909,2026-05-17,comp_3809,tm_26389,PEC Zwolle,tm_79196,Feyenoord,0,2,away
+mt_155791576,2026-08-23,comp_3809,tm_79161,Go Ahead Eagles,tm_63899,ADO Den Haag,3,1,home
+mt_899638975,2026-08-16,comp_3809,tm_63899,ADO Den Haag,tm_26302,FC Groningen,1,4,away
+mt_022910257,2026-08-08,comp_3809,tm_10458,AZ Alkmaar,tm_63899,ADO Den Haag,2,0,home
+mt_585133514,2026-04-24,comp_2977,tm_52648,FC Den Bosch,tm_63899,ADO Den Haag,1,3,away
+mt_733047353,2026-08-15,comp_3809,tm_26373,Willem II Tilburg,tm_91026,NEC Nijmegen,1,4,away
+mt_988479824,2026-08-08,comp_3809,tm_79161,Go Ahead Eagles,tm_26373,Willem II Tilburg,4,1,home
+mt_644323992,2026-05-23,comp_3809,tm_85207,FC Volendam,tm_26373,Willem II Tilburg,1,2,away
+mt_022414337,2026-05-20,comp_3809,tm_26373,Willem II Tilburg,tm_85207,FC Volendam,1,2,away
+mt_644526498,2026-08-22,comp_3809,tm_04732,SC Heerenveen,tm_26389,PEC Zwolle,0,2,away
+mt_377263710,2026-08-09,comp_3809,tm_04732,SC Heerenveen,tm_47976,FC Twente,1,0,home
+mt_644329206,2026-05-21,comp_3809,tm_85290,FC Utrecht,tm_04732,SC Heerenveen,3,2,home
+mt_733047365,2026-08-22,comp_3809,tm_10401,Sparta Rotterdam,tm_85290,FC Utrecht,3,3,draw
+mt_200852011,2026-08-15,comp_3809,tm_85290,FC Utrecht,tm_10458,AZ Alkmaar,1,4,away
+mt_733047309,2026-08-09,comp_3809,tm_26302,FC Groningen,tm_85290,FC Utrecht,2,1,home
+mt_466788825,2026-05-24,comp_3809,tm_52627,AFC Ajax,tm_85290,FC Utrecht,0,0,home
+mt_022910230,2026-08-23,comp_3809,tm_91010,PSV Eindhoven,tm_26302,FC Groningen,5,1,home
+mt_155791587,2026-08-15,comp_3809,tm_38512,Excelsior,tm_91010,PSV Eindhoven,1,2,away
+mt_988479839,2026-08-08,comp_3809,tm_91010,PSV Eindhoven,tm_38581,Fortuna Sittard,2,2,draw
+mt_200792732,2026-08-02,comp_1038,tm_91010,PSV Eindhoven,tm_10458,AZ Alkmaar,0,4,away
+mt_643586426,2026-08-26,comp_586572,tm_033872,Club León,tm_59611,Real Salt Lake,3,0,home
+mt_732973551,2026-08-22,comp_9799,tm_343130,Orlando City SC,tm_59611,Real Salt Lake,2,1,home
+mt_153015691,2026-08-16,comp_9799,tm_59611,Real Salt Lake,tm_869273,Minnesota United,1,1,draw
+mt_732973502,2026-08-23,comp_9799,tm_2693776,Atlanta United,tm_73376,Sporting Kansas City,2,1,home
+mt_209620731,2026-08-02,comp_9799,tm_73376,Sporting Kansas City,tm_89986,Houston Dynamo,0,2,away
+mt_465746878,2026-08-20,comp_9799,tm_155376,Vancouver Whitecaps,tm_89986,Houston Dynamo,0,1,away
+mt_894589036,2026-08-17,comp_9799,tm_733209,Seattle Sounders FC,tm_155376,Vancouver Whitecaps,0,2,away
+mt_893557420,2026-08-12,comp_586572,tm_19616,Tigres UANL,tm_155376,Vancouver Whitecaps,1,1,home
+mt_465746881,2026-08-23,comp_9799,tm_460479,San Jose Earthquakes,tm_869273,Minnesota United,1,5,away
+mt_732973537,2026-08-20,comp_9799,tm_869273,Minnesota United,tm_2693776,Atlanta United,1,2,away
+mt_644336145,2026-08-12,comp_586572,tm_869273,Minnesota United,tm_58455,Atlante FC,3,1,home
+mt_517251255,2026-08-02,comp_9799,tm_3714078,FC Cincinnati,tm_460479,San Jose Earthquakes,4,2,home
+mt_739536776,2026-09-03,comp_5242,tm_97470,Vitória,tm_01922,Vasco da Gama,0,2,away
+mt_895097886,2026-08-27,comp_5242,tm_01922,Vasco da Gama,tm_97470,Vitória,1,0,home
+mt_511488262,2026-08-20,comp_1615,tm_33657,Olimpia,tm_01922,Vasco da Gama,1,4,away
+mt_022503138,2026-08-16,comp_8363,tm_3847085,LNZ Cherkasy,tm_10088,Chornomorets Odesa,2,0,home
+mt_377431687,2026-08-10,comp_8363,tm_63363,Karpaty Lviv,tm_3847085,LNZ Cherkasy,3,0,home
+mt_733072733,2026-07-30,comp_408698,tm_51594,KAA Gent,tm_3847085,LNZ Cherkasy,0,0,home
+mt_644069294,2026-08-14,comp_8363,tm_9217317,FC Epicentr Dunaivtsi,tm_5114137,Veres Rivne,0,0,draw
+mt_899780399,2026-08-02,comp_8363,tm_10088,Chornomorets Odesa,tm_6344902,Polissya Zhytomyr,1,2,away
+mt_257606313,2025-05-24,comp_8363,tm_10088,Chornomorets Odesa,tm_736751,Oleksandria,0,0,draw
+mt_972181040,2025-05-18,comp_8363,tm_10088,Chornomorets Odesa,tm_47720,Dynamo Kyiv,1,1,draw
+mt_377431618,2026-08-15,comp_8363,tm_8587932,FC Kryvbas Kryvyi Rih,tm_7052903,FC Livyi Bereh Kyiv,1,1,draw
+mt_644069241,2026-08-01,comp_8363,tm_8587932,FC Kryvbas Kryvyi Rih,tm_63363,Karpaty Lviv,1,4,away
+mt_838500535,2026-05-23,comp_8363,tm_736751,Oleksandria,tm_8587932,FC Kryvbas Kryvyi Rih,1,1,draw
+mt_466225218,2026-08-23,comp_9639,tm_34668,CFR 1907 Cluj,tm_26681,FCSB,1,0,home
+mt_377440467,2026-08-10,comp_9639,tm_7327310,Sepsi OSK,tm_26681,FCSB,0,0,draw
+mt_378277358,2026-09-02,comp_8525,tm_46107,Udinese,tm_89646,Venezia,2,1,home
+mt_024945199,2026-09-02,comp_8525,tm_51921,Sassuolo,tm_20175,Frosinone,1,1,home
+mt_155849745,2026-09-02,comp_8531,tm_46411,Sint-Truidense VV,tm_17744,Royale Union Saint-Gilloise,0,3,away
+mt_377147113,2026-09-02,comp_3620,tm_20611,VfL Osnabrück,tm_98299,FC Bayern München,1,4,away
+mt_150010980,2026-09-02,comp_1047,tm_447804,VV Staphorst,tm_753154,VV UNA,1,1,home
+mt_895585373,2026-09-02,comp_1047,tm_8702927,SV TOGB,tm_533926,VV Katwijk,2,2,home
+mt_378838640,2026-09-02,comp_1047,tm_1004554,USV Hercules,tm_165470,EVV Echt,1,3,away
+mt_643363208,2026-09-02,comp_1047,tm_0201347,FC Rijnvogels,tm_38543,VV Bennekom,5,0,home
+mt_467747014,2026-09-02,comp_1047,tm_270387,RKSV Groene Ster,tm_40604474,VV Heerjansdam,2,1,home
+mt_512252833,2026-09-02,comp_1047,tm_01210045,Rkvv Spartaan,tm_7651317,RKSV UDI '19,0,5,away
+mt_981191742,2026-09-02,comp_1047,tm_99968,VV Sparta Nijkerk,tm_5563955,SV Venray,2,0,home
+mt_206626586,2026-09-02,comp_1047,tm_58761861,RKSV Mierlo-Hout,tm_25052266,SV Germania 1920 Groesbeek,2,2,away
+mt_150010975,2026-09-02,comp_1047,tm_97879912,Gsv 28,tm_79157,RBC Roosendaal,0,4,away
+mt_739979404,2026-09-02,comp_1047,tm_3118357,FC 's-Gravenzande,tm_26320,VV Gemert,0,2,away
+mt_378838625,2026-09-02,comp_1047,tm_928044,VVSB Noordwijkerhout,tm_9797648,Ajax Amateurs,2,0,home
+mt_512252844,2026-09-02,comp_1047,tm_8973886,VV Dongen,tm_1919389,JOS Watergraafsmeer,2,4,away
+mt_206626570,2026-09-02,comp_1047,tm_4491450,VV Hoogeveen,tm_6069228,SVZW Wierden,1,1,home
+mt_150010969,2026-09-02,comp_1047,tm_2708797,VPV Purmersteijn,tm_58185523,Zwaluw VFC,4,3,home
+mt_895585302,2026-09-02,comp_1047,tm_4746681,VV Goes,tm_655034,vv Noordwijk,0,1,away
+mt_643363230,2026-09-02,comp_1047,tm_462268,HVV Hollandia,tm_19345435,RKSV Halsteren,1,1,away
+mt_206626565,2026-09-02,comp_1047,tm_36536616,FC Surhústerfean,tm_4896291,VV DOVO Veenendaal,1,2,away
+mt_150010903,2026-09-02,comp_1047,tm_91091,ACV Assen,tm_924347,RKVV Westlandia,6,1,home
+mt_378838674,2026-09-02,comp_1047,tm_74347794,Rksv Liereop,tm_779533,VV Zwaluwen,0,7,away
+mt_643363245,2026-09-02,comp_1047,tm_83938854,Atc 65,tm_0800443,DVS '33 Ermelo,1,2,away
+mt_988329711,2026-09-02,comp_0196,tm_8941,Reading,tm_1882,Mansfield Town,5,0,home
+mt_643559915,2026-09-02,comp_0196,tm_7598,Wigan Athletic,tm_0469,Milton Keynes Dons,3,1,home
+mt_377413615,2026-09-02,comp_0196,tm_9905,Luton Town,tm_1332,Stockport County,2,0,home
+mt_644096240,2026-09-02,comp_0196,tm_5840,Barnsley,tm_3489,Blackpool,2,1,home
+mt_988329788,2026-09-02,comp_0196,tm_0830,Burton Albion,tm_371423,AFC Wimbledon,4,1,home
+mt_838367264,2026-05-09,comp_5840,tm_73052,Cagliari,tm_46107,Udinese,0,2,away
+mt_979743021,2026-05-03,comp_5840,tm_46156,Bologna,tm_73052,Cagliari,0,0,draw
+mt_512888849,2026-08-29,comp_5450,tm_20817,Padova,tm_20809,Hellas Verona,1,1,draw
+mt_467000074,2026-08-23,comp_5450,tm_20809,Hellas Verona,tm_37274,Ascoli,1,2,away
+mt_155863076,2026-08-16,comp_8525,tm_20809,Hellas Verona,tm_176195,Virtus Entella,2,2,home
+mt_252581386,2026-05-03,comp_5840,tm_37201,Juventus,tm_20809,Hellas Verona,1,1,draw
+mt_010195877,2026-04-25,comp_5840,tm_20809,Hellas Verona,tm_73026,Lecce,0,0,draw
+mt_643222298,2026-08-30,comp_5450,tm_20886,Arezzo,tm_46171,Palermo,2,3,away
+mt_981777712,2026-08-23,comp_5450,tm_46171,Palermo,tm_05193,Juve Stabia,1,0,home
+mt_466649710,2026-05-20,comp_5450,tm_46171,Palermo,tm_64035,Catanzaro,2,0,home
+mt_988890129,2026-05-17,comp_5450,tm_64035,Catanzaro,tm_46171,Palermo,3,0,home
+mt_363386052,2026-05-08,comp_5450,tm_89646,Venezia,tm_46171,Palermo,2,0,home
+mt_585528657,2026-05-01,comp_5450,tm_46171,Palermo,tm_64035,Catanzaro,3,2,home
+mt_626632838,2026-04-25,comp_5450,tm_645958,Reggiana,tm_46171,Palermo,1,1,draw
+mt_981777724,2026-08-30,comp_5450,tm_15838,Mantova,tm_46168,Empoli,3,1,home
+mt_895333354,2026-08-22,comp_5450,tm_46149,Carrarese,tm_15838,Mantova,1,2,away
+mt_585528768,2026-05-08,comp_5450,tm_20175,Frosinone,tm_15838,Mantova,5,0,home
+mt_191109488,2026-05-01,comp_5450,tm_15838,Mantova,tm_73004,Monza,3,2,home
+mt_404470920,2026-04-25,comp_5450,tm_15847,Südtirol,tm_15838,Mantova,0,3,away
+mt_747794142,2026-04-18,comp_5450,tm_15838,Mantova,tm_15775,Avellino,0,2,away
+mt_191109433,2026-04-12,comp_5450,tm_46114,Spezia,tm_15838,Mantova,0,2,away
+mt_200131513,2026-08-30,comp_8531,tm_51594,KAA Gent,tm_89808,Club Brugge KV,2,1,home
+mt_466292080,2026-08-16,comp_8531,tm_6521331,RAAL La Louvière,tm_51594,KAA Gent,1,2,away
+mt_378043883,2026-08-13,comp_408698,tm_51594,KAA Gent,tm_25088,IFK Göteborg,1,1,draw
+mt_466292075,2026-08-09,comp_8531,tm_51594,KAA Gent,tm_09014,KV Mechelen,2,0,home
+mt_512795288,2026-08-06,comp_408698,tm_25088,IFK Göteborg,tm_51594,KAA Gent,0,1,away
+mt_155848971,2026-08-29,comp_8531,tm_85223,Oud-Heverlee Leuven,tm_20210,Standard Liège,1,2,away
+mt_988303719,2026-08-15,comp_8531,tm_85223,Oud-Heverlee Leuven,tm_89808,Club Brugge KV,0,3,away
+mt_200131508,2026-08-09,comp_8531,tm_89872,RC Sporting Charleroi,tm_85223,Oud-Heverlee Leuven,3,1,home
+mt_987320969,2026-05-23,comp_8531,tm_85223,Oud-Heverlee Leuven,tm_15173,KRC Genk,0,2,away
+mt_893702845,2026-05-19,comp_8531,tm_89872,RC Sporting Charleroi,tm_85223,Oud-Heverlee Leuven,1,1,draw
+mt_642098612,2026-05-15,comp_8531,tm_85223,Oud-Heverlee Leuven,tm_73701,Royal Antwerp FC,3,0,home
+mt_893702829,2026-05-08,comp_8531,tm_20210,Standard Liège,tm_85223,Oud-Heverlee Leuven,2,1,home
+mt_376415356,2026-05-02,comp_8531,tm_51532,KVC Westerlo,tm_85223,Oud-Heverlee Leuven,3,3,draw
+mt_511969898,2026-08-30,comp_8531,tm_17744,Royale Union Saint-Gilloise,tm_15189,RSC Anderlecht,3,0,home
+mt_981892721,2026-08-27,comp_7739,tm_15189,RSC Anderlecht,tm_93034,Kairat Almaty,3,0,home
+mt_643469229,2026-08-20,comp_7739,tm_93034,Kairat Almaty,tm_15189,RSC Anderlecht,0,3,away
+mt_022575138,2026-08-16,comp_8531,tm_70577,SK Beveren,tm_15189,RSC Anderlecht,1,0,home
+mt_467512276,2026-08-13,comp_7739,tm_15189,RSC Anderlecht,tm_26695,PAOK,3,2,home
+mt_377454687,2026-08-09,comp_8531,tm_15189,RSC Anderlecht,tm_6521331,RAAL La Louvière,2,1,home
+mt_378024481,2026-08-06,comp_7739,tm_26695,PAOK,tm_15189,RSC Anderlecht,0,1,away
+mt_733071996,2026-07-30,comp_7739,tm_15189,RSC Anderlecht,tm_83969,Hammarby IF,3,1,home
+mt_899727366,2026-08-29,comp_8531,tm_86087,KV Kortrijk,tm_89872,RC Sporting Charleroi,1,3,away
+mt_200131561,2026-08-15,comp_8531,tm_86087,KV Kortrijk,tm_73701,Royal Antwerp FC,0,3,away
+mt_155848956,2026-08-07,comp_8531,tm_89808,Club Brugge KV,tm_86087,KV Kortrijk,3,0,home
+mt_191648337,2026-04-17,comp_7218,tm_86087,KV Kortrijk,tm_7392241,RWD Molenbeek,3,1,home
+mt_363154056,2026-04-11,comp_7218,tm_70577,SK Beveren,tm_86087,KV Kortrijk,1,0,home
+mt_979203094,2026-04-03,comp_7218,tm_86087,KV Kortrijk,tm_2957117,KAA Gent Reserve U23,2,0,home
+mt_838027274,2026-03-21,comp_7218,tm_8002057,Royal Francs Borains,tm_86087,KV Kortrijk,4,1,home
+mt_838027262,2026-03-14,comp_7218,tm_86087,KV Kortrijk,tm_455877,OC Charleroi,3,1,home
+mt_512957668,2026-09-03,comp_586572,tm_74579,Club América,tm_97234,CF Monterrey,2,2,away
+mt_022538533,2026-09-03,comp_720692,tm_66439,Independiente Santa Fe,tm_33782,Millonarios,3,2,home
+mt_981396006,2026-09-03,comp_586572,tm_25717,CD Toluca,tm_033872,Club León,2,0,home
+mt_150763406,2026-09-03,comp_573599,tm_2776530,Deportes Limache,tm_721561,Ñublense,2,0,home
+mt_150306054,2026-09-03,comp_08235,tm_85905,Vélez Sarsfield,tm_91813,Boca Juniors,0,0,away
+mt_987613406,2026-09-03,comp_1917,tm_18385,Barcelona SC,tm_536213,Independiente del Valle,2,1,home
+mt_465121220,2026-09-03,comp_970794,tm_9272329,Forward Madison FC,tm_8684389,One Knoxville SC,1,1,draw
+mt_517393996,2026-09-02,comp_970794,tm_7561622,Fort Wayne FC,tm_207803,Richmond Kickers,2,0,home
+mt_986434349,2026-09-02,comp_970794,tm_557528,New York Cosmos,tm_5995315,Sarasota Paradise,1,2,away
+mt_732060605,2026-09-02,comp_970794,tm_9880799,Charlotte Independence,tm_45415856,Portland Hearts of Pine,3,2,home
+mt_467162777,2026-09-02,comp_5537,tm_5757898,Colegiales,tm_0438531,Ferrocarril Midland,3,0,home
+mt_028955850,2026-09-02,comp_586859,tm_022830,Charleston Battery,tm_8039042,Hartford Athletic,1,2,away
+mt_732060660,2026-09-02,comp_970794,tm_96946260,Westchester SC,tm_2757171,Chattanooga Red Wolves SC,0,1,away
+mt_739052199,2026-09-02,comp_573599,tm_47691,Coquimbo Unido,tm_09082,Universidad de Concepción,1,0,home
+mt_378863476,2026-09-02,comp_364464,tm_6322209,Talleres de Córdoba Reserve,tm_0958411,Instituto AC Cordoba Reserves,0,1,away
+mt_159308611,2026-09-02,comp_1917,tm_21916,Deportivo Cuenca,tm_1538405,Guayaquil City,1,0,home
+mt_467289782,2026-09-02,comp_4781,tm_26695,PAOK,tm_26639,OFI Crete,0,0,draw
+mt_460572197,2026-09-02,comp_1917,tm_22531,Macará,tm_279303,Manta FC,4,3,home
+mt_024324721,2026-09-02,comp_6694,tm_0438884,Juventus,tm_6281141,SKN St. Pölten,1,1,draw
+mt_022577989,2026-09-02,comp_4084,tm_73342,Grasshopper Club Zürich,tm_98868,FC St. Gallen 1879,2,0,home
+mt_155844739,2026-09-02,comp_4084,tm_51184,FC Luzern,tm_51113,FC Vaduz,2,1,home
+mt_644088580,2026-09-02,comp_4084,tm_02219,FC Thun,tm_64410,FC Lausanne-Sport,0,0,draw
+mt_643532612,2026-09-02,comp_9722,tm_02102,NK Aluminij Kidričevo,tm_51897,NK Celje,0,2,away
+mt_378277718,2026-09-02,comp_6694,tm_6481391,Oud-Heverlee Leuven,tm_3735817,Czarni Sosnowiec,2,1,home
+mt_378257782,2026-09-02,comp_9766,tm_00155,Bohemians Praha 1905,tm_46909,FK Jablonec,1,1,draw
+mt_206706352,2026-09-02,comp_6694,tm_2796637,Real Madrid,tm_1543077,Ajax,2,1,home
+mt_378863421,2026-09-02,comp_364464,tm_0200457,Newell's Old Boys Reserve,tm_8556748,CD Riestra Reserve,0,2,away
+mt_643326053,2026-09-02,comp_364464,tm_6330829,Ferro Carril Oeste Reserve,tm_8988575,Estudiantes de La Plata Reserve,0,1,away
+mt_024410591,2026-09-02,comp_364464,tm_3855474,CA Independiente Reserve,tm_6383443,Platense Reserve,1,1,draw
+mt_150091868,2026-09-02,comp_364464,tm_0958797,Estudiantes de Río Cuarto Reserve,tm_8520572,San Martin Reserve,1,0,home
+mt_150091856,2026-09-02,comp_364464,tm_2638559,Godoy Cruz Reserve,tm_4644725,Tigre Reserve,2,2,draw
+mt_643326041,2026-09-02,comp_364464,tm_5288423,Atlético Tucumán Reserve,tm_3733847,San Lorenzo Reserve,2,1,home
+mt_511437714,2026-09-02,comp_7938,tm_29826,AGF,tm_72074,FC Midtjylland,0,2,away
+mt_467604489,2026-09-02,comp_8597,tm_455781,Mamelodi Sundowns,tm_7356944,Milford FC,2,0,home
+mt_150864075,2026-09-02,comp_4781,tm_47702,AE Larisa,tm_47798,Olympiacos FC,0,4,away
+mt_895702564,2026-09-02,comp_4781,tm_33276,MGS Panserraikos,tm_94911,Atromitos Athens,0,1,away
+mt_150771877,2026-09-02,comp_45001,tm_229721,Sanat Naft Abadan,tm_844888,Sepahan S.C.,0,0,draw
+mt_739559719,2026-09-02,comp_3758,tm_04425,Slavia Sofia,tm_52213,Levski Sofia,1,2,away
+mt_206706363,2026-09-02,comp_6694,tm_8006863,HB Køge,tm_9806149,PSV Eindhoven,1,1,draw
+mt_981281080,2026-09-02,comp_6694,tm_3064426,Real Sociedad,tm_8444036,Chelsea FC,0,1,away
+mt_206665686,2026-09-02,comp_84287,tm_8564596,Abu Qair Semad,tm_317672,Al-Ittihad Alexandria,0,2,away
+mt_150009075,2026-09-02,comp_84287,tm_9472498,Ceramica Cleopatra,tm_1000687,Modern Sport FC,2,0,home
+mt_739143562,2026-09-02,comp_8448,tm_63160,Sivasspor,tm_1649454,Mardin 1969 Spor,2,2,draw
+mt_024712334,2026-09-02,comp_8448,tm_09584,Fatih Karagümrük,tm_91698,Kayserispor,1,1,draw
+mt_511977415,2026-09-02,comp_6429,tm_93670,Hapoel Be'er Sheva,tm_21992,Hapoel Haifa,2,2,draw
+mt_466185992,2026-09-02,comp_1112,tm_937271,BK Olympic,tm_25088,IFK Göteborg,0,5,away
+mt_512412628,2026-09-02,comp_6694,tm_2797663,Servette FC Chênois Féminin,tm_482708,Sparta Prague,3,0,home
+mt_643940439,2026-09-02,comp_6694,tm_4878120,Inter,tm_60994,VfL Wolfsburg,2,0,home
+mt_512412617,2026-09-02,comp_6694,tm_447500,Paris Saint-Germain,tm_4528925,Eintracht Frankfurt,1,1,home
+mt_981449906,2026-09-02,comp_45001,tm_692896,Esteghlal FC,tm_031739,Persepolis FC,1,1,draw
+mt_206767105,2026-09-02,comp_9766,tm_15496,FC Zbrojovka Brno,tm_37577,FC Hradec Králové,1,0,home
+mt_512335957,2026-09-02,comp_45001,tm_9123747,Kheybar Khorramabad FC,tm_557366,Foolad Khuzestan,2,0,home
+mt_206170529,2026-09-02,comp_4781,tm_3806067,GS Marko,tm_0171011,AE Kifisia,2,2,draw
+mt_206882112,2026-09-02,comp_45001,tm_808857,Zob Ahan,tm_8433259,Paykan,1,0,home
+mt_206882181,2026-09-02,comp_45001,tm_772010,Malavan Bandar Anzali FC,tm_9128947,Nassaji Mazandaran FC,0,1,away
+mt_378415825,2026-09-02,comp_4781,tm_0171044,AS Nestos Chrysoupolis,tm_10033,AEK Athens,0,2,away
+mt_378886883,2026-09-02,comp_84287,tm_418128,El Gouna FC,tm_417590,Al-Mokawloon,0,1,away
+mt_895239072,2026-09-02,comp_8448,tm_157164,Van Spor Futbol Kulübü,tm_79443,Batman Petrolspor,0,2,away
+mt_511399687,2026-09-02,comp_6240,tm_47016,Sanfrecce Hiroshima,tm_63253,Nagoya Grampus,3,0,home
+mt_200811392,2026-09-02,comp_6240,tm_79406,Tokyo Verdy,tm_63209,Vissel Kobe,0,2,away
+mt_733066120,2026-09-02,comp_6240,tm_52837,Shimizu S-Pulse,tm_38642,FC Tokyo,1,1,draw
+mt_899677240,2026-09-02,comp_6240,tm_38621,Yokohama F. Marinos,tm_79467,Kyoto Sanga FC,1,1,draw
+mt_377244508,2026-09-02,comp_6240,tm_52898,Avispa Fukuoka,tm_47027,Urawa Red Diamonds,2,3,away
+mt_466122950,2026-09-02,comp_6240,tm_26513,Cerezo Osaka,tm_10971,Kashiwa Reysol,2,0,home
+mt_022955788,2026-09-02,comp_6240,tm_700743,Machida Zelvia,tm_34562,Kawasaki Frontale,2,1,home
+mt_511399676,2026-09-02,comp_6240,tm_035272,V-Varen Nagasaki,tm_85366,Gamba Osaka,2,2,draw
+mt_988433009,2026-09-02,comp_6240,tm_04152,JEF United Chiba,tm_038983,Fagiano Okayama,1,2,away
+mt_200811331,2026-09-02,comp_6240,tm_200306,Mito Hollyhock,tm_04191,Kashima Antlers,4,2,home
+mt_512581292,2026-09-02,comp_08993,tm_0837447,Sutherland Sharks,tm_8402599,Manly United,1,1,away
+mt_981978138,2026-09-02,comp_08993,tm_26351,Marconi Stallions,tm_9300472,North West Sydney Spirit,1,3,away
+mt_988326328,2026-09-02,comp_720692,tm_8450037,Fortaleza CEIF,tm_88957,Once Caldas,1,2,away
+mt_021845972,2026-09-02,comp_1917,tm_34030,LDU,tm_6229144,Mushuc Runa,0,0,draw
+mt_986139042,2026-08-29,comp_9799,tm_134757,Toronto FC,tm_5174148,New York City FC,1,1,draw
+mt_370837161,2026-08-16,comp_9799,tm_5174148,New York City FC,tm_536435,Philadelphia Union,2,3,away
+mt_518229711,2026-08-13,comp_586572,tm_5174148,New York City FC,tm_01977,Club Necaxa,1,2,away
+mt_987113044,2026-08-09,comp_586572,tm_36257,Cruz Azul,tm_5174148,New York City FC,2,1,home
+mt_021445878,2026-08-06,comp_586572,tm_5174148,New York City FC,tm_83625,Santos Laguna,2,0,home
+mt_986198193,2026-07-31,comp_9799,tm_5174148,New York City FC,tm_134757,Toronto FC,1,1,draw
+mt_205661932,2026-08-10,comp_586572,tm_9241601,Nashville SC,tm_19747,Atlético San Luis,4,1,home
+mt_159008417,2026-08-06,comp_586572,tm_9241601,Nashville SC,tm_033872,Club León,0,1,away
+mt_209620628,2026-08-01,comp_9799,tm_98890,DC United,tm_9241601,Nashville SC,2,2,draw
+mt_155165983,2026-08-29,comp_8385,tm_91673,Académico Viseu FC,tm_91602,FC Porto,0,3,away
+mt_988928631,2026-08-23,comp_8385,tm_91602,FC Porto,tm_373760,FC Arouca,2,0,home
+mt_511541732,2026-08-15,comp_8385,tm_63134,Rio Ave,tm_91602,FC Porto,0,2,away
+mt_155165364,2026-08-09,comp_8385,tm_91602,FC Porto,tm_8932260,FC Alverca,2,0,home
+mt_626608985,2026-05-16,comp_8385,tm_91602,FC Porto,tm_26997,Santa Clara,1,0,home
+mt_979393404,2026-05-10,comp_8385,tm_8840625,AVS - Futebol SAD,tm_91602,FC Porto,3,1,home
+mt_252121726,2026-05-02,comp_8385,tm_91602,FC Porto,tm_8932260,FC Alverca,1,0,home
+mt_404242822,2026-04-26,comp_8385,tm_47570,CF Estrela Amadora,tm_91602,FC Porto,1,2,away
+mt_191818615,2026-05-02,comp_8385,tm_04880,Moreirense,tm_47570,CF Estrela Amadora,3,2,home
+mt_363434135,2026-04-25,comp_8385,tm_63118,Benfica,tm_04880,Moreirense,4,1,home
+mt_252121785,2026-04-20,comp_8385,tm_04880,Moreirense,tm_17364,Estoril Praia,1,0,home
+mt_205231375,2026-05-13,comp_0256,tm_83394,RC Lens,tm_01119,Paris Saint-Germain,0,2,away
+mt_191036815,2026-05-10,comp_0256,tm_01119,Paris Saint-Germain,tm_40658,Stade Brestois,1,0,home
+mt_626964045,2026-05-02,comp_0256,tm_25506,Metz,tm_58813,AS Monaco,1,2,away
+mt_733711793,2026-08-29,comp_8814,tm_73725,Levante UD,tm_64056,Real Betis,5,2,home
+mt_191006317,2026-05-23,comp_8814,tm_64056,Real Betis,tm_73725,Levante UD,2,1,home
+mt_838550269,2026-05-12,comp_8814,tm_64056,Real Betis,tm_64612,Elche,2,1,home
+mt_252666829,2026-05-03,comp_8814,tm_64056,Real Betis,tm_20291,Real Oviedo,3,0,home
+mt_747995227,2026-05-14,comp_8814,tm_73673,Real Madrid,tm_20291,Real Oviedo,2,0,home
+mt_979111384,2026-05-03,comp_8814,tm_02599,Espanyol,tm_73673,Real Madrid,0,2,away
+mt_838528628,2026-04-25,comp_8321,tm_8814,West Bromwich Albion,tm_9825,Ipswich Town,0,0,draw
+mt_626386585,2026-04-22,comp_8321,tm_3169,Charlton Athletic,tm_9825,Ipswich Town,1,2,away
+mt_252632723,2026-04-19,comp_8321,tm_9825,Ipswich Town,tm_6387,Middlesbrough,2,2,draw
+mt_022587842,2026-08-29,comp_3039,tm_0406,Liverpool,tm_0836,Nottingham Forest,2,2,draw
+mt_644018143,2026-08-23,comp_3039,tm_7938,Newcastle United,tm_0406,Liverpool,2,2,draw
+mt_010244270,2026-05-09,comp_3039,tm_0406,Liverpool,tm_8531,Chelsea,1,1,draw
+mt_747399419,2026-05-03,comp_3039,tm_4643,Manchester United,tm_0406,Liverpool,3,2,home
+mt_404677022,2026-04-25,comp_3039,tm_0406,Liverpool,tm_3498,Crystal Palace,3,1,home
+mt_404678180,2026-04-19,comp_3039,tm_8091,Everton,tm_0406,Liverpool,1,2,away
+mt_469704026,2025-09-13,comp_62263,tm_1548,Shepshed Dynamo,tm_183717,Stamford,0,2,away
+mt_469757228,2025-09-02,comp_62263,tm_1548,Shepshed Dynamo,tm_314534,Bourne Town,1,1,home
+mt_469011158,2025-08-30,comp_62263,tm_314534,Bourne Town,tm_1548,Shepshed Dynamo,0,0,draw
+mt_400985670,2022-09-06,comp_62263,tm_032749,Coalville Town,tm_1548,Shepshed Dynamo,2,0,home
+mt_199454310,2022-09-03,comp_62263,tm_1548,Shepshed Dynamo,tm_032749,Coalville Town,1,1,draw
+mt_367403335,2023-09-02,comp_62263,tm_6364692,Ossett United,tm_183660,Marske United FC,0,3,away
+mt_467242680,2026-08-29,comp_25875,tm_6433194,Padiham FC,tm_3736750,Pontefract Collieries,0,7,away
+mt_731400505,2025-08-30,comp_62263,tm_4640044,Morpeth Town,tm_3736750,Pontefract Collieries,2,1,home
+mt_196176634,2024-08-31,comp_62263,tm_151611,Sheffield FC,tm_3736750,Pontefract Collieries,5,0,home
+mt_833267369,2022-09-17,comp_62263,tm_9876,Chester,tm_3736750,Pontefract Collieries,0,0,home
+mt_011731072,2022-09-06,comp_62263,tm_3736750,Pontefract Collieries,tm_3115123,Charnock Richard FC,2,1,home
+mt_833292462,2022-09-03,comp_62263,tm_3115123,Charnock Richard FC,tm_3736750,Pontefract Collieries,2,2,draw
+mt_586448423,2021-10-19,comp_62263,tm_3052,FC Halifax Town,tm_3736750,Pontefract Collieries,1,0,home
+mt_194647641,2021-10-16,comp_62263,tm_3736750,Pontefract Collieries,tm_3052,FC Halifax Town,0,0,draw
+mt_733616406,2026-08-29,comp_8531,tm_79129,Cercle Brugge,tm_65625,Lommel SK,0,1,away
+mt_022575191,2026-08-23,comp_8531,tm_65625,Lommel SK,tm_51532,KVC Westerlo,4,0,home
+mt_377454618,2026-08-16,comp_8531,tm_65625,Lommel SK,tm_89872,RC Sporting Charleroi,0,1,away
+mt_022575147,2026-08-08,comp_8531,tm_46411,Sint-Truidense VV,tm_65625,Lommel SK,1,1,draw
+mt_988822386,2026-05-23,comp_8531,tm_9427980,FCV Dender,tm_65625,Lommel SK,0,0,draw
+mt_155566368,2026-05-17,comp_8531,tm_65625,Lommel SK,tm_9427980,FCV Dender,3,2,home
+mt_466066020,2026-05-09,comp_8531,tm_1988367,K. Beerschot V.A.,tm_65625,Lommel SK,1,3,away
+mt_899393428,2026-05-02,comp_8531,tm_65625,Lommel SK,tm_1988367,K. Beerschot V.A.,3,1,home
+mt_466292016,2026-08-23,comp_8531,tm_89808,Club Brugge KV,tm_79129,Cercle Brugge,1,0,home
+mt_987320394,2026-05-24,comp_8531,tm_89808,Club Brugge KV,tm_51594,KAA Gent,5,0,home
+mt_159864885,2026-05-21,comp_8531,tm_09014,KV Mechelen,tm_89808,Club Brugge KV,2,2,draw
+mt_376415445,2026-05-17,comp_8531,tm_89808,Club Brugge KV,tm_17744,Royale Union Saint-Gilloise,5,0,home
+mt_518946934,2026-05-09,comp_8531,tm_89808,Club Brugge KV,tm_46411,Sint-Truidense VV,2,0,home
+mt_404012982,2026-05-10,comp_5840,tm_51388,Fiorentina,tm_51322,Genoa,0,0,draw
+mt_747406179,2026-04-26,comp_5840,tm_51322,Genoa,tm_02924,Como,0,2,away
+mt_252581370,2026-05-02,comp_5840,tm_02924,Como,tm_02943,Napoli,0,0,draw
+mt_893485039,2026-04-21,comp_8525,tm_37262,Inter,tm_02924,Como,3,2,home
+mt_377364632,2026-08-28,comp_4643,tm_98299,FC Bayern München,tm_37258,VfB Stuttgart,5,1,home
+mt_899079062,2026-08-21,comp_3620,tm_51282,F.C. Hansa Rostock,tm_37258,VfB Stuttgart,0,4,away
+mt_644166396,2026-05-23,comp_3620,tm_98299,FC Bayern München,tm_37258,VfB Stuttgart,3,0,home
+mt_191038914,2026-05-16,comp_4643,tm_02978,Eintracht Frankfurt,tm_37258,VfB Stuttgart,2,2,draw
+mt_838546829,2026-05-09,comp_4643,tm_37258,VfB Stuttgart,tm_20832,Bayer 04 Leverkusen,3,1,home
+mt_010489500,2026-05-02,comp_4643,tm_73909,TSG Hoffenheim,tm_37258,VfB Stuttgart,3,3,draw
+mt_626315612,2026-04-26,comp_4643,tm_37258,VfB Stuttgart,tm_02413,SV Werder Bremen,1,1,draw
+mt_987864301,2026-04-23,comp_3620,tm_37258,VfB Stuttgart,tm_89592,SC Freiburg,1,1,home
+mt_988973761,2026-08-29,comp_4643,tm_20721,1. FC Köln,tm_73909,TSG Hoffenheim,3,2,home
+mt_733563564,2026-08-24,comp_3620,tm_371414,FC Würzburger Kickers,tm_20721,1. FC Köln,1,2,away
+mt_626310209,2026-05-16,comp_4643,tm_98299,FC Bayern München,tm_20721,1. FC Köln,5,1,home
+mt_585273565,2026-05-10,comp_4643,tm_20721,1. FC Köln,tm_44984,1. FC Heidenheim,1,3,away
+mt_979164394,2026-05-02,comp_4643,tm_37885,1. FC Union Berlin,tm_20721,1. FC Köln,2,2,draw
+mt_838546783,2026-04-25,comp_4643,tm_20721,1. FC Köln,tm_20832,Bayer 04 Leverkusen,1,2,away
+mt_747920664,2026-04-17,comp_4643,tm_64315,FC St. Pauli,tm_20721,1. FC Köln,1,1,draw
+mt_838546762,2026-04-12,comp_4643,tm_20721,1. FC Köln,tm_02413,SV Werder Bremen,3,1,home
+mt_899755659,2026-08-28,comp_9777,tm_40015,Nancy,tm_842596,USL Dunkerque,2,0,home
+mt_644033548,2026-08-21,comp_9777,tm_842596,USL Dunkerque,tm_97771,Montpellier,0,1,away
+mt_988311472,2026-08-14,comp_9777,tm_97749,Stade de Reims,tm_842596,USL Dunkerque,3,3,draw
+mt_377488187,2026-08-08,comp_9777,tm_842596,USL Dunkerque,tm_25578,Grenoble Foot 38,4,2,home
+mt_747924479,2026-05-09,comp_9777,tm_40015,Nancy,tm_842596,USL Dunkerque,3,2,home
+mt_375527334,2026-05-02,comp_9777,tm_842596,USL Dunkerque,tm_25578,Grenoble Foot 38,0,1,away
+mt_460708252,2026-04-27,comp_9777,tm_25099,US Boulogne Côte-d'Opale,tm_842596,USL Dunkerque,2,6,away
+mt_838546342,2026-04-20,comp_9777,tm_842596,USL Dunkerque,tm_58845,Stade Lavallois,0,2,away
+mt_511922325,2026-08-28,comp_9777,tm_19977,Clermont Foot,tm_36680,Sochaux,0,0,draw
+mt_899755693,2026-08-21,comp_9777,tm_19977,Clermont Foot,tm_62204,Dijon,1,1,draw
+mt_466277104,2026-08-14,comp_9777,tm_83365,Saint-Étienne,tm_19977,Clermont Foot,3,1,home
+mt_466277875,2026-08-08,comp_9777,tm_19977,Clermont Foot,tm_97749,Stade de Reims,0,0,draw
+mt_010481150,2026-05-09,comp_9777,tm_19977,Clermont Foot,tm_01125,Guingamp,1,0,home
+mt_980006107,2026-05-02,comp_9777,tm_97771,Montpellier,tm_19977,Clermont Foot,1,2,away
+mt_404751052,2026-04-24,comp_9777,tm_19977,Clermont Foot,tm_40064,Bastia,1,1,draw
+mt_979164708,2026-04-17,comp_9777,tm_97723,Le Mans,tm_19977,Clermont Foot,1,0,home
+mt_155800706,2026-08-28,comp_9777,tm_97771,Montpellier,tm_25099,US Boulogne Côte-d'Opale,0,0,draw
+mt_022544915,2026-08-21,comp_9777,tm_25099,US Boulogne Côte-d'Opale,tm_007490,Red Star FC,1,1,draw
+mt_733699033,2026-08-14,comp_9777,tm_01125,Guingamp,tm_25099,US Boulogne Côte-d'Opale,1,0,home
+mt_899755099,2026-08-08,comp_9777,tm_25099,US Boulogne Côte-d'Opale,tm_40015,Nancy,0,0,draw
+mt_203379157,2026-05-09,comp_9777,tm_58845,Stade Lavallois,tm_25099,US Boulogne Côte-d'Opale,2,1,home
+mt_154463890,2026-05-02,comp_9777,tm_25099,US Boulogne Côte-d'Opale,tm_0238139,Annecy FC,1,2,away
+mt_731152643,2026-04-18,comp_9777,tm_97782,Troyes,tm_25099,US Boulogne Côte-d'Opale,1,0,home
+mt_466104674,2026-08-29,comp_3809,tm_38512,Excelsior,tm_10401,Sparta Rotterdam,2,1,home
+mt_363710151,2026-05-17,comp_3809,tm_10401,Sparta Rotterdam,tm_38512,Excelsior,2,3,away
+mt_010238371,2026-05-10,comp_3809,tm_47976,FC Twente,tm_10401,Sparta Rotterdam,4,0,home
+mt_252079611,2026-05-03,comp_3809,tm_10401,Sparta Rotterdam,tm_79161,Go Ahead Eagles,2,2,draw
+mt_626491302,2026-04-22,comp_3809,tm_91047,SC Telstar,tm_10401,Sparta Rotterdam,4,1,home
+mt_022910208,2026-08-29,comp_3809,tm_26389,PEC Zwolle,tm_91026,NEC Nijmegen,1,3,away
+mt_988479843,2026-08-09,comp_3809,tm_26389,PEC Zwolle,tm_52627,AFC Ajax,0,2,away
+mt_585147235,2026-05-10,comp_3809,tm_38581,Fortuna Sittard,tm_26389,PEC Zwolle,3,2,home
+mt_585147467,2026-05-03,comp_3809,tm_26389,PEC Zwolle,tm_38524,Heracles Almelo,1,0,home
+mt_252079622,2026-04-23,comp_3809,tm_91010,PSV Eindhoven,tm_26389,PEC Zwolle,6,1,home
+mt_200119120,2026-08-29,comp_9639,tm_9137131,FK Csíkszereda Miercurea Ciuc,tm_34668,CFR 1907 Cluj,2,3,away
+mt_733662657,2026-08-16,comp_9639,tm_8350909,FC Corvinul Hunedoara,tm_34668,CFR 1907 Cluj,3,0,home
+mt_512795244,2026-08-13,comp_408698,tm_1135,Tromsø IL,tm_34668,CFR 1907 Cluj,2,1,home
+mt_378043862,2026-08-06,comp_408698,tm_34668,CFR 1907 Cluj,tm_1135,Tromsø IL,0,5,away
+mt_377340505,2026-07-30,comp_408698,tm_34668,CFR 1907 Cluj,tm_6114280,FC Alashkert,3,0,home
+mt_466225260,2026-07-27,comp_9639,tm_34668,CFR 1907 Cluj,tm_411160,FC Voluntari,5,0,home
+mt_155883897,2026-07-25,comp_9639,tm_04497,FC Farul Constanța,tm_8350909,FC Corvinul Hunedoara,2,0,home
+mt_644001044,2026-07-19,comp_9639,tm_088342,FC Universitatea Cluj,tm_04497,FC Farul Constanța,2,1,home
+mt_377873784,2026-05-31,comp_9639,tm_04497,FC Farul Constanța,tm_338337,Chindia Târgoviște,1,1,home
+mt_988470813,2026-08-29,comp_0256,tm_74434,Olympique Lyonnais,tm_97714,Le Havre,1,1,draw
+mt_643463960,2026-08-26,comp_3498,tm_74434,Olympique Lyonnais,tm_91646,Fenerbahçe,1,2,away
+mt_024204303,2026-08-18,comp_3498,tm_91646,Fenerbahçe,tm_74434,Olympique Lyonnais,1,1,draw
+mt_206988230,2026-08-11,comp_3498,tm_74434,Olympique Lyonnais,tm_89295,AC Sparta Praha,3,0,home
+mt_467511217,2026-08-04,comp_3498,tm_89295,AC Sparta Praha,tm_74434,Olympique Lyonnais,2,1,home
+mt_252695517,2026-05-17,comp_0256,tm_74434,Olympique Lyonnais,tm_83394,RC Lens,0,4,away
+mt_899632959,2026-08-29,comp_0256,tm_62226,Auxerre,tm_01158,Angers,1,3,away
+mt_200853007,2026-08-22,comp_0256,tm_83394,RC Lens,tm_62226,Auxerre,5,2,home
+mt_747925713,2026-05-10,comp_0256,tm_62226,Auxerre,tm_25567,Nice,2,1,home
+mt_252720165,2026-05-03,comp_0256,tm_62226,Auxerre,tm_01158,Angers,3,1,home
+mt_191615854,2026-04-25,comp_0256,tm_74434,Olympique Lyonnais,tm_62226,Auxerre,3,2,home
+mt_252720153,2026-04-19,comp_0256,tm_58813,AS Monaco,tm_62226,Auxerre,2,2,draw
+mt_010302581,2026-04-11,comp_0256,tm_62226,Auxerre,tm_36675,Nantes,0,0,draw
+mt_644620513,2026-08-29,comp_0406,tm_51271,1. FC Nürnberg,tm_15059,Arminia Bielefeld,4,1,home
+mt_511491442,2026-08-22,comp_3620,tm_00790,SG Sonnenhof Großaspach,tm_15059,Arminia Bielefeld,2,2,home
+mt_377364258,2026-08-16,comp_0406,tm_15059,Arminia Bielefeld,tm_98178,Energie Cottbus,3,0,home
+mt_466402190,2026-08-08,comp_0406,tm_51223,Karlsruher SC,tm_15059,Arminia Bielefeld,2,1,home
+mt_979163736,2026-05-17,comp_0406,tm_15059,Arminia Bielefeld,tm_89548,Hertha BSC,6,1,home
+mt_252691572,2026-05-08,comp_0406,tm_46190,1. FC Kaiserslautern,tm_15059,Arminia Bielefeld,2,0,home
+mt_363804618,2026-05-02,comp_0406,tm_15059,Arminia Bielefeld,tm_98181,VfL Bochum 1848,1,1,draw
+mt_626310232,2026-04-25,comp_0406,tm_15018,Preußen Münster,tm_15059,Arminia Bielefeld,2,3,away
+mt_988973460,2026-08-30,comp_0406,tm_64315,FC St. Pauli,tm_46190,1. FC Kaiserslautern,1,2,away
+mt_200710775,2026-08-23,comp_3620,tm_98124,Rot-Weiss Essen,tm_64315,FC St. Pauli,2,0,home
+mt_899837620,2026-08-14,comp_0406,tm_51235,Holstein Kiel,tm_64315,FC St. Pauli,2,2,draw
+mt_022015307,2026-08-09,comp_0406,tm_64315,FC St. Pauli,tm_20666,SpVgg Greuther Fürth,1,1,draw
+mt_585279851,2026-05-16,comp_4643,tm_64315,FC St. Pauli,tm_02484,VfL Wolfsburg,1,3,away
+mt_191037146,2026-05-09,comp_4643,tm_160814,RB Leipzig,tm_64315,FC St. Pauli,2,1,home
+mt_626315681,2026-05-03,comp_4643,tm_64315,FC St. Pauli,tm_64398,1. FSV Mainz 05,1,2,away
+mt_010489555,2026-04-25,comp_4643,tm_44984,1. FC Heidenheim,tm_64315,FC St. Pauli,2,0,home
+mt_466402156,2026-08-30,comp_0406,tm_64302,Darmstadt 98,tm_20600,Hannover 96,0,1,away
+mt_022352344,2026-08-22,comp_3620,tm_9218808,SV Hemelingen,tm_20600,Hannover 96,1,9,away
+mt_200251721,2026-08-16,comp_0406,tm_20600,Hannover 96,tm_02484,VfL Wolfsburg,0,1,away
+mt_988973299,2026-08-09,comp_0406,tm_98178,Energie Cottbus,tm_20600,Hannover 96,3,1,home
+mt_747926406,2026-05-17,comp_0406,tm_20600,Hannover 96,tm_51271,1. FC Nürnberg,3,3,draw
+mt_747926450,2026-05-09,comp_0406,tm_98181,VfL Bochum 1848,tm_20600,Hannover 96,1,1,draw
+mt_585279846,2026-05-03,comp_0406,tm_20600,Hannover 96,tm_15018,Preußen Münster,3,3,draw
+mt_191038956,2026-04-25,comp_0406,tm_51223,Karlsruher SC,tm_20600,Hannover 96,1,3,away
+mt_899837646,2026-08-29,comp_0406,tm_51223,Karlsruher SC,tm_02484,VfL Wolfsburg,2,5,away
+mt_644904956,2026-08-21,comp_3620,tm_15018,Preußen Münster,tm_51223,Karlsruher SC,1,2,away
+mt_899837085,2026-08-15,comp_0406,tm_46190,1. FC Kaiserslautern,tm_51223,Karlsruher SC,0,0,draw
+mt_838547366,2026-05-17,comp_0406,tm_51223,Karlsruher SC,tm_98181,VfL Bochum 1848,1,2,away
+mt_838547300,2026-05-08,comp_0406,tm_20677,SC Paderborn 07,tm_51223,Karlsruher SC,2,2,draw
+mt_252691561,2026-05-03,comp_0406,tm_51223,Karlsruher SC,tm_64302,Darmstadt 98,2,1,home
+mt_466248016,2026-08-29,comp_8363,tm_52257,Shakhtar Donetsk,tm_6344902,Polissya Zhytomyr,0,2,away
+mt_899684893,2026-07-29,comp_408698,tm_08959,FC København,tm_6344902,Polissya Zhytomyr,2,1,home
+mt_899684584,2026-07-23,comp_408698,tm_6344902,Polissya Zhytomyr,tm_08959,FC København,3,3,draw
+mt_404788705,2026-05-24,comp_8363,tm_6344902,Polissya Zhytomyr,tm_0207787,Rukh Lviv,2,0,home
+mt_838500549,2026-05-18,comp_8363,tm_3161303,Zoria Luhansk,tm_6344902,Polissya Zhytomyr,0,0,draw
+mt_644069253,2026-08-29,comp_8363,tm_4865740,Kudrivka,tm_9217317,FC Epicentr Dunaivtsi,0,3,away
+mt_466248080,2026-08-15,comp_8363,tm_4865740,Kudrivka,tm_0128797,Obolon Kyiv,0,0,draw
+mt_899780355,2026-08-08,comp_8363,tm_7052903,FC Livyi Bereh Kyiv,tm_4865740,Kudrivka,0,0,draw
+mt_155816044,2026-08-03,comp_8363,tm_52257,Shakhtar Donetsk,tm_4865740,Kudrivka,5,1,home
+mt_155607045,2026-06-09,comp_8363,tm_5193941,Ahrobiznes Volochysk,tm_4865740,Kudrivka,2,2,away
+mt_733590914,2026-06-05,comp_8363,tm_4865740,Kudrivka,tm_5193941,Ahrobiznes Volochysk,0,0,draw
+mt_626399322,2026-05-24,comp_8363,tm_47720,Dynamo Kyiv,tm_4865740,Kudrivka,3,2,home
+mt_979947803,2026-05-18,comp_8363,tm_4865740,Kudrivka,tm_3847085,LNZ Cherkasy,1,0,home

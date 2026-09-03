@@ -1,9 +1,6 @@
-streamlit
-pandas
-plotly
-python-dotenv
 requests
+python-dotenv
 numpy
-scikit-learn
-xgboost
-streamlit-javascript
+cachetools
+flask
+gunicorn
