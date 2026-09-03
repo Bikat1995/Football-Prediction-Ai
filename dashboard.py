@@ -65,7 +65,7 @@ def get_league_map():
         for c in comps
         if c.get('type') == 'league' and c.get('has_team_stats') == True
     }
-# ─── CSS ──────────────────────────────────────────────────────────────────────
+
 def _load_css():
     base_css = ""
     if os.path.exists("style.css"):
@@ -171,72 +171,38 @@ if 'game_odds' not in st.session_state:
 if 'game_h2h' not in st.session_state:
     st.session_state.game_h2h = {}
 
-# ─── Responsive Navbar (HTML) ─────────────────────────────────────────────────
+# ─── Top bar ──────────────────────────────────────────────────────────────────
 logo_html = (
     f"<img src='data:image/png;base64,{LOGO_B64}' height='34' "
-    f"style='border-radius:4px;margin-right:10px;'>"
+    f"style='border-radius:4px;margin-right:8px;'>"
     if LOGO_B64 else ""
 )
 
-current_day = st.session_state.day
-nav_items = [
-    ('today',    'Today'),
-    ('tomorrow', 'Tomorrow'),
-    ('live',     'Live'),
-    ('past',     'Past Results'),
-]
-
-nav_links_html = ''
-for key, label in nav_items:
-    active_cls = ' nav-btn--active' if key == current_day else ''
-    nav_links_html += f"<button class='nav-btn{active_cls}' onclick=\"window.parent.location.search='?nav={key}'\">{label}</button>"
-
-mob_nav_items_html = ''
-for key, label in nav_items:
-    active_cls = ' mob-nav-item--active' if key == current_day else ''
-    mob_nav_items_html += f"<button class='mob-nav-item{active_cls}' onclick=\"document.getElementById('mob-menu').style.display='none';window.parent.location.search='?nav={key}'\">{label}</button>"
-
-utc_time = datetime.utcnow().strftime('%H:%M UTC')
-
 st.html(f"""
-<nav class="navbar">
-  <div class="navbar-brand">
+<div class="top-bar">
+  <div class="top-bar-brand">
     {logo_html}
     <div>
       <div class="brand-name">better</div>
       <div class="brand-sub">AI Football Predictions</div>
     </div>
   </div>
-
-  <!-- Desktop nav tabs -->
-  <div class="navbar-tabs">
-    {nav_links_html}
+  <div style="font-size:10px;color:#4a5470;font-family:var(--f-data);">
+    Auto-refreshes every 5 min &nbsp;·&nbsp; {datetime.utcnow().strftime('%H:%M')} UTC
   </div>
-
-  <!-- Desktop clock -->
-  <div class="navbar-clock">Auto-refreshes every 5 min &nbsp;·&nbsp; {utc_time}</div>
-
-  <!-- Hamburger (mobile only) -->
-  <button class="hamburger" onclick="var m=document.getElementById('mob-menu');m.style.display=m.style.display==='flex'?'none':'flex'">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- Mobile dropdown menu -->
-<div id="mob-menu" class="mob-menu" style="display:none;">
-  {mob_nav_items_html}
-  <div class="mob-clock">Auto-refreshes every 5 min · {utc_time}</div>
 </div>
 """)
 
-# ─── Handle nav query param ────────────────────────────────────────────────────
-_qp = st.query_params.get('nav', None)
-if _qp and _qp in [k for k, _ in nav_items] and _qp != st.session_state.day:
-    st.session_state.day = _qp
-    st.query_params.clear()
-    st.rerun()
-
-
+# ─── Day selector ─────────────────────────────────────────────────────────────
+d_cols = st.columns([1, 1.3, 1, 1.5, 4.2])
+for col, key, label in zip(d_cols[:4],
+                            ['today', 'tomorrow', 'live', 'past'],
+                            ['Today', 'Tomorrow', 'Live', 'Past Results']):
+    is_active = st.session_state.day == key
+    if col.button(label, use_container_width=True,
+                  type='primary' if is_active else 'secondary'):
+        st.session_state.day = key
+        st.rerun()
 
 # ─── Past Results ─────────────────────────────────────────────────────────────
 if st.session_state.day == 'past':
