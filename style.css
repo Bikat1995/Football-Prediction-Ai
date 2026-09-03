@@ -64,9 +64,10 @@ html, body,
 }
 
 /* ── Main container ── */
-.main .block-container {
+.main .block-container,
+[data-testid="stAppViewBlockContainer"] {
   max-width: 1440px !important;
-  padding: 0 2rem 4rem 2rem !important;
+  padding: 1.5rem 2.5rem 4rem 2.5rem !important;
 }
 
 /* ── Navbar ── */
@@ -192,8 +193,9 @@ html, body,
 
 /* ── Mobile responsive breakpoint ── */
 @media (max-width: 768px) {
-  .main .block-container {
-    padding: 0 0.75rem 4rem 0.75rem !important;
+  .main .block-container,
+  [data-testid="stAppViewBlockContainer"] {
+    padding: 1rem 0.75rem 4rem 0.75rem !important;
   }
   .navbar-tabs { display: none !important; }
   .navbar-clock { display: none !important; }
@@ -205,9 +207,9 @@ html, body,
   [data-testid="stExpander"] summary { padding: 12px 14px !important; font-size: 12px !important; }
   [data-testid="stExpander"] [data-testid="stExpanderDetails"] { padding: 0 12px 14px 12px !important; }
 
-  /* Make columns stack on mobile */
-  [data-testid="stHorizontalBlock"] { flex-wrap: wrap !important; gap: 8px !important; }
-  [data-testid="stHorizontalBlock"] > div { min-width: 140px !important; }
+  /* Force all columns to stack vertically on mobile */
+  [data-testid="stHorizontalBlock"] { flex-direction: column !important; gap: 8px !important; }
+  [data-testid="stHorizontalBlock"] > div { width: 100% !important; min-width: 100% !important; }
 }
 
 

@@ -175,12 +175,12 @@ nav_items = [
 nav_links_html = ''
 for key, label in nav_items:
     active_cls = ' nav-btn--active' if key == current_day else ''
-    nav_links_html += f"<button class='nav-btn{active_cls}' onclick=\"window.location.search='?nav={key}'\">{label}</button>"
+    nav_links_html += f"<button class='nav-btn{active_cls}' onclick=\"window.parent.location.search='?nav={key}'\">{label}</button>"
 
 mob_nav_items_html = ''
 for key, label in nav_items:
     active_cls = ' mob-nav-item--active' if key == current_day else ''
-    mob_nav_items_html += f"<button class='mob-nav-item{active_cls}' onclick=\"document.getElementById('mob-menu').style.display='none';window.location.search='?nav={key}'\">{label}</button>"
+    mob_nav_items_html += f"<button class='mob-nav-item{active_cls}' onclick=\"document.getElementById('mob-menu').style.display='none';window.parent.location.search='?nav={key}'\">{label}</button>"
 
 utc_time = datetime.utcnow().strftime('%H:%M UTC')
 
