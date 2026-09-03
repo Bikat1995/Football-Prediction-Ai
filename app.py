@@ -25,12 +25,8 @@ for _logo_name in ['Better-logo.png', 'logo.png', 'Logo.png']:
 
 form_cache = TTLCache(maxsize=500, ttl=3600)
 
-LEAGUES = [
-    5242, 6088, 5971, 6061, 6223, 5240, 6171, 6245, 6192, 5966,
-    5972, 6301, 6089, 5236, 6032, 5968, 6013, 6204, 6203, 6184,
-    5970, 6035, 6039, 6248, 6228, 6205, 5961, 5960, 6157, 5969,
-    6081, 6033, 6220, 6065, 6214, 5978
-]
+from predict_today import LEAGUES as PT_LEAGUES
+LEAGUES = list(PT_LEAGUES.keys())
 
 @cached(form_cache)
 def cached_team_form(team_id):
