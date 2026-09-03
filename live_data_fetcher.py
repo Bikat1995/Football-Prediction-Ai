@@ -191,21 +191,27 @@ def _get(endpoint: str, params: dict, ttl: int = 1800, retries=2):
 # ─────────────────────────────────────────────────────────────────────────────
 
 def get_fixtures_for_date(target_date: str, leagues=None) -> list:
-    """All fixtures for a given date (YYYY-MM-DD). Fetching per league to avoid pagination limits."""
+    """All fixtures for a given date (YYYY-MM-DD). Fetches globally and filters to avoid rate limits."""
     if not leagues:
         return []
     all_items = []
     import time
-    for lg in leagues:
-        # Cache for 12 hours since schedules rarely change
-        data = _get('matches', {'competition_id': lg, 'date_from': target_date, 'date_to': target_date, 'limit': 100}, ttl=43200)
-        if data and 'data' in data:
-            all_items.extend(data['data'])
-        time.sleep(0.25) # 4 req/sec is very safe
-    return [f for f in all_items if f['status'] in UPCOMING_STATUSES]
+    page = 1
+    while True:
+        data = _get('matches', {'date_from': target_date, 'date_to': target_date, 'limit': 100, 'page': page}, ttl=43200)
+        if not data or 'data' not in data:
+            break
+        all_items.extend(data['data'])
+        meta = data.get('meta', {})
+        if page >= meta.get('total_pages', 1):
+            break
+        page += 1
+        time.sleep(0.5)
+
+    return [f for f in all_items if f.get('status') in UPCOMING_STATUSES and f.get('competition_id') in leagues]
 
 def get_upcoming_fixtures(leagues=None) -> list:
-    """Today + Tomorrow upcoming fixtures. Fetching per league to bypass the 100-match limit globally."""
+    """Today + Tomorrow upcoming fixtures. Fetches globally and filters to avoid rate limits."""
     if not leagues:
         return []
     today    = date.today().isoformat()
@@ -213,14 +219,20 @@ def get_upcoming_fixtures(leagues=None) -> list:
     
     all_items = []
     import time
-    for lg in leagues:
+    page = 1
+    while True:
         # Cache for 15 minutes — short enough to pick up new leagues/config without stale data
-        data = _get('matches', {'competition_id': lg, 'date_from': today, 'date_to': tomorrow, 'limit': 100}, ttl=900)
-        if data and 'data' in data:
-            all_items.extend(data['data'])
-        time.sleep(1.0)  # 1 req/sec to avoid rate limiting with 30+ leagues
+        data = _get('matches', {'date_from': today, 'date_to': tomorrow, 'limit': 100, 'page': page}, ttl=900)
+        if not data or 'data' not in data:
+            break
+        all_items.extend(data['data'])
+        meta = data.get('meta', {})
+        if page >= meta.get('total_pages', 1):
+            break
+        page += 1
+        time.sleep(0.5)
     
-    return [f for f in all_items if f.get('status') in UPCOMING_STATUSES]
+    return [f for f in all_items if f.get('status') in UPCOMING_STATUSES and f.get('competition_id') in leagues]
 
 def get_live_fixtures(leagues=None) -> list:
     """Currently in-play matches globally, filtered by leagues."""
