@@ -308,3 +308,9 @@ button[kind="secondary"]:hover {
   margin-right: 4px;
   color: #fff;
 }
+
+/* Hide Streamlit default UI elements */
+[data-testid=stHeader] {display: none;}
+[data-testid=stToolbar] {display: none;}
+#MainMenu {display: none;}
+footer {display: none;}
