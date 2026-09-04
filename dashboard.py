@@ -1,4 +1,12 @@
 import streamlit as st
+
+# Start background tasks (auto-trainer and keep-alive)
+try:
+    import background_tasks
+    background_tasks.start_background_tasks()
+except Exception as e:
+    print("Could not start background tasks:", e)
+
 from datetime import datetime, date, timedelta
 from dotenv import load_dotenv
 load_dotenv()
