@@ -93,9 +93,9 @@ def fmt_date_short(iso):
     except: return iso[:10]
 
 def conf_color(pct):
-    if pct >= 65: return "#10B981"   # strong — green
-    if pct >= 54: return "#F59E0B"   # moderate — amber
-    return "#6b7280"                 # lean — grey
+    if pct >= 70: return "#10B981"   # very high — green
+    if pct >= 60: return "#F59E0B"   # solid edge — amber
+    return "#6b7280"                 # no clear edge — grey
 
 def form_bubbles_html(form_arr, n=5):
     if not form_arr:
@@ -711,8 +711,36 @@ for game in all_games:
         league = league_map.get(comp_id, 'Unknown League')
     grouped_games[league].append(game)
 
-# Iterate through sorted leagues
-for league in sorted(grouped_games.keys()):
+# ── League priority ordering ──────────────────────────────────────────────────
+LEAGUE_PRIORITY = [
+    "Premier League",      # England
+    "LaLiga",              # Spain
+    "Serie A",             # Italy
+    "Bundesliga",          # Germany
+    "Ligue 1",             # France
+    "UEFA Champions League",
+    "UEFA Europa League",
+    "Championship",        # England 2nd
+    "Liga Portugal Betclic",  # Portugal
+    "Eredivisie",          # Netherlands
+    "Scottish Premiership",
+    "LaLiga 2",
+    "2. Bundesliga",
+    "Serie B",
+    "Ligue 2",
+    "Russian Premier League",
+    "Ukrainian Premier League",
+    "Turkish Super Lig",
+    "MLS",
+    "Brasileirao Serie A",
+]
+
+def league_sort_key(name):
+    if name in LEAGUE_PRIORITY:
+        return LEAGUE_PRIORITY.index(name)
+    return len(LEAGUE_PRIORITY) + 1  # Push unknown leagues to the bottom
+
+for league in sorted(grouped_games.keys(), key=league_sort_key):
     # Display the league name as a distinct header
     st.html(f"""
     <div style='margin-top: 24px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;'>
@@ -743,5 +771,13 @@ for league in sorted(grouped_games.keys()):
             else:
                 pick, pct = "Draw", dr_
 
-        render_card(game, 'unified', pick, pct, conf_color(pct))
+        # Only surface picks where we have genuine edge (>= 60% confidence).
+        # Below that threshold, label it as no clear edge to avoid bad calls.
+        if pct < 60:
+            pick_display = "No Clear Edge"
+            color_display = "#6b7280"  # grey
+        else:
+            pick_display = pick
+            color_display = conf_color(pct)
+        render_card(game, 'unified', pick_display, pct, color_display)
 
