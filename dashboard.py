@@ -164,10 +164,7 @@ def get_all_predictions(day: str, target_date: str):
     return sorted(results, key=lambda x: x['fixture']['utc_date'])
 
 @st.cache_data(ttl=300, show_spinner=False)
-def get_past_predictions():
-    today_str, tomorrow_str = get_client_dates()
-    yesterday_str = (datetime.now() - timedelta(days=1)).date().isoformat()
-    
+def get_past_predictions(today_str, yesterday_str):
     m_today = _get('matches', {'date_from': today_str, 'date_to': today_str, 'limit': 100}, ttl=300)
     m_yest = _get('matches', {'date_from': yesterday_str, 'date_to': yesterday_str, 'limit': 100}, ttl=3600)
     
@@ -261,7 +258,17 @@ for col, key, label in zip(d_cols[:4],
 if st.session_state.day == 'past':
     st.html("<div class='section-label' style='margin-top:0;'>Recent Model Performance</div>")
     try:
-        past = get_past_predictions()
+        today_str, _ = get_client_dates()
+        
+        try:
+            tz_str = get_client_timezone()
+            tz = zoneinfo.ZoneInfo(tz_str)
+        except:
+            tz = zoneinfo.ZoneInfo("UTC")
+            
+        yesterday_str = (datetime.now(tz) - timedelta(days=1)).date().isoformat()
+        
+        past = get_past_predictions(today_str, yesterday_str)
         if not past:
             st.info("No games finished recently.")
             st.stop()
