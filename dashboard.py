@@ -20,6 +20,29 @@ from live_data_fetcher import (
 )
 import base64, os
 
+LEAGUE_PRIORITY = [
+    "Premier League",      # England
+    "LaLiga",              # Spain
+    "Serie A",             # Italy
+    "Bundesliga",          # Germany
+    "Ligue 1",             # France
+    "UEFA Champions League",
+    "UEFA Europa League",
+    "Championship",        # England 2nd
+    "Liga Portugal Betclic",  # Portugal
+    "Eredivisie",          # Netherlands
+    "Scottish Premiership",
+    "LaLiga 2",
+    "2. Bundesliga",
+    "Serie B",
+    "Ligue 2",
+    "Russian Premier League",
+    "Ukrainian Premier League",
+    "Turkish Super Lig",
+    "MLS",
+    "Brasileirao Serie A",
+]
+
 # ─── Page config ──────────────────────────────────────────────────────────────
 LOGO_B64 = ""
 if os.path.exists("Better-logo.png"):
@@ -305,6 +328,8 @@ if st.session_state.day == 'past':
             """)
     except Exception as e:
         import traceback
+
+
         st.error(f"Error loading past predictions: {e}")
         st.code(traceback.format_exc())
     st.stop()
@@ -727,28 +752,7 @@ for game in all_games:
     grouped_games[league].append(game)
 
 # ── League priority ordering ──────────────────────────────────────────────────
-LEAGUE_PRIORITY = [
-    "Premier League",      # England
-    "LaLiga",              # Spain
-    "Serie A",             # Italy
-    "Bundesliga",          # Germany
-    "Ligue 1",             # France
-    "UEFA Champions League",
-    "UEFA Europa League",
-    "Championship",        # England 2nd
-    "Liga Portugal Betclic",  # Portugal
-    "Eredivisie",          # Netherlands
-    "Scottish Premiership",
-    "LaLiga 2",
-    "2. Bundesliga",
-    "Serie B",
-    "Ligue 2",
-    "Russian Premier League",
-    "Ukrainian Premier League",
-    "Turkish Super Lig",
-    "MLS",
-    "Brasileirao Serie A",
-]
+
 
 def league_sort_key(name):
     if name in LEAGUE_PRIORITY:
