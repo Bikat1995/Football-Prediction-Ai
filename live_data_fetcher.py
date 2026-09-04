@@ -404,7 +404,7 @@ def get_team_season_stats(team_id: str, season_id: str) -> dict:
 ML_MODEL_DATA = None
 try:
     import joblib
-    ML_MODEL_DATA = joblib.load('models/live_compatible_model.pkl')
+    ML_MODEL_DATA = joblib.load('models/live_compatible_model_v2.pkl')
     print(f"[ML] Live compatible model loaded. Samples trained: {ML_MODEL_DATA.get('total_samples_trained')}")
 except Exception as e:
     print(f"Warning: ML model not found or failed to load - {e}")
@@ -483,17 +483,47 @@ def compute_poisson_markets(home_team_name: str, away_team_name: str,
 
         stat_weight = 1.0 - ml_weight
         
+        # Shrinkage function for live form data
+        def shrink(val, n_games, league_mean, weight=10):
+            if n_games == 0: return league_mean
+            return (val * n_games + league_mean * weight) / (n_games + weight)
+            
+        h_games = 5 if home_known else 0
+        a_games = 5 if away_known else 0
+        
+        # Calculate implied prob from odds (devig)
+        inv = np.array([1/max(odds_h, 1.01), 1/max(odds_d, 1.01), 1/max(odds_a, 1.01)])
+        impl = inv / inv.sum()
+        p_h, p_d, p_a = impl[0], impl[1], impl[2]
+        
         feature_vector = [
-            home_avg_scored, home_avg_conceded, home_pts_avg,
-            away_avg_scored, away_avg_conceded, away_pts_avg,
-            min(odds_h, 20.0), min(odds_d, 10.0), min(odds_a, 20.0)
+            shrink(home_avg_scored, h_games, 1.3),
+            shrink(home_avg_conceded, h_games, 1.3),
+            shrink(home_pts_avg, h_games, 1.3),
+            shrink(away_avg_scored, a_games, 1.3),
+            shrink(away_avg_conceded, a_games, 1.3),
+            shrink(away_pts_avg, a_games, 1.3),
+            h_games,
+            a_games,
+            min(odds_h, 20.0), min(odds_d, 10.0), min(odds_a, 20.0),
+            p_h, p_d, p_a
         ]
+        
+        import pandas as pd
+        # The v2 model expects a pandas dataframe with specific feature names
+        feature_vector = pd.DataFrame([feature_vector], columns=[
+            "h_goals_scored_avg", "h_goals_conceded_avg", "h_pts_avg",
+            "a_goals_scored_avg", "a_goals_conceded_avg", "a_pts_avg",
+            "h_matches_played", "a_matches_played",
+            "odds_h", "odds_d", "odds_a",
+            "implied_p_h", "implied_p_d", "implied_p_a"
+        ])
         
         try:
             model = ML_MODEL_DATA['model']
             # XGBClassifier returns probabilities for [Away(0), Draw(1), Home(2)]
             import numpy as np
-            probs = model.predict_proba(np.array([feature_vector], dtype=np.float32))[0]
+            probs = model.predict_proba(feature_vector)[0]
             ml_away, ml_draw, ml_home = float(probs[0]), float(probs[1]), float(probs[2])
             
             p_home = p_home * stat_weight + ml_home * ml_weight

@@ -7,7 +7,7 @@ import datetime
 import csv
 
 print("=== DAILY INCREMENTAL TRAINING ===")
-MODEL_PATH = 'models/live_compatible_model.pkl'
+MODEL_PATH = 'models/live_compatible_model_v2.pkl'
 
 if not os.path.exists(MODEL_PATH):
     print("Base model not found! Please run train_live_model.py first.")
