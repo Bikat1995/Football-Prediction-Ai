@@ -163,6 +163,59 @@ def get_all_predictions(day: str, target_date: str):
 
     return sorted(results, key=lambda x: x['fixture']['utc_date'])
 
+@st.cache_data(ttl=300, show_spinner=False)
+def get_past_predictions():
+    today_str, tomorrow_str = get_client_dates()
+    yesterday_str = (datetime.now() - timedelta(days=1)).date().isoformat()
+    
+    m_today = _get('matches', {'date_from': today_str, 'date_to': today_str, 'limit': 100}, ttl=300)
+    m_yest = _get('matches', {'date_from': yesterday_str, 'date_to': yesterday_str, 'limit': 100}, ttl=3600)
+    
+    all_f = []
+    if m_today and 'data' in m_today: all_f.extend(m_today['data'])
+    if m_yest and 'data' in m_yest: all_f.extend(m_yest['data'])
+    
+    league_map = get_league_map()
+    valid_leagues = list(league_map.keys())
+    
+    finished = [f for f in all_f if f.get('status') in ['finished', 'awarded'] and f.get('competition_id') in valid_leagues]
+    
+    past = []
+    for f in finished:
+        hg = f.get('score', {}).get('home')
+        ag = f.get('score', {}).get('away')
+        if hg is None or ag is None: continue
+        
+        hf = cached_team_form_v2(f['home_team']['id'])
+        af = cached_team_form_v2(f['away_team']['id'])
+        poisson = compute_poisson_markets(
+            f['home_team']['name'], f['away_team']['name'],
+            hf.get('avg_scored', 1.3), hf.get('avg_conceded', 1.1),
+            af.get('avg_scored', 1.1), af.get('avg_conceded', 1.3),
+        )
+        
+        hw, dw, aw = poisson['home_win'], poisson['draw'], poisson['away_win']
+        if hw >= dw and hw >= aw: ai_pick = 'home'
+        elif aw >= hw and aw >= dw: ai_pick = 'away'
+        else: ai_pick = 'draw'
+        
+        actual = 'home' if hg > ag else 'away' if ag > hg else 'draw'
+        
+        past.append({
+            'home': f['home_team']['name'],
+            'away': f['away_team']['name'],
+            'score': f'{hg} - {ag}',
+            'winner': actual,
+            'ai_pick': ai_pick,
+            'ai_prob': max(hw, dw, aw),
+            'correct': ai_pick == actual,
+            'date': fmt_date_short(f['utc_date']),
+            'league': league_map.get(f['competition_id'], 'Unknown League'),
+            'sort_time': f.get('utc_date', '')
+        })
+    
+    return sorted(past, key=lambda x: x['sort_time'], reverse=True)
+
 # ─── Session state defaults ────────────────────────────────────────────────────
 if 'day' not in st.session_state:
     st.session_state.day = 'today'
@@ -208,9 +261,11 @@ for col, key, label in zip(d_cols[:4],
 if st.session_state.day == 'past':
     st.html("<div class='section-label' style='margin-top:0;'>Recent Model Performance</div>")
     try:
-        import json
-        with open('past_predictions.json') as f:
-            past = json.load(f)
+        past = get_past_predictions()
+        if not past:
+            st.info("No games finished recently.")
+            st.stop()
+            
         for p in past:
             bg = "#10b98120" if p['correct'] else "#ef444420"
             border = "#10b981" if p['correct'] else "#ef4444"
@@ -232,7 +287,7 @@ if st.session_state.day == 'past':
                 </div>
             </div>
             """)
-    except:
+    except Exception as e:
         st.info("No past predictions logged yet.")
     st.stop()
 
