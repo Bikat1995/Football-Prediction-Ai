@@ -9,16 +9,16 @@ import datetime
 _TASKS_STARTED = False
 
 def keep_alive_loop():
-    """Pings the Render URL every 14 minutes to prevent sleep."""
+    """Pings the Render URL every 10 minutes to prevent sleep."""
     render_url = os.environ.get('RENDER_EXTERNAL_URL')
     if not render_url:
         print("[Keep-Alive] No RENDER_EXTERNAL_URL found, skipping self-ping.")
         return
         
-    print(f"[Keep-Alive] Starting loop to ping {render_url} every 14 minutes.")
+    print(f"[Keep-Alive] Starting loop to ping {render_url} every 10 minutes.")
     while True:
         try:
-            time.sleep(14 * 60) # 14 minutes
+            time.sleep(10 * 60) # 10 minutes
             res = requests.get(render_url)
             print(f"[Keep-Alive] Pinged self: Status {res.status_code}")
         except Exception as e:
