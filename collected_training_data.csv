@@ -1017,3 +1017,959 @@ mt_155607045,2026-06-09,comp_8363,tm_5193941,Ahrobiznes Volochysk,tm_4865740,Kud
 mt_733590914,2026-06-05,comp_8363,tm_4865740,Kudrivka,tm_5193941,Ahrobiznes Volochysk,0,0,draw
 mt_626399322,2026-05-24,comp_8363,tm_47720,Dynamo Kyiv,tm_4865740,Kudrivka,3,2,home
 mt_979947803,2026-05-18,comp_8363,tm_4865740,Kudrivka,tm_3847085,LNZ Cherkasy,1,0,home
+mt_460547957,2026-08-28,comp_1085,tm_25816,Náutico,tm_4820525,Athletic Club,2,1,home
+mt_734273770,2026-08-23,comp_1085,tm_051841,São Bernardo,tm_25816,Náutico,1,1,draw
+mt_460546440,2026-08-19,comp_1085,tm_25816,Náutico,tm_25880,Ceará,1,0,home
+mt_893489869,2026-08-14,comp_1085,tm_74046,Ponte Preta,tm_25816,Náutico,1,1,draw
+mt_460546419,2026-08-09,comp_1085,tm_25816,Náutico,tm_088719,Atlético Goianiense,1,1,draw
+mt_021802045,2026-07-26,comp_1085,tm_01944,Criciúma,tm_25816,Náutico,0,0,draw
+mt_460546462,2026-07-23,comp_1085,tm_25816,Náutico,tm_97494,Londrina,2,1,home
+mt_642164620,2026-07-16,comp_1085,tm_988700,CRB,tm_25816,Náutico,2,1,home
+mt_893485226,2026-08-29,comp_1085,tm_74037,Botafogo-SP,tm_931189,Cuiabá,1,2,away
+mt_518752667,2026-08-25,comp_1085,tm_088719,Atlético Goianiense,tm_74037,Botafogo-SP,3,0,home
+mt_893489875,2026-08-20,comp_1085,tm_74037,Botafogo-SP,tm_01944,Criciúma,1,1,draw
+mt_734273709,2026-08-14,comp_1085,tm_051841,São Bernardo,tm_74037,Botafogo-SP,0,1,away
+mt_893489803,2026-08-08,comp_1085,tm_74037,Botafogo-SP,tm_58318,América Mineiro,2,1,home
+mt_987698912,2026-07-29,comp_1085,tm_19710,Fortaleza,tm_74037,Botafogo-SP,1,0,home
+mt_893489892,2026-07-24,comp_1085,tm_74037,Botafogo-SP,tm_19704,Juventude,4,2,home
+mt_205920255,2026-07-18,comp_1085,tm_97494,Londrina,tm_74037,Botafogo-SP,0,0,draw
+mt_643326094,2026-08-26,comp_364464,tm_8988575,Estudiantes de La Plata Reserve,tm_8524094,Boca Juniors Reserve,2,3,away
+mt_206652161,2026-08-20,comp_364464,tm_8524094,Boca Juniors Reserve,tm_5425379,Central Cordoba Reserve,0,1,away
+mt_739940732,2026-08-12,comp_364464,tm_8520572,San Martin Reserve,tm_8524094,Boca Juniors Reserve,0,0,draw
+mt_022055025,2026-08-04,comp_364464,tm_8524094,Boca Juniors Reserve,tm_8679089,Independiente Rivadavia De Mendoza Reserve,1,0,home
+mt_899877894,2026-07-28,comp_364464,tm_8524094,Boca Juniors Reserve,tm_5275772,Belgrano Reserve,4,0,home
+mt_466422402,2026-07-22,comp_364464,tm_8556748,CD Riestra Reserve,tm_8524094,Boca Juniors Reserve,1,1,draw
+mt_377358752,2026-07-05,comp_364464,tm_8524094,Boca Juniors Reserve,tm_5266922,River Plate Reserve,0,0,away
+mt_988362363,2026-06-28,comp_364464,tm_8524094,Boca Juniors Reserve,tm_5288423,Atlético Tucumán Reserve,3,0,home
+mt_378863418,2026-08-26,comp_364464,tm_7914775,Quilmes Reserve,tm_3855474,CA Independiente Reserve,1,2,away
+mt_643326032,2026-08-19,comp_364464,tm_3870785,Atletico Rafaela Reserve,tm_7914775,Quilmes Reserve,1,0,home
+mt_512285915,2026-08-13,comp_364464,tm_7914775,Quilmes Reserve,tm_6383443,Platense Reserve,1,0,home
+mt_155188100,2026-08-05,comp_364464,tm_7914775,Quilmes Reserve,tm_0417101,Colón Reserve,1,1,draw
+mt_467969262,2026-07-23,comp_364464,tm_8988575,Estudiantes de La Plata Reserve,tm_7914775,Quilmes Reserve,1,1,draw
+mt_377344303,2026-07-13,comp_364464,tm_7914775,Quilmes Reserve,tm_5425379,Central Cordoba Reserve,1,0,home
+mt_987061896,2026-06-18,comp_364464,tm_7914775,Quilmes Reserve,tm_8520572,San Martin Reserve,6,1,home
+mt_893245905,2026-06-08,comp_364464,tm_8679089,Independiente Rivadavia De Mendoza Reserve,tm_7914775,Quilmes Reserve,2,0,home
+mt_893457086,2026-08-30,comp_1917,tm_42524,Emelec,tm_0938378,Leones del Norte,2,1,home
+mt_642130904,2026-08-22,comp_1917,tm_0938378,Leones del Norte,tm_536213,Independiente del Valle,2,3,away
+mt_987613249,2026-08-15,comp_1917,tm_279303,Manta FC,tm_0938378,Leones del Norte,0,2,away
+mt_021845397,2026-08-08,comp_1917,tm_76264,Aucas,tm_0938378,Leones del Norte,3,0,home
+mt_734296593,2026-08-02,comp_1917,tm_0938378,Leones del Norte,tm_18385,Barcelona SC,1,1,draw
+mt_893457053,2026-07-26,comp_1917,tm_8900250,Delfín,tm_0938378,Leones del Norte,0,1,away
+mt_518729484,2026-07-23,comp_1917,tm_0938378,Leones del Norte,tm_1538405,Guayaquil City,1,1,draw
+mt_899704085,2026-07-18,comp_1917,tm_34030,LDU,tm_0938378,Leones del Norte,0,1,away
+mt_021845301,2026-08-30,comp_1917,tm_4710105,Orense SC,tm_22531,Macará,1,2,away
+mt_159308688,2026-08-23,comp_1917,tm_18385,Barcelona SC,tm_4710105,Orense SC,3,0,home
+mt_159308677,2026-08-16,comp_1917,tm_4710105,Orense SC,tm_21916,Deportivo Cuenca,2,0,home
+mt_518729445,2026-08-09,comp_1917,tm_8900250,Delfín,tm_4710105,Orense SC,1,1,draw
+mt_460572889,2026-08-01,comp_1917,tm_3225123,Libertad,tm_4710105,Orense SC,3,0,home
+mt_518729413,2026-07-26,comp_1917,tm_4710105,Orense SC,tm_536213,Independiente del Valle,2,3,away
+mt_899704592,2026-07-23,comp_1917,tm_4710105,Orense SC,tm_76264,Aucas,2,1,home
+mt_733652932,2026-07-20,comp_1917,tm_6229144,Mushuc Runa,tm_4710105,Orense SC,2,1,home
+mt_511947921,2026-08-29,comp_720692,tm_1306654,Jaguares de Córdoba,tm_99880,América de Cali,2,2,draw
+mt_733652637,2026-08-26,comp_720692,tm_99880,América de Cali,tm_44666,Junior Barranquilla,4,2,home
+mt_899704736,2026-08-22,comp_720692,tm_66439,Independiente Santa Fe,tm_99880,América de Cali,0,0,draw
+mt_377410457,2026-08-10,comp_720692,tm_99880,América de Cali,tm_66443,Atlético Nacional,1,0,home
+mt_988326493,2026-08-06,comp_720692,tm_88957,Once Caldas,tm_99880,América de Cali,0,1,away
+mt_022538950,2026-08-02,comp_720692,tm_99880,América de Cali,tm_33771,Boyacá Chicó FC,7,0,home
+mt_511947333,2026-07-26,comp_720692,tm_01894209,Internacional de Bogotá,tm_99880,América de Cali,0,2,away
+mt_460259765,2026-05-29,comp_1615,tm_99880,América de Cali,tm_22531,Macará,0,0,draw
+mt_466285278,2026-08-30,comp_720692,tm_7797547,Alianza Valledupar FC,tm_66443,Atlético Nacional,1,5,away
+mt_899704830,2026-08-26,comp_720692,tm_88996,Cúcuta Deportivo,tm_7797547,Alianza Valledupar FC,1,0,home
+mt_022538522,2026-08-22,comp_720692,tm_7797547,Alianza Valledupar FC,tm_77336,Deportivo Pereira,0,0,draw
+mt_988326309,2026-08-09,comp_720692,tm_7797547,Alianza Valledupar FC,tm_55117,Atlético Bucaramanga,2,3,away
+mt_155863780,2026-08-01,comp_720692,tm_7797547,Alianza Valledupar FC,tm_22063,Deportes Tolima,1,2,away
+mt_466285114,2026-07-26,comp_720692,tm_7797547,Alianza Valledupar FC,tm_8450037,Fortaleza CEIF,1,1,draw
+mt_155953808,2026-05-03,comp_720692,tm_7797547,Alianza Valledupar FC,tm_33782,Millonarios,2,2,draw
+mt_370354668,2026-04-26,comp_720692,tm_0843324,Llaneros FC,tm_7797547,Alianza Valledupar FC,0,0,draw
+mt_200671083,2026-06-06,comp_29906,tm_3102845,Olympique Akbou,tm_0112748,ES Ben Aknoun,1,1,draw
+mt_988879776,2026-05-19,comp_29906,tm_654689,USM Alger,tm_3102845,Olympique Akbou,1,0,home
+mt_155913930,2026-05-08,comp_29906,tm_3102845,Olympique Akbou,tm_327352,CR Belouizdad,0,1,away
+mt_377024381,2026-04-28,comp_29906,tm_092072,MC Alger,tm_3102845,Olympique Akbou,2,1,home
+mt_155461748,2026-04-22,comp_29906,tm_3102845,Olympique Akbou,tm_948906,JS Kabylie,1,1,draw
+mt_022797803,2026-04-17,comp_29906,tm_280233,ASO Chlef,tm_3102845,Olympique Akbou,1,0,home
+mt_518555635,2026-04-11,comp_29906,tm_3102845,Olympique Akbou,tm_654239,ES Sétif,1,0,home
+mt_021590719,2026-04-03,comp_29906,tm_5261666,MB Rouissat,tm_3102845,Olympique Akbou,1,1,draw
+mt_739947643,2026-08-27,comp_364464,tm_4644725,Tigre Reserve,tm_5313385,Gimnasia y Esgrima Mendoza Reserve,1,3,away
+mt_150091835,2026-08-20,comp_364464,tm_5313385,Gimnasia y Esgrima Mendoza Reserve,tm_3733847,San Lorenzo Reserve,1,0,home
+mt_739940717,2026-08-11,comp_364464,tm_7944113,Vélez Sarsfield Reserve,tm_5313385,Gimnasia y Esgrima Mendoza Reserve,2,0,home
+mt_200211295,2026-08-04,comp_364464,tm_5313385,Gimnasia y Esgrima Mendoza Reserve,tm_5266922,River Plate Reserve,1,2,away
+mt_377344354,2026-07-23,comp_364464,tm_2022688,Racing Reserve,tm_5313385,Gimnasia y Esgrima Mendoza Reserve,2,3,away
+mt_988934060,2026-07-13,comp_364464,tm_5313385,Gimnasia y Esgrima Mendoza Reserve,tm_7931630,Sarmiento Reserve,0,1,away
+mt_893245960,2026-06-17,comp_364464,tm_5313385,Gimnasia y Esgrima Mendoza Reserve,tm_1049678,Argentinos Juniors Reserve,2,1,home
+mt_205396068,2026-06-09,comp_364464,tm_1049117,Aldosivi Reserve,tm_5313385,Gimnasia y Esgrima Mendoza Reserve,1,0,home
+mt_512285989,2026-08-27,comp_364464,tm_5155235,Rosario Central Reserve,tm_8522268,Barracas Central Reserve,2,2,draw
+mt_739947624,2026-08-19,comp_364464,tm_6322209,Talleres de Córdoba Reserve,tm_5155235,Rosario Central Reserve,2,2,draw
+mt_512283582,2026-08-12,comp_364464,tm_5155235,Rosario Central Reserve,tm_0474380,Banfield Reserve,1,0,home
+mt_022055083,2026-08-06,comp_364464,tm_5155235,Rosario Central Reserve,tm_0958411,Instituto AC Cordoba Reserves,2,2,draw
+mt_511599561,2026-07-22,comp_364464,tm_4644725,Tigre Reserve,tm_5155235,Rosario Central Reserve,1,3,away
+mt_377342558,2026-07-14,comp_364464,tm_5155235,Rosario Central Reserve,tm_3733847,San Lorenzo Reserve,0,0,draw
+mt_518672197,2026-06-17,comp_364464,tm_5155235,Rosario Central Reserve,tm_7944113,Vélez Sarsfield Reserve,0,4,away
+mt_159430506,2026-06-09,comp_364464,tm_5266922,River Plate Reserve,tm_5155235,Rosario Central Reserve,2,1,home
+mt_981179362,2026-08-20,comp_364464,tm_8522268,Barracas Central Reserve,tm_4644725,Tigre Reserve,1,3,away
+mt_895538722,2026-08-13,comp_364464,tm_3733847,San Lorenzo Reserve,tm_8522268,Barracas Central Reserve,1,0,home
+mt_466422451,2026-08-07,comp_364464,tm_8522268,Barracas Central Reserve,tm_7944113,Vélez Sarsfield Reserve,0,0,draw
+mt_733766677,2026-07-30,comp_364464,tm_8522268,Barracas Central Reserve,tm_2022688,Racing Reserve,1,1,draw
+mt_644600685,2026-07-22,comp_364464,tm_5266922,River Plate Reserve,tm_8522268,Barracas Central Reserve,4,0,home
+mt_734129300,2026-06-19,comp_364464,tm_8522268,Barracas Central Reserve,tm_7931630,Sarmiento Reserve,0,0,draw
+mt_518672125,2026-06-10,comp_364464,tm_1049678,Argentinos Juniors Reserve,tm_8522268,Barracas Central Reserve,3,1,home
+mt_512285973,2026-08-26,comp_364464,tm_0474380,Banfield Reserve,tm_6322209,Talleres de Córdoba Reserve,1,1,draw
+mt_467704292,2026-08-19,comp_364464,tm_0474380,Banfield Reserve,tm_0958411,Instituto AC Cordoba Reserves,2,3,away
+mt_733766721,2026-08-04,comp_364464,tm_0474380,Banfield Reserve,tm_4644725,Tigre Reserve,1,1,draw
+mt_644600069,2026-07-27,comp_364464,tm_0474380,Banfield Reserve,tm_7944113,Vélez Sarsfield Reserve,1,0,home
+mt_987061830,2026-06-17,comp_364464,tm_0474380,Banfield Reserve,tm_5266922,River Plate Reserve,0,1,away
+mt_987061813,2026-06-08,comp_364464,tm_2022688,Racing Reserve,tm_0474380,Banfield Reserve,1,2,away
+mt_376508770,2026-06-02,comp_364464,tm_0474380,Banfield Reserve,tm_7931630,Sarmiento Reserve,2,1,home
+mt_643299483,2026-08-29,comp_45025,tm_803264,Al-Ettifaq,tm_08347503,Al-Diraiyah Club,0,3,away
+mt_378611626,2026-08-26,comp_45025,tm_08347503,Al-Diraiyah Club,tm_7951491,Al-Kholood,1,1,draw
+mt_981722712,2026-08-21,comp_45025,tm_6209912,Al-Hazem,tm_08347503,Al-Diraiyah Club,0,1,away
+mt_644928302,2026-08-18,comp_83796,tm_08347503,Al-Diraiyah Club,tm_156414,Al-Nassr,1,4,away
+mt_150966959,2026-08-13,comp_45025,tm_08347503,Al-Diraiyah Club,tm_754497,Al-Ahli,0,1,away
+mt_739455316,2026-08-30,comp_45025,tm_338426,Al-Qadsiah,tm_447225,Al-Faisaly,3,1,home
+mt_150966960,2026-08-24,comp_45025,tm_2221233,Neom SC,tm_338426,Al-Qadsiah,0,2,away
+mt_467088074,2026-08-21,comp_45025,tm_338426,Al-Qadsiah,tm_480982,Al-Ittihad,0,1,away
+mt_511486256,2026-08-17,comp_83796,tm_9732194,Al Tai,tm_338426,Al-Qadsiah,0,5,away
+mt_739455432,2026-08-13,comp_45025,tm_548644,Al-Shabab,tm_338426,Al-Qadsiah,1,3,away
+mt_516973943,2026-05-21,comp_45025,tm_480982,Al-Ittihad,tm_338426,Al-Qadsiah,1,5,away
+mt_469251272,2026-05-14,comp_45025,tm_338426,Al-Qadsiah,tm_6209912,Al-Hazem,2,0,home
+mt_980361697,2026-05-09,comp_45025,tm_0153318,Al-Fayha,tm_338426,Al-Qadsiah,1,2,away
+mt_899064403,2026-08-31,comp_7938,tm_08959,FC København,tm_45144,Sønderjyske Fodbold,3,1,home
+mt_739557506,2026-08-27,comp_408698,tm_08959,FC København,tm_37522,Inter Turku,4,1,home
+mt_155673305,2026-08-23,comp_7938,tm_84684,Viborg FF,tm_08959,FC København,4,0,home
+mt_512265233,2026-08-20,comp_408698,tm_37522,Inter Turku,tm_08959,FC København,0,0,draw
+mt_511437723,2026-08-16,comp_7938,tm_29137,Randers FC,tm_08959,FC København,0,4,away
+mt_739267952,2026-08-12,comp_408698,tm_08959,FC København,tm_25786,Debreceni VSC,5,1,home
+mt_024850412,2026-08-06,comp_408698,tm_25786,Debreceni VSC,tm_08959,FC København,0,3,away
+mt_377120063,2026-08-02,comp_7938,tm_45122,Silkeborg IF,tm_08959,FC København,1,3,away
+mt_200789977,2026-08-30,comp_7938,tm_96492,FC Nordsjælland,tm_29810,Brøndby IF,3,1,home
+mt_512456581,2026-08-27,comp_408698,tm_98868,FC St. Gallen 1879,tm_96492,FC Nordsjælland,2,3,away
+mt_988246612,2026-08-23,comp_7938,tm_45144,Sønderjyske Fodbold,tm_96492,FC Nordsjælland,0,3,away
+mt_512265299,2026-08-20,comp_408698,tm_96492,FC Nordsjælland,tm_98868,FC St. Gallen 1879,1,0,home
+mt_733502294,2026-08-16,comp_7938,tm_96492,FC Nordsjælland,tm_45122,Silkeborg IF,1,0,home
+mt_895478564,2026-08-13,comp_408698,tm_96492,FC Nordsjælland,tm_74591,Valur Reykjavík,5,0,home
+mt_378043874,2026-08-06,comp_408698,tm_74591,Valur Reykjavík,tm_96492,FC Nordsjælland,0,2,away
+mt_466815558,2026-08-02,comp_7938,tm_96492,FC Nordsjælland,tm_29137,Randers FC,1,0,home
+mt_644031668,2026-08-30,comp_3664,tm_374483,Kisvárda FC,tm_58433,ETO FC Győr,1,1,draw
+mt_022548055,2026-08-23,comp_3664,tm_58433,ETO FC Győr,tm_97242,Zalaegerszegi TE,3,0,home
+mt_377480345,2026-08-16,comp_3664,tm_25786,Debreceni VSC,tm_58433,ETO FC Győr,1,1,draw
+mt_981639176,2026-08-13,comp_408698,tm_58433,ETO FC Győr,tm_8366658,Riga FC,1,1,draw
+mt_512795277,2026-08-06,comp_408698,tm_8366658,Riga FC,tm_58433,ETO FC Győr,1,0,home
+mt_899754862,2026-08-02,comp_3664,tm_58433,ETO FC Győr,tm_05712,Nyiregyháza Spartacus,4,0,home
+mt_200213225,2026-07-30,comp_408698,tm_58433,ETO FC Győr,tm_757932,Atert Bissen,1,1,draw
+mt_466275478,2026-07-26,comp_3664,tm_74504,Vasas,tm_58433,ETO FC Győr,2,2,draw
+mt_155803110,2026-08-30,comp_3664,tm_646188,Puskás Akadémia,tm_40814,Ferencváros TC,1,2,away
+mt_512154811,2026-08-27,comp_7739,tm_40814,Ferencváros TC,tm_26983,Trabzonspor,4,0,home
+mt_150516954,2026-08-20,comp_7739,tm_26983,Trabzonspor,tm_40814,Ferencváros TC,0,1,away
+mt_899754874,2026-08-17,comp_3664,tm_97242,Zalaegerszegi TE,tm_40814,Ferencváros TC,0,1,away
+mt_378046131,2026-08-13,comp_7739,tm_10956,Górnik Zabrze,tm_40814,Ferencváros TC,1,1,draw
+mt_024851402,2026-08-05,comp_7739,tm_40814,Ferencváros TC,tm_10956,Górnik Zabrze,1,0,home
+mt_466275481,2026-08-02,comp_3664,tm_40814,Ferencváros TC,tm_74504,Vasas,0,0,draw
+mt_988490126,2026-07-30,comp_7739,tm_40814,Ferencváros TC,tm_47976,FC Twente,2,2,draw
+mt_988366189,2026-08-30,comp_6429,tm_21992,Hapoel Haifa,tm_60499,Hapoel Tel Aviv,0,0,draw
+mt_024850443,2026-08-12,comp_408698,tm_91783,GKS Katowice,tm_60499,Hapoel Tel Aviv,2,1,home
+mt_739267910,2026-08-06,comp_408698,tm_60499,Hapoel Tel Aviv,tm_91783,GKS Katowice,2,0,home
+mt_155713150,2026-07-30,comp_408698,tm_177393,Ludogorets,tm_60499,Hapoel Tel Aviv,2,2,draw
+mt_466145722,2026-07-23,comp_408698,tm_60499,Hapoel Tel Aviv,tm_177393,Ludogorets,2,0,home
+mt_733219367,2026-05-23,comp_6429,tm_05811,Beitar Jerusalem,tm_60499,Hapoel Tel Aviv,1,1,draw
+mt_511977226,2026-08-29,comp_6429,tm_05811,Beitar Jerusalem,tm_42687,Maccabi Netanya,1,4,away
+mt_643106396,2026-08-13,comp_408698,tm_51679,Austria Wien,tm_05811,Beitar Jerusalem,1,2,home
+mt_739267991,2026-08-06,comp_408698,tm_05811,Beitar Jerusalem,tm_51679,Austria Wien,1,2,away
+mt_899684859,2026-07-30,comp_408698,tm_05811,Beitar Jerusalem,tm_04971,AEK Larnaca,2,3,draw
+mt_511357253,2026-07-23,comp_408698,tm_04971,AEK Larnaca,tm_05811,Beitar Jerusalem,0,1,away
+mt_733219911,2026-05-19,comp_6429,tm_76220,Hapoel Petach Tikva,tm_05811,Beitar Jerusalem,0,0,draw
+mt_644183465,2026-05-16,comp_6429,tm_87440,Maccabi Tel Aviv,tm_05811,Beitar Jerusalem,1,2,away
+mt_467114215,2026-08-29,comp_45001,tm_2738912,Mes Shahr Babak,tm_229721,Sanat Naft Abadan,0,0,draw
+mt_981849808,2026-08-24,comp_45001,tm_808857,Zob Ahan,tm_2738912,Mes Shahr Babak,1,1,draw
+mt_024290104,2026-08-19,comp_45001,tm_2738912,Mes Shahr Babak,tm_9123747,Kheybar Khorramabad FC,1,1,draw
+mt_467614027,2026-08-14,comp_45001,tm_692896,Esteghlal FC,tm_2738912,Mes Shahr Babak,4,0,home
+mt_981648102,2026-08-28,comp_45551,tm_533537,Al-Ahli Doha,tm_2786961,Lusail SC,3,3,draw
+mt_895469524,2026-08-22,comp_45551,tm_536229,Al-Sadd,tm_533537,Al-Ahli Doha,3,1,home
+mt_159599634,2026-04-27,comp_45551,tm_101634,Umm-Salal SC,tm_533537,Al-Ahli Doha,1,3,away
+mt_987097249,2026-04-22,comp_8833,tm_156414,Al-Nassr,tm_533537,Al-Ahli Doha,5,1,home
+mt_893655237,2026-04-19,comp_8833,tm_533537,Al-Ahli Doha,tm_0805909,Al Hussein Irbid,3,1,home
+mt_205055733,2026-04-08,comp_45551,tm_533537,Al-Ahli Doha,tm_288272,Al Duhail,2,1,home
+mt_205055612,2026-04-03,comp_45551,tm_533537,Al-Ahli Doha,tm_700750,Al-Sailiya,2,2,draw
+mt_460600720,2026-03-18,comp_45551,tm_927021,Al-Gharafa,tm_533537,Al-Ahli Doha,1,4,away
+mt_512731263,2026-08-28,comp_45551,tm_020402,Qatar SC,tm_536229,Al-Sadd,2,6,away
+mt_467516642,2026-08-20,comp_45551,tm_177168,Al-Wakrah,tm_020402,Qatar SC,2,2,draw
+mt_734344517,2026-04-27,comp_45551,tm_020402,Qatar SC,tm_288272,Al Duhail,1,2,away
+mt_021554841,2026-04-13,comp_45551,tm_6206529,Al Shamal SC,tm_020402,Qatar SC,3,0,away
+mt_642422363,2026-04-08,comp_45551,tm_099091,Al-Arabi SC,tm_020402,Qatar SC,1,1,draw
+mt_460454754,2026-04-03,comp_45551,tm_020402,Qatar SC,tm_177168,Al-Wakrah,1,4,home
+mt_893933570,2026-03-18,comp_45551,tm_101634,Umm-Salal SC,tm_020402,Qatar SC,0,0,draw
+mt_987148242,2026-03-12,comp_45551,tm_020402,Qatar SC,tm_927021,Al-Gharafa,2,0,home
+mt_739143536,2026-08-30,comp_8448,tm_1004400,Esenler Erokspor,tm_0938324,Iğdır FK,0,1,away
+mt_024712318,2026-08-22,comp_8448,tm_0938324,Iğdır FK,tm_91698,Kayserispor,0,1,away
+mt_512681432,2026-08-15,comp_8448,tm_47517,Bursaspor,tm_0938324,Iğdır FK,1,0,home
+mt_643824939,2026-08-09,comp_8448,tm_0938324,Iğdır FK,tm_09584,Fatih Karagümrük,2,0,home
+mt_626946915,2026-05-02,comp_8448,tm_0938324,Iğdır FK,tm_2066285,Amed Sportif Faaliyetler,3,3,draw
+mt_010320372,2026-04-26,comp_8448,tm_63160,Sivasspor,tm_0938324,Iğdır FK,2,1,home
+mt_626946363,2026-04-19,comp_8448,tm_0938324,Iğdır FK,tm_960238,Pendikspor,1,1,draw
+mt_626946304,2026-04-12,comp_8448,tm_26557,Adana Demirspor,tm_0938324,Iğdır FK,1,6,away
+mt_512681428,2026-08-30,comp_8448,tm_2001772,Manisa FK,tm_1558668,Bodrum FK,0,0,draw
+mt_206350752,2026-08-24,comp_8448,tm_63160,Sivasspor,tm_2001772,Manisa FK,2,2,draw
+mt_739143501,2026-08-15,comp_8448,tm_2001772,Manisa FK,tm_157164,Van Spor Futbol Kulübü,4,1,home
+mt_206350763,2026-08-07,comp_8448,tm_00589,Boluspor,tm_2001772,Manisa FK,1,2,away
+mt_585415471,2026-05-01,comp_8448,tm_2001772,Manisa FK,tm_10949,Sakaryaspor,5,0,home
+mt_626935462,2026-04-26,comp_8448,tm_66594,Keçiörengücü,tm_2001772,Manisa FK,2,1,home
+mt_191651011,2026-04-19,comp_8448,tm_2001772,Manisa FK,tm_9207198,Serik Belediyespor,1,0,home
+mt_252702681,2026-04-12,comp_8448,tm_157164,Van Spor Futbol Kulübü,tm_2001772,Manisa FK,0,1,away
+mt_517393929,2026-08-23,comp_970794,tm_5298347,Corpus Christi FC,tm_96946260,Westchester SC,2,2,draw
+mt_209818167,2026-08-20,comp_970794,tm_5298347,Corpus Christi FC,tm_557528,New York Cosmos,0,2,away
+mt_370242480,2026-08-16,comp_970794,tm_0043708,Spokane Velocity FC,tm_5298347,Corpus Christi FC,2,3,away
+mt_732060634,2026-08-08,comp_970794,tm_45415856,Portland Hearts of Pine,tm_5298347,Corpus Christi FC,0,2,away
+mt_209818150,2026-08-02,comp_970794,tm_01833332,AC Boise,tm_5298347,Corpus Christi FC,0,0,draw
+mt_028959574,2026-07-26,comp_970794,tm_5298347,Corpus Christi FC,tm_5484936,Greenville Triumph SC,1,0,home
+mt_209818823,2026-07-18,comp_970794,tm_557528,New York Cosmos,tm_5298347,Corpus Christi FC,0,0,draw
+mt_894676660,2026-07-04,comp_970794,tm_5298347,Corpus Christi FC,tm_2757171,Chattanooga Red Wolves SC,2,1,home
+mt_205552685,2026-03-17,comp_4159,tm_3861118,South Georgia Tormenta FC,tm_1166348,FC America CFL Spurs,0,1,away
+mt_894446759,2025-11-03,comp_970794,tm_0043708,Spokane Velocity FC,tm_3861118,South Georgia Tormenta FC,0,0,home
+mt_583595236,2025-10-25,comp_970794,tm_3861118,South Georgia Tormenta FC,tm_08098381,Texoma FC,3,0,home
+mt_583595225,2025-10-18,comp_970794,tm_5484936,Greenville Triumph SC,tm_3861118,South Georgia Tormenta FC,1,4,away
+mt_362343886,2025-10-12,comp_970794,tm_0043708,Spokane Velocity FC,tm_3861118,South Georgia Tormenta FC,1,1,draw
+mt_401424704,2025-10-03,comp_970794,tm_3861118,South Georgia Tormenta FC,tm_96946260,Westchester SC,3,1,home
+mt_197181095,2025-09-27,comp_970794,tm_3861118,South Georgia Tormenta FC,tm_207803,Richmond Kickers,4,2,home
+mt_362343853,2025-09-21,comp_970794,tm_57537477,AV Alta FC,tm_3861118,South Georgia Tormenta FC,0,3,away
+mt_150091871,2026-09-03,comp_364464,tm_8524094,Boca Juniors Reserve,tm_7914775,Quilmes Reserve,1,0,home
+mt_642130589,2026-09-03,comp_1917,tm_0938378,Leones del Norte,tm_4710105,Orense SC,1,0,home
+mt_899704762,2026-09-03,comp_720692,tm_99880,América de Cali,tm_7797547,Alianza Valledupar FC,3,0,home
+mt_739674937,2026-09-03,comp_29906,tm_2181393,JS El Biar,tm_3102845,Olympique Akbou,0,2,away
+mt_150755148,2026-09-03,comp_8525,tm_73052,Cagliari,tm_20809,Hellas Verona,1,2,away
+mt_155144188,2026-09-03,comp_8814,tm_02555,Real Sociedad,tm_20116,Celta Vigo,0,0,draw
+mt_205961833,2026-09-03,comp_1917,tm_988090,Universidad Católica del Ecuador,tm_76264,Aucas,1,1,draw
+mt_022575474,2026-09-03,comp_6387,tm_02173,Hibernian,tm_51862,Heart of Midlothian,1,3,away
+mt_466109610,2026-09-03,comp_0256,tm_25581,Toulouse,tm_58884,Lille,0,1,away
+mt_467108464,2026-09-03,comp_8531,tm_51594,KAA Gent,tm_85223,Oud-Heverlee Leuven,1,0,home
+mt_981233168,2026-09-03,comp_9711,tm_26561,Lech Poznań,tm_299627,Jagiellonia Białystok,2,1,home
+mt_150510657,2026-09-03,comp_8531,tm_15189,RSC Anderlecht,tm_86087,KV Kortrijk,1,0,home
+mt_377455265,2026-09-03,comp_4084,tm_20012,Basel,tm_98871,FC Sion,1,2,away
+mt_466299152,2026-09-03,comp_4084,tm_51172,FC Lugano,tm_89932,Servette FC,1,0,home
+mt_895775250,2026-09-03,comp_29906,tm_654239,ES Sétif,tm_0112748,ES Ben Aknoun,0,1,away
+mt_206173686,2026-09-03,comp_4781,tm_85528,Panathinaikos,tm_21299,Niki Volou,1,0,home
+mt_739947606,2026-09-03,comp_364464,tm_3852673,Defensa y Justicia Reserve,tm_8679089,Independiente Rivadavia De Mendoza Reserve,4,0,home
+mt_895538766,2026-09-03,comp_364464,tm_7377965,Huracán Reserve,tm_5425379,Central Cordoba Reserve,5,1,home
+mt_739947639,2026-09-03,comp_364464,tm_5313385,Gimnasia y Esgrima Mendoza Reserve,tm_5155235,Rosario Central Reserve,1,2,away
+mt_467704269,2026-09-03,comp_364464,tm_8522268,Barracas Central Reserve,tm_0474380,Banfield Reserve,0,2,away
+mt_512844178,2026-09-03,comp_45025,tm_08347503,Al-Diraiyah Club,tm_338426,Al-Qadsiah,0,2,away
+mt_644951146,2026-09-03,comp_7938,tm_08959,FC København,tm_96492,FC Nordsjælland,2,0,home
+mt_981379470,2026-09-03,comp_3664,tm_58433,ETO FC Győr,tm_40814,Ferencváros TC,0,3,away
+mt_200199708,2026-09-03,comp_6429,tm_60499,Hapoel Tel Aviv,tm_05811,Beitar Jerusalem,3,0,home
+mt_512228244,2026-09-03,comp_84287,tm_134098,Al Ahly FC,tm_534391,Smouha,1,0,home
+mt_739165512,2026-09-03,comp_61634,tm_8382207,Rækker Mølle Kfum,tm_1311586,HØJ Elitehåndbold,37,34,home
+mt_150495689,2026-09-03,comp_8448,tm_1558668,Bodrum FK,tm_1004400,Esenler Erokspor,0,0,draw
+mt_467906888,2026-09-03,comp_8448,tm_47517,Bursaspor,tm_63105,İstanbulspor,4,0,home
+mt_200707552,2026-09-03,comp_1002,tm_58267,Mjällby AIF,tm_74309,Djurgårdens IF,0,2,away
+mt_981722866,2026-09-03,comp_45025,tm_2221233,Neom SC,tm_8375958,Al-Khaleej,3,0,home
+mt_988346062,2026-09-03,comp_2999,tm_46580,Dynamo Moscow,tm_21309,Akhmat Grozny,3,0,home
+mt_895469543,2026-09-03,comp_45551,tm_700750,Al-Sailiya,tm_099091,Al-Arabi SC,0,2,away
+mt_378462004,2026-09-03,comp_8525,tm_46171,Palermo,tm_15838,Mantova,5,2,home
+mt_739917963,2026-09-03,comp_451094,tm_942996,VfB Stuttgart U19,tm_62158194,SGV Freiberg Fussball U19,3,2,home
+mt_022910911,2026-09-03,comp_9711,tm_809996,Raków Częstochowa,tm_10956,Górnik Zabrze,1,2,away
+mt_206577093,2026-09-03,comp_45025,tm_0153318,Al-Fayha,tm_7951491,Al-Kholood,2,2,draw
+mt_024990501,2026-09-03,comp_45001,tm_330201,Fajr Sepasi FC,tm_2738912,Mes Shahr Babak,1,1,draw
+mt_378027800,2026-09-03,comp_45551,tm_533537,Al-Ahli Doha,tm_020402,Qatar SC,1,0,home
+mt_512681441,2026-09-03,comp_8448,tm_0938324,Iğdır FK,tm_2001772,Manisa FK,4,2,home
+mt_159315118,2026-08-24,comp_1085,tm_4820525,Athletic Club,tm_0113078,Novorizontino,1,4,away
+mt_159315187,2026-08-20,comp_1085,tm_4820525,Athletic Club,tm_988700,CRB,0,2,away
+mt_159315176,2026-08-16,comp_1085,tm_58318,América Mineiro,tm_4820525,Athletic Club,1,3,away
+mt_159315160,2026-08-09,comp_1085,tm_4820525,Athletic Club,tm_01944,Criciúma,2,0,home
+mt_893489854,2026-07-28,comp_1085,tm_74046,Ponte Preta,tm_4820525,Athletic Club,1,1,draw
+mt_159315159,2026-07-23,comp_1085,tm_4820525,Athletic Club,tm_051841,São Bernardo,2,1,home
+mt_518751582,2026-07-18,comp_1085,tm_088719,Atlético Goianiense,tm_4820525,Athletic Club,0,0,draw
+mt_376038502,2026-08-30,comp_1085,tm_25827,Vila Nova FC,tm_25880,Ceará,2,0,home
+mt_205920222,2026-08-23,comp_1085,tm_097215,Operário-PR,tm_25827,Vila Nova FC,0,0,draw
+mt_376037338,2026-08-19,comp_1085,tm_25827,Vila Nova FC,tm_74046,Ponte Preta,6,0,home
+mt_518751535,2026-08-15,comp_1085,tm_088719,Atlético Goianiense,tm_25827,Vila Nova FC,0,2,away
+mt_376037326,2026-08-08,comp_1085,tm_25827,Vila Nova FC,tm_74020,Sport Recife,0,1,away
+mt_642164698,2026-07-27,comp_1085,tm_988700,CRB,tm_25827,Vila Nova FC,2,0,home
+mt_376037385,2026-07-22,comp_1085,tm_25827,Vila Nova FC,tm_19710,Fortaleza,2,1,home
+mt_021802013,2026-07-18,comp_1085,tm_01944,Criciúma,tm_25827,Vila Nova FC,2,0,home
+mt_153788375,2026-08-30,comp_586859,tm_9277942,El Paso Locomotive FC,tm_7543522,Loudoun United FC,4,1,home
+mt_209811970,2026-08-22,comp_586859,tm_7543522,Loudoun United FC,tm_2755286,New Mexico United,0,0,draw
+mt_517399711,2026-08-15,comp_586859,tm_9131310,Detroit City FC,tm_7543522,Loudoun United FC,0,0,draw
+mt_465122507,2026-08-08,comp_586859,tm_7543522,Loudoun United FC,tm_022830,Charleston Battery,0,1,away
+mt_517399777,2026-08-01,comp_586859,tm_7543522,Loudoun United FC,tm_8039042,Hartford Athletic,2,0,home
+mt_986433099,2026-07-25,comp_586859,tm_9714884,Indy Eleven,tm_7543522,Loudoun United FC,0,1,away
+mt_370244546,2026-07-18,comp_586859,tm_7543522,Loudoun United FC,tm_327540,FC Tampa Bay Rowdies,1,1,draw
+mt_465122972,2026-07-03,comp_586859,tm_7543522,Loudoun United FC,tm_97076368,SC Jacksonville,2,2,draw
+mt_517399733,2026-08-29,comp_586859,tm_3440322,Lexington SC,tm_4669045,Colorado Springs Switchbacks FC,0,1,away
+mt_153788369,2026-08-23,comp_586859,tm_4669045,Colorado Springs Switchbacks FC,tm_9277942,El Paso Locomotive FC,0,1,away
+mt_465122571,2026-08-20,comp_586859,tm_8305354,Phoenix Rising FC,tm_4669045,Colorado Springs Switchbacks FC,3,1,home
+mt_465122568,2026-08-16,comp_586859,tm_4669045,Colorado Springs Switchbacks FC,tm_3167153,Birmingham Legion FC,3,2,home
+mt_209811909,2026-08-08,comp_586859,tm_4478940,Rhode Island FC,tm_4669045,Colorado Springs Switchbacks FC,2,0,home
+mt_986433660,2026-08-02,comp_586859,tm_2755286,New Mexico United,tm_4669045,Colorado Springs Switchbacks FC,1,0,home
+mt_986433033,2026-07-26,comp_586859,tm_4669045,Colorado Springs Switchbacks FC,tm_022830,Charleston Battery,2,1,home
+mt_894677279,2026-07-23,comp_586859,tm_4669045,Colorado Springs Switchbacks FC,tm_6452158,Miami FC,2,0,home
+mt_377128511,2026-08-29,comp_6981,tm_0842433,Universidad Técnica de Cajamarca,tm_46575,Universitario,2,4,away
+mt_377128588,2026-08-22,comp_6981,tm_0842433,Universidad Técnica de Cajamarca,tm_7355123,Comerciantes Unidos,1,3,away
+mt_022394748,2026-08-16,comp_6981,tm_20961,Alianza Lima,tm_0842433,Universidad Técnica de Cajamarca,1,0,home
+mt_899065295,2026-08-08,comp_6981,tm_0842433,Universidad Técnica de Cajamarca,tm_3120620,Asociación Deportiva Tarma,1,1,draw
+mt_511432685,2026-08-01,comp_6981,tm_1347030,Cusco FC,tm_0842433,Universidad Técnica de Cajamarca,4,1,home
+mt_200786666,2026-07-26,comp_6981,tm_0842433,Universidad Técnica de Cajamarca,tm_8894258,CD Moquegua,0,0,draw
+mt_022394429,2026-07-18,comp_6981,tm_8572044,Club Atlético Grau,tm_0842433,Universidad Técnica de Cajamarca,3,1,home
+mt_644436052,2026-05-31,comp_6981,tm_0414711,Los Chankas CYC,tm_0842433,Universidad Técnica de Cajamarca,2,2,draw
+mt_511249138,2026-06-05,comp_29906,tm_948906,JS Kabylie,tm_327352,CR Belouizdad,0,0,draw
+mt_511185888,2026-05-20,comp_29906,tm_280233,ASO Chlef,tm_948906,JS Kabylie,1,2,away
+mt_466045009,2026-05-08,comp_29906,tm_948906,JS Kabylie,tm_654239,ES Sétif,5,1,home
+mt_644150633,2026-04-29,comp_29906,tm_948906,JS Kabylie,tm_281879,MC Oran,1,2,away
+mt_155474831,2026-04-17,comp_29906,tm_5261666,MB Rouissat,tm_948906,JS Kabylie,1,1,draw
+mt_987999043,2026-04-10,comp_29906,tm_948906,JS Kabylie,tm_551599,CS Constantine,2,2,draw
+mt_987324402,2026-04-05,comp_29906,tm_6224859,MC El Bayadh,tm_948906,JS Kabylie,1,1,draw
+mt_899507967,2026-06-05,comp_29906,tm_0472778,USM Khenchela,tm_5261666,MB Rouissat,1,0,home
+mt_988111664,2026-05-30,comp_29906,tm_5261666,MB Rouissat,tm_654689,USM Alger,1,0,home
+mt_644442012,2026-05-19,comp_29906,tm_5261666,MB Rouissat,tm_3717528,Paradou AC,2,1,home
+mt_644261221,2026-05-08,comp_29906,tm_092072,MC Alger,tm_5261666,MB Rouissat,1,1,draw
+mt_893888269,2026-04-09,comp_29906,tm_281879,MC Oran,tm_5261666,MB Rouissat,2,1,home
+mt_893570884,2026-03-18,comp_29906,tm_0112748,ES Ben Aknoun,tm_5261666,MB Rouissat,3,2,home
+mt_378775051,2026-08-29,comp_4540,tm_722920,Huracán,tm_0443549,Estudiantes de Río Cuarto,1,1,draw
+mt_150554487,2026-08-21,comp_4540,tm_0443549,Estudiantes de Río Cuarto,tm_26068,San Lorenzo,0,0,draw
+mt_981878871,2026-08-17,comp_4540,tm_0443549,Estudiantes de Río Cuarto,tm_544234,Atlético Tucumán,0,1,away
+mt_643424410,2026-08-08,comp_4540,tm_922132,Independiente Rivadavia,tm_0443549,Estudiantes de Río Cuarto,2,1,home
+mt_200250509,2026-08-01,comp_4540,tm_0443549,Estudiantes de Río Cuarto,tm_79300,Banfield,0,0,draw
+mt_733743426,2026-07-29,comp_4540,tm_63454,Argentinos Juniors,tm_0443549,Estudiantes de Río Cuarto,3,0,home
+mt_899839346,2026-07-25,comp_4540,tm_0443549,Estudiantes de Río Cuarto,tm_844540,Tigre,1,0,home
+mt_518473547,2026-05-05,comp_4540,tm_0443549,Estudiantes de Río Cuarto,tm_32231,Instituto De Córdoba,0,2,away
+mt_378775538,2026-08-28,comp_4540,tm_04237,Club Atlético Unión de Santa Fe,tm_865263,Sarmiento,4,1,home
+mt_895939994,2026-08-23,comp_4540,tm_865263,Sarmiento,tm_63492,Estudiantes de La Plata,2,0,home
+mt_206050050,2026-08-16,comp_4540,tm_865263,Sarmiento,tm_722920,Huracán,2,0,home
+mt_895939928,2026-08-08,comp_4540,tm_544234,Atlético Tucumán,tm_865263,Sarmiento,1,2,away
+mt_988978718,2026-08-03,comp_4540,tm_865263,Sarmiento,tm_922132,Independiente Rivadavia,2,1,home
+mt_155195931,2026-07-28,comp_4540,tm_79300,Banfield,tm_865263,Sarmiento,3,2,home
+mt_466406090,2026-07-23,comp_4540,tm_865263,Sarmiento,tm_63454,Argentinos Juniors,2,3,away
+mt_466162844,2026-07-17,comp_08235,tm_865263,Sarmiento,tm_91813,Boca Juniors,0,2,away
+mt_894625730,2026-08-30,comp_9788,tm_10539,Derry City,tm_38765,Shamrock Rovers,3,3,draw
+mt_150613431,2026-08-27,comp_408698,tm_02792,KuPS,tm_38765,Shamrock Rovers,1,0,home
+mt_981109142,2026-08-20,comp_408698,tm_38765,Shamrock Rovers,tm_02792,KuPS,1,1,draw
+mt_024895541,2026-08-13,comp_7739,tm_7994772,KF Egnatia,tm_38765,Shamrock Rovers,5,1,home
+mt_209836191,2026-08-07,comp_9788,tm_38765,Shamrock Rovers,tm_79344,Dundalk FC,3,2,home
+mt_206981151,2026-08-04,comp_7739,tm_38765,Shamrock Rovers,tm_7994772,KF Egnatia,3,1,home
+mt_517362965,2026-07-31,comp_9788,tm_10595,Drogheda United,tm_38765,Shamrock Rovers,0,0,draw
+mt_022907155,2026-07-28,comp_3498,tm_38765,Shamrock Rovers,tm_7937035,FC Ararat-Armenia,2,1,home
+mt_153740898,2026-08-28,comp_9788,tm_9779104,Galway United,tm_04289,Shelbourne,1,1,draw
+mt_732019625,2026-08-09,comp_9788,tm_04289,Shelbourne,tm_79322,St. Patrick's Athletic,1,2,away
+mt_739267926,2026-08-06,comp_408698,tm_52627,AFC Ajax,tm_04289,Shelbourne,3,1,home
+mt_641583012,2026-08-02,comp_9788,tm_04220,Waterford FC,tm_04289,Shelbourne,1,0,home
+mt_899722786,2026-07-30,comp_408698,tm_295323,Nõmme Kalju,tm_04289,Shelbourne,2,1,home
+mt_377230814,2026-07-23,comp_408698,tm_04289,Shelbourne,tm_295323,Nõmme Kalju,5,2,home
+mt_517362359,2026-07-03,comp_9788,tm_04289,Shelbourne,tm_79344,Dundalk FC,2,1,home
+mt_206678887,2026-08-27,comp_623699,tm_842023,Blooming,tm_6013335,CDT Real Oruro,1,1,draw
+mt_378812273,2026-08-23,comp_623699,tm_6013335,CDT Real Oruro,tm_721023,Bolívar,2,4,away
+mt_467781161,2026-08-15,comp_623699,tm_6013335,CDT Real Oruro,tm_163508,Oriente Petrolero,2,3,away
+mt_155863349,2026-08-07,comp_623699,tm_4815706,CD Real Tomayapo,tm_6013335,CDT Real Oruro,1,2,away
+mt_899702948,2026-08-04,comp_623699,tm_8745558,Academia del Balompié Boliviano,tm_6013335,CDT Real Oruro,4,1,home
+mt_988320867,2026-08-01,comp_623699,tm_6013335,CDT Real Oruro,tm_4102881,Independiente Petrolero,0,3,away
+mt_644098263,2026-07-25,comp_623699,tm_215029,Guabirá,tm_6013335,CDT Real Oruro,4,1,home
+mt_644098204,2026-07-20,comp_623699,tm_189514,Nacional Potosí,tm_6013335,CDT Real Oruro,1,4,away
+mt_028973577,2026-08-28,comp_5812,tm_8772057,Kerry FC,tm_4168514,Treaty United FC,3,1,home
+mt_370251236,2026-08-21,comp_5812,tm_4168514,Treaty United FC,tm_652868,Cork City,2,2,draw
+mt_986402434,2026-08-07,comp_5812,tm_47604,Cobh Ramblers FC,tm_4168514,Treaty United FC,2,0,home
+mt_894620673,2026-08-03,comp_5812,tm_85942,University College Dublin,tm_4168514,Treaty United FC,1,2,away
+mt_028973995,2026-07-31,comp_5812,tm_4168514,Treaty United FC,tm_47652,Longford Town,0,1,away
+mt_370251225,2026-07-24,comp_5812,tm_4168514,Treaty United FC,tm_85959,Athlone Town,2,1,home
+mt_517364344,2026-07-10,comp_5812,tm_26056,Finn Harps,tm_4168514,Treaty United FC,0,1,away
+mt_370251283,2026-07-03,comp_5812,tm_4168514,Treaty United FC,tm_8772057,Kerry FC,2,1,home
+mt_517364355,2026-08-28,comp_5812,tm_652868,Cork City,tm_842722,Wexford FC,2,0,home
+mt_894620689,2026-08-21,comp_5812,tm_842722,Wexford FC,tm_85959,Athlone Town,0,2,away
+mt_028973950,2026-08-07,comp_5812,tm_85942,University College Dublin,tm_842722,Wexford FC,4,1,home
+mt_732015063,2026-08-03,comp_5812,tm_842722,Wexford FC,tm_26090,Bray Wanderers,2,1,home
+mt_986402442,2026-07-31,comp_5812,tm_47604,Cobh Ramblers FC,tm_842722,Wexford FC,1,0,home
+mt_732015004,2026-07-25,comp_5812,tm_47652,Longford Town,tm_842722,Wexford FC,1,2,away
+mt_028973939,2026-07-10,comp_5812,tm_842722,Wexford FC,tm_8772057,Kerry FC,2,2,draw
+mt_641589530,2026-07-03,comp_5812,tm_26056,Finn Harps,tm_842722,Wexford FC,1,0,home
+mt_465198295,2026-08-28,comp_5812,tm_85942,University College Dublin,tm_26056,Finn Harps,5,4,home
+mt_465198149,2026-08-21,comp_5812,tm_26056,Finn Harps,tm_47604,Cobh Ramblers FC,1,3,away
+mt_209837817,2026-08-07,comp_5812,tm_26090,Bray Wanderers,tm_26056,Finn Harps,5,0,home
+mt_370251240,2026-08-03,comp_5812,tm_47652,Longford Town,tm_26056,Finn Harps,5,0,home
+mt_517364333,2026-07-31,comp_5812,tm_26056,Finn Harps,tm_652868,Cork City,0,3,away
+mt_641589596,2026-07-24,comp_5812,tm_8772057,Kerry FC,tm_26056,Finn Harps,2,1,home
+mt_209837828,2026-08-28,comp_5812,tm_85959,Athlone Town,tm_26090,Bray Wanderers,2,1,home
+mt_153746780,2026-08-07,comp_5812,tm_85959,Athlone Town,tm_47652,Longford Town,2,1,home
+mt_465198114,2026-08-03,comp_5812,tm_652868,Cork City,tm_85959,Athlone Town,3,2,home
+mt_153746775,2026-07-31,comp_5812,tm_85959,Athlone Town,tm_85942,University College Dublin,0,0,draw
+mt_732015052,2026-07-10,comp_5812,tm_85959,Athlone Town,tm_47604,Cobh Ramblers FC,2,0,home
+mt_028973943,2026-07-03,comp_5812,tm_26090,Bray Wanderers,tm_85959,Athlone Town,1,0,home
+mt_986402493,2026-08-28,comp_5812,tm_47604,Cobh Ramblers FC,tm_47652,Longford Town,2,2,draw
+mt_641589508,2026-08-03,comp_5812,tm_8772057,Kerry FC,tm_47604,Cobh Ramblers FC,3,0,home
+mt_465198182,2026-07-24,comp_5812,tm_47604,Cobh Ramblers FC,tm_26090,Bray Wanderers,1,2,away
+mt_465198171,2026-07-03,comp_5812,tm_47604,Cobh Ramblers FC,tm_652868,Cork City,0,1,away
+mt_641589561,2026-08-21,comp_5812,tm_8772057,Kerry FC,tm_85942,University College Dublin,1,1,draw
+mt_894620664,2026-07-24,comp_5812,tm_85942,University College Dublin,tm_652868,Cork City,5,2,home
+mt_153746769,2026-07-10,comp_5812,tm_26090,Bray Wanderers,tm_85942,University College Dublin,6,0,home
+mt_894620602,2026-07-04,comp_5812,tm_47652,Longford Town,tm_85942,University College Dublin,2,1,home
+mt_153746716,2026-08-22,comp_5812,tm_47652,Longford Town,tm_26090,Bray Wanderers,4,2,home
+mt_209837886,2026-07-31,comp_5812,tm_26090,Bray Wanderers,tm_8772057,Kerry FC,0,4,away
+mt_517364399,2026-08-07,comp_5812,tm_652868,Cork City,tm_8772057,Kerry FC,3,1,home
+mt_986402421,2026-07-10,comp_5812,tm_652868,Cork City,tm_47652,Longford Town,3,4,away
+mt_988300201,2026-09-01,comp_6258,tm_15577,Stade Nyonnais,tm_89994,FC Winterthur,2,2,draw
+mt_733611971,2026-08-28,comp_6258,tm_89994,FC Winterthur,tm_928709,FC Stade-Lausanne-Ouchy,1,1,draw
+mt_988300240,2026-08-21,comp_6258,tm_167960,FC Rapperswil-Jona,tm_89994,FC Winterthur,0,2,away
+mt_511966415,2026-08-07,comp_6258,tm_89994,FC Winterthur,tm_46602,FC Wil 1900,5,0,home
+mt_733611543,2026-07-31,comp_6258,tm_02225,SC Kriens,tm_89994,FC Winterthur,2,0,home
+mt_988300198,2026-07-24,comp_6258,tm_89994,FC Winterthur,tm_15555,Yverdon-Sport FC,2,2,draw
+mt_893858477,2026-05-16,comp_4084,tm_89994,FC Winterthur,tm_51184,FC Luzern,0,3,away
+mt_734797267,2026-05-12,comp_4084,tm_73342,Grasshopper Club Zürich,tm_89994,FC Winterthur,3,2,home
+mt_200133796,2026-09-01,comp_6258,tm_20050,Neuchâtel Xamax,tm_15555,Yverdon-Sport FC,1,2,away
+mt_022577403,2026-08-28,comp_6258,tm_37703,FC Aarau,tm_20050,Neuchâtel Xamax,2,1,home
+mt_511966252,2026-08-21,comp_6258,tm_20050,Neuchâtel Xamax,tm_928709,FC Stade-Lausanne-Ouchy,1,2,away
+mt_022577379,2026-08-07,comp_6258,tm_37748,Étoile Carouge FC,tm_20050,Neuchâtel Xamax,0,1,away
+mt_155844013,2026-07-31,comp_6258,tm_46602,FC Wil 1900,tm_20050,Neuchâtel Xamax,1,2,away
+mt_988300219,2026-07-24,comp_6258,tm_20050,Neuchâtel Xamax,tm_02225,SC Kriens,3,2,home
+mt_986218119,2026-05-15,comp_6258,tm_928709,FC Stade-Lausanne-Ouchy,tm_20050,Neuchâtel Xamax,2,1,home
+mt_641934332,2026-05-11,comp_6258,tm_20050,Neuchâtel Xamax,tm_37748,Étoile Carouge FC,3,0,home
+mt_643968309,2026-08-31,comp_3758,tm_2672980,Arda Kardzhali,tm_800623,Botev Vratsa,2,0,home
+mt_511453439,2026-08-24,comp_3758,tm_91182,Lokomotiv Plovdiv,tm_2672980,Arda Kardzhali,0,1,away
+mt_022309390,2026-08-17,comp_3758,tm_2672980,Arda Kardzhali,tm_38880,Lokomotiv Sofia,3,1,home
+mt_733570503,2026-08-08,comp_3758,tm_63391,FK Dunav Ruse,tm_2672980,Arda Kardzhali,0,2,away
+mt_024100987,2026-07-31,comp_3758,tm_1095841,FC CSKA 1948 Sofia,tm_2672980,Arda Kardzhali,2,1,home
+mt_466195728,2026-07-24,comp_3758,tm_2672980,Arda Kardzhali,tm_04425,Slavia Sofia,1,0,home
+mt_988406198,2026-07-18,comp_3758,tm_5114555,FK Septemvri Sofia,tm_2672980,Arda Kardzhali,1,1,draw
+mt_988613896,2026-05-25,comp_3758,tm_10000,Cherno More Varna,tm_2672980,Arda Kardzhali,2,3,away
+mt_022309307,2026-08-30,comp_3758,tm_21980,Botev Plovdiv,tm_52213,Levski Sofia,1,3,away
+mt_378135821,2026-08-24,comp_3758,tm_800623,Botev Vratsa,tm_21980,Botev Plovdiv,1,0,home
+mt_466841829,2026-08-15,comp_3758,tm_177393,Ludogorets,tm_21980,Botev Plovdiv,2,0,home
+mt_899086063,2026-08-10,comp_3758,tm_21980,Botev Plovdiv,tm_85553,FK Spartak Varna,3,2,home
+mt_200839683,2026-08-01,comp_3758,tm_21980,Botev Plovdiv,tm_10000,Cherno More Varna,1,0,home
+mt_733604305,2026-07-27,comp_3758,tm_47764,CSKA Sofia,tm_21980,Botev Plovdiv,3,2,home
+mt_155743649,2026-07-21,comp_3758,tm_21980,Botev Plovdiv,tm_38880,Lokomotiv Sofia,1,1,draw
+mt_200961071,2026-05-25,comp_3758,tm_91182,Lokomotiv Plovdiv,tm_21980,Botev Plovdiv,2,1,home
+mt_747671114,2026-05-16,comp_08207,tm_5423535,London City Lionesses,tm_4778680,Aston Villa,2,1,home
+mt_585995554,2026-05-03,comp_08207,tm_3812600,Tottenham FC,tm_5423535,London City Lionesses,2,1,home
+mt_979339938,2026-04-26,comp_08207,tm_5423535,London City Lionesses,tm_7515973,Leicester City,5,1,home
+mt_626006655,2026-03-29,comp_08207,tm_9208126,West Ham,tm_5423535,London City Lionesses,1,1,draw
+mt_979339947,2026-03-21,comp_08207,tm_5423535,London City Lionesses,tm_8444036,Chelsea FC,1,1,draw
+mt_838778807,2026-03-15,comp_08207,tm_5423535,London City Lionesses,tm_515555,Arsenal,0,2,away
+mt_838778856,2026-02-15,comp_08207,tm_4894719,Manchester United,tm_5423535,London City Lionesses,2,1,home
+mt_252112202,2026-02-08,comp_08207,tm_5423535,London City Lionesses,tm_033281,Everton,0,1,away
+mt_626006666,2026-05-16,comp_08207,tm_8444036,Chelsea FC,tm_4894719,Manchester United,1,0,home
+mt_191881119,2026-05-02,comp_08207,tm_4894719,Manchester United,tm_6339494,Brighton,1,1,draw
+mt_838778882,2026-04-26,comp_08207,tm_3812600,Tottenham FC,tm_4894719,Manchester United,0,0,draw
+mt_159343408,2026-04-01,comp_6694,tm_59415,FC Bayern München,tm_4894719,Manchester United,2,1,home
+mt_363443324,2026-03-28,comp_08207,tm_4894719,Manchester United,tm_8396648,Manchester City,0,3,away
+mt_987606089,2026-03-25,comp_6694,tm_4894719,Manchester United,tm_59415,FC Bayern München,2,3,away
+mt_252112289,2026-03-21,comp_08207,tm_4894719,Manchester United,tm_033281,Everton,2,1,home
+mt_734231639,2026-03-18,comp_08207,tm_9208126,West Ham,tm_4894719,Manchester United,0,0,draw
+mt_895300926,2026-08-30,comp_45025,tm_6209912,Al-Hazem,tm_548644,Al-Shabab,1,1,draw
+mt_467088019,2026-08-25,comp_45025,tm_548644,Al-Shabab,tm_8370045,Al-Riyadh,3,3,draw
+mt_895300303,2026-08-22,comp_45025,tm_8375958,Al-Khaleej,tm_548644,Al-Shabab,0,0,draw
+mt_022317408,2026-08-16,comp_83796,tm_037127,Al-Wehda,tm_548644,Al-Shabab,1,1,home
+mt_892746763,2026-05-20,comp_45025,tm_2885215,Al-Najma SC,tm_548644,Al-Shabab,1,0,home
+mt_200955201,2026-05-17,comp_45025,tm_548644,Al-Shabab,tm_480982,Al-Ittihad,3,2,home
+mt_980361708,2026-05-11,comp_45025,tm_2221233,Neom SC,tm_548644,Al-Shabab,2,1,home
+mt_150966541,2026-09-01,comp_45025,tm_466902,Al-Hilal,tm_754497,Al-Ahli,3,0,home
+mt_512844167,2026-08-28,comp_45025,tm_8375958,Al-Khaleej,tm_466902,Al-Hilal,1,5,away
+mt_150966905,2026-08-20,comp_45025,tm_0153318,Al-Fayha,tm_466902,Al-Hilal,0,3,away
+mt_200753611,2026-08-17,comp_83796,tm_226188,Al-Raed,tm_466902,Al-Hilal,0,2,away
+mt_643299246,2026-08-14,comp_45025,tm_466902,Al-Hilal,tm_447225,Al-Faisaly,4,2,home
+mt_154837865,2026-05-21,comp_45025,tm_0153318,Al-Fayha,tm_466902,Al-Hilal,0,1,away
+mt_027589549,2026-05-16,comp_45025,tm_466902,Al-Hilal,tm_2221233,Neom SC,2,0,home
+mt_203196535,2026-05-12,comp_45025,tm_156414,Al-Nassr,tm_466902,Al-Hilal,1,1,draw
+mt_467088696,2026-08-29,comp_45025,tm_7951491,Al-Kholood,tm_754497,Al-Ahli,3,1,home
+mt_512964931,2026-08-26,comp_023414,tm_754497,Al-Ahli,tm_08440915,Auckland FC,1,0,home
+mt_739455453,2026-08-22,comp_45025,tm_754497,Al-Ahli,tm_1986637,Abha,4,0,home
+mt_155694018,2026-08-17,comp_83796,tm_61938005,Al Anwar,tm_754497,Al-Ahli,1,2,away
+mt_980364322,2026-05-20,comp_45025,tm_8375958,Al-Khaleej,tm_754497,Al-Ahli,1,4,away
+mt_516972862,2026-05-16,comp_45025,tm_754497,Al-Ahli,tm_7951491,Al-Kholood,3,0,home
+mt_895300369,2026-08-28,comp_45025,tm_8370045,Al-Riyadh,tm_2221233,Neom SC,1,0,home
+mt_206577566,2026-08-21,comp_45025,tm_8370045,Al-Riyadh,tm_156414,Al-Nassr,0,4,away
+mt_377165847,2026-08-17,comp_83796,tm_0435227,Al Zulfi,tm_8370045,Al-Riyadh,0,2,away
+mt_467088062,2026-08-14,comp_45025,tm_803264,Al-Ettifaq,tm_8370045,Al-Riyadh,4,2,home
+mt_375402420,2026-05-21,comp_45025,tm_8370045,Al-Riyadh,tm_6952308,Al-Okhdood,1,0,home
+mt_892746704,2026-05-15,comp_45025,tm_226177,Al-Taawoun,tm_8370045,Al-Riyadh,1,1,draw
+mt_648013165,2026-05-10,comp_45025,tm_8370045,Al-Riyadh,tm_552949,Al-Fateh,1,0,home
+mt_988480708,2026-08-28,comp_2977,tm_63833,RKC Waalwijk,tm_872387,Jong PSV Eindhoven,2,2,draw
+mt_733031250,2026-08-21,comp_2977,tm_04794,Helmond Sport,tm_63833,RKC Waalwijk,1,1,draw
+mt_466169527,2026-08-14,comp_2977,tm_63833,RKC Waalwijk,tm_52631,FC Dordrecht,2,2,draw
+mt_200803972,2026-08-07,comp_2977,tm_85256,Vitesse,tm_63833,RKC Waalwijk,1,1,draw
+mt_377636280,2026-05-09,comp_3809,tm_26373,Willem II Tilburg,tm_63833,RKC Waalwijk,1,1,draw
+mt_899383588,2026-05-05,comp_3809,tm_63833,RKC Waalwijk,tm_26373,Willem II Tilburg,0,1,away
+mt_377602454,2026-05-01,comp_3809,tm_63833,RKC Waalwijk,tm_04741,Roda JC Kerkrade,1,1,home
+mt_733420033,2026-04-28,comp_3809,tm_04741,Roda JC Kerkrade,tm_63833,RKC Waalwijk,1,1,draw
+mt_022927173,2026-08-28,comp_2977,tm_04741,Roda JC Kerkrade,tm_38578,NAC Breda,2,2,draw
+mt_155754368,2026-08-22,comp_2977,tm_38578,NAC Breda,tm_184981,Jong Ajax,3,2,home
+mt_022927852,2026-08-14,comp_2977,tm_38578,NAC Breda,tm_10483,VVV-Venlo,0,2,away
+mt_511316737,2026-08-07,comp_2977,tm_85268,TOP Oss,tm_38578,NAC Breda,1,2,away
+mt_626491351,2026-05-17,comp_3809,tm_10458,AZ Alkmaar,tm_38578,NAC Breda,3,3,draw
+mt_404685896,2026-05-11,comp_3809,tm_38578,NAC Breda,tm_04732,SC Heerenveen,2,0,home
+mt_747352970,2026-05-02,comp_3809,tm_85290,FC Utrecht,tm_38578,NAC Breda,2,0,home
+mt_363710826,2026-04-25,comp_3809,tm_38578,NAC Breda,tm_52627,AFC Ajax,0,2,away
+mt_377275653,2026-08-30,comp_2977,tm_10483,VVV-Venlo,tm_47987,FC Emmen,4,0,home
+mt_022927804,2026-08-21,comp_2977,tm_47987,FC Emmen,tm_213523,Jong AZ Alkmaar,3,1,home
+mt_899692488,2026-08-17,comp_2977,tm_184981,Jong Ajax,tm_47987,FC Emmen,4,6,away
+mt_988480112,2026-08-07,comp_2977,tm_47987,FC Emmen,tm_04741,Roda JC Kerkrade,1,0,home
+mt_404611401,2026-04-24,comp_2977,tm_47987,FC Emmen,tm_79130,De Graafschap,1,0,home
+mt_979101040,2026-04-17,comp_2977,tm_04741,Roda JC Kerkrade,tm_47987,FC Emmen,2,2,draw
+mt_363858505,2026-04-10,comp_2977,tm_63833,RKC Waalwijk,tm_47987,FC Emmen,5,0,home
+mt_191045184,2026-04-06,comp_2977,tm_47987,FC Emmen,tm_63855,MVV Maastricht,2,1,home
+mt_511316751,2026-08-28,comp_2977,tm_85207,FC Volendam,tm_52631,FC Dordrecht,6,1,home
+mt_155754943,2026-08-21,comp_2977,tm_63855,MVV Maastricht,tm_85207,FC Volendam,1,0,home
+mt_466169548,2026-08-15,comp_2977,tm_85207,FC Volendam,tm_85268,TOP Oss,3,0,home
+mt_899692466,2026-08-10,comp_2977,tm_872387,Jong PSV Eindhoven,tm_85207,FC Volendam,3,2,home
+mt_626491364,2026-05-10,comp_3809,tm_38512,Excelsior,tm_85207,FC Volendam,1,1,draw
+mt_377275034,2026-08-28,comp_2977,tm_184981,Jong Ajax,tm_04794,Helmond Sport,3,2,home
+mt_644548109,2026-08-14,comp_2977,tm_04741,Roda JC Kerkrade,tm_04794,Helmond Sport,2,1,home
+mt_733031206,2026-08-09,comp_2977,tm_04794,Helmond Sport,tm_79130,De Graafschap,1,1,draw
+mt_747300732,2026-04-24,comp_2977,tm_04709,FC Eindhoven,tm_04794,Helmond Sport,1,0,home
+mt_585262615,2026-04-17,comp_2977,tm_04794,Helmond Sport,tm_10483,VVV-Venlo,2,0,home
+mt_010474779,2026-04-10,comp_2977,tm_63855,MVV Maastricht,tm_04794,Helmond Sport,0,0,draw
+mt_404796486,2026-04-06,comp_2977,tm_04794,Helmond Sport,tm_63833,RKC Waalwijk,2,2,draw
+mt_466169516,2026-08-23,comp_2977,tm_10483,VVV-Venlo,tm_79130,De Graafschap,2,1,home
+mt_022927891,2026-08-07,comp_2977,tm_10483,VVV-Venlo,tm_38524,Heracles Almelo,3,4,away
+mt_626455646,2026-04-24,comp_2977,tm_10483,VVV-Venlo,tm_10419,Almere City FC,3,1,home
+mt_191040435,2026-04-11,comp_2977,tm_10483,VVV-Venlo,tm_79130,De Graafschap,3,3,draw
+mt_404796441,2026-04-06,comp_2977,tm_872387,Jong PSV Eindhoven,tm_10483,VVV-Venlo,1,0,home
+mt_511316862,2026-08-29,comp_2977,tm_79130,De Graafschap,tm_10419,Almere City FC,1,4,away
+mt_200803535,2026-08-21,comp_2977,tm_85256,Vitesse,tm_10419,Almere City FC,0,3,away
+mt_988480636,2026-08-14,comp_2977,tm_10419,Almere City FC,tm_872387,Jong PSV Eindhoven,3,1,home
+mt_644548153,2026-08-08,comp_2977,tm_52648,FC Den Bosch,tm_10419,Almere City FC,1,1,draw
+mt_511144235,2026-05-16,comp_3809,tm_26373,Willem II Tilburg,tm_10419,Almere City FC,2,0,home
+mt_988822143,2026-05-13,comp_3809,tm_10419,Almere City FC,tm_26373,Willem II Tilburg,0,1,away
+mt_644262538,2026-05-09,comp_3809,tm_79130,De Graafschap,tm_10419,Almere City FC,2,2,draw
+mt_022101925,2026-05-06,comp_3809,tm_10419,Almere City FC,tm_79130,De Graafschap,3,1,home
+mt_377275686,2026-08-31,comp_2977,tm_872387,Jong PSV Eindhoven,tm_184981,Jong Ajax,1,1,draw
+mt_988480640,2026-08-07,comp_2977,tm_52631,FC Dordrecht,tm_184981,Jong Ajax,2,1,home
+mt_838966892,2026-04-24,comp_2977,tm_184981,Jong Ajax,tm_335407,Jong FC Utrecht Youth,0,2,away
+mt_626383832,2026-04-17,comp_2977,tm_872387,Jong PSV Eindhoven,tm_184981,Jong Ajax,0,1,away
+mt_838525233,2026-04-13,comp_2977,tm_184981,Jong Ajax,tm_85268,TOP Oss,1,2,away
+mt_155670461,2026-08-28,comp_6981,tm_7355123,Comerciantes Unidos,tm_97079701,FC Cajamarca,2,3,away
+mt_733509953,2026-08-21,comp_6981,tm_97079701,FC Cajamarca,tm_8572044,Club Atlético Grau,1,3,away
+mt_022394445,2026-08-16,comp_6981,tm_97079701,FC Cajamarca,tm_46575,Universitario,2,3,away
+mt_155670457,2026-08-09,comp_6981,tm_89455,Melgar,tm_97079701,FC Cajamarca,2,4,away
+mt_466817774,2026-08-01,comp_6981,tm_97079701,FC Cajamarca,tm_485775,Sport Huancayo,0,2,away
+mt_155670005,2026-07-27,comp_6981,tm_0590745,Deportivo Garcilaso,tm_97079701,FC Cajamarca,2,1,home
+mt_200786600,2026-07-17,comp_6981,tm_97079701,FC Cajamarca,tm_6696215,ADC Juan Pablo II,2,2,draw
+mt_466689024,2026-05-31,comp_6981,tm_97079701,FC Cajamarca,tm_20961,Alianza Lima,1,1,draw
+mt_200786383,2026-08-31,comp_6981,tm_20908,Cienciano,tm_1347030,Cusco FC,1,2,away
+mt_988241020,2026-08-23,comp_6981,tm_98619,Sport Boys,tm_20908,Cienciano,5,1,home
+mt_155670408,2026-08-16,comp_6981,tm_20908,Cienciano,tm_0590745,Deportivo Garcilaso,0,0,draw
+mt_466817970,2026-08-06,comp_6981,tm_37087,Alianza Atlético de Sullana,tm_20908,Cienciano,1,0,home
+mt_644953842,2026-08-02,comp_6981,tm_20908,Cienciano,tm_46575,Universitario,2,0,home
+mt_377103752,2026-07-30,comp_1615,tm_20908,Cienciano,tm_85960,Lanús,4,0,home
+mt_150435918,2026-08-29,comp_9235,tm_26919,Galatasaray,tm_04892,Göztepe,3,2,home
+mt_150435987,2026-08-21,comp_9235,tm_552827,Erzurumspor FK,tm_26919,Galatasaray,0,4,away
+mt_895249369,2026-08-14,comp_9235,tm_26919,Galatasaray,tm_7246939,Çorum FK,2,2,draw
+mt_010403832,2026-05-17,comp_9235,tm_55893,Kasımpaşa,tm_26919,Galatasaray,1,0,home
+mt_252627902,2026-05-09,comp_9235,tm_26919,Galatasaray,tm_63159,Antalyaspor,4,2,home
+mt_626369144,2026-05-02,comp_9235,tm_52738,Samsunspor,tm_26919,Galatasaray,4,1,home
+mt_363831067,2026-04-26,comp_9235,tm_26919,Galatasaray,tm_91646,Fenerbahçe,3,0,home
+mt_363831006,2026-04-18,comp_9235,tm_966479,Gençlerbirliği,tm_26919,Galatasaray,1,2,away
+mt_200860833,2026-08-29,comp_1965,tm_646259,FK Novi Pazar,tm_779653,FK Mačva Šabac,1,1,draw
+mt_155705611,2026-08-23,comp_1965,tm_3043738,FK Radnik Surdulica,tm_646259,FK Novi Pazar,1,0,home
+mt_377287148,2026-08-17,comp_1965,tm_646259,FK Novi Pazar,tm_18469,FK Vojvodina,2,0,home
+mt_511321496,2026-08-08,comp_1965,tm_76152,FK Crvena zvezda,tm_646259,FK Novi Pazar,2,0,home
+mt_644534952,2026-08-01,comp_1965,tm_646259,FK Novi Pazar,tm_59644,OFK Beograd,1,4,away
+mt_899659009,2026-07-26,comp_1965,tm_299726,FK Mladost Lučani,tm_646259,FK Novi Pazar,0,0,draw
+mt_022942078,2026-07-18,comp_1965,tm_646259,FK Novi Pazar,tm_288521,FK Radnički 1923,1,0,home
+mt_511632346,2026-05-23,comp_1965,tm_18469,FK Vojvodina,tm_646259,FK Novi Pazar,3,0,home
+mt_988418406,2026-08-29,comp_1965,tm_5296655,FK Železničar Pančevo,tm_3043738,FK Radnik Surdulica,5,1,home
+mt_899659086,2026-08-23,comp_1965,tm_18469,FK Vojvodina,tm_5296655,FK Železničar Pančevo,1,0,home
+mt_466176820,2026-08-09,comp_1965,tm_59644,OFK Beograd,tm_5296655,FK Železničar Pančevo,2,2,draw
+mt_155705666,2026-08-03,comp_1965,tm_5296655,FK Železničar Pančevo,tm_299726,FK Mladost Lučani,0,0,draw
+mt_200829207,2026-07-30,comp_408698,tm_79214,Sporting Braga,tm_5296655,FK Železničar Pančevo,4,0,home
+mt_988496131,2026-07-22,comp_408698,tm_5296655,FK Železničar Pančevo,tm_79214,Sporting Braga,0,1,away
+mt_899659053,2026-07-17,comp_1965,tm_5296655,FK Železničar Pančevo,tm_373622,FK Radnički Niš,2,1,home
+mt_988041483,2026-05-17,comp_1965,tm_646259,FK Novi Pazar,tm_5296655,FK Železničar Pančevo,2,2,draw
+mt_466169965,2026-08-29,comp_3169,tm_13715,AaB,tm_487788,HB Køge,0,0,draw
+mt_733031123,2026-08-23,comp_3169,tm_487788,HB Køge,tm_988821,Kolding IF,2,2,draw
+mt_200803336,2026-08-15,comp_3169,tm_487788,HB Køge,tm_45259,Hvidovre,0,2,away
+mt_022927780,2026-08-08,comp_3169,tm_09983,Aarhus Fremad,tm_487788,HB Køge,3,1,home
+mt_377275577,2026-07-31,comp_3169,tm_487788,HB Køge,tm_94468,Vejle,0,2,away
+mt_988480002,2026-07-25,comp_3169,tm_96304,FC Fredericia,tm_487788,HB Køge,3,0,home
+mt_837627362,2025-03-29,comp_3169,tm_84723,Boldklubben af 1893,tm_487788,HB Køge,2,2,draw
+mt_629454206,2025-03-14,comp_3169,tm_487788,HB Køge,tm_53372,FC Roskilde,2,1,home
+mt_022927727,2026-08-30,comp_3169,tm_29120,Hillerød,tm_96964,Hobro,3,1,home
+mt_511316663,2026-08-20,comp_3169,tm_08517,Vendsyssel FF,tm_29120,Hillerød,1,0,home
+mt_899692239,2026-08-15,comp_3169,tm_29120,Hillerød,tm_09983,Aarhus Fremad,1,1,draw
+mt_466169909,2026-08-09,comp_3169,tm_94468,Vejle,tm_29120,Hillerød,5,4,home
+mt_511316679,2026-08-01,comp_3169,tm_29120,Hillerød,tm_30235,Esbjerg,2,3,away
+mt_377275555,2026-07-24,comp_3169,tm_13715,AaB,tm_29120,Hillerød,1,0,home
+mt_251831580,2025-03-28,comp_3169,tm_08517,Vendsyssel FF,tm_29120,Hillerød,0,0,draw
+mt_972848731,2025-03-14,comp_3169,tm_29120,Hillerød,tm_84723,Boldklubben af 1893,1,1,draw
+mt_466815574,2026-08-28,comp_7938,tm_30450,AC Horsens,tm_84684,Viborg FF,2,3,away
+mt_988246681,2026-08-14,comp_7938,tm_84684,Viborg FF,tm_29826,AGF,2,1,home
+mt_022398829,2026-08-07,comp_7938,tm_45144,Sønderjyske Fodbold,tm_84684,Viborg FF,0,0,draw
+mt_155673393,2026-08-02,comp_7938,tm_29810,Brøndby IF,tm_84684,Viborg FF,1,0,home
+mt_899064448,2026-07-24,comp_7938,tm_84684,Viborg FF,tm_61506,Odense Boldklub,1,0,home
+mt_021441577,2026-05-17,comp_7938,tm_29826,AGF,tm_84684,Viborg FF,6,2,home
+mt_205665828,2026-05-08,comp_7938,tm_84684,Viborg FF,tm_45144,Sønderjyske Fodbold,0,1,away
+mt_377120010,2026-08-30,comp_7938,tm_62451,Lyngby,tm_61506,Odense Boldklub,1,1,draw
+mt_899064492,2026-08-23,comp_7938,tm_30450,AC Horsens,tm_62451,Lyngby,2,1,home
+mt_155673359,2026-08-16,comp_7938,tm_62451,Lyngby,tm_72074,FC Midtjylland,1,1,draw
+mt_733502241,2026-08-09,comp_7938,tm_29137,Randers FC,tm_62451,Lyngby,2,0,home
+mt_899064454,2026-08-01,comp_7938,tm_62451,Lyngby,tm_29826,AGF,2,2,draw
+mt_988246678,2026-07-26,comp_7938,tm_08959,FC København,tm_62451,Lyngby,3,2,home
+mt_837086043,2025-05-24,comp_7938,tm_62451,Lyngby,tm_13715,AaB,3,1,home
+mt_364132166,2025-05-18,comp_7938,tm_45144,Sønderjyske Fodbold,tm_62451,Lyngby,5,1,home
+mt_986424489,2026-08-30,comp_6917,tm_01490,Sandvikens IF,tm_25022,Östers IF,1,1,draw
+mt_732050035,2026-08-25,comp_6917,tm_25022,Östers IF,tm_58135,GIF Sundsvall,1,0,home
+mt_022937003,2026-08-19,comp_1112,tm_83563,Högaborgs BK,tm_25022,Östers IF,0,4,away
+mt_465181165,2026-08-15,comp_6917,tm_01449,Ljungskile SK,tm_25022,Östers IF,2,3,away
+mt_465188078,2026-08-08,comp_6917,tm_25022,Östers IF,tm_97839,Landskrona BoIS,0,1,away
+mt_986422786,2026-08-01,comp_6917,tm_62358,Östersunds FK,tm_25022,Östers IF,1,0,home
+mt_986422770,2026-07-27,comp_6917,tm_25022,Östers IF,tm_293883,Varbergs BoIS,3,0,home
+mt_732055446,2026-07-18,comp_6917,tm_25022,Östers IF,tm_36738,IK Brage,3,2,home
+mt_370212277,2026-08-29,comp_6917,tm_8695869,United IK Nordic,tm_74365,IFK Norrköping,1,3,away
+mt_155805351,2026-08-26,comp_1112,tm_25390197,Bollstanäs SK,tm_8695869,United IK Nordic,0,2,away
+mt_641595593,2026-08-23,comp_6917,tm_36738,IK Brage,tm_8695869,United IK Nordic,1,2,away
+mt_986424473,2026-08-15,comp_6917,tm_8695869,United IK Nordic,tm_293883,Varbergs BoIS,0,0,draw
+mt_209878858,2026-08-08,comp_6917,tm_97188,Falkenbergs FF,tm_8695869,United IK Nordic,1,1,draw
+mt_641599249,2026-08-02,comp_6917,tm_8695869,United IK Nordic,tm_01449,Ljungskile SK,2,2,draw
+mt_641599235,2026-07-28,comp_6917,tm_19654,Helsingborgs IF,tm_8695869,United IK Nordic,1,1,draw
+mt_209877503,2026-07-19,comp_6917,tm_8695869,United IK Nordic,tm_83975,Örebro SK,2,0,home
+mt_894606639,2026-08-24,comp_6917,tm_74365,IFK Norrköping,tm_97188,Falkenbergs FF,2,1,home
+mt_466189441,2026-08-20,comp_1112,tm_11303,Vasalunds IF,tm_74365,IFK Norrköping,1,1,away
+mt_153767708,2026-08-15,comp_6917,tm_01490,Sandvikens IF,tm_74365,IFK Norrköping,1,4,away
+mt_209877569,2026-08-08,comp_6917,tm_74365,IFK Norrköping,tm_36738,IK Brage,3,0,home
+mt_028933133,2026-08-01,comp_6917,tm_74365,IFK Norrköping,tm_19654,Helsingborgs IF,2,0,home
+mt_153766991,2026-07-28,comp_6917,tm_97839,Landskrona BoIS,tm_74365,IFK Norrköping,0,1,away
+mt_465188006,2026-07-19,comp_6917,tm_74365,IFK Norrköping,tm_01490,Sandvikens IF,3,0,home
+mt_981709776,2026-08-28,comp_29522,tm_051238,Al Wasl,tm_2665578,Shabab Al-Ahli Dubai,0,1,away
+mt_739417410,2026-08-21,comp_29522,tm_447617,Al-Ittihad Kalba,tm_051238,Al Wasl,0,3,away
+mt_022023107,2026-08-15,comp_29522,tm_051238,Al Wasl,tm_4491679,United,5,1,home
+mt_159700431,2026-04-19,comp_8833,tm_051238,Al Wasl,tm_156414,Al-Nassr,0,4,away
+mt_518264155,2026-03-07,comp_29522,tm_777951,Baniyas,tm_051238,Al Wasl,2,0,home
+mt_370457017,2026-02-17,comp_8833,tm_051238,Al Wasl,tm_805320,Al-Zawraa,3,2,home
+mt_153845306,2026-02-10,comp_8833,tm_805320,Al-Zawraa,tm_051238,Al Wasl,3,2,home
+mt_469545728,2025-12-24,comp_8833,tm_051238,Al Wasl,tm_173787,Al-Wehdat,2,1,home
+mt_150941948,2026-08-29,comp_29522,tm_3732626,Khor Fakkan,tm_4566714,Al-Dhafra,2,0,home
+mt_981709699,2026-08-22,comp_29522,tm_922337,Al-Ain,tm_3732626,Khor Fakkan,2,0,home
+mt_988982733,2026-08-15,comp_29522,tm_3732626,Khor Fakkan,tm_2665578,Shabab Al-Ahli Dubai,1,5,away
+mt_642281431,2026-03-16,comp_29522,tm_139481,Al-Jazira,tm_3732626,Khor Fakkan,3,1,home
+mt_209122271,2026-02-06,comp_29522,tm_4566714,Al-Dhafra,tm_3732626,Khor Fakkan,2,3,away
+mt_589499839,2025-04-12,comp_29522,tm_3732626,Khor Fakkan,tm_9222862,Al Bataeh,1,1,draw
+mt_015799402,2025-04-04,comp_29522,tm_7923566,Dibba Al-Hisn,tm_3732626,Khor Fakkan,0,1,away
+mt_620855938,2025-03-28,comp_29522,tm_3732626,Khor Fakkan,tm_139481,Al-Jazira,1,0,home
+mt_643154466,2026-08-20,comp_45551,tm_173718,Al-Rayyan,tm_2786961,Lusail SC,1,0,home
+mt_206980636,2026-08-27,comp_45551,tm_177168,Al-Wakrah,tm_173718,Al-Rayyan,1,2,away
+mt_466597542,2026-04-27,comp_45551,tm_177168,Al-Wakrah,tm_700750,Al-Sailiya,3,1,home
+mt_376332607,2026-04-08,comp_45551,tm_177168,Al-Wakrah,tm_927021,Al-Gharafa,3,3,draw
+mt_021343574,2026-03-17,comp_45551,tm_173718,Al-Rayyan,tm_177168,Al-Wakrah,2,1,home
+mt_518231433,2026-03-12,comp_45551,tm_177168,Al-Wakrah,tm_6206529,Al Shamal SC,0,1,away
+mt_465887042,2026-02-27,comp_45551,tm_101634,Umm-Salal SC,tm_177168,Al-Wakrah,2,2,draw
+mt_733999322,2026-05-25,comp_29906,tm_0472778,USM Khenchela,tm_654689,USM Alger,2,1,home
+mt_644426229,2026-05-19,comp_29906,tm_551599,CS Constantine,tm_0472778,USM Khenchela,2,2,draw
+mt_022108180,2026-05-08,comp_29906,tm_0472778,USM Khenchela,tm_6224859,MC El Bayadh,2,1,home
+mt_022895041,2026-05-04,comp_29906,tm_327352,CR Belouizdad,tm_0472778,USM Khenchela,3,1,home
+mt_899262322,2026-04-17,comp_29906,tm_4565508,JS Saoura,tm_0472778,USM Khenchela,3,0,home
+mt_159111476,2026-04-10,comp_29906,tm_1535908,ES Mostaganem,tm_0472778,USM Khenchela,0,3,away
+mt_734650014,2026-04-05,comp_29906,tm_0472778,USM Khenchela,tm_3717528,Paradou AC,1,0,home
+mt_988123846,2026-06-06,comp_29906,tm_281879,MC Oran,tm_654689,USM Alger,2,2,draw
+mt_644390459,2026-06-04,comp_29906,tm_0112748,ES Ben Aknoun,tm_654689,USM Alger,2,2,draw
+mt_733956356,2026-06-02,comp_29906,tm_654689,USM Alger,tm_327352,CR Belouizdad,1,1,draw
+mt_466050554,2026-05-16,comp_45714,tm_865420,Zamalek SC,tm_654689,USM Alger,1,0,draw
+mt_377603046,2026-05-12,comp_29906,tm_654689,USM Alger,tm_1535908,ES Mostaganem,1,1,draw
+mt_512837384,2026-08-28,comp_2593,tm_7552661,Enosis Neon Ypsona FC,tm_7054701,ALS Omonia,0,3,away
+mt_251781981,2025-03-30,comp_2593,tm_7054701,ALS Omonia,tm_38251,AEL Limassol,0,3,away
+mt_198634317,2025-03-14,comp_2593,tm_52367,Anorthosis Famagusta,tm_7054701,ALS Omonia,4,2,home
+mt_584243575,2025-03-08,comp_2593,tm_7054701,ALS Omonia,tm_52367,Anorthosis Famagusta,0,0,draw
+mt_620431083,2025-03-02,comp_2593,tm_04971,AEK Larnaca,tm_7054701,ALS Omonia,2,0,home
+mt_402024582,2025-02-22,comp_2593,tm_7054701,ALS Omonia,tm_79570,Nea Salamina Famagusta,2,1,home
+mt_013439041,2025-02-15,comp_2593,tm_63964,Ethnikos Achnas,tm_7054701,ALS Omonia,1,0,home
+mt_584243548,2025-02-07,comp_2593,tm_7054701,ALS Omonia,tm_47840,Omonia Nicosia,2,3,away
+mt_378620275,2026-08-30,comp_2593,tm_8329675,Karmiotissa Polemidion,tm_6261409,Pafos FC,0,3,away
+mt_973243649,2025-03-30,comp_2593,tm_79570,Nea Salamina Famagusta,tm_8329675,Karmiotissa Polemidion,0,0,draw
+mt_837042485,2025-03-15,comp_2593,tm_8329675,Karmiotissa Polemidion,tm_47196,Enosis Neon Paralimniou,0,2,away
+mt_973164602,2025-03-07,comp_2593,tm_8329675,Karmiotissa Polemidion,tm_38251,AEL Limassol,2,1,home
+mt_361812378,2025-02-22,comp_2593,tm_8329675,Karmiotissa Polemidion,tm_04971,AEK Larnaca,0,3,away
+mt_408781476,2025-02-14,comp_2593,tm_79570,Nea Salamina Famagusta,tm_8329675,Karmiotissa Polemidion,2,1,home
+mt_361812312,2025-02-09,comp_2593,tm_8329675,Karmiotissa Polemidion,tm_63964,Ethnikos Achnas,0,0,draw
+mt_196067101,2025-02-01,comp_2593,tm_47840,Omonia Nicosia,tm_8329675,Karmiotissa Polemidion,3,0,home
+mt_739455409,2026-08-28,comp_45025,tm_0153318,Al-Fayha,tm_1986637,Abha,3,2,home
+mt_981722724,2026-08-25,comp_45025,tm_1986637,Abha,tm_8375958,Al-Khaleej,1,1,draw
+mt_377165838,2026-08-16,comp_83796,tm_7273059,Al-Orobah,tm_1986637,Abha,0,0,home
+mt_895300392,2026-08-13,comp_45025,tm_1986637,Abha,tm_6209912,Al-Hazem,1,2,away
+mt_979740364,2025-09-22,comp_83796,tm_1986637,Abha,tm_548644,Al-Shabab,1,1,away
+mt_581254952,2024-05-27,comp_45025,tm_6209912,Al-Hazem,tm_1986637,Abha,2,1,home
+mt_743975607,2024-05-23,comp_45025,tm_1986637,Abha,tm_8375958,Al-Khaleej,2,1,home
+mt_024133130,2026-08-25,comp_45025,tm_803264,Al-Ettifaq,tm_156414,Al-Nassr,2,3,away
+mt_643299298,2026-08-22,comp_45025,tm_552949,Al-Fateh,tm_803264,Al-Ettifaq,0,1,away
+mt_155694087,2026-08-18,comp_83796,tm_5142736,Al-Jabalain,tm_803264,Al-Ettifaq,1,0,home
+mt_648015058,2026-05-21,comp_45025,tm_2221233,Neom SC,tm_803264,Al-Ettifaq,1,1,draw
+mt_154830943,2026-05-14,comp_45025,tm_803264,Al-Ettifaq,tm_480982,Al-Ittihad,1,3,away
+mt_027584804,2026-05-09,comp_45025,tm_8375958,Al-Khaleej,tm_803264,Al-Ettifaq,0,5,away
+mt_377275500,2026-08-21,comp_3169,tm_96964,Hobro,tm_13715,AaB,2,1,home
+mt_377275566,2026-08-15,comp_3169,tm_30235,Esbjerg,tm_96964,Hobro,1,2,away
+mt_644548821,2026-08-08,comp_3169,tm_96964,Hobro,tm_6438815,AB,1,0,home
+mt_899692295,2026-08-02,comp_3169,tm_08517,Vendsyssel FF,tm_96964,Hobro,1,2,away
+mt_200803571,2026-07-26,comp_3169,tm_96964,Hobro,tm_09983,Aarhus Fremad,1,2,away
+mt_589369834,2025-03-30,comp_3169,tm_96964,Hobro,tm_53372,FC Roskilde,1,1,draw
+mt_408616022,2025-03-14,comp_3169,tm_988821,Kolding IF,tm_96964,Hobro,1,0,home
+mt_155754496,2026-08-30,comp_3169,tm_45259,Hvidovre,tm_96304,FC Fredericia,2,1,home
+mt_155754430,2026-08-22,comp_3169,tm_6438815,AB,tm_45259,Hvidovre,1,1,draw
+mt_511316685,2026-08-09,comp_3169,tm_45259,Hvidovre,tm_30235,Esbjerg,2,1,home
+mt_899692243,2026-08-01,comp_3169,tm_988821,Kolding IF,tm_45259,Hvidovre,0,1,away
+mt_733031114,2026-07-25,comp_3169,tm_45259,Hvidovre,tm_08517,Vendsyssel FF,2,2,draw
+mt_364254613,2025-03-29,comp_3169,tm_45259,Hvidovre,tm_30235,Esbjerg,0,3,away
+mt_257080510,2025-03-14,comp_3169,tm_45259,Hvidovre,tm_61506,Odense Boldklub,0,0,draw
+mt_895328893,2026-08-28,comp_29522,tm_4491679,United,tm_447617,Al-Ittihad Kalba,4,1,home
+mt_644649262,2026-08-14,comp_29522,tm_930200,Al-Nasr Dubai,tm_447617,Al-Ittihad Kalba,2,2,draw
+mt_734736321,2026-04-09,comp_29522,tm_4770015,Al-Wahda FC,tm_447617,Al-Ittihad Kalba,2,2,draw
+mt_251711587,2025-04-11,comp_29522,tm_447617,Al-Ittihad Kalba,tm_2665578,Shabab Al-Ahli Dubai,1,2,away
+mt_746100966,2025-04-05,comp_29522,tm_8986369,Al-Orooba,tm_447617,Al-Ittihad Kalba,2,1,home
+mt_402911864,2025-03-29,comp_29522,tm_447617,Al-Ittihad Kalba,tm_4770015,Al-Wahda FC,0,1,away
+mt_402911802,2025-02-27,comp_29522,tm_9222862,Al Bataeh,tm_447617,Al-Ittihad Kalba,0,0,draw
+mt_643286284,2026-08-29,comp_29522,tm_922337,Al-Ain,tm_930200,Al-Nasr Dubai,2,1,home
+mt_377371637,2026-08-16,comp_29522,tm_777951,Baniyas,tm_922337,Al-Ain,2,4,away
+mt_252830996,2025-08-16,comp_29522,tm_922337,Al-Ain,tm_9222862,Al Bataeh,2,1,home
+mt_401274687,2025-06-26,comp_3872,tm_805667,Wydad Casablanca,tm_922337,Al-Ain,1,2,away
+mt_019540232,2025-06-23,comp_3872,tm_3039,Manchester City,tm_922337,Al-Ain,6,0,home
+mt_583925148,2025-06-19,comp_3872,tm_922337,Al-Ain,tm_37201,Juventus,0,5,away
+mt_973233744,2025-04-12,comp_29522,tm_922337,Al-Ain,tm_8986369,Al-Orooba,3,0,home
+mt_378224463,2026-08-29,comp_13553,tm_62801590,Kelantan Red Warrior FC,tm_0393709,Kuching City,0,5,away
+mt_150767194,2026-08-26,comp_13553,tm_38152,Johor Darul Ta'zim,tm_62801590,Kelantan Red Warrior FC,9,0,home
+mt_895388938,2026-08-22,comp_13553,tm_62801590,Kelantan Red Warrior FC,tm_52468,Selangor Football Club,1,4,away
+mt_467112201,2026-08-29,comp_13553,tm_04372,Kuala Lumpur City FC,tm_485120,Brunei DPMM FC,1,0,home
+mt_512343581,2026-08-26,comp_13553,tm_04372,Kuala Lumpur City FC,tm_0393709,Kuching City,0,6,away
+mt_979401318,2026-05-17,comp_13553,tm_0393709,Kuching City,tm_04372,Kuala Lumpur City FC,1,0,home
+mt_747019691,2026-05-10,comp_13553,tm_04372,Kuala Lumpur City FC,tm_26799,Negeri Sembilan,2,2,draw
+mt_010591187,2026-05-02,comp_13553,tm_38152,Johor Darul Ta'zim,tm_04372,Kuala Lumpur City FC,7,0,home
+mt_404210524,2026-04-10,comp_13553,tm_4802209,Kelantan Darul Naim,tm_04372,Kuala Lumpur City FC,0,2,away
+mt_252185916,2026-03-15,comp_13553,tm_04372,Kuala Lumpur City FC,tm_52468,Selangor Football Club,2,3,away
+mt_626052156,2026-03-07,comp_13553,tm_04372,Kuala Lumpur City FC,tm_0555492,Melaka FC,2,1,home
+mt_895538997,2026-08-30,comp_742231,tm_6395166,Istanbul Başakşehir U19,tm_8543378,Kasımpaşa U19,3,0,home
+mt_378863761,2026-08-23,comp_742231,tm_1041339,Trabzonspor U19,tm_6395166,Istanbul Başakşehir U19,5,0,home
+mt_739947346,2026-08-16,comp_742231,tm_6395166,Istanbul Başakşehir U19,tm_4762050,Kocaelispor U19,2,2,draw
+mt_154938764,2026-05-16,comp_742231,tm_9103427,Gaziantep FK U19,tm_6395166,Istanbul Başakşehir U19,0,1,away
+mt_203591863,2026-05-09,comp_742231,tm_6395166,Istanbul Başakşehir U19,tm_1750833,Samsunspor U19,3,2,home
+mt_375604271,2026-05-02,comp_742231,tm_1033581,Fenerbahçe U19,tm_6395166,Istanbul Başakşehir U19,2,3,away
+mt_648210512,2026-04-24,comp_742231,tm_6395166,Istanbul Başakşehir U19,tm_8543378,Kasımpaşa U19,2,3,away
+mt_892347630,2026-04-19,comp_742231,tm_1041339,Trabzonspor U19,tm_6395166,Istanbul Başakşehir U19,3,1,home
+mt_206652069,2026-08-29,comp_742231,tm_8329747,Galatasaray U19,tm_7910915,Göztepe U19,2,0,home
+mt_512285118,2026-08-21,comp_742231,tm_1099384,Erzurumspor U19,tm_8329747,Galatasaray U19,2,3,away
+mt_024410394,2026-08-14,comp_742231,tm_8329747,Galatasaray U19,tm_01807528,Çorum FK U19,9,1,home
+mt_516879341,2026-05-16,comp_742231,tm_8543378,Kasımpaşa U19,tm_8329747,Galatasaray U19,1,0,home
+mt_980763416,2026-05-09,comp_742231,tm_8329747,Galatasaray U19,tm_8543324,Antalyaspor U19,2,0,home
+mt_892347696,2026-05-02,comp_742231,tm_1750833,Samsunspor U19,tm_8329747,Galatasaray U19,1,2,away
+mt_469052100,2026-04-26,comp_742231,tm_8329747,Galatasaray U19,tm_1033581,Fenerbahçe U19,1,2,away
+mt_027185987,2026-04-18,comp_742231,tm_9894739,Gençlerbirliği U19,tm_8329747,Galatasaray U19,2,6,away
+mt_643444340,2026-08-23,comp_13553,tm_10634,Penang,tm_485120,Brunei DPMM FC,0,1,away
+mt_838625798,2026-05-15,comp_13553,tm_10634,Penang,tm_485120,Brunei DPMM FC,2,1,home
+mt_585362922,2026-05-09,comp_13553,tm_485120,Brunei DPMM FC,tm_79517,Sabah FC,0,1,away
+mt_838763345,2026-05-03,comp_13553,tm_4222717,Immigration FC,tm_485120,Brunei DPMM FC,3,1,home
+mt_010591800,2026-04-25,comp_13553,tm_485120,Brunei DPMM FC,tm_0393709,Kuching City,2,2,draw
+mt_191879310,2026-04-12,comp_13553,tm_26799,Negeri Sembilan,tm_485120,Brunei DPMM FC,2,2,draw
+mt_838763474,2026-03-15,comp_13553,tm_485120,Brunei DPMM FC,tm_38152,Johor Darul Ta'zim,0,3,away
+mt_739006694,2026-08-29,comp_13553,tm_38152,Johor Darul Ta'zim,tm_4222717,Immigration FC,7,0,home
+mt_895083336,2026-08-21,comp_13553,tm_38152,Johor Darul Ta'zim,tm_0393709,Kuching City,3,0,home
+mt_252836165,2026-05-10,comp_13553,tm_4802209,Kelantan Darul Naim,tm_38152,Johor Darul Ta'zim,1,14,away
+mt_838763329,2026-04-28,comp_13553,tm_0555492,Melaka FC,tm_38152,Johor Darul Ta'zim,1,2,away
+mt_734144630,2026-04-17,comp_5432,tm_754497,Al-Ahli,tm_38152,Johor Darul Ta'zim,2,1,home
+mt_363426030,2026-04-11,comp_13553,tm_38152,Johor Darul Ta'zim,tm_52471,Terengganu,1,1,draw
+mt_979442127,2026-05-22,comp_45672,tm_2866707,Dewa United FC,tm_7216263,Bali United FC,0,1,away
+mt_010993421,2026-05-17,comp_45672,tm_7216263,Bali United FC,tm_3721324,Bhayangkara Presisi Indonesia FC,4,1,home
+mt_191776037,2026-05-11,comp_45672,tm_7216263,Bali United FC,tm_4654899,Borneo FC Samarinda,2,3,away
+mt_979442894,2026-05-05,comp_45672,tm_8454677,Madura United FC,tm_7216263,Bali United FC,2,0,home
+mt_747005351,2026-04-27,comp_45672,tm_7216263,Bali United FC,tm_0119227,PSM Makassar,2,0,home
+mt_747005337,2026-04-23,comp_45672,tm_6131509,Persita Tangerang,tm_7216263,Bali United FC,0,1,away
+mt_191776591,2026-04-19,comp_45672,tm_7216263,Bali United FC,tm_8838764,Malut United FC,4,1,home
+mt_838660940,2026-04-12,comp_45672,tm_7216204,Persib Bandung,tm_7216263,Bali United FC,3,2,home
+mt_584984556,2025-05-24,comp_45672,tm_8454677,Madura United FC,tm_5127947,PSS Sleman,0,3,away
+mt_584983678,2025-05-17,comp_45672,tm_5127947,PSS Sleman,tm_4592514,Persija Jakarta,2,1,home
+mt_257158360,2025-05-09,comp_45672,tm_2091290,PSIS Semarang,tm_5127947,PSS Sleman,1,2,away
+mt_584983643,2025-05-03,comp_45672,tm_5127947,PSS Sleman,tm_0119227,PSM Makassar,3,1,home
+mt_972374088,2025-04-26,comp_45672,tm_7216204,Persib Bandung,tm_5127947,PSS Sleman,3,0,home
+mt_196897494,2025-04-11,comp_45672,tm_2668375,PSBS Biak,tm_5127947,PSS Sleman,2,1,home
+mt_257158393,2025-03-11,comp_45672,tm_5127947,PSS Sleman,tm_1550550,Persis Solo,1,4,away
+mt_408201590,2025-03-07,comp_45672,tm_6131509,Persita Tangerang,tm_5127947,PSS Sleman,1,2,away
+mt_370127550,2026-05-10,comp_96844,tm_317417,BG Pathum United,tm_4706272,PT Prachuap FC,3,0,home
+mt_986247992,2026-05-01,comp_96844,tm_658013,Muang Thong United,tm_317417,BG Pathum United,1,1,draw
+mt_028391059,2026-04-25,comp_96844,tm_317417,BG Pathum United,tm_0285757,Nakhon Ratchasima Mazda FC,1,0,home
+mt_987043684,2026-04-19,comp_96844,tm_289822,Port FC,tm_317417,BG Pathum United,0,0,draw
+mt_465810411,2026-04-04,comp_96844,tm_8608023,Kanchanaburi Power FC,tm_317417,BG Pathum United,0,2,away
+mt_986247948,2026-03-22,comp_96844,tm_317417,BG Pathum United,tm_5726446,Ratchaburi,2,2,draw
+mt_465810477,2026-03-14,comp_96844,tm_1098585,Rayong FC,tm_317417,BG Pathum United,1,1,draw
+mt_641952643,2026-03-08,comp_96844,tm_317417,BG Pathum United,tm_693284,Chonburi FC,2,3,away
+mt_206702333,2026-09-03,comp_5242,tm_66113,Grêmio,tm_62523,Internacional,3,1,home
+mt_460547908,2026-09-03,comp_1085,tm_25816,Náutico,tm_74037,Botafogo-SP,1,0,home
+mt_643540911,2026-08-30,comp_5537,tm_3010286,Estudiantes de Buenos Aires,tm_277616,Club Ferro Carril Oeste,2,2,draw
+mt_641552391,2026-08-24,comp_5537,tm_277616,Club Ferro Carril Oeste,tm_033499,All Boys,1,0,home
+mt_028991419,2026-08-15,comp_5537,tm_277616,Club Ferro Carril Oeste,tm_772620,Atlanta,3,1,home
+mt_732004921,2026-08-09,comp_5537,tm_3030642,Los Andes,tm_277616,Club Ferro Carril Oeste,1,2,away
+mt_209885023,2026-08-01,comp_5537,tm_277616,Club Ferro Carril Oeste,tm_00100,Godoy Cruz,1,3,away
+mt_209885071,2026-07-26,comp_5537,tm_7252099,Deportivo Morón,tm_277616,Club Ferro Carril Oeste,4,0,home
+mt_022095421,2026-07-17,comp_5537,tm_277616,Club Ferro Carril Oeste,tm_38717,Club Atletico Colón,2,0,home
+mt_466272228,2026-07-11,comp_5537,tm_4776646,San Miguel,tm_277616,Club Ferro Carril Oeste,0,1,away
+mt_732004960,2026-08-30,comp_5537,tm_4704668,Mitre,tm_6326445,Central Norte de Salta,2,2,draw
+mt_028991440,2026-08-21,comp_5537,tm_1578794,Deportivo Madryn,tm_4704668,Mitre,4,0,home
+mt_209885606,2026-08-15,comp_5537,tm_4704668,Mitre,tm_6402145,Güemes,1,1,draw
+mt_986447168,2026-08-09,comp_5537,tm_4704668,Mitre,tm_424881,Defensores de Belgrano,2,1,home
+mt_370226741,2026-08-02,comp_5537,tm_9243933,Ciudad de Bolivar,tm_4704668,Mitre,0,2,away
+mt_641552454,2026-07-26,comp_5537,tm_4704668,Mitre,tm_177444,Almirante Brown,0,0,draw
+mt_153779550,2026-07-17,comp_5537,tm_4704668,Mitre,tm_3812787,Racing de Córdoba,1,0,home
+mt_022545503,2026-07-11,comp_5537,tm_3010286,Estudiantes de Buenos Aires,tm_4704668,Mitre,3,0,home
+mt_642163819,2026-08-30,comp_1085,tm_988700,CRB,tm_01944,Criciúma,2,1,home
+mt_021804771,2026-08-23,comp_1085,tm_01944,Criciúma,tm_19710,Fortaleza,0,2,away
+mt_021802057,2026-08-15,comp_1085,tm_01944,Criciúma,tm_19738,Goiás,1,0,home
+mt_734273732,2026-07-21,comp_1085,tm_0113078,Novorizontino,tm_01944,Criciúma,0,1,away
+mt_642163883,2026-08-22,comp_1085,tm_931189,Cuiabá,tm_19738,Goiás,1,1,draw
+mt_642164664,2026-08-19,comp_1085,tm_931189,Cuiabá,tm_097215,Operário-PR,1,0,home
+mt_987698943,2026-08-15,comp_1085,tm_25880,Ceará,tm_931189,Cuiabá,1,3,away
+mt_642164651,2026-08-09,comp_1085,tm_931189,Cuiabá,tm_19710,Fortaleza,1,1,draw
+mt_460546474,2026-07-27,comp_1085,tm_74020,Sport Recife,tm_931189,Cuiabá,1,1,draw
+mt_642164646,2026-07-23,comp_1085,tm_931189,Cuiabá,tm_088719,Atlético Goianiense,0,1,away
+mt_376037363,2026-07-17,comp_1085,tm_19704,Juventude,tm_931189,Cuiabá,2,0,home
+mt_378288853,2026-08-29,comp_8998,tm_79366,Defensor Sporting,tm_9794068,Montevideo City Torque,1,3,away
+mt_467844626,2026-08-23,comp_8998,tm_9794068,Montevideo City Torque,tm_10044,Montevideo Wanderers,5,1,home
+mt_466800791,2026-08-20,comp_1615,tm_9794068,Montevideo City Torque,tm_844540,Tigre,2,1,home
+mt_150016637,2026-08-15,comp_8998,tm_04251,Juventud de Las Piedras,tm_9794068,Montevideo City Torque,0,1,away
+mt_644922465,2026-08-12,comp_1615,tm_844540,Tigre,tm_9794068,Montevideo City Torque,0,1,away
+mt_378663347,2026-07-31,comp_8998,tm_9794068,Montevideo City Torque,tm_10044,Montevideo Wanderers,0,2,away
+mt_512874885,2026-07-24,comp_8998,tm_9794068,Montevideo City Torque,tm_85976,Danubio,1,0,home
+mt_022019395,2026-07-11,comp_8998,tm_04251,Juventud de Las Piedras,tm_9794068,Montevideo City Torque,1,3,away
+mt_643533380,2026-08-30,comp_8998,tm_736406,Cerro Largo,tm_721373,Liverpool UY,1,1,draw
+mt_024300251,2026-08-22,comp_8998,tm_736406,Cerro Largo,tm_79366,Defensor Sporting,1,1,draw
+mt_643369500,2026-08-15,comp_8998,tm_10044,Montevideo Wanderers,tm_736406,Cerro Largo,1,1,draw
+mt_378864613,2026-08-07,comp_8998,tm_736406,Cerro Largo,tm_04251,Juventud de Las Piedras,1,1,draw
+mt_895338854,2026-08-01,comp_8998,tm_38741,Peñarol,tm_736406,Cerro Largo,3,0,home
+mt_512885582,2026-07-25,comp_8998,tm_91896,Central Español,tm_736406,Cerro Largo,0,1,away
+mt_022019339,2026-07-13,comp_8998,tm_736406,Cerro Largo,tm_79366,Defensor Sporting,1,1,draw
+mt_511461426,2026-06-08,comp_8998,tm_721373,Liverpool UY,tm_736406,Cerro Largo,0,0,draw
+mt_467669596,2026-08-30,comp_4540,tm_544234,Atlético Tucumán,tm_52125,Belgrano,0,0,draw
+mt_467606602,2026-08-23,comp_4540,tm_52125,Belgrano,tm_755964,Defensa y Justicia,1,2,away
+mt_378081862,2026-08-19,comp_08235,tm_47610,Racing Club,tm_52125,Belgrano,1,0,home
+mt_643424426,2026-08-15,comp_4540,tm_52125,Belgrano,tm_922132,Independiente Rivadavia,2,0,home
+mt_206050095,2026-08-10,comp_4540,tm_79300,Banfield,tm_52125,Belgrano,0,2,away
+mt_466406007,2026-08-06,comp_4540,tm_844540,Tigre,tm_52125,Belgrano,0,0,draw
+mt_988978787,2026-08-01,comp_4540,tm_52125,Belgrano,tm_63454,Argentinos Juniors,0,1,away
+mt_511581866,2026-07-23,comp_4540,tm_52125,Belgrano,tm_38728,Rosario Central,2,1,home
+mt_467669940,2026-08-23,comp_4540,tm_722920,Huracán,tm_5175881,Deportivo Riestra,0,0,draw
+mt_512181161,2026-08-09,comp_4540,tm_26068,San Lorenzo,tm_722920,Huracán,0,2,away
+mt_466406071,2026-08-04,comp_4540,tm_722920,Huracán,tm_544234,Atlético Tucumán,0,0,draw
+mt_511581888,2026-07-30,comp_4540,tm_922132,Independiente Rivadavia,tm_722920,Huracán,2,1,home
+mt_733743410,2026-07-25,comp_4540,tm_722920,Huracán,tm_79300,Banfield,1,0,home
+mt_511467384,2026-06-03,comp_08235,tm_8442265,Barracas Central,tm_722920,Huracán,1,0,home
+mt_206003322,2026-08-31,comp_4540,tm_755964,Defensa y Justicia,tm_311845,Platense,1,0,home
+mt_206967609,2026-08-28,comp_08235,tm_311845,Platense,tm_32231,Instituto De Córdoba,1,1,home
+mt_024212219,2026-08-23,comp_4540,tm_8442265,Barracas Central,tm_311845,Platense,1,2,away
+mt_733544230,2026-08-19,comp_0499,tm_47691,Coquimbo Unido,tm_311845,Platense,0,0,away
+mt_512116635,2026-08-16,comp_4540,tm_311845,Platense,tm_91813,Boca Juniors,1,1,draw
+mt_899033490,2026-08-12,comp_0499,tm_311845,Platense,tm_47691,Coquimbo Unido,1,1,draw
+mt_024212283,2026-08-09,comp_4540,tm_79355,CA Independiente,tm_311845,Platense,0,1,away
+mt_200250565,2026-08-03,comp_4540,tm_311845,Platense,tm_10567,Talleres,0,4,away
+mt_512116767,2026-08-29,comp_4540,tm_5175881,Deportivo Riestra,tm_85905,Vélez Sarsfield,1,1,draw
+mt_981612187,2026-08-18,comp_08235,tm_5175881,Deportivo Riestra,tm_47685,Gimnasia y Esgrima,1,1,home
+mt_467669925,2026-08-15,comp_4540,tm_91829,Newell's Old Boys,tm_5175881,Deportivo Riestra,2,0,home
+mt_739343321,2026-08-08,comp_4540,tm_5175881,Deportivo Riestra,tm_63492,Estudiantes de La Plata,2,0,home
+mt_377367674,2026-08-02,comp_4540,tm_5175881,Deportivo Riestra,tm_8442265,Barracas Central,0,1,away
+mt_644624213,2026-07-29,comp_4540,tm_755964,Defensa y Justicia,tm_5175881,Deportivo Riestra,2,1,home
+mt_155195948,2026-07-26,comp_4540,tm_5175881,Deportivo Riestra,tm_91813,Boca Juniors,3,0,home
+mt_981124411,2026-08-28,comp_623699,tm_721023,Bolívar,tm_8745558,Academia del Balompié Boliviano,4,1,home
+mt_895506604,2026-08-22,comp_623699,tm_8745558,Academia del Balompié Boliviano,tm_8802278,GV San José,2,2,draw
+mt_643334828,2026-08-16,comp_623699,tm_189514,Nacional Potosí,tm_8745558,Academia del Balompié Boliviano,2,0,home
+mt_377410533,2026-08-07,comp_623699,tm_8745558,Academia del Balompié Boliviano,tm_215029,Guabirá,0,1,away
+mt_644098489,2026-07-31,comp_623699,tm_4815706,CD Real Tomayapo,tm_8745558,Academia del Balompié Boliviano,1,1,draw
+mt_466289046,2026-07-24,comp_623699,tm_038117,Club Aurora,tm_8745558,Academia del Balompié Boliviano,3,2,home
+mt_733651405,2026-07-20,comp_623699,tm_4117987,San Antonio Bulo-Bulo,tm_8745558,Academia del Balompié Boliviano,2,1,home
+mt_895506652,2026-08-25,comp_623699,tm_9113429,FC Universitario de Vinto,tm_189514,Nacional Potosí,2,0,home
+mt_739950003,2026-08-21,comp_623699,tm_797553,The Strongest,tm_9113429,FC Universitario de Vinto,4,3,home
+mt_467776954,2026-08-14,comp_623699,tm_9113429,FC Universitario de Vinto,tm_4815706,CD Real Tomayapo,0,1,away
+mt_733652224,2026-08-09,comp_623699,tm_163508,Oriente Petrolero,tm_9113429,FC Universitario de Vinto,5,0,home
+mt_377415763,2026-08-06,comp_623699,tm_9113429,FC Universitario de Vinto,tm_134730,Real Potosí,0,2,away
+mt_466289697,2026-07-31,comp_623699,tm_9113429,FC Universitario de Vinto,tm_215029,Guabirá,1,1,draw
+mt_988320806,2026-07-27,comp_623699,tm_8802278,GV San José,tm_9113429,FC Universitario de Vinto,2,1,home
+mt_200173581,2026-07-18,comp_623699,tm_5229336,Club Always Ready,tm_9113429,FC Universitario de Vinto,4,0,home
+mt_988241124,2026-08-30,comp_6981,tm_8894258,CD Moquegua,tm_37087,Alianza Atlético de Sullana,1,4,away
+mt_200786362,2026-08-21,comp_6981,tm_37087,Alianza Atlético de Sullana,tm_98683,Club Sporting Cristal,3,1,home
+mt_733509994,2026-08-15,comp_6981,tm_3120620,Asociación Deportiva Tarma,tm_37087,Alianza Atlético de Sullana,1,1,draw
+mt_733509149,2026-08-02,comp_6981,tm_20961,Alianza Lima,tm_37087,Alianza Atlético de Sullana,3,1,home
+mt_644953398,2026-07-24,comp_6981,tm_37087,Alianza Atlético de Sullana,tm_0414711,Los Chankas CYC,3,1,home
+mt_511432214,2026-07-18,comp_6981,tm_1347030,Cusco FC,tm_37087,Alianza Atlético de Sullana,4,1,home
+mt_899958765,2026-05-31,comp_6981,tm_89455,Melgar,tm_37087,Alianza Atlético de Sullana,3,1,home
+mt_150067770,2026-08-26,comp_623699,tm_4117987,San Antonio Bulo-Bulo,tm_797553,The Strongest,0,3,away
+mt_643395558,2026-08-22,comp_623699,tm_163508,Oriente Petrolero,tm_4117987,San Antonio Bulo-Bulo,4,0,home
+mt_024442785,2026-08-15,comp_623699,tm_721023,Bolívar,tm_4117987,San Antonio Bulo-Bulo,4,1,home
+mt_733652212,2026-08-08,comp_623699,tm_4117987,San Antonio Bulo-Bulo,tm_189514,Nacional Potosí,2,1,home
+mt_511946182,2026-08-05,comp_623699,tm_8802278,GV San José,tm_4117987,San Antonio Bulo-Bulo,0,0,draw
+mt_899702927,2026-08-01,comp_623699,tm_4117987,San Antonio Bulo-Bulo,tm_842023,Blooming,2,0,home
+mt_988326098,2026-07-25,comp_623699,tm_5229336,Club Always Ready,tm_4117987,San Antonio Bulo-Bulo,3,1,home
+mt_641538888,2026-08-30,comp_1992,tm_6641,Sandefjord Fotball,tm_72546,SK Brann,0,0,draw
+mt_209802226,2026-08-16,comp_1992,tm_96668,Sarpsborg 08,tm_6641,Sandefjord Fotball,1,2,away
+mt_028920059,2026-08-07,comp_1992,tm_6641,Sandefjord Fotball,tm_61854,KFUM Oslo,0,1,away
+mt_209802285,2026-08-01,comp_1992,tm_3387,Fredrikstad FK,tm_6641,Sandefjord Fotball,1,0,home
+mt_641546695,2026-07-26,comp_1992,tm_6641,Sandefjord Fotball,tm_6686,Bodø/Glimt,0,3,away
+mt_517315541,2026-07-18,comp_1992,tm_08322,Viking FK,tm_6641,Sandefjord Fotball,2,1,home
+mt_894698896,2026-07-12,comp_1992,tm_6641,Sandefjord Fotball,tm_6628,HamKam,2,2,draw
+mt_732037725,2026-05-30,comp_1992,tm_2296,Molde FK,tm_6641,Sandefjord Fotball,2,1,home
+mt_894652223,2026-08-30,comp_1992,tm_08322,Viking FK,tm_3376,Aalesunds FK,2,1,home
+mt_467647841,2026-08-26,comp_3498,tm_08322,Viking FK,tm_97303,GNK Dinamo Zagreb,3,1,home
+mt_981891298,2026-08-18,comp_3498,tm_97303,GNK Dinamo Zagreb,tm_08322,Viking FK,2,2,draw
+mt_986489992,2026-08-14,comp_1992,tm_29703,Rosenborg BK,tm_08322,Viking FK,2,1,home
+mt_209802210,2026-08-08,comp_1992,tm_08322,Viking FK,tm_96668,Sarpsborg 08,2,1,home
+mt_894698808,2026-08-01,comp_1992,tm_3360,IK Start,tm_08322,Viking FK,0,3,away
+mt_465164488,2026-07-26,comp_1992,tm_3376,Aalesunds FK,tm_08322,Viking FK,1,1,draw
+mt_988143031,2026-07-22,comp_1992,tm_0085,Lillestrøm SK,tm_08322,Viking FK,1,2,away
+mt_988479486,2026-08-30,comp_9711,tm_10956,Górnik Zabrze,tm_91783,GKS Katowice,2,3,away
+mt_466104106,2026-08-23,comp_9711,tm_91783,GKS Katowice,tm_91719,Wisła Płock,5,0,home
+mt_155791747,2026-08-16,comp_9711,tm_455217,Motor Lublin,tm_91783,GKS Katowice,1,0,home
+mt_644526961,2026-08-02,comp_9711,tm_91783,GKS Katowice,tm_455998,Radomiak Radom,3,1,home
+mt_899874222,2026-07-30,comp_408698,tm_91783,GKS Katowice,tm_98729,MŠK Žilina,3,1,home
+mt_200852786,2026-07-26,comp_9711,tm_26508,Wisła Kraków,tm_91783,GKS Katowice,2,1,home
+mt_206801798,2026-08-29,comp_5537,tm_9243933,Ciudad de Bolivar,tm_424881,Defensores de Belgrano,1,0,home
+mt_517338229,2026-08-22,comp_5537,tm_424881,Defensores de Belgrano,tm_177444,Almirante Brown,0,2,away
+mt_153779000,2026-08-14,comp_5537,tm_692602,Atlético de Rafaela,tm_424881,Defensores de Belgrano,0,0,draw
+mt_894663976,2026-08-01,comp_5537,tm_424881,Defensores de Belgrano,tm_3010286,Estudiantes de Buenos Aires,1,1,draw
+mt_028991298,2026-07-26,comp_5537,tm_033499,All Boys,tm_424881,Defensores de Belgrano,0,0,draw
+mt_644030628,2026-07-12,comp_5537,tm_00100,Godoy Cruz,tm_424881,Defensores de Belgrano,1,0,home
+mt_894663388,2026-07-04,comp_5537,tm_424881,Defensores de Belgrano,tm_7252099,Deportivo Morón,2,1,home
+mt_986447149,2026-08-30,comp_5537,tm_3812787,Racing de Córdoba,tm_38717,Club Atletico Colón,1,0,home
+mt_986447114,2026-08-23,comp_5537,tm_9243933,Ciudad de Bolivar,tm_3812787,Racing de Córdoba,1,1,draw
+mt_732004934,2026-08-16,comp_5537,tm_3812787,Racing de Córdoba,tm_966292,San Martín de San Juan,0,0,draw
+mt_465110798,2026-08-09,comp_5537,tm_3812787,Racing de Córdoba,tm_4776646,San Miguel,1,0,home
+mt_641552403,2026-08-02,comp_5537,tm_177444,Almirante Brown,tm_3812787,Racing de Córdoba,2,0,home
+mt_894663905,2026-07-26,comp_5537,tm_3812787,Racing de Córdoba,tm_2076831,San Telmo,2,1,home
+mt_155808884,2026-07-12,comp_5537,tm_3812787,Racing de Córdoba,tm_2929513,Acassuso,3,2,home
+mt_733633330,2026-08-30,comp_9722,tm_15544,NK Nafta Lendava 1903,tm_15981,NK Maribor,2,3,away
+mt_155855558,2026-08-21,comp_9722,tm_64203,NK Olimpija Ljubljana,tm_15544,NK Nafta Lendava 1903,1,0,home
+mt_155855597,2026-08-15,comp_9722,tm_15544,NK Nafta Lendava 1903,tm_51897,NK Celje,1,3,away
+mt_466266605,2026-08-09,comp_9722,tm_02102,NK Aluminij Kidričevo,tm_15544,NK Nafta Lendava 1903,1,1,draw
+mt_200100098,2026-08-01,comp_9722,tm_15544,NK Nafta Lendava 1903,tm_3718257,NŠ Mura,5,2,home
+mt_899799949,2026-07-26,comp_9722,tm_1051341,NK Bravo,tm_15544,NK Nafta Lendava 1903,0,3,away
+mt_022522270,2026-07-17,comp_9722,tm_15544,NK Nafta Lendava 1903,tm_37641,FC Koper,0,2,away
+mt_899566399,2026-05-31,comp_9722,tm_15544,NK Nafta Lendava 1903,tm_02151,ND Primorje,1,0,home
+mt_988388810,2026-08-29,comp_9722,tm_312235,Kalcer Radomlje,tm_64203,NK Olimpija Ljubljana,0,0,draw
+mt_733633345,2026-08-16,comp_9722,tm_312235,Kalcer Radomlje,tm_02102,NK Aluminij Kidričevo,1,3,away
+mt_988388879,2026-08-10,comp_9722,tm_3718257,NŠ Mura,tm_312235,Kalcer Radomlje,1,3,away
+mt_733633329,2026-08-02,comp_9722,tm_312235,Kalcer Radomlje,tm_1051341,NK Bravo,1,2,away
+mt_644044411,2026-07-26,comp_9722,tm_37641,FC Koper,tm_312235,Kalcer Radomlje,2,2,draw
+mt_377477706,2026-07-18,comp_9722,tm_312235,Kalcer Radomlje,tm_3813061,Brinje Grosuplje,0,2,away
+mt_252026291,2026-05-17,comp_9722,tm_64203,NK Olimpija Ljubljana,tm_312235,Kalcer Radomlje,2,1,home
+mt_404647400,2026-05-09,comp_9722,tm_1051341,NK Bravo,tm_312235,Kalcer Radomlje,2,1,home
+mt_200133730,2026-09-01,comp_6258,tm_928709,FC Stade-Lausanne-Ouchy,tm_37748,Étoile Carouge FC,3,0,home
+mt_466299892,2026-08-28,comp_6258,tm_37748,Étoile Carouge FC,tm_167960,FC Rapperswil-Jona,2,1,home
+mt_377455844,2026-08-21,comp_6258,tm_15577,Stade Nyonnais,tm_37748,Étoile Carouge FC,0,0,draw
+mt_466299728,2026-07-31,comp_6258,tm_15555,Yverdon-Sport FC,tm_37748,Étoile Carouge FC,1,1,draw
+mt_644088986,2026-07-24,comp_6258,tm_37748,Étoile Carouge FC,tm_37703,FC Aarau,3,0,home
+mt_028342438,2026-05-15,comp_6258,tm_37748,Étoile Carouge FC,tm_73334,AC Bellinzona,2,2,draw
+mt_899722044,2026-08-31,comp_6258,tm_46602,FC Wil 1900,tm_37703,FC Aarau,2,2,draw
+mt_988300274,2026-08-28,comp_6258,tm_15555,Yverdon-Sport FC,tm_46602,FC Wil 1900,1,1,draw
+mt_466299741,2026-08-22,comp_6258,tm_46602,FC Wil 1900,tm_02225,SC Kriens,0,2,away
+mt_899722578,2026-07-24,comp_6258,tm_167960,FC Rapperswil-Jona,tm_46602,FC Wil 1900,4,5,away
+mt_732593995,2026-05-15,comp_6258,tm_46602,FC Wil 1900,tm_51113,FC Vaduz,1,3,away
+mt_517421246,2026-05-11,comp_6258,tm_73334,AC Bellinzona,tm_46602,FC Wil 1900,2,4,away
+mt_988984811,2026-08-31,comp_9777,tm_62204,Dijon,tm_83365,Saint-Étienne,2,3,away
+mt_733699539,2026-08-14,comp_9777,tm_62204,Dijon,tm_40020,Pau FC,0,1,away
+mt_200166708,2026-08-08,comp_9777,tm_97771,Montpellier,tm_62204,Dijon,1,1,draw
+mt_361143042,2025-03-28,comp_5881,tm_53728,FC Rouen,tm_62204,Dijon,0,0,draw
+mt_584495751,2025-03-21,comp_5881,tm_62204,Dijon,tm_28260,Valenciennes,2,1,home
+mt_972296481,2025-03-14,comp_5881,tm_58829,Nîmes Olympique,tm_62204,Dijon,0,0,draw
+mt_257729800,2025-03-07,comp_5881,tm_62204,Dijon,tm_293663,US Orléans,2,2,draw
+mt_200166868,2026-08-28,comp_9777,tm_459777,Rodez AF,tm_40020,Pau FC,2,2,draw
+mt_511922319,2026-08-21,comp_9777,tm_40020,Pau FC,tm_40015,Nancy,0,1,away
+mt_377488265,2026-08-08,comp_9777,tm_40020,Pau FC,tm_0238139,Annecy FC,0,1,away
+mt_191039916,2026-05-09,comp_9777,tm_97749,Stade de Reims,tm_40020,Pau FC,5,3,home
+mt_979164772,2026-05-02,comp_9777,tm_40020,Pau FC,tm_40015,Nancy,1,3,away
+mt_747920444,2026-04-24,comp_9777,tm_0238139,Annecy FC,tm_40020,Pau FC,5,1,home
+mt_191037943,2026-04-17,comp_9777,tm_40020,Pau FC,tm_01125,Guingamp,2,1,home
+mt_466277179,2026-08-21,comp_9777,tm_36680,Sochaux,tm_01125,Guingamp,1,0,home
+mt_155800795,2026-08-14,comp_9777,tm_007490,Red Star FC,tm_36680,Sochaux,0,0,draw
+mt_644033516,2026-08-08,comp_9777,tm_36680,Sochaux,tm_83365,Saint-Étienne,0,3,away
+mt_641532823,2026-01-11,comp_4750,tm_36680,Sochaux,tm_83394,RC Lens,0,3,away
+mt_209620151,2025-12-20,comp_4750,tm_8926373,Bethune St,tm_36680,Sochaux,2,4,away
+mt_465790415,2025-11-29,comp_4750,tm_9776492,US Sarre-Union,tm_36680,Sochaux,0,6,away
+mt_465525022,2025-11-15,comp_4750,tm_2933500,CA Pontarlier,tm_36680,Sochaux,2,2,away
+mt_377488286,2026-08-28,comp_9777,tm_58845,Stade Lavallois,tm_25578,Grenoble Foot 38,0,3,away
+mt_155800750,2026-08-22,comp_9777,tm_25506,Metz,tm_58845,Stade Lavallois,1,1,draw
+mt_377488270,2026-08-14,comp_9777,tm_58845,Stade Lavallois,tm_36675,Nantes,2,1,home
+mt_899755634,2026-08-08,comp_9777,tm_459777,Rodez AF,tm_58845,Stade Lavallois,3,1,home
+mt_644319333,2026-05-24,comp_9777,tm_58845,Stade Lavallois,tm_53728,FC Rouen,1,0,home
+mt_511274227,2026-05-19,comp_9777,tm_53728,FC Rouen,tm_58845,Stade Lavallois,1,1,draw
+mt_252698556,2026-05-02,comp_9777,tm_97782,Troyes,tm_58845,Stade Lavallois,4,0,home
+mt_466285281,2026-09-04,comp_720692,tm_77336,Deportivo Pereira,tm_44677,Independiente Medellín,0,3,away

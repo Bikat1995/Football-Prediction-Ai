@@ -403,9 +403,9 @@ def get_team_season_stats(team_id: str, season_id: str) -> dict:
 # Load ML Model once
 ML_MODEL_DATA = None
 try:
-    with open('models/xgb_classifier.pkl', 'rb') as f:
-        ML_MODEL_DATA = pickle.load(f)
-    print("[ML] Legacy model loaded successfully (updated).")
+    import joblib
+    ML_MODEL_DATA = joblib.load('models/live_compatible_model.pkl')
+    print(f"[ML] Live compatible model loaded. Samples trained: {ML_MODEL_DATA.get('total_samples_trained')}")
 except Exception as e:
     print(f"Warning: ML model not found or failed to load - {e}")
 
@@ -419,7 +419,8 @@ def compute_poisson_markets(home_team_name: str, away_team_name: str,
                             home_avg_scored: float, home_avg_conceded: float,
                             away_avg_scored: float, away_avg_conceded: float,
                             match_odds: dict = None,
-                            max_goals: int = 6) -> dict:
+                            max_goals: int = 6,
+                            home_pts_avg: float = 1.5, away_pts_avg: float = 1.5) -> dict:
     """
     Compute all major betting markets from Poisson + ML + Real Betting Odds ensemble.
     Always returns a prediction.
@@ -442,42 +443,71 @@ def compute_poisson_markets(home_team_name: str, away_team_name: str,
     home_known = False
     away_known = False
     low_data_warning = None
+    ml_used = False
+    model_version = "None"
+    total_trained = 0
+    blend_explanation = "Pure Poisson logic used."
 
-    if ML_MODEL_DATA and 'team_stats' in ML_MODEL_DATA:
-        # ── Legacy model fallback ──
-        team_stats = ML_MODEL_DATA['team_stats']
-        model      = ML_MODEL_DATA['model']
-        lg         = ML_MODEL_DATA.get('league_avg', {})
-        fallback   = [lg.get('scored', 1.3), lg.get('conceded', 1.1), lg.get('ppg', 1.5)]
-        import difflib
+    # ENSEMBLE BLEND: Real Betting Odds
+    odds_h = 2.5
+    odds_d = 3.0
+    odds_a = 2.8
+    if match_odds and 'match_odds' in match_odds:
+        try:
+            o = match_odds['match_odds']
+            odds_h = float(o['home']['last_seen'])
+            odds_d = float(o['draw']['last_seen'])
+            odds_a = float(o['away']['last_seen'])
+        except Exception: pass
 
-        def get_team_feat(name):
-            match_name = name
-            if name not in team_stats:
-                ms = difflib.get_close_matches(name, list(team_stats.keys()), n=1, cutoff=0.6)
-                if ms: match_name = ms[0]
-            if match_name in team_stats and team_stats[match_name]['games'] >= 3:
-                g = team_stats[match_name]['games']
-                return [team_stats[match_name]['scored']/g, team_stats[match_name]['conceded']/g,
-                        team_stats[match_name]['points']/g], True
-            return fallback, False
+    if ML_MODEL_DATA and 'model' in ML_MODEL_DATA:
+        model_version = ML_MODEL_DATA.get('version', 'v1')
+        total_trained = ML_MODEL_DATA.get('total_samples_trained', 0)
+        
+        # Check if teams have sufficient live API form to use the ML model confidently
+        # (home_pts_avg is computed from real recent games fetched via API)
+        if home_avg_scored > 0 or home_pts_avg != 1.5: home_known = True
+        if away_avg_scored > 0 or away_pts_avg != 1.5: away_known = True
+        
+        if home_known and away_known:
+            ml_weight = 0.70 # Strong AI usage
+            blend_explanation = "70% AI Model / 30% Poisson (Rich data available)"
+        elif home_known or away_known:
+            ml_weight = 0.30 # Weak AI usage
+            blend_explanation = "30% AI Model / 70% Poisson (Limited data for one team)"
+            low_data_warning = "Limited historical data for one team. Relying heavily on Poisson estimates."
+        else:
+            ml_weight = 0.10 # Almost pure Poisson
+            blend_explanation = "10% AI Model / 90% Poisson (New teams, statistical estimate)"
+            low_data_warning = "Unknown teams. Using pure statistical distribution."
 
-        h_feat, home_known = get_team_feat(home_team_name)
-        a_feat, away_known = get_team_feat(away_team_name)
-        ml_weight   = 0.40 if (home_known and away_known) else (0.20 if (home_known or away_known) else 0.0)
         stat_weight = 1.0 - ml_weight
-        if ml_weight > 0:
-            try:
-                ml_probs = model.predict_proba(np.array([h_feat + a_feat + [1]], dtype=np.float32))[0]
-                ml_away, ml_draw, ml_home = float(ml_probs[0]), float(ml_probs[1]), float(ml_probs[2])
-                p_home = p_home * stat_weight + ml_home * ml_weight
-                p_draw = p_draw * stat_weight + ml_draw * ml_weight
-                p_away = p_away * stat_weight + ml_away * ml_weight
-                _s = p_home + p_draw + p_away
-                p_home /= _s; p_draw /= _s; p_away /= _s
-                ml_confidence = round(ml_weight * 100)
-            except Exception:
-                pass
+        
+        feature_vector = [
+            home_avg_scored, home_avg_conceded, home_pts_avg,
+            away_avg_scored, away_avg_conceded, away_pts_avg,
+            min(odds_h, 20.0), min(odds_d, 10.0), min(odds_a, 20.0)
+        ]
+        
+        try:
+            model = ML_MODEL_DATA['model']
+            # XGBClassifier returns probabilities for [Away(0), Draw(1), Home(2)]
+            import numpy as np
+            probs = model.predict_proba(np.array([feature_vector], dtype=np.float32))[0]
+            ml_away, ml_draw, ml_home = float(probs[0]), float(probs[1]), float(probs[2])
+            
+            p_home = p_home * stat_weight + ml_home * ml_weight
+            p_draw = p_draw * stat_weight + ml_draw * ml_weight
+            p_away = p_away * stat_weight + ml_away * ml_weight
+            
+            _s = p_home + p_draw + p_away
+            p_home /= _s; p_draw /= _s; p_away /= _s
+            
+            ml_confidence = round(ml_weight * 100)
+            ml_used = True
+        except Exception as e:
+            print(f"ML Inference failed: {e}")
+            pass
 
     if not home_known and not away_known:
         low_data_warning = f"Limited historical data for both {home_team_name} and {away_team_name}. Prediction is statistical only."
