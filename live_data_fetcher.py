@@ -1,3 +1,4 @@
+import numpy as np
 import os
 import requests
 import json
@@ -6,7 +7,6 @@ from datetime import datetime, date, timedelta
 from dotenv import load_dotenv
 import math
 import pickle
-import numpy as np
 
 load_dotenv()
 
@@ -522,7 +522,6 @@ def compute_poisson_markets(home_team_name: str, away_team_name: str,
         try:
             model = ML_MODEL_DATA['model']
             # XGBClassifier returns probabilities for [Away(0), Draw(1), Home(2)]
-            import numpy as np
             probs = model.predict_proba(feature_vector)[0]
             ml_away, ml_draw, ml_home = float(probs[0]), float(probs[1]), float(probs[2])
             
