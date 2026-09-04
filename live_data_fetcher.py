@@ -241,6 +241,29 @@ def get_upcoming_fixtures(leagues=None) -> list:
     
     return [f for f in all_items if f.get('status') in UPCOMING_STATUSES and f.get('competition_id') in leagues]
 
+def get_finished_fixtures(leagues=None) -> list:
+    """Today + Yesterday finished fixtures. Fetches globally and filters."""
+    if not leagues:
+        return []
+    today    = date.today().isoformat()
+    yesterday = (date.today() - timedelta(days=1)).isoformat()
+    
+    all_items = []
+    import time
+    page = 1
+    while True:
+        data = _get('matches', {'date_from': yesterday, 'date_to': today, 'limit': 100, 'page': page}, ttl=600)
+        if not data or 'data' not in data:
+            break
+        all_items.extend(data['data'])
+        meta = data.get('meta', {})
+        if page >= meta.get('total_pages', 1):
+            break
+        page += 1
+        time.sleep(0.5)
+    
+    return [f for f in all_items if f.get('status') in ['finished', 'awarded'] and f.get('competition_id') in leagues]
+
 def get_live_fixtures(leagues=None) -> list:
     """Currently in-play matches globally, filtered by leagues."""
     # Using status=live fetches all live games

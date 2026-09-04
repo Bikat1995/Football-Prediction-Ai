@@ -5,7 +5,7 @@ load_dotenv()
 
 import predict_today
 from live_data_fetcher import (
-    get_live_fixtures, get_upcoming_fixtures,
+    get_live_fixtures, get_upcoming_fixtures, get_finished_fixtures,
     get_team_form, get_head_to_head,
     get_match_odds, compute_poisson_markets,
     LIVE_STATUSES, _get
@@ -163,19 +163,12 @@ def get_all_predictions(day: str, target_date: str):
 
     return sorted(results, key=lambda x: x['fixture']['utc_date'])
 
-@st.cache_data(ttl=300, show_spinner=False)
-def get_past_predictions(today_str, yesterday_str):
-    m_today = _get('matches', {'date_from': today_str, 'date_to': today_str, 'limit': 100}, ttl=300)
-    m_yest = _get('matches', {'date_from': yesterday_str, 'date_to': yesterday_str, 'limit': 100}, ttl=3600)
-    
-    all_f = []
-    if m_today and 'data' in m_today: all_f.extend(m_today['data'])
-    if m_yest and 'data' in m_yest: all_f.extend(m_yest['data'])
-    
+@st.cache_data(ttl=600, show_spinner=False)
+def get_past_predictions():
     league_map = get_league_map()
     valid_leagues = list(league_map.keys())
     
-    finished = [f for f in all_f if f.get('status') in ['finished', 'awarded'] and f.get('competition_id') in valid_leagues]
+    finished = get_finished_fixtures(leagues=valid_leagues)
     
     past = []
     for f in finished:
@@ -258,17 +251,7 @@ for col, key, label in zip(d_cols[:4],
 if st.session_state.day == 'past':
     st.html("<div class='section-label' style='margin-top:0;'>Recent Model Performance</div>")
     try:
-        today_str, _ = get_client_dates()
-        
-        try:
-            tz_str = get_client_timezone()
-            tz = zoneinfo.ZoneInfo(tz_str)
-        except:
-            tz = zoneinfo.ZoneInfo("UTC")
-            
-        yesterday_str = (datetime.now(tz) - timedelta(days=1)).date().isoformat()
-        
-        past = get_past_predictions(today_str, yesterday_str)
+        past = get_past_predictions()
         if not past:
             st.info("No games finished recently.")
             st.stop()
