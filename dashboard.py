@@ -37,11 +37,14 @@ from streamlit_javascript import st_javascript
 
 def get_client_timezone():
     if 'client_tz' not in st.session_state:
-        # returns e.g. "Asia/Ho_Chi_Minh" or "America/Los_Angeles"
-        tz = st_javascript("Intl.DateTimeFormat().resolvedOptions().timeZone")
-        if tz:
-            st.session_state.client_tz = tz
-        else:
+        try:
+            # Fallback to UTC immediately if st_javascript hangs (common on mobile webviews)
+            tz = st_javascript("Intl.DateTimeFormat().resolvedOptions().timeZone")
+            if tz and isinstance(tz, str):
+                st.session_state.client_tz = tz
+            else:
+                return "UTC"
+        except Exception:
             return "UTC"
     return st.session_state.client_tz
 

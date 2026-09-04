@@ -308,3 +308,52 @@ button[kind="secondary"]:hover {
   margin-right: 4px;
   color: #fff;
 }
+
+
+/* Responsive Grid Overrides */
+@media (max-width: 768px) {
+  /* Make the 6-column metrics stack gracefully */
+  .stHorizontalBlock > div {
+    min-width: 48% !important; /* Switch to 2 columns on mobile */
+    margin-bottom: 8px;
+  }
+  
+  /* Make market odds rows wrap */
+  div[style*="display:flex;gap:8px;"] {
+    flex-wrap: wrap !important;
+  }
+  div[style*="display:flex;gap:8px;"] > div {
+    min-width: 45% !important;
+    flex: 1 1 auto !important;
+    margin-bottom: 8px;
+  }
+  
+  /* Make the header elements fit */
+  .top-bar-brand {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin-bottom: 12px;
+  }
+  .top-bar-controls {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    margin-top: 10px;
+  }
+  
+  /* Fix the game card layout */
+  div[style*="display:flex;justify-content:space-between;align-items:center;"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  div[style*="display:flex;justify-content:space-between;align-items:center;"] > div:nth-child(2) {
+    margin-top: 12px;
+    width: 100%;
+    text-align: left !important;
+  }
+  
+  /* Adjust score/team name layout */
+  div[style*="font-size:16px;font-weight:700;"] {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+}
