@@ -129,13 +129,22 @@ def norm3(a, b, c):
     return (round(a/s*100,1), round(b/s*100,1), round(c/s*100,1)) if s else (33.3, 33.3, 33.3)
 
 # ─── Cached data fetchers ─────────────────────────────────────────────────────
+def get_priority_league_ids():
+    l_map = get_league_map()
+    # Only fetch fixtures for our priority leagues to prevent massive API Rate Limits!
+    priority_ids = []
+    for cid, cname in l_map.items():
+        if cname in LEAGUE_PRIORITY:
+            priority_ids.append(cid)
+    return priority_ids if priority_ids else list(l_map.keys())[:20]
+
 @st.cache_data(ttl=60,    show_spinner=False)
 def cached_live():
-    return get_live_fixtures(leagues=list(get_league_map().keys()))
+    return get_live_fixtures(leagues=get_priority_league_ids())
 
 @st.cache_data(ttl=300,   show_spinner=False)
 def cached_upcoming():
-    return get_upcoming_fixtures(leagues=list(get_league_map().keys()))
+    return get_upcoming_fixtures(leagues=get_priority_league_ids())
 
 @st.cache_data(ttl=3600,  show_spinner=False)
 def cached_team_form_v2(team_id):
@@ -180,7 +189,7 @@ def get_all_predictions(day: str, target_date: str):
 @st.cache_data(ttl=600, show_spinner=False)
 def get_past_predictions():
     league_map = get_league_map()
-    valid_leagues = list(league_map.keys())
+    valid_leagues = get_priority_league_ids()
     
     finished = get_finished_fixtures(leagues=valid_leagues)
     
