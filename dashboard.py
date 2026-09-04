@@ -288,7 +288,9 @@ if st.session_state.day == 'past':
             </div>
             """)
     except Exception as e:
-        st.info("No past predictions logged yet.")
+        import traceback
+        st.error(f"Error loading past predictions: {e}")
+        st.code(traceback.format_exc())
     st.stop()
 
 # ─── Load all predictions ─────────────────────────────────────────────────# ── Load all predictions ──
