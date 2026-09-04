@@ -170,6 +170,9 @@ def get_past_predictions():
     
     finished = get_finished_fixtures(leagues=valid_leagues)
     
+    # Sort descending by date and limit to 20 matches to avoid API rate limits on team form fetching
+    finished = sorted(finished, key=lambda x: x.get('utc_date', ''), reverse=True)[:20]
+    
     past = []
     for f in finished:
         hg = f.get('score', {}).get('home')
