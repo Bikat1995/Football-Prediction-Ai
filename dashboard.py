@@ -38,14 +38,17 @@ from streamlit_javascript import st_javascript
 def get_client_timezone():
     if 'client_tz' not in st.session_state:
         try:
-            # Fallback to UTC immediately if st_javascript hangs (common on mobile webviews)
             tz = st_javascript("Intl.DateTimeFormat().resolvedOptions().timeZone")
+            # st_javascript returns 0 while executing on the client side
+            if tz == 0:
+                return "UTC" # Temporarily return UTC to prevent hanging, but DO NOT set session state yet
+                
             if tz and isinstance(tz, str):
                 st.session_state.client_tz = tz
             else:
-                return "UTC"
+                st.session_state.client_tz = "UTC"
         except Exception:
-            return "UTC"
+            st.session_state.client_tz = "UTC"
     return st.session_state.client_tz
 
 def get_client_dates():
